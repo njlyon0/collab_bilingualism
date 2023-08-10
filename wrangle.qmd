@@ -23,7 +23,7 @@ trout_salamander_py = pd.read_csv('data/verts.csv')
 
 ```{r}
 #| column: page-right
-head(trout_salamander_R, 5) # include an integrer is you want to specify the number of rows returned
+head(trout_salamander_R, n = 5)
 tail(trout_salamander_R)
 ```
 
@@ -31,8 +31,9 @@ tail(trout_salamander_R)
 
 ```{python}
 #| column: page-right
-trout_salamander_py.head(5) # include an integrer is you want to specify the number of rows returned
+trout_salamander_py.head(5)
 
 trout_salamander_py.tail()
 ```
 :::
+

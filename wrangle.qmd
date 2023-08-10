@@ -2,6 +2,9 @@
 title: "Data Wrangling"
 ---
 
+
+python3 -m pip install pandas
+
 ```{r}
 #| warning: false
 library(tidyverse)

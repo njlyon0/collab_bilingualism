@@ -3,12 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "lyon_bilingualism"
+  title: "R / Python Bilingualism"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - wrangle.qmd
 
 format:
   html:

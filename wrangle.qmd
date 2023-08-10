@@ -1,0 +1,38 @@
+---
+title: "Data Wrangling"
+---
+
+```{r}
+#| warning: false
+library(tidyverse)
+library(lterdatasampler)
+
+trout_salamander_R <- and_vertebrates
+```
+
+```{python}
+import pandas as pd
+
+trout_salamander_py = pd.read_csv('data/and_vertebrates.csv')
+```
+
+
+
+::: panel-tabset
+## `r fontawesome::fa("r-project", fill = "#5A5A5A", a11y = "sem")` R
+
+```{r}
+#| column: page-right
+head(trout_salamander_R, 5) # include an integrer is you want to specify the number of rows returned
+tail(trout_salamander_R)
+```
+
+## `r fontawesome::fa("python", fill = "#5A5A5A", a11y ="sem")` Python
+
+```{python}
+#| column: page-right
+trout_salamander_py.head(5) # include an integrer is you want to specify the number of rows returned
+
+trout_salamander_py.tail()
+```
+:::

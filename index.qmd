@@ -1,11 +1,13 @@
 ---
-title: "lyon_bilingualism"
+title: "Welcome!"
 ---
 
-This is a Quarto website.
+I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Additional Resources
 
-```{r}
-1 + 1
-```
+I'm not the first to have this idea so there are other useful resources on this topic. See below:
+
+- ESIIL (<u>E</u>nvironmental Data Science Inclusion and Innovation Lab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource
+
+

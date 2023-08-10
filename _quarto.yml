@@ -9,12 +9,16 @@ website:
       - href: index.qmd
         text: Home
       - wrangle.qmd
-
+  page-footer:
+    center: "Copyright 2023, Nicholas Lyon"
+    background: secondary
+    
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      light: lyonlight.scss
+      dark: lyondark.scss
+    mainfont: Open Sans
     toc: true
-
-editor: visual
-
+    link-external-newwindow: true
+    link-external-icon: false

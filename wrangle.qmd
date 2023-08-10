@@ -2,7 +2,6 @@
 title: "Data Wrangling"
 ---
 
-
 python3 -m pip install pandas
 
 ```{r}
@@ -18,8 +17,6 @@ import pandas as pd
 
 trout_salamander_py = pd.read_csv('data/verts.csv')
 ```
-
-
 
 ::: panel-tabset
 ## `r fontawesome::fa("r-project", fill = "#5A5A5A", a11y = "sem")` R
@@ -39,4 +36,3 @@ trout_salamander_py.head(5)
 trout_salamander_py.tail()
 ```
 :::
-

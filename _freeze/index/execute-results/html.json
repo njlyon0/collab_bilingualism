@@ -1,0 +1,14 @@
+{
+  "hash": "6c2aab496107546c09b04323b06d806b",
+  "result": {
+    "markdown": "---\ntitle: \"Welcome!\"\n---\n\n\nI think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.\n\n## Additional Resources\n\nI'm not the first to have this idea so there are other useful resources on this topic. See below:\n\n- [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nclusion and <u>I</u>nnovation <u>L</u>ab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource\n- [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for its facet dealing with R/Python bilingualism\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

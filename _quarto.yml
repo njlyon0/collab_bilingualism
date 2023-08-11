@@ -11,7 +11,9 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - wrangle.qmd
+      - text: "Data Wrangling"
+        menu:
+          - href: wrangle_basics.qmd
     right:
       - href: https://njlyon0.github.io/
         text: "About Me"

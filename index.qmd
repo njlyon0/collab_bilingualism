@@ -9,7 +9,7 @@ I think of myself as a competent R coder but am a total novice when it comes to 
 I'm not the first to have this idea so there are other useful resources on this topic. See below:
 
 - [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nnovation and <u>I</u>nclusion <u>L</u>ab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource
-- UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
+- Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for its facet dealing with R/Python bilingualism
 
 ```{r, include = F}

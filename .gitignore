@@ -57,3 +57,6 @@ rsconnect/
 # Quarto background stuff
 /.quarto/
 docs/
+
+# External resources folder
+misc_resources/

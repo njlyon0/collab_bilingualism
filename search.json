@@ -1,10 +1,52 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "wrangle.html",
+    "href": "wrangle.html",
+    "title": "Data Wrangling",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "The beating heart of my day to day work revolves around data ‘wrangling’. I view ‘wrangling’ as any scripted data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love."
+  },
+  {
+    "objectID": "wrangle.html#overview",
+    "href": "wrangle.html#overview",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "The beating heart of my day to day work revolves around data ‘wrangling’. I view ‘wrangling’ as any scripted data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love."
+  },
+  {
+    "objectID": "wrangle.html#package-installation",
+    "href": "wrangle.html#package-installation",
+    "title": "Data Wrangling",
+    "section": "Package Installation",
+    "text": "Package Installation\nThe loading of external packages containing the functions we require to actually do the bulk of data wrangling is an important preliminary step. I won’t evaluate the code chunks below but you’ll need to if you don’t already have these packages on your local machine.\n\nR Project RPython Python\n\n\n\n# Install the 'tidyverse' meta-package and 'lterdatasampler' package\ninstall.packages(\"tidyverse\")\ninstall.packages(\"lterdatasampler\")\n\n\n\nNote that Python package installation is done through the CLI (command line interface)\n\n# Install the 'pandas' package\npython3 -m pip install pandas"
+  },
+  {
+    "objectID": "wrangle.html#library-loading",
+    "href": "wrangle.html#library-loading",
+    "title": "Data Wrangling",
+    "section": "Library Loading",
+    "text": "Library Loading\nIt is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.\n\nR Project RPython Python\n\n\nR libraries are loaded with the library function\n\nlibrary(tidyverse)\nlibrary(lterdatasampler)\n\n\n\nPython libraries are loaded with import and can be aliased into simpler names with as at the same time.\n\nimport pandas as pd"
+  },
+  {
+    "objectID": "wrangle.html#data-import",
+    "href": "wrangle.html#data-import",
+    "title": "Data Wrangling",
+    "section": "Data Import",
+    "text": "Data Import\nWe can now load an external dataset derived from the lterdatasampler R package (see here) with both R and Python. This relatively simple operation is also a nice chance to showcase how ‘namespacing’ (i.e., indicating which package a given function comes from) differs between the two languages.\n\nR Project RPython Python\n\n\nNamespacing in R is accomplished by doing package_name::function_name and is optional (though, in my opinion, good practice!)\n\nvert_R &lt;- utils::read.csv(file = 'data/verts.csv')\n\n\n\nIn Python, namespacing is required and is done via package_name.function_name.\n\nvert_py = pd.read_csv('data/verts.csv')"
+  },
+  {
+    "objectID": "wrangle.html#making-heads-or-tails-of-data",
+    "href": "wrangle.html#making-heads-or-tails-of-data",
+    "title": "Data Wrangling",
+    "section": "Making Heads or Tails of Data",
+    "text": "Making Heads or Tails of Data\nChecking the ‘head’ or ‘tail’ of the data (i.e., the first or last few rows of the data respectively) is a nice way of getting a sense for the general format of the dataframe being assessed.\n\nR Project RPython Python\n\n\nIn R, we use the head or tail function and can use an optional n argument to specify the number of rows to return as an integer (default is 6 rows). Functions in R act on contents inside of parentheses.\n\nutils::head(vert_R, n = 2)\n\n  year sitecode section reach pass unitnum unittype vert_index pitnumber\n1 1987 MACKCC-L      CC     L    1       1        R          1        NA\n2 1987 MACKCC-L      CC     L    1       1        R          2        NA\n          species length_1_mm length_2_mm weight_g clip sampledate notes\n1 Cutthroat trout          58          NA     1.75 NONE 1987-10-07      \n2 Cutthroat trout          61          NA     1.95 NONE 1987-10-07      \n\nutils::tail(vert_R, n = 3)\n\n      year sitecode section reach pass unitnum unittype vert_index pitnumber\n32207 2019 MACKOG-U      OG     U    2      16        C         24   1043547\n32208 2019 MACKOG-U      OG     U    2      16        C         25   1043583\n32209 2019 MACKOG-U      OG     U    2      16        C         26   1043500\n                       species length_1_mm length_2_mm weight_g clip sampledate\n32207 Coastal giant salamander          67         120      9.6 NONE 2019-09-05\n32208 Coastal giant salamander          74         131     14.3 NONE 2019-09-05\n32209 Coastal giant salamander          73         128     11.6 NONE 2019-09-05\n            notes\n32207            \n32208            \n32209 Terrestrial\n\n\n\n\nIn Python we also use a head or tail function but instead of placing the data object inside of parentheses attached to the function we append the function name after the name of the data object separated by a period. This is visually similar to how we namespace functions in Python! You can again specify an integer number of rows to return (the default is 5)\n\nvert_py.head(3)\n\n   year  sitecode section reach  ...  weight_g  clip  sampledate  notes\n0  1987  MACKCC-L      CC     L  ...      1.75  NONE  1987-10-07    NaN\n1  1987  MACKCC-L      CC     L  ...      1.95  NONE  1987-10-07    NaN\n2  1987  MACKCC-L      CC     L  ...      5.60  NONE  1987-10-07    NaN\n\n[3 rows x 16 columns]\n\nvert_py.tail(2)\n\n       year  sitecode section reach  ...  weight_g  clip  sampledate        notes\n32207  2019  MACKOG-U      OG     U  ...      14.3  NONE  2019-09-05          NaN\n32208  2019  MACKOG-U      OG     U  ...      11.6  NONE  2019-09-05  Terrestrial\n\n[2 rows x 16 columns]"
+  },
+  {
+    "objectID": "wrangle.html#template-tabset-panel-area",
+    "href": "wrangle.html#template-tabset-panel-area",
+    "title": "Data Wrangling",
+    "section": "Template Tabset Panel Area",
+    "text": "Template Tabset Panel Area\n\nR Project RPython Python\n\n\n\n# X\n\n\n\n\n# X"
   },
   {
     "objectID": "index.html",
@@ -19,12 +61,5 @@
     "title": "Welcome!",
     "section": "Additional Resources",
     "text": "Additional Resources\nI’m not the first to have this idea so there are other useful resources on this topic. See below:\n\nESIIL (Environmental Data Science Inclusion and Innovation Lab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource\nMarie Rivers also made a website for exploring Quarto more generally that I’ve found super helpful for its facet dealing with R/Python bilingualism"
-  },
-  {
-    "objectID": "wrangle.html",
-    "href": "wrangle.html",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "python3 -m pip install pandas\n\nlibrary(tidyverse)\nlibrary(lterdatasampler)\n\ntrout_salamander_R &lt;- and_vertebrates\n\n\nimport pandas as pd\n\ntrout_salamander_py = pd.read_csv('data/verts.csv')\n\n\nR Project RPython Python\n\n\n\nhead(trout_salamander_R, n = 5)\n\n# A tibble: 5 × 16\n   year sitecode section reach  pass unitnum unittype vert_index pitnumber\n  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;\n1  1987 MACKCC-L CC      L         1       1 R                 1        NA\n2  1987 MACKCC-L CC      L         1       1 R                 2        NA\n3  1987 MACKCC-L CC      L         1       1 R                 3        NA\n4  1987 MACKCC-L CC      L         1       1 R                 4        NA\n5  1987 MACKCC-L CC      L         1       1 R                 5        NA\n# ℹ 7 more variables: species &lt;chr&gt;, length_1_mm &lt;dbl&gt;, length_2_mm &lt;dbl&gt;,\n#   weight_g &lt;dbl&gt;, clip &lt;chr&gt;, sampledate &lt;date&gt;, notes &lt;chr&gt;\n\ntail(trout_salamander_R)\n\n# A tibble: 6 × 16\n   year sitecode section reach  pass unitnum unittype vert_index pitnumber\n  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;\n1  2019 MACKOG-U OG      U         2      16 C                21        NA\n2  2019 MACKOG-U OG      U         2      16 C                22        NA\n3  2019 MACKOG-U OG      U         2      16 C                23   1043503\n4  2019 MACKOG-U OG      U         2      16 C                24   1043547\n5  2019 MACKOG-U OG      U         2      16 C                25   1043583\n6  2019 MACKOG-U OG      U         2      16 C                26   1043500\n# ℹ 7 more variables: species &lt;chr&gt;, length_1_mm &lt;dbl&gt;, length_2_mm &lt;dbl&gt;,\n#   weight_g &lt;dbl&gt;, clip &lt;chr&gt;, sampledate &lt;date&gt;, notes &lt;chr&gt;\n\n\n\n\n\ntrout_salamander_py.head(5)\n\n   year  sitecode section reach  ...  weight_g  clip  sampledate  notes\n0  1987  MACKCC-L      CC     L  ...      1.75  NONE  1987-10-07    NaN\n1  1987  MACKCC-L      CC     L  ...      1.95  NONE  1987-10-07    NaN\n2  1987  MACKCC-L      CC     L  ...      5.60  NONE  1987-10-07    NaN\n3  1987  MACKCC-L      CC     L  ...      2.15  NONE  1987-10-07    NaN\n4  1987  MACKCC-L      CC     L  ...      6.90  NONE  1987-10-07    NaN\n\n[5 rows x 16 columns]\n\ntrout_salamander_py.tail()\n\n       year  sitecode section reach  ...  weight_g  clip  sampledate        notes\n32204  2019  MACKOG-U      OG     U  ...       7.9  NONE  2019-09-05          NaN\n32205  2019  MACKOG-U      OG     U  ...       8.7  NONE  2019-09-05          NaN\n32206  2019  MACKOG-U      OG     U  ...       9.6  NONE  2019-09-05          NaN\n32207  2019  MACKOG-U      OG     U  ...      14.3  NONE  2019-09-05          NaN\n32208  2019  MACKOG-U      OG     U  ...      11.6  NONE  2019-09-05  Terrestrial\n\n[5 rows x 16 columns]"
   }
 ]

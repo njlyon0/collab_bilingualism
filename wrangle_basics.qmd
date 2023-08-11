@@ -116,7 +116,54 @@ In python, concatenation uses plus signs (`+`) instead of the function-based app
 py_concat_list = ["Hello", "friend"]
 
 ## Use the relevant numpy function
-np.array(py_concat_list)
+py_concat_vec = np.array(py_concat_list)
+
+## Print that to display it visually
+print(py_concat_vec)
+```
+:::
+
+## Repetition
+
+If you want to repeat a string that is also a supported operation
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R uses the `rep` function with a `times` argument to specify the number of times to repeat.
+
+```{r r-reps}
+rep(x = "Bye", times = 3)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In python, we can use an asterisk as shorthand for repetition with the thing to repeat on the left and the number of repetitions on the right.
+
+```{python py-reps}
+"Bye" * 3
+```
+:::
+
+## String Indexing
+
+We may also want to access the _n_th element of a character string. We can do that by "indexing". In both python and R we use square brackets (`\[\]`) to do this but there are two key differences. In R, we index an element of a vector and the first index value is 1 but in python we're indexing a character in a string and the index begins at 0.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-index}
+# Access third element of a vector
+c("Hello", "my", "friend")[3]
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Note again the the "third" character is actually the fourth letter because the first letter's index value is 0!
+
+```{python py-index}
+# Access third character of a string
+"friend"[3]
 ```
 :::
 

@@ -13,9 +13,14 @@ I'm not the first to have this idea so there are other useful resources on this 
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for its facet dealing with R/Python bilingualism
 
 ```{r, include = F}
-# Can install needed R packages for this site here
+## Install needed R packages for this site here
 # install.packages("tidyverse")
 # install.packages("lterdatasampler")
 # install.packages("fontawesome")
+```
+
+```{bash, include = F}
+## Install needed Python packages for this site here
+# python3 -m pip install pandas
 ```
 

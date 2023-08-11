@@ -177,7 +177,7 @@ str(vert_r$vert_index)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, we separate the dataframe name from the column name with a `.` (e.g., ) and append the function to the end with another `.` between.
+In Python, we separate the dataframe name from the column name with a `.` (e.g., `data_name.column_name`) and append the function to the end with another `.` between.
 
 ```{python py-col-structure}
 # Check structure of a particular column

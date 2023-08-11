@@ -10,8 +10,11 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: "Home"
       - wrangle.qmd
+    right:
+      - href: https://njlyon0.github.io/
+        text: "About Me"
   page-footer:
     center: "Copyright 2023, Nicholas Lyon"
     background: secondary

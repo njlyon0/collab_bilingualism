@@ -88,3 +88,25 @@ type("my hands are typing words")
 ```
 :::
 
+## Character Counting
+
+Sometimes we want to know how many characters are in a given string. Note that in python this is called "length" which is **not the same** as "length" in an R context. In R, "length" refers to the number of elements in a vector and 'number of characters' is a better parallel for "length" _sensu_ python. 
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, we use the `nchar` function (short for 'number of characters').
+
+```{r}
+nchar("Hello")
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In python, the equivalent function is `len`.
+
+```{python}
+len("Hello")
+```
+:::
+

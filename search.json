@@ -98,6 +98,13 @@
     "text": "Class & Type\nWe often want to know the “class” of an object to know what operations we can perform on that object. For example, we can only do arithmetic operations on objects that are some kind “numeric” (R) / “float” (python) or “integer” (both).\n\nR Project RPython Python\n\n\nIn R we use the class function to get this information. Note that the class of text in R is “character”.\n\n# Check class of an integer\nclass(37)\n\n[1] \"numeric\"\n\n# Check class of a decimal\nclass(3.14159)\n\n[1] \"numeric\"\n\n# Check class of text\nclass(\"my hands are typing words\")\n\n[1] \"character\"\n\n\n\n\nIn python, the type function returns the class of the data object. Note that the text has class of “str” (short for string).\n\n# Check type of an integer\ntype(37)\n\n# Check type of a decimal\n\n&lt;class 'int'&gt;\n\ntype(3.14159)\n\n# Check type of text\n\n&lt;class 'float'&gt;\n\ntype(\"my hands are typing words\")\n\n&lt;class 'str'&gt;"
   },
   {
+    "objectID": "wrangle_basics.html#character-counting",
+    "href": "wrangle_basics.html#character-counting",
+    "title": "Fundamentals",
+    "section": "Character Counting",
+    "text": "Character Counting\nSometimes we want to know how many characters are in a given string. Note that in python this is called “length” which is not the same as “length” in an R context. In R, “length” refers to the number of elements in a vector and ‘number of characters’ is a better parallel for “length” sensu python.\n\nR Project RPython Python\n\n\nIn R, we use the nchar function (short for ‘number of characters’).\n\nnchar(\"Hello\")\n\n[1] 5\n\n\n\n\nIn python, the equivalent function is len.\n\nlen(\"Hello\")\n\n5"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome!",

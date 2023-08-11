@@ -13,7 +13,7 @@ The loading of external packages containing the functions we require to actually
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r, eval = F}
+```{r r-pkg-install, eval = F}
 # Install the 'tidyverse' meta-package and 'lterdatasampler' package
 install.packages("tidyverse")
 install.packages("lterdatasampler")
@@ -22,7 +22,7 @@ install.packages("lterdatasampler")
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
 Note that Python package installation is done through the CLI (<u>c</u>ommand <u>l</u>ine <u>i</u>nterface)
-```{bash, eval = F}
+```{bash py-pkg-install, eval = F}
 # Install the 'pandas' package
 python3 -m pip install pandas
 ```
@@ -37,7 +37,7 @@ It is not enough to install a package onto a given computer, you also have to sp
 
 R libraries are loaded with the `library` function
 
-```{r, warning = F, message = F}
+```{r r-libs, warning = F, message = F}
 library(tidyverse)
 library(lterdatasampler)
 ```
@@ -46,7 +46,7 @@ library(lterdatasampler)
 
 Python libraries are loaded with `import` and can be aliased into simpler names with `as` at the same time.
 
-```{python}
+```{python py-libs}
 import pandas as pd
 ```
 :::
@@ -60,15 +60,15 @@ We can now load an external dataset derived from the `lterdatasampler` R package
 
 Namespacing in R is accomplished by doing `package_name::function_name` and is optional (though, in my opinion, good practice!)
 
-```{r}
-vert_R <- utils::read.csv(file = 'data/verts.csv')
+```{r r-ext-data}
+vert_r <- utils::read.csv(file = 'data/verts.csv')
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
 In Python, namespacing is required and is done via `package_name.function_name`.
 
-```{python}
+```{python py-ext-data}
 vert_py = pd.read_csv('data/verts.csv')
 ```
 :::
@@ -82,42 +82,110 @@ Checking the 'head' or 'tail' of the data (i.e., the first or last few rows of t
 
 In R, we use the `head` or `tail` function and can use an optional `n` argument to specify the number of rows to return as an integer (default is 6 rows). Functions in R act on contents _inside of parentheses_.
 
-```{r}
-utils::head(vert_R, n = 2)
-utils::tail(vert_R, n = 3)
+```{r r-head}
+utils::head(vert_r, n = 2)
+utils::tail(vert_r, n = 3)
 ```
 
 ## `r fontawesome::fa("python", fill = "#077DC2", a11y ="sem")` Python
 
 In Python we also use a `head` or `tail` function but instead of placing the data object inside of parentheses attached to the function we _append the function name after the name of the data object separated by a period_. This is visually similar to how we namespace functions in Python! You can again specify an integer number of rows to return (the default is 5)
 
-```{python}
+```{python py-head}
 vert_py.head(3)
 vert_py.tail(2)
 ```
 :::
 
+## Class & Type
 
-
-
-
-
-
-
-
-
-## Template Tabset Panel Area
+We often want to know the "class" of an object to know what operations we can perform on that object. For example, we can only do arithmetic operations on objects that are some kind "numeric" (R) / "float" (Python) or "integer" (both).
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r}
-# X
+In R we use the `class` function to get this information. Note that the class of text in R is "character".
+
+```{r r-class}
+# Check class of an integer
+class(37)
+
+# Check class of a decimal
+class(3.14159)
+
+# Check class of text
+class("my hands are typing words")
+
+# Check class of a data object
+class(vert_r)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
-```{python}
-# X
+
+In Python, the `type` function returns the class of the data object. Note that the text has class of "str" (short for string).
+
+```{python py-class}
+# Check type of an integer
+type(37)
+
+# Check type of a decimal
+type(3.14159)
+
+# Check type of text
+type("my hands are typing words")
+
+# Check type of a data object
+type(vert_py)
 ```
 :::
+
+## Data Structure
+
+### Full Data Object
+
+Often we want to check the 'structure' of a data table. This includes the  of each column in the data
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R uses the `str` function to assess data structure (not to be confused with the Python object class "str").
+
+```{r r-structure}
+str(vert_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-structure}
+vert_py.dtypes
+```
+:::
+
+### Specific Column
+
+You may want to check the structure of only a single column. For this, we need to use an 'operator' to access a single column within the dataframe object by that column's name. Note the operator differs between the two languages.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, we use the `$` operator (e.g., `data_name$column_name`) to access that column and pass it to functions for further processing.
+
+```{r r-col-structure}
+# Check structure of a particular column
+str(vert_r$vert_index)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python, we separate the dataframe name from the column name with a `.` (e.g., ) and append the function to the end with another `.` between.
+
+```{python py-col-structure}
+# Check structure of a particular column
+vert_py.vert_index.dtype
+```
+:::
+
+
+
+
 

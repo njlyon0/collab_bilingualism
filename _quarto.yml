@@ -14,6 +14,9 @@ website:
       - text: "Data Wrangling"
         menu:
           - href: wrangle_basics.qmd
+            text: "Fundamentals"
+          - href: wrangle_data.qmd
+            text: "Data Tables"
     right:
       - href: https://njlyon0.github.io/
         text: "About Me"

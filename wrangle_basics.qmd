@@ -4,7 +4,7 @@ title: "Fundamentals"
 
 ## Overview
 
-The beating heart of my day to day work revolves around data 'wrangling'. I view 'wrangling' as any **scripted** data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.
+This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc.
 
 ## Package Installation
 

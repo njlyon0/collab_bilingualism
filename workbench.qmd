@@ -9,13 +9,13 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r}
+```{r r-}
 # X
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-```{python}
+```{python py-}
 # X
 ```
 :::

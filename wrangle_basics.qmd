@@ -6,33 +6,9 @@ title: "Fundamentals"
 
 This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc.
 
-## Package Installation
-
-The loading of external packages containing the functions we require to actually do the bulk of data wrangling is an important preliminary step. I won't evaluate the code chunks below but you'll need to if you don't already have these packages on your local machine.
-
-:::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
-
-R contains an `install.packages` function for installing packages.
-
-```{r r-pkg-install, eval = F}
-# Install the 'tidyverse' meta-package
-install.packages("tidyverse")
-```
-
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
-
-Note that python package installation is done through the CLI (<u>c</u>ommand <u>l</u>ine <u>i</u>nterface).
-
-```{bash py-pkg-install, eval = F}
-# Install the 'pandas' package
-python3 -m pip install pandas
-```
-:::
-
 ## Library Loading
 
-It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.
+This section assumes you've already installed the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -48,7 +24,7 @@ library(tidyverse)
 python libraries are loaded with `import` and can be aliased into simpler names with `as` at the same time.
 
 ```{python py-libs}
-import pandas as pd
+import numpy as np
 ```
 :::
 
@@ -97,7 +73,7 @@ Sometimes we want to know how many characters are in a given string. Note that i
 
 In R, we use the `nchar` function (short for 'number of characters').
 
-```{r}
+```{r r-length}
 nchar("Hello")
 ```
 
@@ -105,8 +81,42 @@ nchar("Hello")
 
 In python, the equivalent function is `len`.
 
-```{python}
+```{python py-length}
 len("Hello")
+```
+:::
+
+## Concatenation
+
+We can add multiple objects together with concatenation in both languages but how they get added together differs in an important way between the two.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, we use the `c` function and separate each element with commas. We are left with a vector of however many elements were included in the concatenation function. To get a similar output to how python treats concatenation we actually have to use the `paste0` function.
+
+```{r r-concat}
+# R concatenation
+c("Hello", "friend")
+
+# R version of python concatenation
+paste0("Hello", "friend")
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In python, concatenation uses plus signs (`+`) instead of the function-based approach of R. In order to concatenate elements into a vector (like R does), we need to use the `array` function in the `numpy` package.
+
+```{python py-concat}
+# python concatenation
+"Hello" + "friend"
+
+# python version of R concatenation
+## Make a "list" (not the same as an R list)
+py_concat_list = ["Hello", "friend"]
+
+## Use the relevant numpy function
+np.array(py_concat_list)
 ```
 :::
 

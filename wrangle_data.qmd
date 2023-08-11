@@ -8,7 +8,7 @@ Once you get a sense for the core rules of your programming language of choice, 
 
 ## Library Loading
 
-We can assume that the needed packages were already installed in the preceding section of the "Data Wrangling" set of translations. That said, we still need to re-load those libraries for them to be accessible from here on out.
+This step assumes that you have already installed the needed packages. That said, we still need to re-load those libraries for them to be accessible from here on out.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

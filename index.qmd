@@ -4,6 +4,31 @@ title: "Welcome!"
 
 I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
 
+## Package Installation
+
+Using either R or python requires using "functions" that are contained in "packages" we can install on a given computer. This saves us from having to reinvent the wheel for every even moderately complex operation that we want to perform. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R contains an `install.packages` function for installing packages.
+
+```{r r-pkg-install, eval = F}
+# Install the 'tidyverse' meta-package
+install.packages("tidyverse")
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Note that python package installation is done through the CLI (<u>c</u>ommand <u>l</u>ine <u>i</u>nterface) a.k.a. "bash".
+
+```{bash py-pkg-install, eval = F}
+# Install the 'pandas' and 'numpy' package
+python3 -m pip install pandas
+python3 -m pip install numpy
+```
+:::
+
 ## Section Overviews
 
 ### Data Wrangling
@@ -18,16 +43,3 @@ I'm not the first to have this idea so there are other useful resources on this 
 - The [Earth Lab](https://www.earthdatascience.org/) has a Python course that was recommended to me by an NCEAS employee (specifically [section 4](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/))
 - Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for its facet dealing with R/Python bilingualism
-
-```{r, include = F, eval = F}
-## Install needed R packages for this site here
-# install.packages("tidyverse")
-# install.packages("lterdatasampler")
-# install.packages("fontawesome")
-```
-
-```{bash, include = F, eval = F}
-## Install needed Python packages for this site here
-# python3 -m pip install pandas
-```
-

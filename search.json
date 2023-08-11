@@ -102,7 +102,21 @@
     "href": "wrangle_basics.html#concatenation",
     "title": "Fundamentals",
     "section": "Concatenation",
-    "text": "Concatenation\nWe can add multiple objects together with concatenation in both languages but how they get added together differs in an important way between the two.\n\nR Project RPython Python\n\n\nIn R, we use the c function and separate each element with commas. We are left with a vector of however many elements were included in the concatenation function. To get a similar output to how python treats concatenation we actually have to use the paste0 function.\n\n# R concatenation\nc(\"Hello\", \"friend\")\n\n[1] \"Hello\"  \"friend\"\n\n# R version of python concatenation\npaste0(\"Hello\", \"friend\")\n\n[1] \"Hellofriend\"\n\n\n\n\nIn python, concatenation uses plus signs (+) instead of the function-based approach of R. In order to concatenate elements into a vector (like R does), we need to use the array function in the numpy package.\n\n# python concatenation\n\"Hello\" + \"friend\"\n\n# python version of R concatenation\n## Make a \"list\" (not the same as an R list)\n\n'Hellofriend'\n\npy_concat_list = [\"Hello\", \"friend\"]\n\n## Use the relevant numpy function\nnp.array(py_concat_list)\n\narray(['Hello', 'friend'], dtype='&lt;U6')"
+    "text": "Concatenation\nWe can add multiple objects together with concatenation in both languages but how they get added together differs in an important way between the two.\n\nR Project RPython Python\n\n\nIn R, we use the c function and separate each element with commas. We are left with a vector of however many elements were included in the concatenation function. To get a similar output to how python treats concatenation we actually have to use the paste0 function.\n\n# R concatenation\nc(\"Hello\", \"friend\")\n\n[1] \"Hello\"  \"friend\"\n\n# R version of python concatenation\npaste0(\"Hello\", \"friend\")\n\n[1] \"Hellofriend\"\n\n\n\n\nIn python, concatenation uses plus signs (+) instead of the function-based approach of R. In order to concatenate elements into a vector (like R does), we need to use the array function in the numpy package.\n\n# python concatenation\n\"Hello\" + \"friend\"\n\n# python version of R concatenation\n## Make a \"list\" (not the same as an R list)\n\n'Hellofriend'\n\npy_concat_list = [\"Hello\", \"friend\"]\n\n## Use the relevant numpy function\npy_concat_vec = np.array(py_concat_list)\n\n## Print that to display it visually\nprint(py_concat_vec)\n\n['Hello' 'friend']"
+  },
+  {
+    "objectID": "wrangle_basics.html#repetition",
+    "href": "wrangle_basics.html#repetition",
+    "title": "Fundamentals",
+    "section": "Repetition",
+    "text": "Repetition\nIf you want to repeat a string that is also a supported operation\n\nR Project RPython Python\n\n\nR uses the rep function with a times argument to specify the number of times to repeat.\n\nrep(x = \"Bye\", times = 3)\n\n[1] \"Bye\" \"Bye\" \"Bye\"\n\n\n\n\nIn python, we can use an asterisk as shorthand for repetition with the thing to repeat on the left and the number of repetitions on the right.\n\n\"Bye\" * 3\n\n'ByeByeBye'"
+  },
+  {
+    "objectID": "wrangle_basics.html#string-indexing",
+    "href": "wrangle_basics.html#string-indexing",
+    "title": "Fundamentals",
+    "section": "String Indexing",
+    "text": "String Indexing\nWe may also want to access the _n_th element of a character string. We can do that by “indexing”. In both python and R we use square brackets (\\[\\]) to do this but there are two key differences. In R, we index an element of a vector and the first index value is 1 but in python we’re indexing a character in a string and the index begins at 0.\n\nR Project RPython Python\n\n\n\n# Access third element of a vector\nc(\"Hello\", \"my\", \"friend\")[3]\n\n[1] \"friend\"\n\n\n\n\nNote again the the “third” character is actually the fourth letter because the first letter’s index value is 0!\n\n# Access third character of a string\n\"friend\"[3]\n\n'e'"
   },
   {
     "objectID": "index.html",

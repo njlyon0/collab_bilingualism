@@ -32,7 +32,7 @@
     "href": "wrangle_data.html#library-loading",
     "title": "Data Operations",
     "section": "Library Loading",
-    "text": "Library Loading\nWe can assume that the needed packages were already installed in the preceding section of the “Data Wrangling” set of translations. That said, we still need to re-load those libraries for them to be accessible from here on out.\n\nR Project RPython Python\n\n\n\nlibrary(tidyverse)\n\n\n\n\nimport pandas as pd"
+    "text": "Library Loading\nThis step assumes that you have already installed the needed packages. That said, we still need to re-load those libraries for them to be accessible from here on out.\n\nR Project RPython Python\n\n\n\nlibrary(tidyverse)\n\n\n\n\nimport pandas as pd"
   },
   {
     "objectID": "wrangle_data.html#data-import",
@@ -77,18 +77,11 @@
     "text": "This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc."
   },
   {
-    "objectID": "wrangle_basics.html#package-installation",
-    "href": "wrangle_basics.html#package-installation",
-    "title": "Fundamentals",
-    "section": "Package Installation",
-    "text": "Package Installation\nThe loading of external packages containing the functions we require to actually do the bulk of data wrangling is an important preliminary step. I won’t evaluate the code chunks below but you’ll need to if you don’t already have these packages on your local machine.\n\nR Project RPython Python\n\n\nR contains an install.packages function for installing packages.\n\n# Install the 'tidyverse' meta-package\ninstall.packages(\"tidyverse\")\n\n\n\nNote that python package installation is done through the CLI (command line interface).\n\n# Install the 'pandas' package\npython3 -m pip install pandas"
-  },
-  {
     "objectID": "wrangle_basics.html#library-loading",
     "href": "wrangle_basics.html#library-loading",
     "title": "Fundamentals",
     "section": "Library Loading",
-    "text": "Library Loading\nIt is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.\n\nR Project RPython Python\n\n\nR libraries are loaded with the library function\n\nlibrary(tidyverse)\n\n\n\npython libraries are loaded with import and can be aliased into simpler names with as at the same time.\n\nimport pandas as pd"
+    "text": "Library Loading\nThis section assumes you’ve already installed the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.\n\nR Project RPython Python\n\n\nR libraries are loaded with the library function\n\nlibrary(tidyverse)\n\n\n\npython libraries are loaded with import and can be aliased into simpler names with as at the same time.\n\nimport numpy as np"
   },
   {
     "objectID": "wrangle_basics.html#class-type",
@@ -105,11 +98,25 @@
     "text": "Character Counting\nSometimes we want to know how many characters are in a given string. Note that in python this is called “length” which is not the same as “length” in an R context. In R, “length” refers to the number of elements in a vector and ‘number of characters’ is a better parallel for “length” sensu python.\n\nR Project RPython Python\n\n\nIn R, we use the nchar function (short for ‘number of characters’).\n\nnchar(\"Hello\")\n\n[1] 5\n\n\n\n\nIn python, the equivalent function is len.\n\nlen(\"Hello\")\n\n5"
   },
   {
+    "objectID": "wrangle_basics.html#concatenation",
+    "href": "wrangle_basics.html#concatenation",
+    "title": "Fundamentals",
+    "section": "Concatenation",
+    "text": "Concatenation\nWe can add multiple objects together with concatenation in both languages but how they get added together differs in an important way between the two.\n\nR Project RPython Python\n\n\nIn R, we use the c function and separate each element with commas. We are left with a vector of however many elements were included in the concatenation function. To get a similar output to how python treats concatenation we actually have to use the paste0 function.\n\n# R concatenation\nc(\"Hello\", \"friend\")\n\n[1] \"Hello\"  \"friend\"\n\n# R version of python concatenation\npaste0(\"Hello\", \"friend\")\n\n[1] \"Hellofriend\"\n\n\n\n\nIn python, concatenation uses plus signs (+) instead of the function-based approach of R. In order to concatenate elements into a vector (like R does), we need to use the array function in the numpy package.\n\n# python concatenation\n\"Hello\" + \"friend\"\n\n# python version of R concatenation\n## Make a \"list\" (not the same as an R list)\n\n'Hellofriend'\n\npy_concat_list = [\"Hello\", \"friend\"]\n\n## Use the relevant numpy function\nnp.array(py_concat_list)\n\narray(['Hello', 'friend'], dtype='&lt;U6')"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome!",
     "section": "",
     "text": "I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to ‘eat my vegetables’ and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process."
+  },
+  {
+    "objectID": "index.html#package-installation",
+    "href": "index.html#package-installation",
+    "title": "Welcome!",
+    "section": "Package Installation",
+    "text": "Package Installation\nUsing either R or python requires using “functions” that are contained in “packages” we can install on a given computer. This saves us from having to reinvent the wheel for every even moderately complex operation that we want to perform. The following code chunks are not evaluated in the building of this website but you’ll need to install these packages on your local machine (if you haven’t already done so) in order to run the code in the rest of this translation tutorial.\n\nR Project RPython Python\n\n\nR contains an install.packages function for installing packages.\n\n# Install the 'tidyverse' meta-package\ninstall.packages(\"tidyverse\")\n\n\n\nNote that python package installation is done through the CLI (command line interface) a.k.a. “bash”.\n\n# Install the 'pandas' and 'numpy' package\npython3 -m pip install pandas\npython3 -m pip install numpy"
   },
   {
     "objectID": "index.html#section-overviews",

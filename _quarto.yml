@@ -20,13 +20,15 @@ website:
     right:
       - href: https://njlyon0.github.io/
         text: "About Me"
+      - href: https://github.com/njlyon0/lyon_bilingualism
+        icon: github
   page-footer:
     center: "Copyright 2023, Nicholas Lyon"
     background: secondary
-    
+
 format:
   html:
-    theme: 
+    theme:
       light: lyonlight.scss
       dark: lyondark.scss
     mainfont: Open Sans

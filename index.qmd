@@ -23,9 +23,13 @@ install.packages("tidyverse")
 Note that python package installation is done through the CLI (<u>c</u>ommand <u>l</u>ine <u>i</u>nterface) a.k.a. "bash".
 
 ```{bash py-pkg-install, eval = F}
-# Install the 'pandas' and 'numpy' package
+# Install the following python packages
 python3 -m pip install pandas
 python3 -m pip install numpy
+python3 -m pip install matplotlib
+python3 -m pip install jupyterlab
+## `plotnine` is `ggplot2` in python!
+python3 -m pip install plotnine
 ```
 :::
 

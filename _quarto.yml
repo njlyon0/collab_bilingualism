@@ -11,6 +11,8 @@ website:
     left:
       - href: index.qmd
         text: "Home"
+      - href: terms.qmd
+        text: "Glossary"
       - text: "Data Wrangling"
         menu:
           - href: wrangle_basics.qmd

@@ -41,9 +41,10 @@ The beating heart of my day to day work revolves around data 'wrangling'. I view
 
 ## Additional Resources
 
-I'm not the first to have this idea so there are other useful resources on this topic. See below:
+I'm not the first to have this idea so there are other useful Python tutorials and specifically R-Python bilingualism resources. See below:
 
-- [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nnovation and <u>I</u>nclusion <u>L</u>ab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource
+- The Carpentries has a "[Data Analysis and Visualization in Python for Ecologists ](https://datacarpentry.org/python-ecology-lesson/index.html)" lesson that is really well put-together (as is characteristic of The Carpentries' content)
 - The [Earth Lab](https://www.earthdatascience.org/) has a Python course that was recommended to me by an NCEAS employee (specifically [section 4](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/))
 - Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
+- [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nnovation and <u>I</u>nclusion <u>L</u>ab) has made a workshop attempting to teach this same topic. I anticipate my tutorial will borrow heavily from this resource
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for its facet dealing with R/Python bilingualism

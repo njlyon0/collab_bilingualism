@@ -4,28 +4,28 @@
     "href": "terms.html",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages."
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\nNote that if a given term means the same thing in both languages, no special mention is made of the other language."
   },
   {
     "objectID": "terms.html#overview",
     "href": "terms.html#overview",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages."
-  },
-  {
-    "objectID": "terms.html#r-terms",
-    "href": "terms.html#r-terms",
-    "title": "Glossary",
-    "section": "R Project R Terms",
-    "text": "R Project R Terms"
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\nNote that if a given term means the same thing in both languages, no special mention is made of the other language."
   },
   {
     "objectID": "terms.html#python-terms",
     "href": "terms.html#python-terms",
     "title": "Glossary",
     "section": "Python Python Terms",
-    "text": "Python Python Terms"
+    "text": "Python Python Terms\n\nGeneral\n\nVariable - any data object stored for later re-use\n\nR - object\n\nAssignment Operator (=) - symbol used to assign data to a variable\n\nR - same definition but uses &lt;- or -&gt;\n\nType - category of information contained in a variable\n\nR - class\n\nList - fundamental data object of Python potentially of many structures and types\n\nSimilar to a list sensu R but not exactly the same\n\nLength - Multiple definitions, see below:\n\n1 - number of characters in a string (equivalent to ‘number of characters’ in R)\n2 - number of items in a list\n\n\n\n\nVariable Types\n\nInteger - “round” number\nFloat - non-integer number\n\nR - numeric\n\nString - text (or numbers stored as text)\n\nR - character"
+  },
+  {
+    "objectID": "terms.html#r-terms",
+    "href": "terms.html#r-terms",
+    "title": "Glossary",
+    "section": "R Project R Terms",
+    "text": "R Project R Terms\n\nGeneral\n\nObject - any data object stored for later re-use\n\nPython - variable\n\nAssignment Operator (&lt;-/-&gt;) - symbol used to assign data to an object\n\nPython - same definition but uses =\n\nClass - category of information contained in an object\n\nPython - type\n\nVector - fundamental data object of one dimension and a single class\n\nEquivalent to the simplest possible list sensu Python\n\nList - generic data object that is ordered and may contain various data structures or classes\n\nSimilar to a list sensu Python but not exactly the same and not as fundamental in R as its equivalent in the other language\n\nLength - Number of entries in a vector\n\n\n\nObject Classes\n\nInteger - “round” number\nNumeric - non-integer number\n\nPython - float\n\nCharacter - text (or numbers stored as text)\n\nPython - string"
   },
   {
     "objectID": "wrangle_data.html",

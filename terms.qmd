@@ -1,12 +1,12 @@
 ---
 title: "Glossary"
+engine: knitr
 ---
 
 ## Overview
 
 Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages' definition for terms that occur in both languages.
 
-:::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R Terms
 
 - 
@@ -14,5 +14,3 @@ Learning a programming language is just like learning a spoken language: there a
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python Terms
 
 - 
-
-:::

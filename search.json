@@ -4,14 +4,28 @@
     "href": "terms.html",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\n\nr fontawesome::fa(name = \"r-project\", fill = \"#FF9B00\", a11y = \"sem\") R Termsr fontawesome::fa(name = \"python\", fill = \"#077DC2\", a11y = \"sem\") Python Terms"
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages."
   },
   {
     "objectID": "terms.html#overview",
     "href": "terms.html#overview",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\n\nr fontawesome::fa(name = \"r-project\", fill = \"#FF9B00\", a11y = \"sem\") R Termsr fontawesome::fa(name = \"python\", fill = \"#077DC2\", a11y = \"sem\") Python Terms"
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages."
+  },
+  {
+    "objectID": "terms.html#r-terms",
+    "href": "terms.html#r-terms",
+    "title": "Glossary",
+    "section": "R Project R Terms",
+    "text": "R Project R Terms"
+  },
+  {
+    "objectID": "terms.html#python-terms",
+    "href": "terms.html#python-terms",
+    "title": "Glossary",
+    "section": "Python Python Terms",
+    "text": "Python Python Terms"
   },
   {
     "objectID": "wrangle_data.html",

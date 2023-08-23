@@ -7,10 +7,53 @@ engine: knitr
 
 Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages' definition for terms that occur in both languages.
 
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R Terms
-
-- 
+Note that if a given term **means the same thing in both languages**, no special mention is made of the other language.
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python Terms
 
-- 
+### General
+
+- **Variable** - any data object stored for later re-use
+    - **<span style="color:#ff9b00">R</span>** - object
+- **Assignment Operator (`=`)** - symbol used to assign data to a variable
+    - **<span style="color:#ff9b00">R</span>** - same definition but uses `<-` or `->`
+- **Type** - category of information contained in a variable
+    - **<span style="color:#ff9b00">R</span>** - class
+- **List** - fundamental data object of **<span style="color:#077dc2">Python</span>** potentially of many structures and types
+    - Similar to a list _sensu_ **<span style="color:#ff9b00">R</span>** but not exactly the same
+- **Length** - Multiple definitions, see below:
+    - 1 - number of characters in a string (equivalent to 'number of characters' in **<span style="color:#ff9b00">R</span>**)
+    - 2 - number of items in a list
+
+### Variable Types
+
+- **Integer** - "round" number
+- **Float** - non-integer number
+    - **<span style="color:#ff9b00">R</span>** - numeric
+- **String** - text (or numbers stored as text)
+    - **<span style="color:#ff9b00">R</span>** - character
+
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R Terms
+
+### General
+
+- **Object** - any data object stored for later re-use
+    - **<span style="color:#077dc2">Python</span>** - variable
+- **Assignment Operator (`<-`/`->`)** - symbol used to assign data to an object
+    - **<span style="color:#077dc2">Python</span>** - same definition but uses `=`
+- **Class** - category of information contained in an object
+    - **<span style="color:#077dc2">Python</span>** - type
+- **Vector** - fundamental data object of one dimension and a single class
+    - Equivalent to the simplest possible list _sensu_ **<span style="color:#077dc2">Python</span>**
+- **List** - generic data object that is ordered and may contain various data structures or classes
+    - Similar to a list _sensu_ **<span style="color:#077dc2">Python</span>** but not exactly the same and not as fundamental in **<span style="color:#ff9b00">R</span>** as its equivalent in the other language
+- **Length** - Number of entries in a vector
+
+### Object Classes
+
+- **Integer** - "round" number
+- **Numeric** - non-integer number
+     - **<span style="color:#077dc2">Python</span>** - float
+- **Character** - text (or numbers stored as text)
+     - **<span style="color:#077dc2">Python</span>** - string
+

@@ -67,7 +67,7 @@
     "href": "wrangle_data.html#library-loading",
     "title": "Data Operations",
     "section": "Library Loading",
-    "text": "Library Loading\nThis step assumes that you have already installed the needed packages. That said, we still need to re-load those libraries for them to be accessible from here on out.\n\nR Project RPython Python\n\n\n\nlibrary(tidyverse)\n\n\n\n\nimport pandas as pd"
+    "text": "Library Loading\nThis section assumes you’ve already installed the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.\n\nR Project RPython Python\n\n\nR libraries are loaded with the library function.\n\nlibrary(tidyverse)\n\n\n\nPython libraries are loaded with the import statement and can be aliased into simpler names with as at the same time.\n\nimport pandas as pd"
   },
   {
     "objectID": "wrangle_data.html#data-import",
@@ -140,59 +140,38 @@
     "text": "Template Tabset Panel Area\n\nR Project RPython Python\n\n\n\n# X\n\n\n\n\n# X"
   },
   {
-    "objectID": "wrangle_basics.html",
-    "href": "wrangle_basics.html",
+    "objectID": "basics.html",
+    "href": "basics.html",
     "title": "Fundamentals",
     "section": "",
-    "text": "This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc."
+    "text": "This section covers some of the most fundamental operations of both languages. These include variable/object assignment, data type/class, arithmetic, etc. External data are not included in this page.\nNote that any line in a code chunk preceded by a hashtag (#) is a “comment” and is not evaluated in either language. Including comments is generally good practice because it allows humans to read and understand code that may otherwise be unclear to them."
   },
   {
-    "objectID": "wrangle_basics.html#overview",
-    "href": "wrangle_basics.html#overview",
+    "objectID": "basics.html#overview",
+    "href": "basics.html#overview",
     "title": "Fundamentals",
     "section": "",
-    "text": "This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc."
+    "text": "This section covers some of the most fundamental operations of both languages. These include variable/object assignment, data type/class, arithmetic, etc. External data are not included in this page.\nNote that any line in a code chunk preceded by a hashtag (#) is a “comment” and is not evaluated in either language. Including comments is generally good practice because it allows humans to read and understand code that may otherwise be unclear to them."
   },
   {
-    "objectID": "wrangle_basics.html#library-loading",
-    "href": "wrangle_basics.html#library-loading",
+    "objectID": "basics.html#assignment",
+    "href": "basics.html#assignment",
     "title": "Fundamentals",
-    "section": "Library Loading",
-    "text": "Library Loading\nThis section assumes you’ve already installed the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.\n\nR Project RPython Python\n\n\nR libraries are loaded with the library function\n\nlibrary(tidyverse)\n\n\n\npython libraries are loaded with import and can be aliased into simpler names with as at the same time.\n\nimport numpy as np"
+    "section": "Assignment",
+    "text": "Assignment\nAt its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires assigning data to a variable/object with the assignment operator.\n\nR Project RPython Python\n\n\nIn R, the assignment operator is &lt;-. To use it, the name of the new object-to-be is on the left of the arrow and the information to assign is on the right.\n\n# Make a simple object\na &lt;- 2\n\n# Check it out\na\n\n[1] 2\n\n\n\n\nIn Python, the assignment operator is =. To use it, the name of the new object-to-be is on the left of the equal sign and the information to assign is on the right.\n\n# Make a simple object\na = 2\n\n# Check it out\na\n\n2\n\n\n\n\n\nOnce we’ve created a variable/object we can then use the information stored inside of it in downstream operations! For example, we could perform basic arithmetic on our variable/object and assign the result to a new variable/object.\n\nR Project RPython Python\n\n\nAddition, subtraction, multiplication, and division share operators across both languages (+, -, *, and / respectively). However, in R exponents use ^.\n\n# Raise to an exponent\nb &lt;- a^3\n\n# Check out the result\nb\n\n[1] 8\n\n\n\n\nAddition, subtraction, multiplication, and division share operators across both languages (+, -, *, and / respectively). However, in Python exponents use **\n\n# Raise to an exponent\nb = a**3\n\n# Check out the result\nb\n\n8"
   },
   {
-    "objectID": "wrangle_basics.html#class-type",
-    "href": "wrangle_basics.html#class-type",
+    "objectID": "basics.html#type-class",
+    "href": "basics.html#type-class",
     "title": "Fundamentals",
-    "section": "Class & Type",
-    "text": "Class & Type\nWe often want to know the “class” of an object to know what operations we can perform on that object. For example, we can only do arithmetic operations on objects that are some kind “numeric” (R) / “float” (python) or “integer” (both).\n\nR Project RPython Python\n\n\nIn R we use the class function to get this information. Note that the class of text in R is “character”.\n\n# Check class of an integer\nclass(37)\n\n[1] \"numeric\"\n\n# Check class of a decimal\nclass(3.14159)\n\n[1] \"numeric\"\n\n# Check class of text\nclass(\"my hands are typing words\")\n\n[1] \"character\"\n\n\n\n\nIn python, the type function returns the class of the data object. Note that the text has class of “str” (short for string).\n\n# Check type of an integer\ntype(37)\n\n# Check type of a decimal\n\n&lt;class 'int'&gt;\n\ntype(3.14159)\n\n# Check type of text\n\n&lt;class 'float'&gt;\n\ntype(\"my hands are typing words\")\n\n&lt;class 'str'&gt;"
+    "section": "Type & Class",
+    "text": "Type & Class\nSome operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In Python this is known as the variable’s type & while in R this is the object’s class. In either case, it’s important to know–and be able to check–this information about the variables/objects with which we are working.\n\nR Project RPython Python\n\n\nIn R we use the class function to get this information. Note that the names of R classes sometimes differ from their equivalents in Python.\n\n# Check class of an integer\nclass(37)\n\n[1] \"numeric\"\n\n\n\n# Check class of a decimal\nclass(3.14159)\n\n[1] \"numeric\"\n\n\n\n# Check class of text\nclass(\"my hands are typing words\")\n\n[1] \"character\"\n\n\n\n\nIn python, the type function returns the type of the data object. Note that the names of Python types sometimes differ from their equivalents in R.\n\n# Check type of an integer\ntype(37)\n\n&lt;class 'int'&gt;\n\n\n\n# Check type of a decimal\ntype(3.14159)\n\n&lt;class 'float'&gt;\n\n\n\n# Check type of text\ntype(\"my hands are typing words\")\n\n&lt;class 'str'&gt;"
   },
   {
-    "objectID": "wrangle_basics.html#character-counting",
-    "href": "wrangle_basics.html#character-counting",
+    "objectID": "basics.html#indexing",
+    "href": "basics.html#indexing",
     "title": "Fundamentals",
-    "section": "Character Counting",
-    "text": "Character Counting\nSometimes we want to know how many characters are in a given string. Note that in python this is called “length” which is not the same as “length” in an R context. In R, “length” refers to the number of elements in a vector and ‘number of characters’ is a better parallel for “length” sensu python.\n\nR Project RPython Python\n\n\nIn R, we use the nchar function (short for ‘number of characters’).\n\nnchar(\"Hello\")\n\n[1] 5\n\n\n\n\nIn python, the equivalent function is len.\n\nlen(\"Hello\")\n\n5"
-  },
-  {
-    "objectID": "wrangle_basics.html#concatenation",
-    "href": "wrangle_basics.html#concatenation",
-    "title": "Fundamentals",
-    "section": "Concatenation",
-    "text": "Concatenation\nWe can add multiple objects together with concatenation in both languages but how they get added together differs in an important way between the two.\n\nR Project RPython Python\n\n\nIn R, we use the c function and separate each element with commas. We are left with a vector of however many elements were included in the concatenation function. To get a similar output to how python treats concatenation we actually have to use the paste0 function.\n\n# R concatenation\nc(\"Hello\", \"friend\")\n\n[1] \"Hello\"  \"friend\"\n\n# R version of python concatenation\npaste0(\"Hello\", \"friend\")\n\n[1] \"Hellofriend\"\n\n\n\n\nIn python, concatenation uses plus signs (+) instead of the function-based approach of R. In order to concatenate elements into a vector (like R does), we need to use the array function in the numpy package.\n\n# python concatenation\n\"Hello\" + \"friend\"\n\n# python version of R concatenation\n## Make a \"list\" (not the same as an R list)\n\n'Hellofriend'\n\npy_concat_list = [\"Hello\", \"friend\"]\n\n## Use the relevant numpy function\npy_concat_vec = np.array(py_concat_list)\n\n## Print that to display it visually\nprint(py_concat_vec)\n\n['Hello' 'friend']"
-  },
-  {
-    "objectID": "wrangle_basics.html#repetition",
-    "href": "wrangle_basics.html#repetition",
-    "title": "Fundamentals",
-    "section": "Repetition",
-    "text": "Repetition\nIf you want to repeat a string that is also a supported operation\n\nR Project RPython Python\n\n\nR uses the rep function with a times argument to specify the number of times to repeat.\n\nrep(x = \"Bye\", times = 3)\n\n[1] \"Bye\" \"Bye\" \"Bye\"\n\n\n\n\nIn python, we can use an asterisk as shorthand for repetition with the thing to repeat on the left and the number of repetitions on the right.\n\n\"Bye\" * 3\n\n'ByeByeBye'"
-  },
-  {
-    "objectID": "wrangle_basics.html#string-indexing",
-    "href": "wrangle_basics.html#string-indexing",
-    "title": "Fundamentals",
-    "section": "String Indexing",
-    "text": "String Indexing\nWe may also want to access the _n_th element of a character string. We can do that by “indexing”. In both python and R we use square brackets (\\[\\]) to do this but there are two key differences. In R, we index an element of a vector and the first index value is 1 but in python we’re indexing a character in a string and the index begins at 0.\n\nR Project RPython Python\n\n\n\n# Access third element of a vector\nc(\"Hello\", \"my\", \"friend\")[3]\n\n[1] \"friend\"\n\n\n\n\nNote again the the “third” character is actually the fourth letter because the first letter’s index value is 0!\n\n# Access third character of a string\n\"friend\"[3]\n\n'e'"
+    "section": "Indexing",
+    "text": "Indexing\nWhen our variables/objects have more than one item/element we may want to examine the piece of information at a specific position. This position is the “index position” and can be accessed in either language fairly easily.\nIn order to explore this more fully, let’s make some example multi-component variables/objects.\n\nR Project RPython Python\n\n\nIn R, one of the fundamental data structures is a “vector”. Vectors are assembled with the concatenation function (c) where each item is separated by commas (,) and the set of them is wrapped in parentheses ((...)).\nNote that the class of the object comes from the vector’s contents rather than the fact that it is a vector. All elements in a vector therefore must share a class.\n\n# Make a multi-item variable\nx &lt;- c(1, 2, 3, 4, 5)\n\n# Check it out\nclass(x)\n\n[1] \"numeric\"\n\n\n\n\nIn Python the fundamental data structure is a “list”. Lists are assembled either by wrapping the items to include in square brackets ([...]) or by using the list function. In either case, each item is separated from the others by commas (,).\nNote that the type of the variable comes from the list itself rather than its contents. Lists therefore support items of multiple different types.\n\n# Make a multi-item variable\nx = [1, 2, 3, 4, 5]\n\n# Check it out\ntype(x)\n\n&lt;class 'list'&gt;\n\n\n\n\n\nOne crucial difference between R and Python is that Python is “0-based” meaning that the first item is at index position 0 while in R the position of the equivalent element is 1.\nFortunately, in either language the syntax for indexing is the same.\n\nR Project RPython Python\n\n\nTo index a multi-element object, simply append square brackets to the end of the object name and specify the number of the index position in which you are interested.\n\n# Access the first element of the vector\nx[1]\n\n[1] 1\n\n\n\n\nTo index a multi-item variable, simply append square brackets to the end of the variable name and specify the number of the index position in which you are interested.\n\n# Access the first item of the list\nx[0]\n\n1"
   }
 ]

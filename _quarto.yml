@@ -13,15 +13,15 @@ website:
         text: "Home"
       - href: terms.qmd
         text: "Glossary"
-      - text: "Data Wrangling"
-        menu:
-          - href: wrangle_basics.qmd
-            text: "Fundamentals"
-          - href: wrangle_data.qmd
-            text: "Data Tables"
+      - href: wrangle_basics.qmd
+        text: "Fundamentals"
+      - href: wrangle_data.qmd
+        text: "Data Wrangling"
     right:
-      - href: https://njlyon0.github.io/
-        text: "About Me"
+      - text: "Creators"
+        menu:
+          - href: https://njlyon0.github.io/
+            text: "Nick J Lyon"
       - href: https://github.com/njlyon0/lyon_bilingualism
         icon: github
   page-footer:

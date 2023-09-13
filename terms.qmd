@@ -5,55 +5,112 @@ engine: knitr
 
 ## Overview
 
-Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages' definition for terms that occur in both languages.
+Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial R and Python terms below.
 
-Note that if a given term **means the same thing in both languages**, no special mention is made of the other language.
+Note that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined.
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python Terms
+## General Terms
 
-### General
+- Data stored for later re-use (regardless of structure/dimensions)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- variable
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- object
 
-- **Variable** - any data object stored for later re-use
-    - **<span style="color:#ff9b00">R</span>** - object
-- **Assignment Operator (`=`)** - symbol used to assign data to a variable
-    - **<span style="color:#ff9b00">R</span>** - same definition but uses `<-` or `->`
-- **Type** - category of information contained in a variable
-    - **<span style="color:#ff9b00">R</span>** - class
-- **List** - fundamental data object of **<span style="color:#077dc2">Python</span>** potentially of many structures and types
-    - Similar to a list _sensu_ **<span style="color:#ff9b00">R</span>** but not exactly the same
-- **Length** - Multiple definitions, see below:
-    - 1 - number of characters in a string (equivalent to 'number of characters' in **<span style="color:#ff9b00">R</span>**)
-    - 2 - number of items in a list
+- Category of information stored in a given data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- type
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- class
 
-### Variable Types
+- Downloadable set of functions
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- library / package
+    - See "Tools" for definition of 'function'
 
-- **Integer** - "round" number
-- **Float** - non-integer number
-    - **<span style="color:#ff9b00">R</span>** - numeric
-- **String** - text (or numbers stored as text)
-    - **<span style="color:#ff9b00">R</span>** - character
+## Data <span style="color:#077DC2">Types</span>/<span style="color:#FF9B00">Classes</span>
 
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R Terms
+- Numbers that are not a fraction (i.e., are a whole number)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- integer
 
-### General
+- Non-integer numbers
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- float
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- numeric
 
-- **Object** - any data object stored for later re-use
-    - **<span style="color:#077dc2">Python</span>** - variable
-- **Assignment Operator (`<-`/`->`)** - symbol used to assign data to an object
-    - **<span style="color:#077dc2">Python</span>** - same definition but uses `=`
-- **Class** - category of information contained in an object
-    - **<span style="color:#077dc2">Python</span>** - type
-- **Vector** - fundamental data object of one dimension and a single class
-    - Equivalent to the simplest possible list _sensu_ **<span style="color:#077dc2">Python</span>**
-- **List** - generic data object that is ordered and may contain various data structures or classes
-    - Similar to a list _sensu_ **<span style="color:#077dc2">Python</span>** but not exactly the same and not as fundamental in **<span style="color:#ff9b00">R</span>** as its equivalent in the other language
-- **Length** - Number of entries in a vector
+- Text / content stored as text
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- string
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- character
 
-### Object Classes
+- Text / content stored as text with few _unique_ entries relative to _total_ number of entries
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- object
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- factor
 
-- **Integer** - "round" number
-- **Numeric** - non-integer number
-     - **<span style="color:#077dc2">Python</span>** - float
-- **Character** - text (or numbers stored as text)
-     - **<span style="color:#077dc2">Python</span>** - string
+- Logical values indicating whether conditions are met
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- boolean (`True` / `False`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- boolean (`TRUE` / `FALSE` / `T` / `F`)
+
+- <span style="color:#077DC2">Variable</span>/<span style="color:#FF9B00">Object</span> holding an ordered sequence of data (_can_ be modified)
+   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- list
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- vector (_must_ be one-dimensional) / list
+
+- Each component of a <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">list</span>
+   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- item
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- element
+
+- <span style="color:#077DC2">Variable</span> holding an ordered sequence of data (_cannot_ be modified)
+   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _ONLY_ -- tuple [two-pull]
+
+## Operators
+
+- Assignment operator -- creates a new <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- `=`
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- `<-` / `->`
+
+- Arithmetic operators -- performs basic arithmetic
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- addition (`+`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- subtraction (`-`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- multiplication (`*`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- division (`/`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- exponent (`**`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- exponent (`^`)
+
+- Arithmetic assignment operator -- does an arithmetic operation and stores the result in a <span style="color:#077DC2">variable</span>
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _ONLY_ -- arithmetic operator and assignment operator (e.g., `+=`)
+
+- Relational operators -- conditional statements that return boolean values
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- 'exactly equal to' (`==`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- 'not equal to' (`!=`)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- greater/less than (`>` / `<` respectively)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- greater/less than or equal to (`>=` / `<=` respectively)
+
+- Namespacing operator -- specifies library in which a given function is defined
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- a period `package.function`
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- two colons `package::function` _(optional)_
+
+## Tools
+
+- <span style="color:#077DC2">Variable</span>/<span style="color:#FF9B00">Object</span> containing multiple, inter-related operations that are run in a pre-defined order every time the <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> is used
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- function
+
+- Value sent to a function when called to modify behavior (sometimes optional)
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- argument / parameter
+
+- Function that can only be used on a specific <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> of <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> that supports arguments (sometimes optional) to modify behavior
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- method (`variable.method(...)`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- just a special case of function
+
+- Function that can only be used on a specific <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> of <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> _without_ arguments to modify behavior
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- attribute (`variable.attribute`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- just a special case of function
+
+## Data Characteristics
+
+- Number of <span style="color:#077DC2">items</span>/<span style="color:#FF9B00">elements</span> in a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- length (`len()`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- length (`length()`)
+
+- Number of rows/columns in a two-dimension, tabular <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- shape (`.shape`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- dimensions (`dim()`)
+
+- Number of characters in a string
+    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- also length (`len()`)
+    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- number of characters (`nchar()`)
+
+
 

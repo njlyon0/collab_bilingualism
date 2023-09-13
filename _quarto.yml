@@ -13,7 +13,7 @@ website:
         text: "Home"
       - href: terms.qmd
         text: "Glossary"
-      - href: wrangle_basics.qmd
+      - href: basics.qmd
         text: "Fundamentals"
       - href: wrangle_data.qmd
         text: "Data Wrangling"

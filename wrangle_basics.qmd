@@ -8,28 +8,6 @@ This section covers some of the most fundamental operations of both languages. T
 
 Note that any line in a code chunk preceded by a hashtag (`#`) is a "comment" and is not evaluated in either language. Including comments is generally good practice because it allows humans to read and understand code that may otherwise be unclear to them.
 
-## Library Loading
-
-This section assumes you've already installed the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. It is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.
-
-:::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
-
-R libraries are loaded with the `library` function
-
-```{r r-libs, warning = F, message = F}
-library(tidyverse)
-```
-
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
-
-python libraries are loaded with the `import` statement and can be aliased into simpler names with `as` at the same time.
-
-```{python py-libs}
-import numpy as np
-```
-:::
-
 ## Assignment
 
 At its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires **assigning** data to a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> with the **assignment operator**.

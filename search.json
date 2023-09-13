@@ -4,28 +4,49 @@
     "href": "terms.html",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\nNote that if a given term means the same thing in both languages, no special mention is made of the other language."
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
   },
   {
     "objectID": "terms.html#overview",
     "href": "terms.html#overview",
     "title": "Glossary",
     "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below and (where applicable) re-capitulating the other languages’ definition for terms that occur in both languages.\nNote that if a given term means the same thing in both languages, no special mention is made of the other language."
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
   },
   {
-    "objectID": "terms.html#python-terms",
-    "href": "terms.html#python-terms",
+    "objectID": "terms.html#general-terms",
+    "href": "terms.html#general-terms",
     "title": "Glossary",
-    "section": "Python Python Terms",
-    "text": "Python Python Terms\n\nGeneral\n\nVariable - any data object stored for later re-use\n\nR - object\n\nAssignment Operator (=) - symbol used to assign data to a variable\n\nR - same definition but uses &lt;- or -&gt;\n\nType - category of information contained in a variable\n\nR - class\n\nList - fundamental data object of Python potentially of many structures and types\n\nSimilar to a list sensu R but not exactly the same\n\nLength - Multiple definitions, see below:\n\n1 - number of characters in a string (equivalent to ‘number of characters’ in R)\n2 - number of items in a list\n\n\n\n\nVariable Types\n\nInteger - “round” number\nFloat - non-integer number\n\nR - numeric\n\nString - text (or numbers stored as text)\n\nR - character"
+    "section": "General Terms",
+    "text": "General Terms\n\nData stored for later re-use (regardless of structure/dimensions)\n\nPython Python – variable\nR Project R – object\n\nCategory of information stored in a given data variable/object\n\nPython Python – type\nR Project R – class\n\nDownloadable set of functions\n\nPython Python & R Project R – library / package\nSee “Tools” for definition of ‘function’"
   },
   {
-    "objectID": "terms.html#r-terms",
-    "href": "terms.html#r-terms",
+    "objectID": "terms.html#data-typesclasses",
+    "href": "terms.html#data-typesclasses",
     "title": "Glossary",
-    "section": "R Project R Terms",
-    "text": "R Project R Terms\n\nGeneral\n\nObject - any data object stored for later re-use\n\nPython - variable\n\nAssignment Operator (&lt;-/-&gt;) - symbol used to assign data to an object\n\nPython - same definition but uses =\n\nClass - category of information contained in an object\n\nPython - type\n\nVector - fundamental data object of one dimension and a single class\n\nEquivalent to the simplest possible list sensu Python\n\nList - generic data object that is ordered and may contain various data structures or classes\n\nSimilar to a list sensu Python but not exactly the same and not as fundamental in R as its equivalent in the other language\n\nLength - Number of entries in a vector\n\n\n\nObject Classes\n\nInteger - “round” number\nNumeric - non-integer number\n\nPython - float\n\nCharacter - text (or numbers stored as text)\n\nPython - string"
+    "section": "Data Types/Classes",
+    "text": "Data Types/Classes\n\nNumbers that are not a fraction (i.e., are a whole number)\n\nPython Python & R Project R – integer\n\nNon-integer numbers\n\nPython Python – float\nR Project R – numeric\n\nText / content stored as text\n\nPython Python – string\nR Project R – character\n\nText / content stored as text with few unique entries relative to total number of entries\n\nPython Python – object\nR Project R – factor\n\nLogical values indicating whether conditions are met\n\nPython Python – boolean (True / False)\nR Project R – boolean (TRUE / FALSE / T / F)\n\nVariable/Object holding an ordered sequence of data (can be modified)\n\nPython Python – list\nR Project R – vector (must be one-dimensional) / list\n\nEach component of a list/list\n\nPython Python – item\nR Project R – element\n\nVariable holding an ordered sequence of data (cannot be modified)\n\nPython Python ONLY – tuple [two-pull]"
+  },
+  {
+    "objectID": "terms.html#operators",
+    "href": "terms.html#operators",
+    "title": "Glossary",
+    "section": "Operators",
+    "text": "Operators\n\nAssignment operator – creates a new variable/object\n\nPython Python – =\nR Project R – &lt;- / -&gt;\n\nArithmetic operators – performs basic arithmetic\n\nPython Python & R Project R – addition (+)\nPython Python & R Project R – subtraction (-)\nPython Python & R Project R – multiplication (*)\nPython Python & R Project R – division (/)\nPython Python – exponent (**)\nR Project R – exponent (^)\n\nArithmetic assignment operator – does an arithmetic operation and stores the result in a variable\n\nPython Python ONLY – arithmetic operator and assignment operator (e.g., +=)\n\nRelational operators – conditional statements that return boolean values\n\nPython Python & R Project R – ‘exactly equal to’ (==)\nPython Python & R Project R – ‘not equal to’ (!=)\nPython Python & R Project R – greater/less than (&gt; / &lt; respectively)\nPython Python & R Project R – greater/less than or equal to (&gt;= / &lt;= respectively)\n\nNamespacing operator – specifies library in which a given function is defined\n\nPython Python – a period package.function\nR Project R – two colons package::function (optional)"
+  },
+  {
+    "objectID": "terms.html#tools",
+    "href": "terms.html#tools",
+    "title": "Glossary",
+    "section": "Tools",
+    "text": "Tools\n\nVariable/Object containing multiple, inter-related operations that are run in a pre-defined order every time the variable/object is used\n\nPython Python & R Project R – function\n\nValue sent to a function when called to modify behavior (sometimes optional)\n\nPython Python & R Project R – argument / parameter\n\nFunction that can only be used on a specific type/class of variable/object that supports arguments (sometimes optional) to modify behavior\n\nPython Python – method (variable.method(...))\nR Project R – just a special case of function\n\nFunction that can only be used on a specific type/class of variable/object without arguments to modify behavior\n\nPython Python – attribute (variable.attribute)\nR Project R – just a special case of function"
+  },
+  {
+    "objectID": "terms.html#data-characteristics",
+    "href": "terms.html#data-characteristics",
+    "title": "Glossary",
+    "section": "Data Characteristics",
+    "text": "Data Characteristics\n\nNumber of items/elements in a variable/object\n\nPython Python – length (len())\nR Project R – length (length())\n\nNumber of rows/columns in a two-dimension, tabular variable/object\n\nPython Python – shape (.shape)\nR Project R – dimensions (dim())\n\nNumber of characters in a string\n\nPython Python – also length (len())\nR Project R – number of characters (nchar())"
   },
   {
     "objectID": "wrangle_data.html",

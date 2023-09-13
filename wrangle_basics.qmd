@@ -4,7 +4,9 @@ title: "Fundamentals"
 
 ## Overview
 
-This section covers the most fundamental operations / terms of R and python. Object assignment, classes, etc.
+This section covers some of the most fundamental operations of both languages. These include <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> assignment, data <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span>, arithmetic, etc. External data are _not_ included in this page.
+
+Note that any line in a code chunk preceded by a hashtag (`#`) is a "comment" and is not evaluated in either language. Including comments is generally good practice because it allows humans to read and understand code that may otherwise be unclear to them.
 
 ## Library Loading
 
@@ -21,48 +23,175 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-python libraries are loaded with `import` and can be aliased into simpler names with `as` at the same time.
+python libraries are loaded with the `import` statement and can be aliased into simpler names with `as` at the same time.
 
 ```{python py-libs}
 import numpy as np
 ```
 :::
 
-## Class & Type
+## Assignment
 
-We often want to know the "class" of an object to know what operations we can perform on that object. For example, we can only do arithmetic operations on objects that are some kind "numeric" (R) / "float" (python) or "integer" (both).
+At its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires **assigning** data to a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> with the **assignment operator**.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R we use the `class` function to get this information. Note that the class of text in R is "character".
+In R, the assignment operator is `<-`. To use it, the name of the new object-to-be is on the left of the arrow and the information to assign is on the right.
 
-```{r r-class}
+```{r r-assign}
+# Make a simple object
+a <- 2
+
+# Check it out
+a
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python, the assignment operator is `=`. To use it, the name of the new object-to-be is on the left of the equal sign and the information to assign is on the right.
+
+```{python py-assign}
+# Make a simple object
+a = 2
+
+# Check it out
+a
+```
+:::
+
+Once we've created a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> we can then use the information stored inside of it in downstream operations! For example, we could perform basic arithmetic on our <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> and assign the result to a new <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in R exponents use `^`.
+
+```{r r-math}
+# Raise to an exponent
+b <- a^3
+
+# Check out the result
+b
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in Python exponents use `**`
+
+```{python py-math}
+# Raise to an exponent
+b = a**3
+
+# Check out the result
+b
+```
+:::
+
+## <span style="color:#077DC2">Type</span> & <span style="color:#FF9B00">Class</span>
+
+Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In Python this is known as the <span style="color:#077DC2">variable</span>'s <span style="color:#077DC2">type</span> & while in R this is the <span style="color:#FF9B00">object</span>'s <span style="color:#FF9B00">class</span>. In either case, it's important to know--and be able to check--this information about the <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> with which we are working.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R we use the `class` function to get this information. Note that the names of R classes sometimes differ from their equivalents in Python.
+
+```{r r-class1}
 # Check class of an integer
 class(37)
+```
 
+```{r r-class2}
 # Check class of a decimal
 class(3.14159)
+```
 
+```{r r-class3}
 # Check class of text
 class("my hands are typing words")
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In python, the `type` function returns the class of the data object. Note that the text has class of "str" (short for string).
+In python, the `type` function returns the type of the data object. Note that the names of Python types sometimes differ from their equivalents in R.
 
-```{python py-class}
+```{python py-class1}
 # Check type of an integer
 type(37)
+```
 
+```{python py-class2}
 # Check type of a decimal
 type(3.14159)
+```
 
+```{python py-class3}
 # Check type of text
 type("my hands are typing words")
 ```
 :::
+
+## Indexing
+
+When our <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> have more than one <span style="color:#077DC2">item</span>/<span style="color:#FF9B00">element</span> we may want to examine the piece of information at a specific position. This position is the "index position" and can be accessed in either language fairly easily.
+
+In order to explore this more fully, let's make some example multi-component <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, one of the fundamental data structures is a "vector". Vectors are assembled with the concatenation function (`c`) where each item is separated by commas (`,`) and the set of them is wrapped in parentheses (`(...)`).
+
+Note that the class of the object comes from the vector's _contents_ rather than the fact that it is a vector. All elements in a vector therefore must share a class.
+
+```{r r-index-prep}
+# Make a multi-item variable
+x <- c(1, 2, 3, 4, 5)
+
+# Check it out
+class(x)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python the fundamental data structure is a "list". Lists are assembled either by wrapping the items to include in square brackets (`[...]`) or by using the `list` function. In either case, each item is separated from the others by commas (`,`).
+
+Note that the type of the variable comes from the _list itself_ rather than its contents. Lists therefore support items of multiple different types.
+
+```{python py-index-prep}
+# Make a multi-item variable
+x = [1, 2, 3, 4, 5]
+
+# Check it out
+type(x)
+```
+:::
+
+One crucial difference between R and Python is that Python is "0-based" meaning that the first <span style="color:#077DC2">item</span> is at index position `0` while in R the position of the equivalent <span style="color:#FF9B00">element</span> is `1`.
+
+Fortunately, in either language the syntax for indexing is the same.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+To index a multi-element object, simply append square brackets to the end of the object name and specify the number of the index position in which you are interested.
+
+```{r r-index}
+# Access the first element of the vector
+x[1]
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+To index a multi-item variable, simply append square brackets to the end of the variable name and specify the number of the index position in which you are interested.
+
+```{python py-index}
+# Access the first item of the list
+x[0]
+```
+:::
+
 
 ## Character Counting
 
@@ -152,7 +281,7 @@ We may also want to access the _n_th element of a character string. We can do th
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r r-index}
+```{r r-indexxx}
 # Access third element of a vector
 c("Hello", "my", "friend")[3]
 ```
@@ -161,7 +290,7 @@ c("Hello", "my", "friend")[3]
 
 Note again the the "third" character is actually the fourth letter because the first letter's index value is 0!
 
-```{python py-index}
+```{python py-indexxxx}
 # Access third character of a string
 "friend"[3]
 ```

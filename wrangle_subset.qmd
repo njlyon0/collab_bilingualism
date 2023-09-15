@@ -24,3 +24,14 @@ import pandas as pd
 ```
 :::
 
+## Conditionals
+
+
+
+## Subsetting with Conditionals
+
+
+
+## Subsetting with Masks
+
+

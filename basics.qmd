@@ -170,3 +170,37 @@ x[0]
 ```
 :::
 
+## Slicing
+
+When we index more than one position, this is known as "slicing". We can still use square brackets in either language to slice multiple <span style="color:#077DC2">items</span>/<span style="color:#FF9B00">elements</span> and the syntax inside of those brackets _seems_ shared but yields different results due to inherent syntactical differences.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, when we write two numbers separated by a colon (`:`), that indicates that we want those two numbers and all integers between them.
+
+```{r r-slice-cont1}
+# Demonstrate that the colon is shorthand for 'all numbers between'
+1:10
+```
+
+We can use this to slice out multiple _continuous_ index positions from an object.
+
+```{r r-slice-cont2}
+# Slice items in the `x` object
+x[2:4]
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In order to slice in Python, we include the start and stop _bounds_ of the items that we want to slice separated by a colon (`:`) inside of square brackets. The first bound (i.e., bound position 0) is actually the starting bracket of the list! This means that we can treat the first number in the slice in the same way we would in single indexing but the second number is actually the bound before the item with that index value.
+
+Another way of thinking about this is that it is similar to a mathematical set. The starting bound is _inclusive_ while the ending bound is _exclusive_.
+
+```{python py-slice-cont}
+# Strip out several items of the Python list
+x[2:4]
+```
+
+Notice that we only get the items at third and fourth index position despite `4` being after the colon (which in an index would return the fifth index position)? That is because the fourth bound is after the fourth item but _before_ the fifth item.
+:::

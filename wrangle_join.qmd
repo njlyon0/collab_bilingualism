@@ -2,27 +2,40 @@
 title: "Joining Data"
 ---
 
-## Library Loading
+## Library & Data Loading
 
-Begin by loading any needed libraries
+Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Load the `tidyverse` meta-package for R operations.
+Load the `tidyverse` meta-package as well as our vertebrate data.
 
-```{r r-libs, warning = F, message = F}
+```{r r-start, warning = F, message = F}
+# Load needed library
 library(tidyverse)
+
+# Load data
+vert_r <- read.csv(file = "data/verts.csv")
+
+# Check out first few rows
+head(vert_r, n = 5)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas library.
+Load the Pandas library as well as our vertebrate data.
 
 ```{python py-libs}
+# Load needed library
 import pandas as pd
+
+# Load data
+vert_py = pd.read_csv("data/verts.csv")
+
+# Check out first few rows
+vert_py.head()
 ```
 :::
-
 
 [ Under Construction! ]

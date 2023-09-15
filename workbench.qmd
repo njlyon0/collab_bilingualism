@@ -11,12 +11,14 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 
 ```{r r-}
 # X
+
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
 ```{python py-}
 # X
+
 ```
 :::
 

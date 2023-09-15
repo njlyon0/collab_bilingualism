@@ -53,7 +53,7 @@ Note that if a definition has a term in both languages, the definition is given 
     -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- element
 
 - <span style="color:#077DC2">Variable</span> holding an ordered sequence of data (_cannot_ be modified)
-   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _ONLY_ -- tuple [two-pull]
+   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _ONLY_ -- tuple [too-pull]
 
 ## Operators
 

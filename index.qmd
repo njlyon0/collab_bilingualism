@@ -37,6 +37,10 @@ python3 -m pip install plotnine
 
 ## Section Overviews
 
+### Glossary
+
+As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
+
 ### Fundamentals
 
 When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. Beginning in this way provides a strong foundation for extensions into more nuanced operations.

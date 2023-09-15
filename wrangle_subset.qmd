@@ -26,7 +26,63 @@ import pandas as pd
 
 ## Conditionals
 
+Often when we work with data we want to retrieve only the rows that meet some condition(s). These conditions can be defined in code by using "relational operators". Fortunately, the fundamental relational operators are the same between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>!
 
+Conditional statements always return "boolean" [boo-lee-un] values. These are <span style="color:#077DC2">type</span> boolean and <span style="color:#FF9B00">class</span> logical in <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> respectively.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R `TRUE` and `FALSE` are booleans. Note that their abbreviations `T` and `F` are also accepted though they _must_ be capitalized.
+
+```{r r-bool1}
+# Assess whether a number equals itself and assign to an object
+bool_r <- 20 == 20
+
+# See what that object contains
+bool_r
+```
+
+```{r r-bool2}
+# And check class
+class(bool_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python `True` or `False` are booleans. Note that they must be capitalized in this way to register as the correct type (i.e., only first letter capitalized).
+
+```{python py-bool1}
+# Assess whether a number equals itself and assign to an object
+bool_py = 20 == 20
+
+# See what that object contains
+bool_py
+```
+
+```{python py-bool2}
+# Also check type
+type(bool_py)
+```
+:::
+
+In addition to asking whether something 'is exactly equal to' something else (`==`), we can also ask whether two values are _not_ equal (`!=`) or pose greater/less than conditionals (`>`/`<`).
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-bool3}
+# Ask whether a number is less than or equal to a particular value
+7 <= 5
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-bool3}
+# Ask whether a number is less than or equal to a particular value
+7 <= 5
+```
+:::
 
 ## Subsetting with Conditionals
 

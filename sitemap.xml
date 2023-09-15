@@ -2,26 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/collabs.html</loc>
-    <lastmod>2023-09-15T15:03:01.940Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/njlyon0/collab_bilingualism/terms.html</loc>
-    <lastmod>2023-09-15T15:03:00.188Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/njlyon0/collab_bilingualism/workbench.html</loc>
-    <lastmod>2023-09-15T15:02:58.156Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/njlyon0/collab_bilingualism/index.html</loc>
-    <lastmod>2023-09-15T15:02:56.592Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/njlyon0/collab_bilingualism/basics.html</loc>
-    <lastmod>2023-09-15T15:02:59.340Z</lastmod>
+    <lastmod>2023-09-15T15:19:42.264Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_start.html</loc>
-    <lastmod>2023-09-15T15:03:01.364Z</lastmod>
+    <lastmod>2023-09-15T15:19:41.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_reshape.html</loc>
+    <lastmod>2023-09-15T15:19:39.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/terms.html</loc>
+    <lastmod>2023-09-15T15:19:37.679Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/workbench.html</loc>
+    <lastmod>2023-09-15T15:19:35.655Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/index.html</loc>
+    <lastmod>2023-09-15T15:19:33.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/basics.html</loc>
+    <lastmod>2023-09-15T15:19:36.827Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_subset.html</loc>
+    <lastmod>2023-09-15T15:19:38.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_join.html</loc>
+    <lastmod>2023-09-15T15:19:39.811Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_summarize.html</loc>
+    <lastmod>2023-09-15T15:19:41.700Z</lastmod>
   </url>
 </urlset>

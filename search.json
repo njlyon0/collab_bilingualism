@@ -1,54 +1,5 @@
 [
   {
-    "objectID": "terms.html",
-    "href": "terms.html",
-    "title": "Glossary",
-    "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
-  },
-  {
-    "objectID": "terms.html#overview",
-    "href": "terms.html#overview",
-    "title": "Glossary",
-    "section": "",
-    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
-  },
-  {
-    "objectID": "terms.html#general-terms",
-    "href": "terms.html#general-terms",
-    "title": "Glossary",
-    "section": "General Terms",
-    "text": "General Terms\n\nData stored for later re-use (regardless of structure/dimensions)\n\nPython Python – variable\nR Project R – object\n\nCategory of information stored in a given data variable/object\n\nPython Python – type\nR Project R – class\n\nDownloadable set of functions\n\nPython Python & R Project R – library / package\nSee “Tools” for definition of ‘function’"
-  },
-  {
-    "objectID": "terms.html#data-typesclasses",
-    "href": "terms.html#data-typesclasses",
-    "title": "Glossary",
-    "section": "Data Types/Classes",
-    "text": "Data Types/Classes\n\nNumbers that are not a fraction (i.e., are a whole number)\n\nPython Python & R Project R – integer\n\nNon-integer numbers\n\nPython Python – float\nR Project R – numeric\n\nText / content stored as text\n\nPython Python – string\nR Project R – character\n\nText / content stored as text with few unique entries relative to total number of entries\n\nPython Python – object\nR Project R – factor\n\nLogical values indicating whether conditions are met\n\nPython Python – boolean (True / False)\nR Project R – boolean (TRUE / FALSE / T / F)\n\nVariable/Object holding an ordered sequence of data (can be modified)\n\nPython Python – list\nR Project R – vector (must be one-dimensional) / list\n\nEach component of a list/list\n\nPython Python – item\nR Project R – element\n\nVariable holding an ordered sequence of data (cannot be modified)\n\nPython Python ONLY – tuple [two-pull]"
-  },
-  {
-    "objectID": "terms.html#operators",
-    "href": "terms.html#operators",
-    "title": "Glossary",
-    "section": "Operators",
-    "text": "Operators\n\nAssignment operator – creates a new variable/object\n\nPython Python – =\nR Project R – &lt;- / -&gt;\n\nArithmetic operators – performs basic arithmetic\n\nPython Python & R Project R – addition (+)\nPython Python & R Project R – subtraction (-)\nPython Python & R Project R – multiplication (*)\nPython Python & R Project R – division (/)\nPython Python – exponent (**)\nR Project R – exponent (^)\n\nArithmetic assignment operator – does an arithmetic operation and stores the result in a variable\n\nPython Python ONLY – arithmetic operator and assignment operator (e.g., +=)\n\nRelational operators – conditional statements that return boolean values\n\nPython Python & R Project R – ‘exactly equal to’ (==)\nPython Python & R Project R – ‘not equal to’ (!=)\nPython Python & R Project R – greater/less than (&gt; / &lt; respectively)\nPython Python & R Project R – greater/less than or equal to (&gt;= / &lt;= respectively)\n\nNamespacing operator – specifies library in which a given function is defined\n\nPython Python – a period package.function\nR Project R – two colons package::function (optional)"
-  },
-  {
-    "objectID": "terms.html#tools",
-    "href": "terms.html#tools",
-    "title": "Glossary",
-    "section": "Tools",
-    "text": "Tools\n\nVariable/Object containing multiple, inter-related operations that are run in a pre-defined order every time the variable/object is used\n\nPython Python & R Project R – function\n\nValue sent to a function when called to modify behavior (sometimes optional)\n\nPython Python & R Project R – argument / parameter\n\nFunction that can only be used on a specific type/class of variable/object that supports arguments (sometimes optional) to modify behavior\n\nPython Python – method (variable.method(...))\nR Project R – just a special case of function\n\nFunction that can only be used on a specific type/class of variable/object without arguments to modify behavior\n\nPython Python – attribute (variable.attribute)\nR Project R – just a special case of function"
-  },
-  {
-    "objectID": "terms.html#data-characteristics",
-    "href": "terms.html#data-characteristics",
-    "title": "Glossary",
-    "section": "Data Characteristics",
-    "text": "Data Characteristics\n\nNumber of items/elements in a variable/object\n\nPython Python – length (len())\nR Project R – length (length())\n\nNumber of rows/columns in a two-dimension, tabular variable/object\n\nPython Python – shape (.shape)\nR Project R – dimensions (dim())\n\nNumber of characters in a string\n\nPython Python – also length (len())\nR Project R – number of characters (nchar())"
-  },
-  {
     "objectID": "wrangle_data.html",
     "href": "wrangle_data.html",
     "title": "Data Operations",
@@ -98,48 +49,6 @@
     "text": "Data Structure\n\nFull Data Object\nOften we want to check the ‘structure’ of a data table. This includes the of each column in the data\n\nR Project RPython Python\n\n\nR uses the str function to assess data structure (not to be confused with the python object class “str”).\n\nstr(vert_r)\n\n'data.frame':   32209 obs. of  16 variables:\n $ year       : int  1987 1987 1987 1987 1987 1987 1987 1987 1987 1987 ...\n $ sitecode   : chr  \"MACKCC-L\" \"MACKCC-L\" \"MACKCC-L\" \"MACKCC-L\" ...\n $ section    : chr  \"CC\" \"CC\" \"CC\" \"CC\" ...\n $ reach      : chr  \"L\" \"L\" \"L\" \"L\" ...\n $ pass       : int  1 1 1 1 1 1 1 1 1 1 ...\n $ unitnum    : num  1 1 1 1 1 1 1 1 1 1 ...\n $ unittype   : chr  \"R\" \"R\" \"R\" \"R\" ...\n $ vert_index : int  1 2 3 4 5 6 7 8 9 10 ...\n $ pitnumber  : int  NA NA NA NA NA NA NA NA NA NA ...\n $ species    : chr  \"Cutthroat trout\" \"Cutthroat trout\" \"Cutthroat trout\" \"Cutthroat trout\" ...\n $ length_1_mm: int  58 61 89 58 93 86 107 131 103 117 ...\n $ length_2_mm: int  NA NA NA NA NA NA NA NA NA NA ...\n $ weight_g   : num  1.75 1.95 5.6 2.15 6.9 5.9 10.5 20.6 9.55 13 ...\n $ clip       : chr  \"NONE\" \"NONE\" \"NONE\" \"NONE\" ...\n $ sampledate : chr  \"1987-10-07\" \"1987-10-07\" \"1987-10-07\" \"1987-10-07\" ...\n $ notes      : chr  \"\" \"\" \"\" \"\" ...\n\n\n\n\n\nvert_py.dtypes\n\nyear             int64\nsitecode        object\nsection         object\nreach           object\npass             int64\nunitnum        float64\nunittype        object\nvert_index       int64\npitnumber      float64\nspecies         object\nlength_1_mm    float64\nlength_2_mm    float64\nweight_g       float64\nclip            object\nsampledate      object\nnotes           object\ndtype: object\n\n\n\n\n\n\n\nSpecific Column\nYou may want to check the structure of only a single column. For this, we need to use an ‘operator’ to access a single column within the dataframe object by that column’s name. Note the operator differs between the two languages.\n\nR Project RPython Python\n\n\nIn R, we use the $ operator (e.g., data_name$column_name) to access that column and pass it to functions for further processing.\n\n# Check structure of a particular column\nstr(vert_r$vert_index)\n\n int [1:32209] 1 2 3 4 5 6 7 8 9 10 ...\n\n\n\n\nIn python, we separate the dataframe name from the column name with a . (e.g., data_name.column_name) and append the function to the end with another . between.\n\n# Check structure of a particular column\nvert_py.vert_index.dtype\n\ndtype('int64')"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome!",
-    "section": "",
-    "text": "I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to ‘eat my vegetables’ and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process."
-  },
-  {
-    "objectID": "index.html#package-installation",
-    "href": "index.html#package-installation",
-    "title": "Welcome!",
-    "section": "Package Installation",
-    "text": "Package Installation\nBoth coding lanaguage rely on packages to install specific functions that are absent from the ‘base’ version of either R or Python. The following code chunks are not evaluated in the building of this website but you’ll need to install these packages on your local machine (if you haven’t already done so) in order to run the code in the rest of this translation tutorial.\n\nR Project RPython Python\n\n\nR contains an install.packages function for installing packages from within R.\n\n# Install the 'tidyverse' meta-package\ninstall.packages(\"tidyverse\")\n\n\n\nPython packages must be installed via the Command Line Interface (a.k.a. CLI, or “bash”).\n\n# Install the following python packages\npython3 -m pip install pandas\npython3 -m pip install numpy\npython3 -m pip install matplotlib\npython3 -m pip install jupyterlab\n\n## `plotnine` is `ggplot2` in python!\npython3 -m pip install plotnine"
-  },
-  {
-    "objectID": "index.html#section-overviews",
-    "href": "index.html#section-overviews",
-    "title": "Welcome!",
-    "section": "Section Overviews",
-    "text": "Section Overviews\n\nData Wrangling\nThe beating heart of my day to day work revolves around data ‘wrangling’. I view ‘wrangling’ as any scripted data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love."
-  },
-  {
-    "objectID": "index.html#additional-resources",
-    "href": "index.html#additional-resources",
-    "title": "Welcome!",
-    "section": "Additional Resources",
-    "text": "Additional Resources\nI’m not the first to have this idea so there are other useful Python tutorials and specifically R-Python bilingualism resources. See below:\n\nThe Carpentries has a “Data Analysis and Visualization in Python for Ecologists” lesson that is really well put-together (as is characteristic of The Carpentries’ content)\nThe Earth Lab has a Python course that was recommended to me by an NCEAS employee (specifically section 4)\nDr. Diba Mirza taught a UCSB Computer Science (CS8) course on Python\nESIIL (Environmental Data Science Innovation and Inclusion Lab) has created an R-Python bilingualism tutorial that is framed for a more applied audience\nMarie Rivers also made a website for exploring Quarto more generally that I’ve found super helpful for its facet dealing with R/Python bilingualism"
-  },
-  {
-    "objectID": "workbench.html",
-    "href": "workbench.html",
-    "title": "Workbench",
-    "section": "",
-    "text": "Place to store snippets of code / formatting that I’ll be copy/pasting a bunch"
-  },
-  {
-    "objectID": "workbench.html#template-tabset-panel-area",
-    "href": "workbench.html#template-tabset-panel-area",
-    "title": "Workbench",
-    "section": "Template Tabset Panel Area",
-    "text": "Template Tabset Panel Area\n\nR Project RPython Python\n\n\n\n# X\n\n\n\n\n# X"
-  },
-  {
     "objectID": "basics.html",
     "href": "basics.html",
     "title": "Fundamentals",
@@ -173,5 +82,96 @@
     "title": "Fundamentals",
     "section": "Indexing",
     "text": "Indexing\nWhen our variables/objects have more than one item/element we may want to examine the piece of information at a specific position. This position is the “index position” and can be accessed in either language fairly easily.\nIn order to explore this more fully, let’s make some example multi-component variables/objects.\n\nR Project RPython Python\n\n\nIn R, one of the fundamental data structures is a “vector”. Vectors are assembled with the concatenation function (c) where each item is separated by commas (,) and the set of them is wrapped in parentheses ((...)).\nNote that the class of the object comes from the vector’s contents rather than the fact that it is a vector. All elements in a vector therefore must share a class.\n\n# Make a multi-item variable\nx &lt;- c(1, 2, 3, 4, 5)\n\n# Check it out\nclass(x)\n\n[1] \"numeric\"\n\n\n\n\nIn Python the fundamental data structure is a “list”. Lists are assembled either by wrapping the items to include in square brackets ([...]) or by using the list function. In either case, each item is separated from the others by commas (,).\nNote that the type of the variable comes from the list itself rather than its contents. Lists therefore support items of multiple different types.\n\n# Make a multi-item variable\nx = [1, 2, 3, 4, 5]\n\n# Check it out\ntype(x)\n\n&lt;class 'list'&gt;\n\n\n\n\n\nOne crucial difference between R and Python is that Python is “0-based” meaning that the first item is at index position 0 while in R the position of the equivalent element is 1.\nFortunately, in either language the syntax for indexing is the same.\n\nR Project RPython Python\n\n\nTo index a multi-element object, simply append square brackets to the end of the object name and specify the number of the index position in which you are interested.\n\n# Access the first element of the vector\nx[1]\n\n[1] 1\n\n\n\n\nTo index a multi-item variable, simply append square brackets to the end of the variable name and specify the number of the index position in which you are interested.\n\n# Access the first item of the list\nx[0]\n\n1"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to ‘eat my vegetables’ and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process."
+  },
+  {
+    "objectID": "index.html#package-installation",
+    "href": "index.html#package-installation",
+    "title": "Welcome!",
+    "section": "Package Installation",
+    "text": "Package Installation\nBoth coding lanaguage rely on packages to install specific functions that are absent from the ‘base’ version of either R or Python. The following code chunks are not evaluated in the building of this website but you’ll need to install these packages on your local machine (if you haven’t already done so) in order to run the code in the rest of this translation tutorial.\n\nR Project RPython Python\n\n\nR contains an install.packages function for installing packages from within R.\n\n# Install the 'tidyverse' meta-package\ninstall.packages(\"tidyverse\")\n\n\n\nPython packages must be installed via the Command Line Interface (a.k.a. CLI, or “bash”).\n\n# Install the following python packages\npython3 -m pip install pandas\npython3 -m pip install numpy\npython3 -m pip install matplotlib\npython3 -m pip install jupyterlab\n\n## `plotnine` is `ggplot2` in python!\npython3 -m pip install plotnine"
+  },
+  {
+    "objectID": "index.html#section-overviews",
+    "href": "index.html#section-overviews",
+    "title": "Welcome!",
+    "section": "Section Overviews",
+    "text": "Section Overviews\n\nFundamentals\nWhen learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. Beginning in this way provides a strong foundation for extensions into more nuanced operations.\n\n\nData Wrangling\nThe beating heart of my day to day work revolves around data ‘wrangling’. I view ‘wrangling’ as any scripted data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love."
+  },
+  {
+    "objectID": "index.html#additional-resources",
+    "href": "index.html#additional-resources",
+    "title": "Welcome!",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nI’m not the first to have this idea so there are other useful Python tutorials and specifically R-Python bilingualism resources. See below:\n\nThe Carpentries has a “Data Analysis and Visualization in Python for Ecologists” lesson that is really well put-together (as is characteristic of The Carpentries’ content)\nThe Earth Lab has a Python course that was recommended to me by an NCEAS employee (specifically section 4)\nDr. Diba Mirza taught a UCSB Computer Science (CS8) course on Python\nESIIL (Environmental Data Science Innovation and Inclusion Lab) has created an R-Python bilingualism tutorial that is framed for a more applied audience\nMarie Rivers also made a website for exploring Quarto more generally that I’ve found super helpful for its facet dealing with R/Python bilingualism"
+  },
+  {
+    "objectID": "workbench.html",
+    "href": "workbench.html",
+    "title": "Workbench",
+    "section": "",
+    "text": "Place to store snippets of code / formatting that I’ll be copy/pasting a bunch"
+  },
+  {
+    "objectID": "workbench.html#template-tabset-panel-area",
+    "href": "workbench.html#template-tabset-panel-area",
+    "title": "Workbench",
+    "section": "Template Tabset Panel Area",
+    "text": "Template Tabset Panel Area\n\nR Project RPython Python\n\n\n\n# X\n\n\n\n\n# X"
+  },
+  {
+    "objectID": "terms.html",
+    "href": "terms.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
+  },
+  {
+    "objectID": "terms.html#overview",
+    "href": "terms.html#overview",
+    "title": "Glossary",
+    "section": "",
+    "text": "Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I’m compiling a glossary of crucial R and Python terms below.\nNote that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined."
+  },
+  {
+    "objectID": "terms.html#general-terms",
+    "href": "terms.html#general-terms",
+    "title": "Glossary",
+    "section": "General Terms",
+    "text": "General Terms\n\nData stored for later re-use (regardless of structure/dimensions)\n\nPython Python – variable\nR Project R – object\n\nCategory of information stored in a given data variable/object\n\nPython Python – type\nR Project R – class\n\nDownloadable set of functions\n\nPython Python & R Project R – library / package\nSee “Tools” for definition of ‘function’"
+  },
+  {
+    "objectID": "terms.html#data-typesclasses",
+    "href": "terms.html#data-typesclasses",
+    "title": "Glossary",
+    "section": "Data Types/Classes",
+    "text": "Data Types/Classes\n\nNumbers that are not a fraction (i.e., are a whole number)\n\nPython Python & R Project R – integer\n\nNon-integer numbers\n\nPython Python – float\nR Project R – numeric\n\nText / content stored as text\n\nPython Python – string\nR Project R – character\n\nText / content stored as text with few unique entries relative to total number of entries\n\nPython Python – object\nR Project R – factor\n\nLogical values indicating whether conditions are met\n\nPython Python – boolean (True / False)\nR Project R – boolean (TRUE / FALSE / T / F)\n\nVariable/Object holding an ordered sequence of data (can be modified)\n\nPython Python – list\nR Project R – vector (must be one-dimensional) / list\n\nEach component of a list/list\n\nPython Python – item\nR Project R – element\n\nVariable holding an ordered sequence of data (cannot be modified)\n\nPython Python ONLY – tuple [two-pull]"
+  },
+  {
+    "objectID": "terms.html#operators",
+    "href": "terms.html#operators",
+    "title": "Glossary",
+    "section": "Operators",
+    "text": "Operators\n\nAssignment operator – creates a new variable/object\n\nPython Python – =\nR Project R – &lt;- / -&gt;\n\nArithmetic operators – performs basic arithmetic\n\nPython Python & R Project R – addition (+)\nPython Python & R Project R – subtraction (-)\nPython Python & R Project R – multiplication (*)\nPython Python & R Project R – division (/)\nPython Python – exponent (**)\nR Project R – exponent (^)\n\nArithmetic assignment operator – does an arithmetic operation and stores the result in a variable\n\nPython Python ONLY – arithmetic operator and assignment operator (e.g., +=)\n\nRelational operators – conditional statements that return boolean values\n\nPython Python & R Project R – ‘exactly equal to’ (==)\nPython Python & R Project R – ‘not equal to’ (!=)\nPython Python & R Project R – greater/less than (&gt; / &lt; respectively)\nPython Python & R Project R – greater/less than or equal to (&gt;= / &lt;= respectively)\n\nNamespacing operator – specifies library in which a given function is defined\n\nPython Python – a period package.function\nR Project R – two colons package::function (optional)"
+  },
+  {
+    "objectID": "terms.html#tools",
+    "href": "terms.html#tools",
+    "title": "Glossary",
+    "section": "Tools",
+    "text": "Tools\n\nVariable/Object containing multiple, inter-related operations that are run in a pre-defined order every time the variable/object is used\n\nPython Python & R Project R – function\n\nValue sent to a function when called to modify behavior (sometimes optional)\n\nPython Python & R Project R – argument / parameter\n\nFunction that can only be used on a specific type/class of variable/object that supports arguments (sometimes optional) to modify behavior\n\nPython Python – method (variable.method(...))\nR Project R – just a special case of function\n\nFunction that can only be used on a specific type/class of variable/object without arguments to modify behavior\n\nPython Python – attribute (variable.attribute)\nR Project R – just a special case of function"
+  },
+  {
+    "objectID": "terms.html#data-characteristics",
+    "href": "terms.html#data-characteristics",
+    "title": "Glossary",
+    "section": "Data Characteristics",
+    "text": "Data Characteristics\n\nNumber of items/elements in a variable/object\n\nPython Python – length (len())\nR Project R – length (length())\n\nNumber of rows/columns in a two-dimension, tabular variable/object\n\nPython Python – shape (.shape)\nR Project R – dimensions (dim())\n\nNumber of characters in a string\n\nPython Python – also length (len())\nR Project R – number of characters (nchar())"
   }
 ]

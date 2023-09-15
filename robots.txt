@@ -1,1 +1,1 @@
-Sitemap: https://github.com/njlyon0/lyon_bilingualism/sitemap.xml
+Sitemap: https://github.com/njlyon0/collab_bilingualism/sitemap.xml

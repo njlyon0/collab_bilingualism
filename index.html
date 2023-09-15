@@ -170,6 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#package-installation" id="toc-package-installation" class="nav-link active" data-scroll-target="#package-installation">Package Installation</a></li>
   <li><a href="#section-overviews" id="toc-section-overviews" class="nav-link" data-scroll-target="#section-overviews">Section Overviews</a>
   <ul class="collapse">
+  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link" data-scroll-target="#fundamentals">Fundamentals</a></li>
   <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
   </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
@@ -228,6 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-overviews" class="level2">
 <h2 class="anchored" data-anchor-id="section-overviews">Section Overviews</h2>
+<section id="fundamentals" class="level3">
+<h3 class="anchored" data-anchor-id="fundamentals">Fundamentals</h3>
+<p>When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. Beginning in this way provides a strong foundation for extensions into more nuanced operations.</p>
+</section>
 <section id="data-wrangling" class="level3">
 <h3 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h3>
 <p>The beating heart of my day to day work revolves around data ‘wrangling’. I view ‘wrangling’ as any <em>scripted</em> data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.</p>
@@ -595,7 +600,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/github\.com\/njlyon0\/lyon_bilingualism");
+      var filterRegex = new RegExp("https:\/\/github\.com\/njlyon0\/collab_bilingualism");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

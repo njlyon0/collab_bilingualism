@@ -15,8 +15,10 @@ website:
         text: "Glossary"
       - href: basics.qmd
         text: "Fundamentals"
-      - href: wrangle_data.qmd
-        text: "Data Wrangling"
+      - text: "Data Wrangling"
+        menu:
+          - href: wrangle_start.qmd
+            text: "Starting with Data"
     right:
       - text: "Creators"
         menu:

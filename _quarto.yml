@@ -22,6 +22,8 @@ website:
         menu:
           - href: https://njlyon0.github.io/
             text: "Nick J Lyon"
+          - href: collabs.qmd
+            text: "Contributing"
       - href: https://github.com/njlyon0/lyon_bilingualism
         icon: github
   page-footer:

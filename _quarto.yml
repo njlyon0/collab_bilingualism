@@ -18,6 +18,7 @@ website:
       - text: "Data Wrangling"
         menu:
           - href: wrangle_start.qmd
+            text: "Read & Examine"
           - href: wrangle_subset.qmd
             text: "Subset"
           - href: wrangle_summarize.qmd
@@ -26,6 +27,8 @@ website:
             text: "Reshape"
           - href: wrangle_join.qmd
             text: "Join"
+      - href: viz.qmd
+        text: "Visualization"
     right:
       - text: "Creators"
         menu:

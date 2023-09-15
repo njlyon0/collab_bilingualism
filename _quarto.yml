@@ -19,6 +19,13 @@ website:
         menu:
           - href: wrangle_start.qmd
           - href: wrangle_subset.qmd
+            text: "Subset"
+          - href: wrangle_summarize.qmd
+            text: "Summarize"
+          - href: wrangle_reshape.qmd
+            text: "Reshape"
+          - href: wrangle_join.qmd
+            text: "Join"
     right:
       - text: "Creators"
         menu:

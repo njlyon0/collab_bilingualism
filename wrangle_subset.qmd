@@ -178,5 +178,66 @@ print("Subsetting changed this to", len(py_sub2))
 
 ## Subsetting with Masks
 
-<span style="color:#077DC2">type</span>
-<span style="color:#FF9B00">class</span>
+We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` <span style="color:#077DC2">method</span> or the `%in%` <span style="color:#FF9B00">operator</span> (in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Let's subset to only salamander species in the dataset using a mask. In R, that means providing the column name to the left of the `%in%` operator and giving a vector of options to the right.
+
+```{r r-mask1}
+# Make the subset
+r_mask1 <- dplyr::filter(vert_r, species %in% c("Coastal giant salamander", "Cascade torrent salamander"))
+
+# Check whether that worked
+message("Before subsetting the data had ", nrow(vert_r), " rows.")
+message("Subsetting changed this to ", nrow(r_mask1))
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Let's subset to only salamander species in the dataset using a mask. In Python, the `isin` method is a method so it is appended to the right of the column it accesses (separated by a period) and the options must be provided as a list (i.e., wrapped in square brackets and separated by commas).
+
+```{python py-mask1}
+# Make the subset
+py_mask1 = vert_py[vert_py.species.isin(["Coastal giant salamander", "Cascade torrent salamander"])]
+
+# Check whether that worked
+print("Before subsetting the data had", len(vert_py), "rows.")
+print("Subsetting changed this to", len(py_mask1))
+```
+:::
+
+## Negating Criteria
+
+Sometimes it is helpful to _negate_ criteria and subset to only conditions that _don't_ meet our criteria. This works with either simpler conditional statements or with masks! The symbol we use to do this negation differs between the two languages but in either it is placed to the left of the criterion it is negating.
+
+In the below example we'll use the `isnull` <span style="color:#077DC2">function</span> or the `is.na` <span style="color:#FF9B00">function</span> to see whether a column contains missing values and invert it to return only rows where the specified column _is not_ missing values.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R we negate conditions by adding an exclamation point (`!`) to the left of the relevant criterion.
+
+```{r r-mask2}
+# Subset to only species that *have* a recorded value in the "length_2_mm" column
+r_mask2 <- dplyr::filter(vert_r, !is.na(length_2_mm))
+
+# Check whether that worked
+message("Before subsetting the data had ", nrow(vert_r), " rows.")
+message("Subsetting changed this to ", nrow(r_mask2))
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python we negate conditions by adding a tilde (`~`) to the left of the relevant criterion.
+
+```{python py-mask2}
+# Subset to only species that *have* a recorded value in the "length_2_mm" column
+py_mask2 = vert_py[~pd.isnull(vert_py.length_2_mm)]
+
+# Check whether that worked
+print("Before subsetting the data had", len(vert_py), "rows.")
+print("Subsetting changed this to", len(py_mask2))
+```
+:::

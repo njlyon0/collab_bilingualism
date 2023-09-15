@@ -3,10 +3,6 @@ title: "Starting with Data"
 engine: knitr
 ---
 
-## Overview
-
-Once you get a sense for the core rules of your programming language of choice, you can move on to working with a data table that is more realistically complex.
-
 ## Library Loading
 
 This section assumes you've already _installed_ the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. However, it is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.

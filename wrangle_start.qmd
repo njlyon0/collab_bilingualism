@@ -27,7 +27,7 @@ import pandas as pd
 
 ## Data Import
 
-We can now load an external dataset derived from the `lterdatasampler` R package (see [here](https://lter.github.io/lterdatasampler/)) with both R and python. This relatively simple operation is also a nice chance to showcase how 'namespacing' (i.e., indicating which package a given function comes from) differs between the two languages.
+We can now load an external dataset derived from the `lterdatasampler` R package (see [here](https://lter.github.io/lterdatasampler/)) with both R and Python. This relatively simple operation is also a nice chance to showcase how 'namespacing' (i.e., indicating which package a given function comes from) differs between the two languages.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -41,7 +41,7 @@ vert_r <- utils::read.csv(file = "data/verts.csv")
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, namespacing is required and is done via `package_name.function_name`. Note that we use the assignment operator (`<-`) to assign the contents of the CSV to a variable.
+In Python, namespacing is required and is done via `package_name.function_name`. Note that we use the assignment operator (`=`) to assign the contents of the CSV to a variable.
 
 ```{python py-ext-data}
 # Read in vertebrate data CSV

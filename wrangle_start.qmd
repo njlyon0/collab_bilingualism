@@ -215,14 +215,14 @@ head(vert_r[, c("year", "sitecode", "weight_g")])
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python we could use the `iloc` method for multiple columns and simply supply a list of the column index positions in which we are interested.
+In Python we could use the `iloc` method for multiple columns and simply supply a list of the column index positions in which we are interested. Note that this method is different from many of the other methods we've covered so far because it uses square brackets instead of parentheses.
 
 ```{python py-multicols1}
 # Use multiple column index positions
 vert_py.iloc[:, [0, 1, 12]].head()
 ```
 
-Or we could use the `.loc` method and supply a list of column labels. Note that the `loc` method also uses square brackets instead of parentheses and requires a colon to the left of the column in order to return all rows.
+Or we could use the `.loc` method and supply a list of column labels. Note that the `loc` method also uses square brackets instead of parentheses and requires a colon to the left of the comma in order to return all rows.
 
 ```{python py-multicols2}
 vert_py.loc[:, ["year", "sitecode", "weight_g"]].head()

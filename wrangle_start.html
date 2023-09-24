@@ -561,7 +561,7 @@ Name: year, dtype: int64</code></pre>
 </div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>In Python we could use the <code>iloc</code> method for multiple columns and simply supply a list of the column index positions in which we are interested.</p>
+<p>In Python we could use the <code>iloc</code> method for multiple columns and simply supply a list of the column index positions in which we are interested. Note that this method is different from many of the other methods we’ve covered so far because it uses square brackets instead of parentheses.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use multiple column index positions</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>vert_py.iloc[:, [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">12</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -574,7 +574,7 @@ Name: year, dtype: int64</code></pre>
 4  1987  MACKCC-L      6.90</code></pre>
 </div>
 </div>
-<p>Or we could use the <code>.loc</code> method and supply a list of column labels. Note that the <code>loc</code> method also uses square brackets instead of parentheses and requires a colon to the left of the column in order to return all rows.</p>
+<p>Or we could use the <code>.loc</code> method and supply a list of column labels. Note that the <code>loc</code> method also uses square brackets instead of parentheses and requires a colon to the left of the comma in order to return all rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>vert_py.loc[:, [<span class="st">"year"</span>, <span class="st">"sitecode"</span>, <span class="st">"weight_g"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

@@ -18,7 +18,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python libraries are loaded with the `import` statement and can be aliased into simpler names with `as` at the same time. Note that common libraries (like Pandas) have a broadly-accepted abbreviation that is almost always used (like `pd` in the case of Pandas.)
+Python libraries are loaded with the `import` statement and can be aliased into simpler names with `as` at the same time. Note that common libraries (like Pandas) have a broadly-accepted abbreviations that are almost always used (like `pd` in the case of Pandas).
 
 ```{python py-libs}
 import pandas as pd
@@ -128,6 +128,61 @@ When we want to know the type of each column in a Python `DataFrame`, we can use
 
 ```{python py-structure}
 vert_py.dtypes
+```
+:::
+
+## Data Summaries
+
+We often want to begin our exploration of a given dataset by getting a summary of each column. This is rarely what we actually need for statistics or visualization but it is a nice high-level way of getting a sense for the composition of the data.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R provides the `summary` function to summarize all columns in a dataset. Note that it is not terribly informative for columns of class character.
+
+```{r r-describe}
+# Get summary of data
+summary(vert_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python has the `describe` method for getting similar information about each column of a `DataFrame`.
+
+```{python py-describe}
+# Describe data
+vert_py.describe()
+```
+
+Python also offers the `info` method to identify only the count of non-null entries in each column as well as the type of each column.
+
+```{python py-describe2}
+# Check info of data
+vert_py.info()
+```
+:::
+
+## Identifying Columns
+
+If we want to skip these steps and just identify the full set of column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> there is a small operation for stripping that information out in both languages.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R has the `names` function to quickly return a vector of the column names in a given `data.frame` object.
+
+```{r r-names}
+# Check column names
+names(vert_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python has the `columns` attributes for returning a simple list of column labels in a given `DataFrame` variable.
+
+```{python py-names}
+# Check column labels
+vert_py.columns
 ```
 :::
 

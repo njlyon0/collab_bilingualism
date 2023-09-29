@@ -77,7 +77,7 @@ vert_py = pd.read_csv("data/verts.csv")
 vert_py.head(2)
 ```
 
-Then load the dataset with lichen community composition on trees
+Then load the dataset with lichen community composition on trees.
 
 ```{python py-data2}
 # Load data
@@ -99,19 +99,116 @@ road.head(2)
 
 :::
 
-## `concat` & `cbind`/`rbind`
+## Concatenating Data
+
+The simplest way of combining data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> is called "concatenation". This involves--essentially--pasting rows or columns of separate data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> together.
+
+We'll need to modify our vertebrate data somewhat in order to demonstrate the two modes (horizontal or vertical) of concatenating <span style="color:#077DC2">DataFrames</span>/<span style="color:#FF9B00">data.frames</span>.
+
+Concatenating data (either horizontally or vertically) in this way is _deeply_ risky in that it can easily result in creating rows or columns that appear to relate to one another but in actuality do not. However, it is still worthwhile to cover how this can be done.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Split the first and last two rows of the vertebrate data into separate objects. Note that in each we'll want to retain all columns.
+
+```{r r-concat-prep}
+# Split the two datasets
+vert_r_top <- vert_r[1:2, ]
+vert_r_bottom <- vert_r[(nrow(vert_r) - 1):nrow(vert_r), ]
+
+# Look at one
+vert_r_bottom
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Split the first and last two rows of the vertebrate data into separate variables. Note that in each we'll want to retain all columns.
+
+```{python py-concat-prep}
+# Split the two datasets
+vert_py_top = vert_py.iloc[[0, 1], :]
+vert_py_bottom = vert_py.iloc[[-1, -2], :]
+
+# Look at one
+vert_py_bottom
+```
+:::
+
+### Vertical Concatenation
+
+Vertical concatenation (i.e., concatenating by stacking rows on top of each other) is one option for concatenation. This is much more common than horizontal concatenation.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R can perform this operation with the `rbind` function (from base R) but the `bind_rows` function (from the `dplyr` package) is preferable because it checks for matching column names and--if necessary--reorders columns to match between the two data objects.
+
+```{r r-rowbind}
+# Combine vertically
+vert_r_vertical <- dplyr::bind_rows(vert_r_top, vert_r_bottom)
+
+# Check shape before and after to demonstrate it worked
+message("There were two rows each before concatenation and ", nrow(vert_r_vertical), " after")
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python does horizontal concatenation with the `concat` function from the Pandas library. This function does horizontal and vertical concatenation and uses the `axis` argument to determine which is done. Setting `axis` to `0` performs vertical concatenation.
+
+```{python py-rowbind}
+# Combine vertically
+vert_py_vertical = pd.concat([vert_py_top, vert_py_bottom], axis = 0)
+
+# Check shape before and after to demonstrate it worked
+print("There were two rows each before concatenation and", len(vert_py_vertical), "after")
+```
+:::
+
+### Horizontal Concatenation
+
+Horizontal concatenation (i.e., concatenating by putting columns next to one another) is the other option for concatenation. Note that it assumes row orders are consistent and _won't perform any check for improper row combinations_. Also, both languages will create duplicate column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> in our example because both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> have the same column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span>.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R does horizontal concatenation with the `cbind` function from base R. 
+
+```{r r-colbind}
+# Combine horizontally
+vert_r_horiz <- cbind(vert_r_top, vert_r_bottom)
+
+# Check columns to show they were added
+names(vert_r_horiz)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Setting the `axis` argument to `1` is how the `concat` function is switched to horizontal concatenation.
+
+```{python py-colbind}
+# Combine horizontally
+vert_py_horiz = pd.concat([vert_py_top, vert_py_bottom], axis = 1)
+
+# Check columns to show they were added
+vert_py_horiz.columns
+```
+:::
+
+## Joins
+
+A less risky mode of combining separate data objects is to use "joins".
+
+### Left / Right Joins
 
 
 
-## Left / Right Joins
+### Inner Joins
 
 
 
-## Inner Joins
+### Full Joins
 
 
-
-## Full Joins
-
-
+<span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>
 

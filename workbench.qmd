@@ -22,3 +22,7 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 ```
 :::
 
+
+<span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>
+
+

@@ -305,14 +305,49 @@
     "href": "wrangle_join.html",
     "title": "Joining Data",
     "section": "",
-    "text": "Begin by loading any needed libraries and reading in an external data file for use in downstream examples.\n\nR Project RPython Python\n\n\nLoad the tidyverse meta-package as well as our vertebrate data.\n\n# Load needed library\nlibrary(tidyverse)\n\n# Load data\nvert_r &lt;- read.csv(file = \"data/verts.csv\")\n\n# Check out first few rows\nhead(vert_r, n = 5)\n\n  year sitecode section reach pass unitnum unittype vert_index pitnumber\n1 1987 MACKCC-L      CC     L    1       1        R          1        NA\n2 1987 MACKCC-L      CC     L    1       1        R          2        NA\n3 1987 MACKCC-L      CC     L    1       1        R          3        NA\n4 1987 MACKCC-L      CC     L    1       1        R          4        NA\n5 1987 MACKCC-L      CC     L    1       1        R          5        NA\n          species length_1_mm length_2_mm weight_g clip sampledate notes\n1 Cutthroat trout          58          NA     1.75 NONE 1987-10-07      \n2 Cutthroat trout          61          NA     1.95 NONE 1987-10-07      \n3 Cutthroat trout          89          NA     5.60 NONE 1987-10-07      \n4 Cutthroat trout          58          NA     2.15 NONE 1987-10-07      \n5 Cutthroat trout          93          NA     6.90 NONE 1987-10-07      \n\n\n\n\nLoad the Pandas library as well as our vertebrate data.\n\n# Load needed library\nimport pandas as pd\n\n# Load data\nvert_py = pd.read_csv(\"data/verts.csv\")\n\n# Check out first few rows\nvert_py.head()\n\n   year  sitecode section reach  ...  weight_g  clip  sampledate  notes\n0  1987  MACKCC-L      CC     L  ...      1.75  NONE  1987-10-07    NaN\n1  1987  MACKCC-L      CC     L  ...      1.95  NONE  1987-10-07    NaN\n2  1987  MACKCC-L      CC     L  ...      5.60  NONE  1987-10-07    NaN\n3  1987  MACKCC-L      CC     L  ...      2.15  NONE  1987-10-07    NaN\n4  1987  MACKCC-L      CC     L  ...      6.90  NONE  1987-10-07    NaN\n\n[5 rows x 16 columns]\n\n\n\n\n\n[ Under Construction! ]"
+    "text": "Begin by loading any needed libraries\n\nR Project RPython Python\n\n\nLoad the tidyverse meta-package as well as our vertebrate data.\n\n# Load needed library\nlibrary(tidyverse)\n\n\n\nLoad the Pandas library as well as our vertebrate data.\n\n# Load needed library\nimport pandas as pd"
   },
   {
-    "objectID": "wrangle_join.html#library-data-loading",
-    "href": "wrangle_join.html#library-data-loading",
+    "objectID": "wrangle_join.html#library-loading",
+    "href": "wrangle_join.html#library-loading",
     "title": "Joining Data",
     "section": "",
-    "text": "Begin by loading any needed libraries and reading in an external data file for use in downstream examples.\n\nR Project RPython Python\n\n\nLoad the tidyverse meta-package as well as our vertebrate data.\n\n# Load needed library\nlibrary(tidyverse)\n\n# Load data\nvert_r &lt;- read.csv(file = \"data/verts.csv\")\n\n# Check out first few rows\nhead(vert_r, n = 5)\n\n  year sitecode section reach pass unitnum unittype vert_index pitnumber\n1 1987 MACKCC-L      CC     L    1       1        R          1        NA\n2 1987 MACKCC-L      CC     L    1       1        R          2        NA\n3 1987 MACKCC-L      CC     L    1       1        R          3        NA\n4 1987 MACKCC-L      CC     L    1       1        R          4        NA\n5 1987 MACKCC-L      CC     L    1       1        R          5        NA\n          species length_1_mm length_2_mm weight_g clip sampledate notes\n1 Cutthroat trout          58          NA     1.75 NONE 1987-10-07      \n2 Cutthroat trout          61          NA     1.95 NONE 1987-10-07      \n3 Cutthroat trout          89          NA     5.60 NONE 1987-10-07      \n4 Cutthroat trout          58          NA     2.15 NONE 1987-10-07      \n5 Cutthroat trout          93          NA     6.90 NONE 1987-10-07      \n\n\n\n\nLoad the Pandas library as well as our vertebrate data.\n\n# Load needed library\nimport pandas as pd\n\n# Load data\nvert_py = pd.read_csv(\"data/verts.csv\")\n\n# Check out first few rows\nvert_py.head()\n\n   year  sitecode section reach  ...  weight_g  clip  sampledate  notes\n0  1987  MACKCC-L      CC     L  ...      1.75  NONE  1987-10-07    NaN\n1  1987  MACKCC-L      CC     L  ...      1.95  NONE  1987-10-07    NaN\n2  1987  MACKCC-L      CC     L  ...      5.60  NONE  1987-10-07    NaN\n3  1987  MACKCC-L      CC     L  ...      2.15  NONE  1987-10-07    NaN\n4  1987  MACKCC-L      CC     L  ...      6.90  NONE  1987-10-07    NaN\n\n[5 rows x 16 columns]\n\n\n\n\n\n[ Under Construction! ]"
+    "text": "Begin by loading any needed libraries\n\nR Project RPython Python\n\n\nLoad the tidyverse meta-package as well as our vertebrate data.\n\n# Load needed library\nlibrary(tidyverse)\n\n\n\nLoad the Pandas library as well as our vertebrate data.\n\n# Load needed library\nimport pandas as pd"
+  },
+  {
+    "objectID": "wrangle_join.html#combining-dataframes",
+    "href": "wrangle_join.html#combining-dataframes",
+    "title": "Joining Data",
+    "section": "Combining DataFrames",
+    "text": "Combining DataFrames\nSometimes we collected related data and store them in separate files. This necessitates integrating the two datasets later on for statistics and/or visualization. If the two datasets that are sampled at very different frequencies (e.g., annual temperature values and daily insect counts), trying to include both in a single file results in duplicating the less granular data many times. This is not ideal. Fortunately, scripted languages provide several methods for combining data easily and appropriately so that they can be used together despite being stored separately.\nTo illustrate some of these methods we’ll load some new simulated data on lichen coverage to use instead of the vertebrate data we’ve used in past modules.\n\nR Project RPython Python\n\n\nLoad the vertebrate data first.\n\n# Load data\nvert_r &lt;- read.csv(file = \"data/verts.csv\")\n\n# Check out first few rows\nhead(vert_r, n = 2)\n\n  year sitecode section reach pass unitnum unittype vert_index pitnumber\n1 1987 MACKCC-L      CC     L    1       1        R          1        NA\n2 1987 MACKCC-L      CC     L    1       1        R          2        NA\n          species length_1_mm length_2_mm weight_g clip sampledate notes\n1 Cutthroat trout          58          NA     1.75 NONE 1987-10-07      \n2 Cutthroat trout          61          NA     1.95 NONE 1987-10-07      \n\n\nThen load the dataset with lichen community composition on trees.\n\n# Load data\nlich &lt;- read.csv(file = \"data/tree_lichen.csv\")\n\n# Check out rows rows\nhead(lich, n = 2)\n\n    tree lichen_foliose lichen_fruticose lichen_crustose\n1 Tree_A           1.00              0.9            0.95\n2 Tree_B           0.35              1.0            0.00\n\n\nAnd finally load the data that includes distance from the nearest road for some of the same trees for which we have lichen data.\n\n# Load data\nroad &lt;- read.csv(file = \"data/tree_road.csv\")\n\n# Check out rows\nhead(road, n = 2)\n\n  tree_name dist_to_road_m\n1    Tree_A             13\n2    Tree_C             10\n\n\n\n\nLoad the vertebrate data first.\n\n# Load data\nvert_py = pd.read_csv(\"data/verts.csv\")\n\n# Check out first few rows\nvert_py.head(2)\n\n   year  sitecode section reach  ...  weight_g  clip  sampledate  notes\n0  1987  MACKCC-L      CC     L  ...      1.75  NONE  1987-10-07    NaN\n1  1987  MACKCC-L      CC     L  ...      1.95  NONE  1987-10-07    NaN\n\n[2 rows x 16 columns]\n\n\nThen load the dataset with lichen community composition on trees\n\n# Load data\nlich = pd.read_csv(\"data/tree_lichen.csv\")\n\n# Check out rows\nlich.head(2)\n\n     tree  lichen_foliose  lichen_fruticose  lichen_crustose\n0  Tree_A            1.00               0.9             0.95\n1  Tree_B            0.35               1.0             0.00\n\n\nAnd finally load the data that includes distance from the nearest road for some of the same trees for which we have lichen data.\n\n# Load data\nroad = pd.read_csv(\"data/tree_road.csv\")\n\n# Check out rows\nroad.head(2)\n\n  tree_name  dist_to_road_m\n0    Tree_A              13\n1    Tree_C              10"
+  },
+  {
+    "objectID": "wrangle_join.html#concat-cbindrbind",
+    "href": "wrangle_join.html#concat-cbindrbind",
+    "title": "Joining Data",
+    "section": "concat & cbind/rbind",
+    "text": "concat & cbind/rbind"
+  },
+  {
+    "objectID": "wrangle_join.html#left-right-joins",
+    "href": "wrangle_join.html#left-right-joins",
+    "title": "Joining Data",
+    "section": "Left / Right Joins",
+    "text": "Left / Right Joins"
+  },
+  {
+    "objectID": "wrangle_join.html#inner-joins",
+    "href": "wrangle_join.html#inner-joins",
+    "title": "Joining Data",
+    "section": "Inner Joins",
+    "text": "Inner Joins"
+  },
+  {
+    "objectID": "wrangle_join.html#full-joins",
+    "href": "wrangle_join.html#full-joins",
+    "title": "Joining Data",
+    "section": "Full Joins",
+    "text": "Full Joins"
   },
   {
     "objectID": "wrangle_reshape.html",

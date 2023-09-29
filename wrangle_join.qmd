@@ -28,30 +28,75 @@ import pandas as pd
 
 ## Combining DataFrames
 
-Sometimes we collected related data and store them in separate files. If you have two datasets that are sampled at very different frequencies (e.g., annual temperature values and daily insect counts), trying to include both in a single file results in duplicating the less granular data _many_ times. This is not ideal. Fortunately, scripted languages provide several methods for combining data so that they can be used together despite being stored separately.
+Sometimes we collected related data and store them in separate files. This necessitates integrating the two datasets later on for statistics and/or visualization. If the two datasets that are sampled at very different frequencies (e.g., annual temperature values and daily insect counts), trying to include both in a single file results in duplicating the less granular data _many_ times. This is not ideal. Fortunately, scripted languages provide several methods for combining data easily and appropriately so that they can be used together despite being stored separately.
 
 To illustrate some of these methods we'll load some new simulated data on lichen coverage to use instead of the vertebrate data we've used in past modules.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r r-data}
+Load the vertebrate data first.
+
+```{r r-data1}
 # Load data
 vert_r <- read.csv(file = "data/verts.csv")
 
 # Check out first few rows
-head(vert_r, n = 5)
+head(vert_r, n = 2)
+```
+
+Then load the dataset with lichen community composition on trees.
+
+```{r r-data2}
+# Load data
+lich <- read.csv(file = "data/tree_lichen.csv")
+
+# Check out rows rows
+head(lich, n = 2)
+```
+
+And finally load the data that includes distance from the nearest road for some of the same trees for which we have lichen data.
+
+```{r r-data3}
+# Load data
+road <- read.csv(file = "data/tree_road.csv")
+
+# Check out rows
+head(road, n = 2)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-```{python py-data}
+Load the vertebrate data first.
+
+```{python py-data1}
 # Load data
 vert_py = pd.read_csv("data/verts.csv")
 
 # Check out first few rows
-vert_py.head()
+vert_py.head(2)
 ```
+
+Then load the dataset with lichen community composition on trees
+
+```{python py-data2}
+# Load data
+lich = pd.read_csv("data/tree_lichen.csv")
+
+# Check out rows
+lich.head(2)
+```
+
+And finally load the data that includes distance from the nearest road for some of the same trees for which we have lichen data.
+
+```{python py-data3}
+# Load data
+road = pd.read_csv("data/tree_road.csv")
+
+# Check out rows
+road.head(2)
+```
+
 :::
 
 ## `concat` & `cbind`/`rbind`

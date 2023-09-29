@@ -207,6 +207,10 @@ There are several variants of joins that each function slightly differently so w
 
 Left joins combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> by their join key(s) but only keep rows that are found in the "left". A right join performs the same operation but prioritizes rows in the second data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>. Note that functionally you can make a left join into a right join by switching which data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> you assign to "left" versus "right".
 
+<p align="center">
+<img src="images/joins/left-join_table.png" width="75%"/>
+</p>
+
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
@@ -244,6 +248,10 @@ See how "tree_B" has no distance to road listed? That is because it lacks a row 
 
 ### Inner Joins
 
+<p align="center">
+<img src="images/joins/inner-join_table.png" width="75%"/>
+</p>
+
 An inner join keeps _only_ the rows that can be found in <u>both</u> join keys. This is very useful in situations where only "complete" data (i.e., no missing values) is required.
 
 :::panel-tabset
@@ -276,6 +284,10 @@ in_py.head(5)
 ### Full Joins
 
 A full join (sometimes known as an "outer join" or a "full outer join") combines all rows in both left and right data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> regardless of whether the join key entries are found in both.
+
+<p align="center">
+<img src="images/joins/outer-join_table.png" width="75%"/>
+</p>
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

@@ -201,18 +201,105 @@ While concatentation is simple and effective in some cases, a less risky mode of
 
 This module makes use of simulated data on lichen coverage on various trees and the distance of those trees to the nearest road. Lichen wasn't surveyed on all of the trees and not all trees that _did_ have lichen measured had their distance to the nearest road recorded. Vertical concatenation is inappropriate because the column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> and horizontal concatenation is incorrect because we want to make sure we only combine data from the same tree across the two datasets.
 
-There are several variants of joins that each function slightly differently so we'll discuss each below.
+There are several variants of joins that each function slightly differently so we'll discuss each below. Note that all <u>joins only combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> at a time</u> and they are always referred to as the "left" (first) and "right" (second).
 
 ### Left / Right Joins
 
+Left joins combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> by their join key(s) but only keep rows that are found in the "left". A right join performs the same operation but prioritizes rows in the second data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>. Note that functionally you can make a left join into a right join by switching which data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> you assign to "left" versus "right".
 
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+The `left_join` function (from the `dplyr` package) performs--as its name suggests--left joins. The `right_join` function does the same for right joins. Both have an `x` and a `y` argument for the left and right data objects respectively.
+
+The `by` argument expects a vector of join keys to by which to join. Note that if the join key column names differ--as is the case with our example data--you can specify that by using the syntax `"left key" = "right key"`.
+
+```{r r-left}
+# Do a left join
+left_r <- dplyr::left_join(x = lich, y = road, by = c("tree" = "tree_name"))
+
+# Check that out
+head(left_r, n = 5)
+```
+
+See how "tree_B" has no distance to road listed? That is because it lacks a row in the right data object!
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+All Python joins are performed with the `merge` function (from the Pandas library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
+
+The `on` argument can be used when the join key(s) labels match but otherwise a `left_on` and `right_on` argument are provided to specify the join key's label in the left and right data variable respectively.
+
+```{python py-left}
+# Do a left join
+left_py = pd.merge(left = lich, right = road, how = "left", 
+                   left_on = "tree", right_on = "tree_name")
+
+# Check that out
+left_py.head(5)
+```
+
+See how "tree_B" has no distance to road listed? That is because it lacks a row in the right data variable!
+:::
 
 ### Inner Joins
 
+An inner join keeps _only_ the rows that can be found in <u>both</u> join keys. This is very useful in situations where only "complete" data (i.e., no missing values) is required.
 
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, we can do an inner join with `dplyr`'s `inner_join` function. It has the same arguments as the `left_join` function.
+
+```{r r-inner}
+# Inner join the two datasets
+in_r <- dplyr::inner_join(x = lich, y = road, by = c("tree" = "tree_name"))
+
+# Check that out
+head(in_r, n = 5)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python, an inner join is actually the default behavior of the `merge` function. Therefore we can exclude the `how` argument entirely!
+
+```{python py-inner}
+# Inner join the two datasets
+in_py = pd.merge(left = lich, right = road,
+                 left_on = "tree", right_on = "tree_name")
+
+# Check that out
+in_py.head(5)
+```
+:::
 
 ### Full Joins
 
+A full join (sometimes known as an "outer join" or a "full outer join") combines all rows in both left and right data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> regardless of whether the join key entries are found in both.
 
-<span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
+R uses the `full_join` function (from `dplyr`) and the same arguments as the other types of join that we've already discussed.
+
+```{r r-outer}
+# Do a full join
+full_r <- dplyr::full_join(x = lich, y = road, by = c("tree" = "tree_name"))
+
+# Check that out
+head(full_r, n = 5)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python refers to full joins as "outer" joins so the `how` argument of the `merge` function needs to be set to "outer".
+
+```{python py-outer}
+# Do a full join
+full_py = pd.merge(left = lich, right = road, how = "outer",
+                   left_on = "tree", right_on = "tree_name")
+
+# Check that out
+full_py.head(5)
+```
+:::

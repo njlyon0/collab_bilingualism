@@ -197,7 +197,11 @@ vert_py_horiz.columns
 
 ## Joins
 
-A less risky mode of combining separate data objects is to use "joins".
+While concatentation is simple and effective in some cases, a less risky mode of combining separate data objects is to use "joins". Joins allow two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> to be combined in an appropriate order based on a column found in both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>. This shared column (or column_s_) are known as "join keys".
+
+This module makes use of simulated data on lichen coverage on various trees and the distance of those trees to the nearest road. Lichen wasn't surveyed on all of the trees and not all trees that _did_ have lichen measured had their distance to the nearest road recorded. Vertical concatenation is inappropriate because the column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> and horizontal concatenation is incorrect because we want to make sure we only combine data from the same tree across the two datasets.
+
+There are several variants of joins that each function slightly differently so we'll discuss each below.
 
 ### Left / Right Joins
 

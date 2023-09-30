@@ -200,10 +200,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#library-loading" id="toc-library-loading" class="nav-link active" data-scroll-target="#library-loading">Library Loading</a></li>
   <li><a href="#combining-dataframes" id="toc-combining-dataframes" class="nav-link" data-scroll-target="#combining-dataframes">Combining DataFrames</a></li>
-  <li><a href="#concat-cbindrbind" id="toc-concat-cbindrbind" class="nav-link" data-scroll-target="#concat-cbindrbind"><code>concat</code> &amp; <code>cbind</code>/<code>rbind</code></a></li>
+  <li><a href="#concatenating-data" id="toc-concatenating-data" class="nav-link" data-scroll-target="#concatenating-data">Concatenating Data</a>
+  <ul class="collapse">
+  <li><a href="#vertical-concatenation" id="toc-vertical-concatenation" class="nav-link" data-scroll-target="#vertical-concatenation">Vertical Concatenation</a></li>
+  <li><a href="#horizontal-concatenation" id="toc-horizontal-concatenation" class="nav-link" data-scroll-target="#horizontal-concatenation">Horizontal Concatenation</a></li>
+  </ul></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a>
+  <ul class="collapse">
   <li><a href="#left-right-joins" id="toc-left-right-joins" class="nav-link" data-scroll-target="#left-right-joins">Left / Right Joins</a></li>
   <li><a href="#inner-joins" id="toc-inner-joins" class="nav-link" data-scroll-target="#inner-joins">Inner Joins</a></li>
   <li><a href="#full-joins" id="toc-full-joins" class="nav-link" data-scroll-target="#full-joins">Full Joins</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -317,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [2 rows x 16 columns]</code></pre>
 </div>
 </div>
-<p>Then load the dataset with lichen community composition on trees</p>
+<p>Then load the dataset with lichen community composition on trees.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>lich <span class="op">=</span> pd.read_csv(<span class="st">"data/tree_lichen.csv"</span>)</span>
@@ -347,19 +354,303 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="concat-cbindrbind" class="level2">
-<h2 class="anchored" data-anchor-id="concat-cbindrbind"><code>concat</code> &amp; <code>cbind</code>/<code>rbind</code></h2>
+<section id="concatenating-data" class="level2">
+<h2 class="anchored" data-anchor-id="concatenating-data">Concatenating Data</h2>
+<p>The simplest way of combining data in either <svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> <span style="color:#077DC2">Python</span> or <svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> <span style="color:#FF9B00">R</span> is called “concatenation”. This involves–essentially–pasting rows or columns of separate data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> together.</p>
+<p>We’ll need to modify our vertebrate data somewhat in order to demonstrate the two modes (horizontal or vertical) of concatenating <span style="color:#077DC2">DataFrames</span>/<span style="color:#FF9B00">data.frames</span>.</p>
+<p>Concatenating data (either horizontally or vertically) in this way is <em>deeply</em> risky in that it can easily result in creating rows or columns that appear to relate to one another but in actuality do not. However, it is still worthwhile to cover how this can be done.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Split the first and last two rows of the vertebrate data into separate objects. Note that in each we’ll want to retain all columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the two datasets</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>vert_r_top <span class="ot">&lt;-</span> vert_r[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, ]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>vert_r_bottom <span class="ot">&lt;-</span> vert_r[(<span class="fu">nrow</span>(vert_r) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(vert_r), ]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at one</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>vert_r_bottom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      year sitecode section reach pass unitnum unittype vert_index pitnumber
+32208 2019 MACKOG-U      OG     U    2      16        C         25   1043583
+32209 2019 MACKOG-U      OG     U    2      16        C         26   1043500
+                       species length_1_mm length_2_mm weight_g clip sampledate
+32208 Coastal giant salamander          74         131     14.3 NONE 2019-09-05
+32209 Coastal giant salamander          73         128     11.6 NONE 2019-09-05
+            notes
+32208            
+32209 Terrestrial</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Split the first and last two rows of the vertebrate data into separate variables. Note that in each we’ll want to retain all columns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the two datasets</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>vert_py_top <span class="op">=</span> vert_py.iloc[[<span class="dv">0</span>, <span class="dv">1</span>], :]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>vert_py_bottom <span class="op">=</span> vert_py.iloc[[<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>], :]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at one</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>vert_py_bottom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       year  sitecode section reach  ...  weight_g  clip  sampledate        notes
+32208  2019  MACKOG-U      OG     U  ...      11.6  NONE  2019-09-05  Terrestrial
+32207  2019  MACKOG-U      OG     U  ...      14.3  NONE  2019-09-05          NaN
+
+[2 rows x 16 columns]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="vertical-concatenation" class="level3">
+<h3 class="anchored" data-anchor-id="vertical-concatenation">Vertical Concatenation</h3>
+<p>Vertical concatenation (i.e., concatenating by stacking rows on top of each other) is one option for concatenation. This is much more common than horizontal concatenation.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>R can perform this operation with the <code>rbind</code> function (from base R) but the <code>bind_rows</code> function (from the <code>dplyr</code> package) is preferable because it checks for matching column names and–if necessary–reorders columns to match between the two data objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine vertically</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>vert_r_vertical <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(vert_r_top, vert_r_bottom)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check shape before and after to demonstrate it worked</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"There were two rows each before concatenation and "</span>, <span class="fu">nrow</span>(vert_r_vertical), <span class="st">" after"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>There were two rows each before concatenation and 4 after</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>Python does horizontal concatenation with the <code>concat</code> function from the Pandas library. This function does horizontal and vertical concatenation and uses the <code>axis</code> argument to determine which is done. Setting <code>axis</code> to <code>0</code> performs vertical concatenation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine vertically</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>vert_py_vertical <span class="op">=</span> pd.concat([vert_py_top, vert_py_bottom], axis <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check shape before and after to demonstrate it worked</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"There were two rows each before concatenation and"</span>, <span class="bu">len</span>(vert_py_vertical), <span class="st">"after"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>There were two rows each before concatenation and 4 after</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="left-right-joins" class="level2">
-<h2 class="anchored" data-anchor-id="left-right-joins">Left / Right Joins</h2>
+<section id="horizontal-concatenation" class="level3">
+<h3 class="anchored" data-anchor-id="horizontal-concatenation">Horizontal Concatenation</h3>
+<p>Horizontal concatenation (i.e., concatenating by putting columns next to one another) is the other option for concatenation. Note that it assumes row orders are consistent and <em>won’t perform any check for improper row combinations</em>. Also, both languages will create duplicate column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> in our example because both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> have the same column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>R does horizontal concatenation with the <code>cbind</code> function from base R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine horizontally</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>vert_r_horiz <span class="ot">&lt;-</span> <span class="fu">cbind</span>(vert_r_top, vert_r_bottom)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check columns to show they were added</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vert_r_horiz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "year"        "sitecode"    "section"     "reach"       "pass"       
+ [6] "unitnum"     "unittype"    "vert_index"  "pitnumber"   "species"    
+[11] "length_1_mm" "length_2_mm" "weight_g"    "clip"        "sampledate" 
+[16] "notes"       "year"        "sitecode"    "section"     "reach"      
+[21] "pass"        "unitnum"     "unittype"    "vert_index"  "pitnumber"  
+[26] "species"     "length_1_mm" "length_2_mm" "weight_g"    "clip"       
+[31] "sampledate"  "notes"      </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Setting the <code>axis</code> argument to <code>1</code> is how the <code>concat</code> function is switched to horizontal concatenation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine horizontally</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>vert_py_horiz <span class="op">=</span> pd.concat([vert_py_top, vert_py_bottom], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check columns to show they were added</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>vert_py_horiz.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index(['year', 'sitecode', 'section', 'reach', 'pass', 'unitnum', 'unittype',
+       'vert_index', 'pitnumber', 'species', 'length_1_mm', 'length_2_mm',
+       'weight_g', 'clip', 'sampledate', 'notes', 'year', 'sitecode',
+       'section', 'reach', 'pass', 'unitnum', 'unittype', 'vert_index',
+       'pitnumber', 'species', 'length_1_mm', 'length_2_mm', 'weight_g',
+       'clip', 'sampledate', 'notes'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="inner-joins" class="level2">
-<h2 class="anchored" data-anchor-id="inner-joins">Inner Joins</h2>
 </section>
-<section id="full-joins" class="level2">
-<h2 class="anchored" data-anchor-id="full-joins">Full Joins</h2>
+<section id="joins" class="level2">
+<h2 class="anchored" data-anchor-id="joins">Joins</h2>
+<p>While concatentation is simple and effective in some cases, a less risky mode of combining separate data objects is to use “joins”. Joins allow two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> to be combined in an appropriate order based on a column found in both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>. This shared column (or column_s_) are known as “join keys”.</p>
+<p>This module makes use of simulated data on lichen coverage on various trees and the distance of those trees to the nearest road. Lichen wasn’t surveyed on all of the trees and not all trees that <em>did</em> have lichen measured had their distance to the nearest road recorded. Vertical concatenation is inappropriate because the column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> and horizontal concatenation is incorrect because we want to make sure we only combine data from the same tree across the two datasets.</p>
+<p>There are several variants of joins that each function slightly differently so we’ll discuss each below. Note that all <u>joins only combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> at a time</u> and they are always referred to as the “left” (first) and “right” (second).</p>
+<section id="left-right-joins" class="level3">
+<h3 class="anchored" data-anchor-id="left-right-joins">Left / Right Joins</h3>
+<p>Left joins combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> by their join key(s) but only keep rows that are found in the “left”. A right join performs the same operation but prioritizes rows in the second data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>. Note that functionally you can make a left join into a right join by switching which data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> you assign to “left” versus “right”.</p>
+<p align="center">
+<img src="images/joins/left-join_table.png" width="75%">
+</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>The <code>left_join</code> function (from the <code>dplyr</code> package) performs–as its name suggests–left joins. The <code>right_join</code> function does the same for right joins. Both have an <code>x</code> and a <code>y</code> argument for the left and right data objects respectively.</p>
+<p>The <code>by</code> argument expects a vector of join keys to by which to join. Note that if the join key column names differ–as is the case with our example data–you can specify that by using the syntax <code>"left key" = "right key"</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a left join</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>left_r <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">left_join</span>(<span class="at">x =</span> lich, <span class="at">y =</span> road, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"tree"</span> <span class="ot">=</span> <span class="st">"tree_name"</span>))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(left_r, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    tree lichen_foliose lichen_fruticose lichen_crustose dist_to_road_m
+1 Tree_A           1.00              0.9            0.95             13
+2 Tree_B           0.35              1.0            0.00             NA
+3 Tree_C           0.20              0.0            0.05             10
+4 Tree_D           0.55              0.9            0.85             23
+5 Tree_E           0.85              0.9            0.25             20</code></pre>
+</div>
+</div>
+<p>See how “tree_B” has no distance to road listed? That is because it lacks a row in the right data object!</p>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>All Python joins are performed with the <code>merge</code> function (from the Pandas library) and the type of join is specified by the <code>how</code> argument. Which data variable is left and right is specified by arguments of the same name.</p>
+<p>The <code>on</code> argument can be used when the join key(s) labels match but otherwise a <code>left_on</code> and <code>right_on</code> argument are provided to specify the join key’s label in the left and right data variable respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a left join</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>left_py <span class="op">=</span> pd.merge(left <span class="op">=</span> lich, right <span class="op">=</span> road, how <span class="op">=</span> <span class="st">"left"</span>, </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                   left_on <span class="op">=</span> <span class="st">"tree"</span>, right_on <span class="op">=</span> <span class="st">"tree_name"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>left_py.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tree  lichen_foliose  ...  tree_name  dist_to_road_m
+0  Tree_A            1.00  ...     Tree_A            13.0
+1  Tree_B            0.35  ...        NaN             NaN
+2  Tree_C            0.20  ...     Tree_C            10.0
+3  Tree_D            0.55  ...     Tree_D            23.0
+4  Tree_E            0.85  ...     Tree_E            20.0
+
+[5 rows x 6 columns]</code></pre>
+</div>
+</div>
+<p>See how “tree_B” has no distance to road listed? That is because it lacks a row in the right data variable!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="inner-joins" class="level3">
+<h3 class="anchored" data-anchor-id="inner-joins">Inner Joins</h3>
+<p align="center">
+<img src="images/joins/inner-join_table.png" width="75%">
+</p>
+<p>An inner join keeps <em>only</em> the rows that can be found in <u>both</u> join keys. This is very useful in situations where only “complete” data (i.e., no missing values) is required.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>In R, we can do an inner join with <code>dplyr</code>’s <code>inner_join</code> function. It has the same arguments as the <code>left_join</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner join the two datasets</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>in_r <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">inner_join</span>(<span class="at">x =</span> lich, <span class="at">y =</span> road, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"tree"</span> <span class="ot">=</span> <span class="st">"tree_name"</span>))</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(in_r, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    tree lichen_foliose lichen_fruticose lichen_crustose dist_to_road_m
+1 Tree_A           1.00             0.90            0.95             13
+2 Tree_C           0.20             0.00            0.05             10
+3 Tree_D           0.55             0.90            0.85             23
+4 Tree_E           0.85             0.90            0.25             20
+5 Tree_L           0.75             0.35            1.00             17</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>In Python, an inner join is actually the default behavior of the <code>merge</code> function. Therefore we can exclude the <code>how</code> argument entirely!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner join the two datasets</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>in_py <span class="op">=</span> pd.merge(left <span class="op">=</span> lich, right <span class="op">=</span> road,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                 left_on <span class="op">=</span> <span class="st">"tree"</span>, right_on <span class="op">=</span> <span class="st">"tree_name"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>in_py.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tree  lichen_foliose  ...  tree_name  dist_to_road_m
+0  Tree_A            1.00  ...     Tree_A              13
+1  Tree_C            0.20  ...     Tree_C              10
+2  Tree_D            0.55  ...     Tree_D              23
+3  Tree_E            0.85  ...     Tree_E              20
+4  Tree_L            0.75  ...     Tree_L              17
+
+[5 rows x 6 columns]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="full-joins" class="level3">
+<h3 class="anchored" data-anchor-id="full-joins">Full Joins</h3>
+<p>A full join (sometimes known as an “outer join” or a “full outer join”) combines all rows in both left and right data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> regardless of whether the join key entries are found in both.</p>
+<p align="center">
+<img src="images/joins/outer-join_table.png" width="75%">
+</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true"><svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#FF9B00;overflow:visible;position:relative;"><title>R Project</title><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false"><svg aria-label="Python" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#077DC2;overflow:visible;position:relative;"><title>Python</title><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<p>R uses the <code>full_join</code> function (from <code>dplyr</code>) and the same arguments as the other types of join that we’ve already discussed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a full join</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>full_r <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">full_join</span>(<span class="at">x =</span> lich, <span class="at">y =</span> road, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"tree"</span> <span class="ot">=</span> <span class="st">"tree_name"</span>))</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(full_r, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    tree lichen_foliose lichen_fruticose lichen_crustose dist_to_road_m
+1 Tree_A           1.00              0.9            0.95             13
+2 Tree_B           0.35              1.0            0.00             NA
+3 Tree_C           0.20              0.0            0.05             10
+4 Tree_D           0.55              0.9            0.85             23
+5 Tree_E           0.85              0.9            0.25             20</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>Python refers to full joins as “outer” joins so the <code>how</code> argument of the <code>merge</code> function needs to be set to “outer”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a full join</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>full_py <span class="op">=</span> pd.merge(left <span class="op">=</span> lich, right <span class="op">=</span> road, how <span class="op">=</span> <span class="st">"outer"</span>,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                   left_on <span class="op">=</span> <span class="st">"tree"</span>, right_on <span class="op">=</span> <span class="st">"tree_name"</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check that out</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>full_py.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tree  lichen_foliose  ...  tree_name  dist_to_road_m
+0  Tree_A            1.00  ...     Tree_A            13.0
+1  Tree_B            0.35  ...        NaN             NaN
+2  Tree_C            0.20  ...     Tree_C            10.0
+3  Tree_D            0.55  ...     Tree_D            23.0
+4  Tree_E            0.85  ...     Tree_E            20.0
+
+[5 rows x 6 columns]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

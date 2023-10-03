@@ -234,7 +234,69 @@ help(mult_py)
 
 ### Function Defaults
 
+Sometimes a given argument will often be set to the same value. In cases like this, we can define that as the default of the argument which allows users to not specify that argument at all. When users do specify something for that argument, it overrides the default behavior. All functions (and `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python methods</span>) with "optional" arguments are using defaults behind the scenes to make those arguments optional.
 
+We can define these defaults when we first create a function! Let's make a simple division function that divides the first argument by the second and sets the default of the second argument to 2.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Write and demonstrate the simple division function.
+
+```{r r-fxn-default}
+# Define function
+div_r <- function(p, q = 2){
+  
+  # Do division
+  result_r <- p / q
+  
+  # Return that
+  return(result_r)
+}
+
+# Test this function
+div_r(p = 10)
+```
+
+Use the function again but set the second argument ourselves.
+
+```{r r-fxn-nondefault}
+# Specify the second argument
+div_r(p = 10, q = 10)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Write and demonstrate the simple division function.
+
+```{python py-fxn-default}
+# Define function
+def div_py(n, i = 2):
+  # Write function documentation
+  """
+  Divide the first value by the second
+  
+  n -- Numerator
+  i -- Denominator
+  """
+  
+  # Do division
+  result_py = n / i
+  
+  # Return that
+  return result_py
+
+# Use the function with the default
+div_py(n = 10)
+```
+
+Use the function again but set the second argument ourselves.
+
+```{python py-fxn-nondefault}
+# Specify the second argument
+div_py(n = 10, i = 10)
+```
+:::
 
 ### Functions & Conditionals
 

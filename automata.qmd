@@ -93,10 +93,67 @@ animal
 ```
 :::
 
-
 ### Loops & Conditionals
 
+We can also build conditional statements into a loop to create a loop that can flexibly handle different outcomes. We have discussed conditional operators elsewhere so we'll only explain the parts of loop conditionals that we haven't already discussed. To demonstrate, we can loop across a set of numbers and use conditionals to print whether the values are greater/less than or equal to zero.
 
+In the example below we'll use three new statements `if`, `else if` and `else`. Each condition only performs its operation when its condition is met (i.e., returns <span style="color:#077DC2">True</span>/<span style="color:#FF9B00">TRUE</span>).
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+These three statements all have similar syntax to the `for` statement in that they evaluate something in parentheses and then perform some operation(s) in curly braces. They do differ slightly in context however:
+
+- `if` can only be used first (or in cases where there is only `if` and `else`)
+- `else if` can only be used after `if` (or after another `else if`) and _allows for specifying another condition._
+- `else` can only be used at the end; catches only cases that _don't_ meet one of the prior conditions
+
+```{r r-condloop}
+# Loop across numbers
+for(j in c(-2, -1, 0, 1, 2)){
+  
+  # If less than 0
+  if(j < 0){ 
+    print(paste(j, "is negative")) 
+    }
+  
+  # If greater than 0
+  else if(j > 0){
+    print(paste(j, "is positive"))
+  }
+  
+  # If neither of those, then it must be 0!
+  else { 
+    print(paste(j, "is zero!"))
+    }
+}
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+These three statements all have similar syntax to the `for` statement in that they evaluate something before a colon and then perform some operation(s) after that colon. They do differ slightly in context however:
+
+- `if` can only be used first (or in cases where there is only `if` and `else`)
+- `elif` can only be used after `if` (or after another `elif`) and _allows for specifying another condition._
+- `else` can only be used at the end; catches only cases that _don't_ meet one of the prior conditions
+
+```{python py-condloop}
+# Loop across numbers
+for k in [-2, -1, 0, 1, 2]:
+  
+  # If less than 0
+  if k < 0: 
+    print(str(k) + " is negative")
+    
+  # If greater than 0
+  elif k > 0:
+    print(str(k) + " is positive")
+  
+  # If neither of those, then it must be 0!
+  else:
+    print(str(k) + " is zero!")
+```
+:::
 
 ## "Custom" Functions
 

@@ -1,6 +1,7 @@
 ---
 title: "Starting with Data"
 engine: knitr
+code-annotations: hover
 ---
 
 ## Library Loading
@@ -80,12 +81,13 @@ Checking the 'head' or 'tail' of the data (i.e., the first or last few rows of t
 ::: panel-tabset
 ## `r fontawesome::fa("r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, we use the `head` or `tail` function and can use an optional `n` argument to specify the number of rows to return as an integer (default is 6 rows).
+In R, we use the `head` or `tail` function to return the first or last rows respectively.
 
 ```{r r-head}
 # Check out head
-utils::head(vert_r, n = 2)
+utils::head(vert_r, n = 2) # <1>
 ```
+1. Note that we're using the _optional_ `n` argument to specify the number of rows to return
 
 ```{r r-tail}
 # Check out tail
@@ -94,9 +96,7 @@ utils::tail(vert_r, n = 3)
 
 ## `r fontawesome::fa("python", fill = "#077DC2", a11y ="sem")` Python
 
-In Python, we also use a `head` or `tail` tool but here it is a "method" available to any variable of type `DataFrame`. All methods are appended to the end of the variable of the appropriate type separated by a period.
-
-Both the `head` and `tail` methods allow specifying an integer number of rows to return (the default is 5).
+In Python, we use the `head` or `tail` method to return the first or last rows respectively. Note that these methods are only available to variables of type `DataFrame`. All methods are appended to the end of the variable of the appropriate type separated by a period.
 
 ```{python py-head}
 # Check out head
@@ -116,11 +116,13 @@ While it is nice to know the <span style="color:#077DC2">type</span>/<span style
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R uses the `str` function to assess data structure (not to be confused with the Python type "str" that is short for "string). Structure includes the dimensions of the data (i.e., number of rows and columns) as well as the class of the data (`data.frame`) and the class of each column.
+R uses the `str` function to assess data structure. Structure includes the dimensions of the data (i.e., number of rows and columns) as well as the class of the data (`data.frame`) and the class of each column.
 
 ```{r r-structure}
 utils::str(vert_r)
 ```
+
+Be careful to not confuse this with the Python function `str` that coerces values to type "string"!
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 

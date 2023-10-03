@@ -300,6 +300,79 @@ div_py(n = 10, i = 10)
 
 ### Functions & Conditionals
 
+Just like loops, we can build conditional statements into our functions to make them more flexible and broadly useful. Let's combine this with setting default values to demonstrate this effectively.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Let's make a simple addition function and set both arguments to default to `NULL`. `NULL` is an R constant that allows us to create an object without assigning any value to it.
+
+Note that we're also using the `is.null` function in our conditional in order to easily assess whether the argument has been left to its default (i.e., set to `NULL`) or defined.
+
+```{r r-condfxn1}
+# Define addition function
+add_r <- function(p = NULL, q = NULL){
+  
+  # If first argument is missing, set it to 2
+  if(is.null(p) == TRUE){
+    p <- 2
+  }
+  
+  # Do the same for the second argument
+  if(is.null(q) == TRUE){
+    q <- 2
+  }
+  
+  # Sum the two arguments
+  result_r <- p + q
+  
+  # Return that
+  return(result_r)
+}
+```
+
+Now let's use the function without specifying either argument.
+
+```{r r-condfxn2}
+# Use the function
+add_r()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Let's make a simple addition function and set both arguments to default to `None`. `None` is a Python constant that allows us to create a variable without assigning any value to it.
+
+Note that we're also using the `is` statement in our conditional (in this case it is equivalent to `==``).
+
+```{python py-condfxn}
+# Define addition function
+def add_py(n = None, i = None):
+  # Add documentation
+  """Add two values (`n` and `i`)"""
+
+  # If first argument is missing, set it to 2
+  if n is None:
+    n = 2
+
+  # Do the same for the second argument
+  if i is None:
+    i = 2
+  
+  # Sum the two arguments
+  result_py = n + i
+  
+  # Return that
+  return result_py
+```
+
+Now let's use the function without specifying either argument.
+
+```{py py-condfxn2}
+# Use the function
+add_py()
+```
+:::
+
 
 
 

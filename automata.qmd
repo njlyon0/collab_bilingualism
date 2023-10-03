@@ -129,6 +129,8 @@ for(j in c(-2, -1, 0, 1, 2)){
 }
 ```
 
+Note that to get the message to print correctly we needed to wrap a `paste` function in `print` to assemble multiple things into a single object.
+
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
 These three statements all have similar syntax to the `for` statement in that they evaluate something before a colon and then perform some operation(s) after that colon. They do differ slightly in context however:
@@ -153,6 +155,8 @@ for k in [-2, -1, 0, 1, 2]:
   else:
     print(str(k) + " is zero!")
 ```
+
+Note that to get the message to print correctly we needed to coerce the loop variable into type string (using the `str` function).
 :::
 
 ## "Custom" Functions

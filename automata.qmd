@@ -161,3 +161,83 @@ Note that to get the message to print correctly we needed to coerce the loop var
 
 ## "Custom" Functions
 
+Loops are a really powerful tool but they are limited in some ways. Sometimes we want to do a task once per project but only use it once in each instance. Such an operation is certainly "repeated" but not really the same context in which a loop makes sense. We can create reusable modular code to fit these circumstances by writing our own custom functions--"custom" in the sense that we write them ourselves rather than load them from a particular library.
+
+Let's write a simple function in both languages that simply multiplies two arguments by one another and returns the result.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Generating a function in R shares some syntax elements with loops and conditional statements! In this case we use the `function` function to preserve our work as a function, then provide any needed arguments in parentheses, and end with curly braces with the operation(s) performed by the function inside. If the function produces something that we want to give back to the user, we need to specify that with the `return` function.
+
+```{r r-fxn}
+# Multiplication function
+mult_r <- function(p, q){
+  
+  # Multiply the two values
+  result_r <- p * q
+  
+  # Return that
+  return(result_r)
+}
+
+# Once defined, we can invoke the function like we would any other
+mult_r(p = 2, q = 5)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Generating a function in Python shares some syntax elements with loops and conditional statements! In this case we use the `def` statement then provide the name and--parenthetically--any needed arguments for our new function. If the function produces something that we want to give back to the user, we need to specify that by using the `return` statement.
+
+```{python py-fxn}
+# Multiplication function
+def mult_py(n, i):
+  # Add docstrings for later use (see below)
+  """
+  Multiply two values by one another.
+  
+  n -- First value to multiply
+  i -- Second value to multiply
+  """
+  
+  # Multiply the two values
+  result_py = n * i
+  
+  # Return them
+  return result_py
+
+# Once defined, we can invoke the function like we would any other
+mult_py(n = 2, i = 5)
+```
+:::
+
+### Function Documentation
+
+One component of custom functions to be aware of is their somewhat variable documentation. "Official" functions tend to be really well documented but custom functions have no required documentation. However, there are some best practices that we can try to follow ourselves to make life as easy as possible for people trying to intuit our functions' purposes (including ourselves in the future!).
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R contains no native mode of specifying function documentation! While there are tools to formalize this when functions are part of a formal package (see [roxygen2 formatting](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)) our custom functions _cannot_ include documentation. That said, <u>it is still good practice to include plain-language comment lines that describe the function's operations</u> even when they will only be visible where the function is defined.
+
+Note that the [`docstring` R package](https://cran.r-project.org/web/packages/docstring/vignettes/docstring_intro.html) simulates Python-style docstrings for R functions but is not part of "base" R.
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python custom functions allow us to specify triple quoted (`"""..."""`) documentation of function purpose/arguments known as "docstrings". When this is supplied, we can use the `help` function (or append a `?` _after_ the function name) to print whatever documentation was included in the function when it was defined.
+
+```{python py-fxn-help}
+# Check custom function documentation
+help(mult_py)
+```
+:::
+
+### Function Defaults
+
+
+
+### Functions & Conditionals
+
+
+
+

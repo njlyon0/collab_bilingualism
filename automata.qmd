@@ -1,0 +1,14 @@
+---
+title: "Automation"
+---
+
+## Loops
+
+
+
+### Loops & Conditionals
+
+
+
+## "Custom" Functions
+

@@ -27,6 +27,8 @@ website:
             text: "Reshape"
           - href: wrangle_join.qmd
             text: "Join"
+      - href: automata.qmd
+        text: "Automation"
       - href: viz.qmd
         text: "Visualization"
     right:

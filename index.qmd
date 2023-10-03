@@ -47,7 +47,15 @@ When learning a new programming language, it can be really helpful to begin with
 
 ### Data Wrangling
 
-The beating heart of my day to day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.
+The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.
+
+### Automation
+
+Sometimes we want to repeat a given set of steps iteratively. While we _could_ simply copy/paste the relevant code once per needed iteration, this is cumbersome and error-prone. Instead we can use loops and "custom" functions (i.e., those we write ourselves rather than those that are installed from official libraries) to capture a repeated set of steps in a single location for re-use.
+
+### Visualization
+
+Somewhat self-explanatory but this section is all about data visualization! While visualization can be an effective quality control tool it is also useful in data exploration and--eventually--to generate publication- or report-quality graphics. This section attempts to cover the fundamentals of data "viz" in both languages but is by no means exhaustive!
 
 ## Contributing Guidelines
 

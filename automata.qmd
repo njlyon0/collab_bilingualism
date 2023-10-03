@@ -1,9 +1,97 @@
 ---
-title: "Automation"
+title: "Workflow Automation"
 ---
 
 ## Loops
 
+Often we want to perform some set of operations repeatedly across a known number of iterations. For example, maybe we want to subset a given data file into a separate <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> by month of data collection and export the resulting file as a CSV. We _could_ simply copy/paste our 'subset and export' code as many times as needed but this can be error-prone. Also, it is cumbersome to manually update all copies of the relevant code when you identify a possible improvement. 
+
+One code solution to this is to **automate** the workflow using `for` loops (casually referred to more simply as just "loops"). The syntax of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> is very similar for loops--likely because this is such a fundamental operation to any coding language!
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Make a simple object to demonstrate loops.
+
+```{r r-loop-prep}
+# Make a vector of animal types
+zoo_r <- c("lion", "tiger", "crocodile", "vulture", "hippo")
+
+# Check that out
+zoo_r
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Make a simple variable to demonstrate loops.
+
+```{python py-loop-prep}
+# Make a list of animal types
+zoo_py = ["lion", "tiger", "crocodile", "vulture", "hippo"]
+
+# Check that out
+zoo_py
+```
+:::
+
+With this simple <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> in-hand we can now demonstrate the core facets of loops.
+
+### Fundamental Components
+
+Loops (in either language) require a few core components in order to work properly:
+
+1. `for` statement -- defines the start of the loop-definition component
+2. "Loop <span style="color:#077DC2">Variable</span>/<span style="color:#FF9B00">Object</span>" -- essentially a placeholder <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> whose value will change with each iteration of the loop
+3. `in` statement -- relates loop <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> to set of <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> to iterate across
+4. <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> to iterate across -- set of values to iterate across
+5. Actual workflow! -- operations to perform on each iteration of the loop
+
+To see in this syntax in action we'll use a simple loop that prints each animal type in the <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> we created above.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R, the `for` statement requires parentheses around the loop object, the `in` statement, and the vector to iterate across. The operation(s) performed in each iteration _must_ be wrapped in curly braces (`{...}`).
+
+When the code reaches the closing curly brace it returns to the top of the workflow and begins again with the next element of the provided vector.
+
+```{r r-loop1}
+# For each animal in the zoo
+for(animal in zoo_r){
+  
+  # Print its name
+  print(animal)
+  
+}
+```
+
+Note that when we are done the loop object still exists and is set to the last element of the vector we iterated across.
+
+```{r r-loop2}
+# Check current value of `animal` object
+animal
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indentened one level (i.e., press "tab" once or "space" four times).
+
+When the code reaches the end of the indented lines it returns to the top of the workflow and begins again with the next item of the provided list.
+
+```{python py-loop1}
+# For each animal in the zoo
+for animal in zoo_py:
+  # Print its name
+  print(animal)
+```
+
+Note that when we are done the loop variable still exists and is set to the last item of the list we iterated across.
+
+```{python py-loop2}
+# Check current value of `animal` variable
+animal
+```
+:::
 
 
 ### Loops & Conditionals

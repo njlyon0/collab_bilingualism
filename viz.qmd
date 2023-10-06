@@ -2,6 +2,12 @@
 title: "Visualizing Data"
 ---
 
+## Grammar of Graphics
+
+Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> have a plotting library based on [The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson. The `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> package (`plotnine`) is actually directly based on the `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> package (`ggplot2`) so their internal syntax is _very_ similar. In fact the only serious differences between the two languages' ggplot operations are those that derive from larger syntax and format differences.
+
+Note that in the following examples we **_will not_** namespace `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> `ggplot2` functions (e.g., `ggplot2::aes`) for convenience. Any function not namespaced in the R examples producing graphs can be assumed to be exported from `ggplot2`.
+
 ## Library & Data Loading
 
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
@@ -9,35 +15,110 @@ Begin by loading any needed libraries and reading in an external data file for u
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Load the `tidyverse` meta-package as well as our vertebrate data.
+Load the `ggplot2` and `dplyr` libraries as well as our vertebrate data.
 
 ```{r r-start, warning = F, message = F}
 # Load needed library
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
 
 # Load data
 vert_r <- read.csv(file = "data/verts.csv")
 
+# Keep only rows where species and year are *not* NA
+complete_r <- dplyr::filter(.data = vert_r,
+                            !is.na(species) & nchar(species) != 0 &
+                              !is.na(year) & nchar(year) != 0)
+
+# Group data by species and year
+grp_r <- dplyr::group_by(.data = complete_r, 
+                         year, species)
+
+# Average weight by species and year
+avg_r <- dplyr::summarize(.data = grp_r, 
+                          mean_wt = mean(weight_g))
+
 # Check out first few rows
-head(vert_r, n = 5)
+head(avg_r, n = 5)
 ```
+
+Remember that we use an `!` in R to negate a conditional masking function like `is.na`.
+
+Note that the `summarize` function drops columns that it doesn't create and that are not used as grouping variables.
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas library as well as our vertebrate data.
+Load the Plotnine and Pandas libraries as well as our vertebrate data.
 
 ```{python py-libs}
 # Load needed library
+import plotnine as p9
 import pandas as pd
 
 # Load data
 vert_py = pd.read_csv("data/verts.csv")
 
+# Keep only rows where species and year are *not* NA
+complete_py = vert_py[(~pd.isnull(vert_py["species"])) & (~pd.isnull(vert_py["year"]))]
+
+# Group data by species and year
+grp_py = complete_py.groupby(["year", "species"])
+
+# Average weight by species and year
+avg_py = grp_py["weight_g"].mean().reset_index(name = "mean_wt")
+
 # Check out first few rows
-vert_py.head()
+avg_py.head()
+```
+
+Remember that we use a `~` in Python to negate a conditional masking function like `isnull`.
+:::
+
+## Core Grammar of Graphics Plots
+
+There are three fundamental components to ggplots:
+
+1. <u>Data</u> <span style="color:#077DC2">variable(s)</span>/<span style="color:#FF9B00">object(s)</span> used in the graph
+2. <u>Aesthetics</u> (i.e., which column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> are assigned to graph components)
+3. <u>Geometries</u> (i.e., defining the type of plot)
+
+### Data & Aesthetics 
+
+We can create an empty graph with correctly labeled axes but without any data by defining the data and aesthetics but neglecting to include any geometry.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-gg1}
+# Graph 
+
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-gg1}
+# X
+
 ```
 :::
 
 
-[ Under Construction! ]
+
+
+### Geometries
+
+
+## Customizing Themes
+
+
+### Built-In Themes
+
+
+### Fully Custom Themes
+
+
+
+
+
+
 

@@ -1,5 +1,7 @@
 ---
 title: "Visualizing Data"
+execute: 
+  warning: false
 ---
 
 ## Grammar of Graphics
@@ -36,7 +38,7 @@ grp_r <- dplyr::group_by(.data = complete_r,
 
 # Average weight by species and year
 avg_r <- dplyr::summarize(.data = grp_r, 
-                          mean_wt = mean(weight_g))
+                          mean_wt = mean(weight_g, na.rm = T))
 
 # Check out first few rows
 head(avg_r, n = 5)
@@ -74,7 +76,7 @@ avg_py.head()
 Remember that we use a `~` in Python to negate a conditional masking function like `isnull`.
 :::
 
-## Core Grammar of Graphics Plots
+## Core Components
 
 There are three fundamental components to ggplots:
 
@@ -84,41 +86,221 @@ There are three fundamental components to ggplots:
 
 ### Data & Aesthetics 
 
-We can create an empty graph with correctly labeled axes but without any data by defining the data and aesthetics but neglecting to include any geometry.
+We can create an empty graph with correctly labeled axes but without any data by defining the data and aesthetics but neglecting to include any geometry. Make a graph where year is on the X-axis (horizontal) and mean weight is on the Y-axis (vertical).
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-```{r r-gg1}
-# Graph 
+Column names _cannot be_ in quotes in the `aes` function.
 
+```{r r-gg1}
+# Create graph
+ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt))
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-```{python py-gg1}
-# X
+Column labels supplies to the `aes` function _need to be_ in quotes.
 
+```{python py-gg1}
+#| warning: false
+
+# Create graph
+(p9.ggplot(data = avg_py, mapping = p9.aes(x = "year", y = "mean_wt")))
 ```
+
+Note that we need to wrap our Python ggplot in parentheses to avoid errors.
 :::
 
-
-
+As we alluded to above, the `ggplot` function with data and mapped aesthetics is enough to create the correct axis labels and tick marks but doesn't actually put our data on the graphing area. For that, we'll need to add a geometry.
 
 ### Geometries
 
+All geometry functions--in either language--take the form of `geom_*` where `*` is name of the desired chart type (e.g., `geom_line` adds a line, `geom_bar` adds bars, etc.). In order to add geometries onto our plot--again, in either language--we use the `+` operator. Note that style guides suggest ending each line of a ggplot with a `+` and including each new component as their own line below. This keeps even very complicated graphs relatively human-readable.
+
+Let's make these graphs into scatter plots by adding a point geometry.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-gg2}
+# Create graph
+ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt)) +
+  geom_point()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-gg2}
+#| warning: false
+# Create graph
+(p9.ggplot(data = avg_py, mapping = p9.aes(x = "year", y = "mean_wt")) +
+    p9.geom_point()
+    )
+```
+:::
+
+Note that in either language the `geom_point` function does not need either data or aesthetics because it "inherits" them from the `ggplot` function! You _can_ specify aesthetics (or data!) for a particular geometry but it is simpler to specify it once if you're okay with all subsequent plot components using the same data/aesthetics.
+
+Let's practice a little further by making the color of the points dependent upon species.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-gg3}
+# Create graph
+ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt)) +
+  geom_point(mapping = aes(color = species))
+```
+
+Note that we could specify the color aesthetic in the `ggplot` aesthetics!
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-gg3}
+#| warning: false
+# Create graph
+(p9.ggplot(data = avg_py, mapping = p9.aes(x = "year", y = "mean_wt")) +
+    p9.geom_point(mapping = p9.aes(color = "species"))
+    )
+```
+
+Note that we could specify the color aesthetic in the `ggplot` aesthetics!
+
+:::
+
+### Iterative Revision
+
+One of the real strengths of ggplots is that you can preserve part of your ideal graph as a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> and then add to it later. This saves you from needing to re-type a consistent `ggplot` function when all you really want to do is experiment with different geometries
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Create the top level of the graph and assign it to an object. Then--separately--add a line geometry.
+
+```{r r-gg4}
+# Create graph
+gg_r <- ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt, color = species)) 
+
+# Add the line geometry
+gg_r +
+  geom_line()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Create the top level of the graph and assign it to a variable. Then--separately--add a line geometry.
+
+```{python py-gg4}
+#| warning: false
+
+# Create graph
+gg_py = p9.ggplot(data = avg_py, mapping = p9.aes(x = "year", y = "mean_wt", color = "species"))
+
+# Add the line geometry
+(gg_py +
+    p9.geom_line())
+```
+:::
 
 ## Customizing Themes
 
+Once you have a graph that has the desired content mapped to various aesthetics and uses the geometry that you want, it's time to dive into the optional fourth component of grammar of graphics plots: themes! All plot format components from the size of the font in the axes to the gridline width are controlled by theme elements.
+
+To emphasize the theme modification examples below, let's assign all components of the above graph into a new <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-gg5}
+# Make the line graph object
+line_r <- gg_r +
+  geom_line()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-gg5}
+#| warning: false
+
+# Make the line graph variable
+line_py = gg_py + p9.geom_line()
+```
+:::
 
 ### Built-In Themes
 
+To begin, <span style="color:#077DC2">plotnine</span>/<span style="color:#FF9B00">ggplot2</span> both come with pre-built themes that change a swath of theme elements all at once. If one of these fits your visualization needs then you don't need to worry about customizing the nitty gritty yourself which can be a real time-saver.
+
+Let's add the built-in 'black and white' theme to our existing graph using the `theme_bw` function.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-gg6}
+# Add the black and white theme
+line_r + 
+  theme_bw()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-gg6}
+#| warning: false
+
+# Add the black and white theme
+(line_py + 
+   p9.theme_bw())
+```
+:::
 
 ### Fully Custom Themes
 
+If we'd rather, we can use the `theme` function and manually specify particular elements to change ourselves! Each element requires a helper function that matches the category of element beind edited. For instance, text elements get changed with `element_text()` while line elements with `element_line`. When we want to _remove_ an element we can use `element_blank`. Let's increase the font size for our axis tick labels and titles.
+
+We'll also use the `labs` function to customize our axis titles slightly.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Note that the `theme` arguments use periods (`.`) between words.
+
+```{r r-gg7}
+# Customize theme more fully
+line_r + 
+  labs(x = "Year", y = "Average Weight (g)") +
+  theme(panel.background = element_blank(),
+        axis.line = element_line(color = "black"),
+        axis.title = element_text(size = 18),
+        axis.text = element_text(size = 14))
+```
 
 
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
+Note that the `theme` arguments use underscores (`_`) between words to be consistent with Python syntax.
 
+```{python py-gg7}
+#| warning: false
 
+# Customize theme more fully
+(line_py + 
+   p9.labs(x = "Year", y = "Average Weight (g)") +
+   p9.theme(panel_background = p9.element_blank(),
+            axis_line = p9.element_line(color = "black"),
+            axis_title = p9.element_text(size = 18),
+            axis_text = p9.element_text(size = 14)))
+```
+:::
 
+## Continuing to Explore
+
+This lesson was designed to showcase the similarity between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>, _not_ to provide an exhaustive primer on all things ggplot. There are a lot of really cool graphs you can make with these tools and hopefully this website makes you feel better prepared to translate the knowledge you have from one language into the other!
+
+If you are new to `ggplot`, I recommend searching out "faceting" graphs in particular as this can be a particularly powerful tool when you have many groups within your data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+
+### Additional Resources
+
+- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- NCEAS Scientific Computing team has a nice [Tidyverse Workshop](https://nceas.github.io/scicomp-workshop-tidyverse/visualize.html) with a particular emphasis on `ggplot2`
+- `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- The Carpentries covers `plotnine` in their ['Python for Ecologists' lesson](https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python.html)
+- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- The Carpentries also covers `ggplot2` in their ['R for Ecologists' lesson](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)

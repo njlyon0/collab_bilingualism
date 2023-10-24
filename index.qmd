@@ -7,7 +7,7 @@ I think of myself as a competent R coder but am a total novice when it comes to 
 
 ## Package Installation
 
-Both coding lanaguage rely on packages to install specific functions that are absent from the 'base' version of either R or Python. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
+Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

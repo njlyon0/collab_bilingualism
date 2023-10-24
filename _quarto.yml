@@ -31,6 +31,8 @@ website:
         text: "Automation"
       - href: viz.qmd
         text: "Visualization"
+      - href: sql.qmd
+        text: "SQL"
     right:
       - text: "Creators"
         menu:

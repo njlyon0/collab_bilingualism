@@ -36,7 +36,45 @@ import sqlite3
 
 ## Connecting to Databases
 
-SQLite operations require us to connect to a database, perform the desired queries, and then _close the connection_ when we are finished. Note that it is a good practice to fully capitalize `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> verbs (e.g., `SELECT`) to help differentiate them from column / data table names.
+SQLite operations require us to connect to a database, perform desired operations, and then _close the connection_ when we are finished. A good introduction to this is showing how one can list the data tables available in a given database; this is _vital_ information for doing any "real" queries as we need to know the name of the table from which we want to extract data.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+In R we can open the connection with the `dbConnect` function, identify the tables in the database with the `dbListTables` function and--eventually--close the connection with the `dbDisconnect` function (all of which are in the `DBI` package).
+
+```{r r-sql-connect}
+# Open the connection
+cxn <- DBI::dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
+
+# Identify tables in the database
+DBI::dbListTables(conn = cxn)
+
+# Close the connection
+DBI::dbDisconnect(conn = cxn)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+In Python we can open the connection with the `connect` function (from the `sqlite3` library), identify the tables in the database with the `read_sql_query` function (from `pandas`) and--eventually--close the connection with the `close` method.
+
+```{python py-sql-connect}
+# Open the connection
+cxn = sqlite3.connect("data/mammals.sqlite")
+
+# Query some columns in the 'surveys' object
+pd.read_sql_query(sql = "SELECT name FROM sqlite_master WHERE type = 'table'", con = cxn)
+
+# Close the connection
+cxn.close()
+```
+:::
+
+## Extracting Data
+
+Connecting and listing the available data in a given database is all well and good but really what we want to do is extract some of the data for later use. To do this we still need to open (and eventually close!) the connection but between those two steps we can use `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> syntax to actually perform a query. Note that it is a good practice to fully capitalize `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> verbs (e.g., `SELECT`) to help differentiate them from column / data table names.
+
+At a minimum a query must involve `SELECT` to dictate which columns to keep (accepts either column names or a `*` for 'all columns') and `FROM` to indicate which table in the database we want to query.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -52,7 +90,7 @@ query_r <- DBI::dbGetQuery(conn = cxn, statement = "SELECT year, species_id, plo
 DBI::dbDisconnect(conn = cxn)
 ```
 
-Note that we can still use the query data object once we've closed our database connection!
+Note that we can still use the query data object even when we have closed our database connection!
 
 ```{r r-sql2}
 # Check out the first few rows of that
@@ -72,10 +110,11 @@ query_py = pd.read_sql_query(sql = "SELECT year, species_id, plot_id FROM survey
 cxn.close()
 ```
 
-Note that we can still use the query data object once we've closed our database connection!
+Note that we can still use the query data object even when we have closed our database connection!
 
 ```{python py-sql2}
 # Check out the first few rows of that
 query_py.head(4)
 ```
 :::
+

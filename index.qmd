@@ -17,7 +17,7 @@ R contains an `install.packages` function for installing packages from within R.
 ```{r r-pkg-install, eval = F}
 # Install the 'tidyverse' meta-package
 install.packages("tidyverse")
-install.packages("RSQLite")
+install.packages("DBI")
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python

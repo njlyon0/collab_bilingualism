@@ -3,13 +3,79 @@ title: "SQL"
 engine: knitr
 ---
 
-## SQL Overview
+## Overview
 
 So far, we've been able to use `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> on CSV files without issue. However, when the data that we are working with become very large (e.g., millions of rows) it can be very inefficient to rely on your computer's internal memory to do operations. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> (<u>S</u>tructured <u>Q</u>uery <u>L</u>anguage) is another programming language specifically built to work with larger databases where users "query" just the component of the data that they need for a given operation. This minimizes the amount of data that must be held in memory at any given time.
 
 A caveat before we begin: `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> is a fully fledged language in its own right that carries a suite of verbs and syntax conventions. We'll need to engage with these a little in our examples but this website is not meant as a tutorial in this language. Note that `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> users may have some SQL intuition already because SQL shares many of its verbs with the `dplyr` package.
 
-Despite the above caveat there are two things to keep in mind about SQL queries:
+## Library Loading
 
-1. It is a good practice to fully capitalize `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> verbs (e.g., `SELECT`) to help differentiate them from column / data table names
-2. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> queries end with a semicolon (`;`)
+Begin by loading the needed libraries.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Load the `DBI` package.
+
+```{r r-libs}
+# Load needed libraries
+library(DBI)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Load the `pandas` and `sqlite3` packages.
+
+```{python py-libs}
+# Load needed libraries
+import pandas as pd
+import sqlite3
+```
+:::
+
+## Connecting to Databases
+
+SQLite operations require us to connect to a database, perform the desired queries, and then _close the connection_ when we are finished. Note that it is a good practice to fully capitalize `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> verbs (e.g., `SELECT`) to help differentiate them from column / data table names.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+```{r r-sql1}
+# Open the connection
+cxn <- DBI::dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
+
+# Query some columns in the 'surveys' object
+query_r <- DBI::dbGetQuery(conn = cxn, statement = "SELECT year, species_id, plot_id FROM surveys")
+
+# Close the connection
+DBI::dbDisconnect(conn = cxn)
+```
+
+Note that we can still use the query data object once we've closed our database connection!
+
+```{r r-sql2}
+# Check out the first few rows of that
+head(query_r, n = 4)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-sql1}
+# Open the connection
+cxn = sqlite3.connect("data/mammals.sqlite")
+
+# Query some columns in the 'surveys' object
+query_py = pd.read_sql_query(sql = "SELECT year, species_id, plot_id FROM surveys", con = cxn)
+
+# Close the connection
+cxn.close()
+```
+
+Note that we can still use the query data object once we've closed our database connection!
+
+```{python py-sql2}
+# Check out the first few rows of that
+query_py.head(4)
+```
+:::

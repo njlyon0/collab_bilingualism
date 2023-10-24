@@ -17,6 +17,7 @@ R contains an `install.packages` function for installing packages from within R.
 ```{r r-pkg-install, eval = F}
 # Install the 'tidyverse' meta-package
 install.packages("tidyverse")
+install.packages("RSQLite")
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
@@ -29,6 +30,7 @@ python3 -m pip install pandas
 python3 -m pip install numpy
 python3 -m pip install matplotlib
 python3 -m pip install jupyterlab
+python3 -m pip install sqlite3
 
 ## `plotnine` is `ggplot2` in python!
 python3 -m pip install plotnine

@@ -1,4 +1,15 @@
 ---
 title: "SQL"
+engine: knitr
 ---
 
+## SQL Overview
+
+So far, we've been able to use `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> on CSV files without issue. However, when the data that we are working with become very large (e.g., millions of rows) it can be very inefficient to rely on your computer's internal memory to do operations. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> (<u>S</u>tructured <u>Q</u>uery <u>L</u>anguage) is another programming language specifically built to work with larger databases where users "query" just the component of the data that they need for a given operation. This minimizes the amount of data that must be held in memory at any given time.
+
+A caveat before we begin: `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> is a fully fledged language in its own right that carries a suite of verbs and syntax conventions. We'll need to engage with these a little in our examples but this website is not meant as a tutorial in this language. Note that `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> users may have some SQL intuition already because SQL shares many of its verbs with the `dplyr` package.
+
+Despite the above caveat there are two things to keep in mind about SQL queries:
+
+1. It is a good practice to fully capitalize `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> verbs (e.g., `SELECT`) to help differentiate them from column / data table names
+2. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> queries end with a semicolon (`;`)

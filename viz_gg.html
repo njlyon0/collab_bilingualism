@@ -159,10 +159,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./automata.html" rel="" target="">
  <span class="menu-text">Automation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./viz.html" rel="" target="" aria-current="page">
- <span class="menu-text">Visualization</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualization" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Visualization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visualization">    
+        <li>
+    <a class="dropdown-item" href="./viz_gg.html" rel="" target="">
+ <span class="dropdown-text">Grammar of Graphics</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./sql.html" rel="" target="">
  <span class="menu-text">SQL</span></a>
@@ -352,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create graph</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avg_r, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_wt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg1-1.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -365,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg1-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg1-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 <p>Note that we need to wrap our Python ggplot in parentheses to avoid errors.</p>
@@ -387,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avg_r, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_wt)) <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg2-3.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg2-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -398,12 +405,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    p9.geom_point()</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;Figure Size: (1280 x 960)&gt;
-
-/Users/lyon/anaconda3/lib/python3.11/site-packages/plotnine/layer.py:364: PlotnineWarning: geom_point : Removed 22 rows containing missing values.</code></pre>
+<pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg2-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg2-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 </div>
@@ -420,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avg_r, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_wt)) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg3-3.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg3-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Note that we could specify the color aesthetic in the <code>ggplot</code> aesthetics!</p>
@@ -432,12 +437,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    p9.geom_point(mapping <span class="op">=</span> p9.aes(color <span class="op">=</span> <span class="st">"species"</span>))</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;Figure Size: (1280 x 960)&gt;
-
-/Users/lyon/anaconda3/lib/python3.11/site-packages/plotnine/layer.py:364: PlotnineWarning: geom_point : Removed 22 rows containing missing values.</code></pre>
+<pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg3-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg3-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 <p>Note that we could specify the color aesthetic in the <code>ggplot</code> aesthetics!</p>
@@ -461,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>gg_r <span class="sc">+</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg4-3.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg4-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -478,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg4-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg4-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 </div>
@@ -521,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>line_r <span class="sc">+</span> </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg6-1.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -534,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg6-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg6-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 </div>
@@ -559,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/r-gg7-3.png" class="img-fluid" width="672"></p>
+<p><img src="viz_gg_files/figure-html/r-gg7-3.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -577,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Figure Size: (1280 x 960)&gt;</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="viz_files/figure-html/py-gg7-1.png" class="img-fluid" width="614"></p>
+<p><img src="viz_gg_files/figure-html/py-gg7-1.png" class="img-fluid" width="614"></p>
 </div>
 </div>
 </div>

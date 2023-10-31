@@ -159,10 +159,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./automata.html" rel="" target="">
  <span class="menu-text">Automation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./viz.html" rel="" target="">
- <span class="menu-text">Visualization</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualization" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Visualization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visualization">    
+        <li>
+    <a class="dropdown-item" href="./viz_gg.html" rel="" target="">
+ <span class="dropdown-text">Grammar of Graphics</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link active" href="./sql.html" rel="" target="" aria-current="page">
  <span class="menu-text">SQL</span></a>
@@ -277,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify tables in the database</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbListTables</span>(<span class="at">conn =</span> cxn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "plots"       "species"     "surveys"     "surveys2002"</code></pre>
+<pre><code>[1] "plots"   "species" "surveys"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the connection</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(<span class="at">conn =</span> cxn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -292,11 +299,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query some columns in the 'surveys' object</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>pd.read_sql_query(sql <span class="op">=</span> <span class="st">"SELECT name FROM sqlite_master WHERE type = 'table'"</span>, con <span class="op">=</span> cxn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          name
-0      surveys
-1      species
-2        plots
-3  surveys2002</code></pre>
+<pre><code>      name
+0  surveys
+1  species
+2    plots</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the connection</span></span>

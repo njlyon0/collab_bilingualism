@@ -59,6 +59,11 @@ Sometimes we want to repeat a given set of steps iteratively. While we _could_ s
 
 Somewhat self-explanatory but this section is all about data visualization! While visualization can be an effective quality control tool it is also useful in data exploration and--eventually--to generate publication- or report-quality graphics. This section attempts to cover the fundamentals of data "viz" in both languages but is by no means exhaustive!
 
+### SQL
+
+`r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span>'s syntax itself.
+
+
 ## Contributing Guidelines
 
 {{< include /collabs.qmd >}}

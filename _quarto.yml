@@ -29,8 +29,10 @@ website:
             text: "Join"
       - href: automata.qmd
         text: "Automation"
-      - href: viz.qmd
-        text: "Visualization"
+      - text: "Visualization"
+        menu: 
+          - href: viz_gg.qmd
+            text: "Grammar of Graphics"
       - href: sql.qmd
         text: "SQL"
     right:

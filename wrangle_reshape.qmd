@@ -9,34 +9,117 @@ Begin by loading any needed libraries and reading in an external data file for u
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Load the `tidyverse` meta-package as well as our vertebrate data.
+Load the `tidyverse` meta-package as well as our simulated lichen data.
 
 ```{r r-start, warning = F, message = F}
 # Load needed library
 library(tidyverse)
 
 # Load data
-vert_r <- read.csv(file = "data/verts.csv")
+lich_r <- read.csv(file = "data/tree_lichen.csv")
 
 # Check out first few rows
-head(vert_r, n = 5)
+head(lich_r, n = 3)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas library as well as our vertebrate data.
+Load the Pandas library as well as our simulated lichen data.
 
 ```{python py-libs}
 # Load needed library
 import pandas as pd
 
 # Load data
-vert_py = pd.read_csv("data/verts.csv")
+lich_py = pd.read_csv("data/tree_lichen.csv")
 
 # Check out first few rows
-vert_py.head()
+lich_py.head(3)
 ```
 :::
 
+## Understanding Data Shape
 
-[ Under Construction! ]
+All tabular data can be said to have a "shape" that is either **wide** or **long**. This is often used to simply indicate whether there are more columns than there are rows but it is perhaps more accurate to say that _wide_ data have variables in separate columns while _long_ data usually has a column of variable names and a column of values. This distinction is important because you can have a data table with more rows than columns that is still in wide format (e.g., the simulated example lichen community data we just loaded).
+
+When wrangling data we may find it necessary to change the data from one shape to the other--this process is what is meant by "reshaping" (or sometimes "pivoting"). An example of each type of reshaping is included below.
+
+## Reshaping Longer
+
+Our lichen data are currently in wide format so let's reshape into long format.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R uses the `pivot_longer` function from the `tidyr` package for this operation. We need to specify the data table to reshape, the columns to collapse (to the `cols` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `names_to` and `values_to` arguments are reasonably intuitively named.
+
+```{r r-longer}
+# Reshape longer
+long_r <- tidyr::pivot_longer(data = lich_r,
+                              cols = c(lichen_foliose, lichen_fruticose, lichen_crustose),
+                              names_to = "lichen_types",
+                              values_to = "percent_cover")
+
+# Check out the first few rows of that
+head(long_r, n = 3)
+```
+
+Note that the column names to reshape _must_ be a vector.
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python uses the `melt` function from the Pandas library for this operation. We need to specify the DataFrame to reshape, the columns to _exclude_ from collapsing (with the `id_vars` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `var_name` and `value_name` arguments are reasonably intuitively named.
+
+```{python py-longer}
+# Reshape longer
+long_py = pd.melt(frame = lich_py,
+                  id_vars = ["tree"],
+                  var_name = "lichen_types",
+                  value_name = "percent_cover")
+
+# Check out the first few rows of that
+long_py.head(3)
+```
+
+Note that the column names use as IDs _must_ be a list (or similar object type).
+:::
+
+## Reshaping Wider
+
+The opposite operation--reshaping wider--is also readily available in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. We'll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R uses the `pivot_wider` function (also from the `tidyr` package) to do this type of reshaping operation. Reshaping wider requires fewer arguments as only the columns to reshape need to be specified.
+
+```{r r-wider}
+# Reshape (back) into wide format
+wide_r <- tidyr::pivot_wider(data = long_r,
+                             names_from = "lichen_types",
+                             values_from = "percent_cover")
+
+# Check out the first few rows
+head(wide_r, n = 2)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+We can use the Pandas function `pivot_table` to reshape back into wide format. Unlike R, we do need to specify the `index` column label(s) that are not being reshaped.
+
+```{python py-wider}
+# Reshape (back) into wide format
+wide_py = pd.pivot_table(data = long_py,
+                         index = ["tree"], 
+                         columns = "lichen_types",
+                         values = "percent_cover")
+                         
+# Do some small index reformatting steps
+wide_py = wide_py.reset_index().rename_axis(mapper = None, axis = 1)
+
+# Check out the first few rows
+wide_py.head(2)
+```
+
+The reset index step is needed to get the index to look like it did before we `melt`ed it.
+:::

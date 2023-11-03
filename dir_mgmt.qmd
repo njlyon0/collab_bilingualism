@@ -27,7 +27,7 @@ We'll need to quickly load any needed libraries before getting into the "actual"
 
 R does not require any libraries to perform these operations!
 
-```{r r-}
+```{r r-libs}
 #| echo: false
 
 # Load needed libraries
@@ -38,7 +38,7 @@ R does not require any libraries to perform these operations!
 
 We'll need the `os` library in Python to do these operations.
 
-```{python py-}
+```{python py-libs}
 # Load needed library
 import os
 ```

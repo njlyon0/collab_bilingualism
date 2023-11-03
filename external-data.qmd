@@ -6,22 +6,24 @@ code-annotations: hover
 
 ## Library Loading
 
-This section assumes you've already _installed_ the needed python / R packages. See the chunks in the home page of this website if you need a refresher on which packages are needed. However, it is not enough to install a package onto a given computer, you also have to specifically load that library into your working environment for its functions to be available to you in a specific script / document.
+Begin by loading any needed libraries.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R libraries are loaded with the `library` function.
+Load the `tidyverse` meta-package.
 
-```{r r-libs, warning = F, message = F}
+```{r r-start, warning = F, message = F}
+# Load needed library
 library(tidyverse)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python libraries are loaded with the `import` statement and can be aliased into simpler names with `as` at the same time. Note that common libraries (like Pandas) have a broadly-accepted abbreviations that are almost always used (like `pd` in the case of Pandas).
+Load the Pandas library.
 
 ```{python py-libs}
+# Load needed library
 import pandas as pd
 ```
 :::

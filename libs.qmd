@@ -1,0 +1,35 @@
+---
+title: "Packages & Libraries"
+engine: knitr
+---
+
+## Installation versus Loading
+
+Packages must first be _installed_ before they can be _loaded_. Installing a package is equivalent to going to a hardware store and buying a pre-made set of tools whereas loading that package is more like retrieving a set of tools that you already own and putting them in your work space so they are available to use. <u>All sections of this website assume you have already installed the needed packages</u> so consult the [package installtion instructions](https://njlyon0.github.io/collab_bilingualism/#package-installation) on the home page of the site if you have not already done so.
+
+Note also that "package" and "library" are functionally interchangeable for our purposes though it is more common to say that packages are installed and libraries are loaded.
+
+## Library Loading
+
+Assuming you've already installed the needed `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _and_ `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> packages, you can now load them.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R libraries are loaded with the `library` function.
+
+```{r r-libs, warning = F, message = F}
+library(tidyverse)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Python libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like Pandas) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of Pandas).
+
+```{python py-libs}
+import pandas as pd
+```
+:::
+
+With that, you're all done loading libraries! Note however that you will need to re-load your libraries every time you quit and re-open your IDE (<u>I</u>ntegrated <u>D</u>eveloper <u>E</u>nvironment) such as <span style="color:#077DC2">Conda</span> or <span style="color:#FF9B00">RStudio</span>. Restarting your session will also necessitate re-loading your libraries. That said, you only need to install packages _once!_
+

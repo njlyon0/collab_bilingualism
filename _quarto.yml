@@ -20,12 +20,14 @@ website:
             text: "Automation"
           - href: string_methods.qmd
             text: "Text Methods"
+          - href: libs.qmd
+            text: "Packages & Libraries"
           - href: dir_mgmt.qmd
             text: "Directory Management"
+          - href: external-data.qmd
+            text: "External Data"
       - text: "Data Wrangling"
         menu:
-          - href: wrangle_start.qmd
-            text: "Read & Examine"
           - href: wrangle_subset.qmd
             text: "Subset"
           - href: wrangle_summarize.qmd

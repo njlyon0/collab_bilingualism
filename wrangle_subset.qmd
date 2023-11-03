@@ -4,12 +4,12 @@ title: "Subsetting Data"
 
 ## Library Loading
 
-Again, we need to begin by loading any needed libraries
+Begin by loading any needed libraries.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Load the `tidyverse` meta-package for R operations.
+Load the `tidyverse` meta-package.
 
 ```{r r-libs, warning = F, message = F}
 library(tidyverse)

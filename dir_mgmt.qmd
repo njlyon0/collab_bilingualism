@@ -36,11 +36,12 @@ R does not require any libraries to perform these operations!
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-We'll need the `os` library in Python to do these operations.
+We'll need the `os` library and `glob` library in Python to do these operations.
 
 ```{python py-libs}
 # Load needed library
 import os
+import glob
 ```
 :::
 
@@ -96,3 +97,28 @@ Note that the needed function is in the `path` module of the `os` library.
 
 Using these tools allows us to code collaboratively even when not all group members use the same operating system! Note that nothing will solve the issue of using absolute paths because group members will always have different paths from the root to a particular directory. Because of this <u>it is best to **_always_** use relative paths when working in group contexts</u>.
 
+## Finding Files
+
+Once you've confirmed your working directory and figured out how to account for OS idiosyncrasies, its time to actually look at the files you have available! In the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` <span style="color:#EB6534">command line</span>, the `ls` function lists all files in a particular folder. Fortunately both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> contain tools for doing this as well.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+We can use the base R `dir` function to identify all files in a particular folder (note this ignores _folders_ in that folder).
+
+```{r r-ls}
+# List files in the "data" folder for this website
+dir(path = file.path("data"))
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+We can use the `glob` function (from the library of the same name) to identify all files in a particular folder.
+
+```{python py-ls}
+# List files in the "data" folder for this website
+glob.glob(pathname = os.path.join("data", "*"))
+```
+
+Note that we need to use the wildcard asterisk (`*`) to identify everything in the "data" folder.
+:::

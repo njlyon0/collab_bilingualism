@@ -1,4 +1,76 @@
 ---
 title: "Text Methods"
+engine: knitr
 ---
 
+## Overview
+
+Data stored as text (i.e., <span style="color:#077DC2">string</span>/<span style="color:#077DC2">object</span> or <span style="color:#FF9B00">character</span>) is notoriously typo-prone and often requires extensive quality control checks throughout the data tidying process. Below is a--non exhaustive--set of common text methods that may prove valuable to people interested in dealing with text data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>.
+
+## Find & Replace
+
+The bulk of text tidying often boils down to finding unwanted <span style="color:#077DC2">strings</span>/<span style="color:#FF9B00">characters</span> and replacing them with desired variants. This operation is how computers handle fixing typos.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+We can use the base R function `gsub` to find and replace (part of) a character object.
+
+```{r r-find-replace}
+# Make a vector of characters
+text_r <- c("he1lo", "HELLO", "bye")
+
+# Find and replace the number "1" with an "L"
+fix1_r <- gsub(pattern = "1", replacement = "l", x = text_r)
+
+# Print the result
+print(fix1_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+We can use the Python method `replace` to find and replace (part of) a string/object variable.
+
+```{python py-find-replace}
+# Make a list of strings
+text_py = ["he1lo", "HELLO", "bye"]
+
+# Find and replace the number "1" with an "L"
+fix1_py = [item.replace("1", "l") for item in text_py]
+
+# Print the result
+print(fix1_py)
+```
+
+Note that we have to loop across our list to do this operation in this language.
+:::
+
+## Casing
+
+Text casing (i.e., either UPPERCASE or lowercase) is also a frequent source of issues in code as many scripted operations are sensitive to text case. We can coerce to upper or lowercase as needed though with relative ease.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+We can use the `tolower` or `toupper` functions (also from base R) to coerce all text into lower or uppercase respectively.
+
+```{r r-case}
+# Coerce everything to lowercase
+fix2_r <- tolower(x = fix1_r)
+
+# Print the result
+print(fix2_r)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+We can use the `lower` or `upper` methods to coerce all text into lower or uppercase respectively.
+
+```{python py-case}
+# Coerce everything to lowercase
+fix2_py = [item.lower() for item in fix1_py]
+
+# Print the result
+print(fix2_py)
+```
+:::

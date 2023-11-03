@@ -1,0 +1,98 @@
+---
+title: "Directory & File Management"
+engine: knitr
+---
+
+## Overview
+
+One thing we have not discussed that is incredibly important to any scripted language (`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> _very_ much included) is computer directory and file management. Code often interacts with external data files that must be imported at the start of a workflow and often preserves a record of its operation as an exported product at the end of the workflow. These concepts are more related to fundamental understanding of how your computer stores information than they are strictly coding language considerations but they are still worth discussing here.
+
+## Crucial Vocabulary
+
+There are a few vocabulary terms we need to introduce before we can dive into the code side of file and directory management. Fortunately, these are terms that apply to computers generally so we do not have to deal with `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> using different names for the same concept.
+
+- Directory -- A folder on your computer (typically containing other folders and/or files)
+particular file/folder
+- Working Directory -- The folder your code is "looking at" for a given project
+    - By default this is the folder in which the code file itself can be found though you _can_ set it elsewhere (though this is sometimes risky)
+- Root -- The single folder that contains _everything_ else on your computer
+- Absolute Path -- The names of each directory <u>beginning at the root</u> and ending at a - Relative Path -- The names of each directory <u>beginning at the your working directory</u> and ending at a particular file/folder
+
+## Library Loading
+
+We'll need to quickly load any needed libraries before getting into the "actual" coding.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+R does not require any libraries to perform these operations!
+
+```{r r-}
+#| echo: false
+
+# Load needed libraries
+
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+We'll need the `os` library in Python to do these operations.
+
+```{python py-}
+# Load needed library
+import os
+```
+:::
+
+## The Working Directory
+
+As defined above, the working directory is the primary folder with which your code can easily interact. This includes folders within your working directory but _does not_ include folders "above"/outside of it. It is a good practice to use different folders for different projects such that each project has a different working directory and you don't run the risk of scripts/data from one project accidentally interacting with those form another project. For `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> users, the RStudio "R Project" functionality guarantees that you have a different working directory for each R project.
+
+Both languages provide a quick way of checking what your current working directory is to ensure you're not accidentally in the wrong one. Note that either approach will return the _absolute path_ to your working directory which will differ among users/computers.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Base R includes the `getwd` function to display your current working directory.
+
+```{r r-wd}
+# Check current working directory
+getwd()
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+```{python py-wd}
+# Check current working directory
+os.getcwd()
+```
+:::
+
+## Operating Systems & File Paths
+
+One minor--but often frustrating--hurdle for collaborative coding occurs when group members use different operating systems (i.e., macOS, Windows, etc.). When defining file paths (absolute or relative), different operating systems use either a slash (`/`) or a backslash (`\`) to separate directories in that path. Unfortunately for us, your OS will only be able to interpret file paths that use the type of slash it uses. This means that any code that reads in external data or exports its outputs needs to account for this OS-level difference **_every_ time a file path is defined**. However, the developers of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> know this pain themselves and have given us straightforward tools to handle this.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Base R includes a `file.path` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
+
+```{r r-os-paths}
+# Build a faux file path
+file.path("path", "to", "my", "data")
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+The `os` library in Python includes a `join` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
+
+```{python py-os-paths}
+# Build a faux file path
+os.path.join("path", "to", "my", "data")
+```
+
+Note that the needed function is in the `path` module of the `os` library.
+:::
+
+Using these tools allows us to code collaboratively even when not all group members use the same operating system! Note that nothing will solve the issue of using absolute paths because group members will always have different paths from the root to a particular directory. Because of this <u>it is best to **_always_** use relative paths when working in group contexts</u>.
+

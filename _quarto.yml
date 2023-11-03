@@ -20,6 +20,8 @@ website:
             text: "Automation"
           - href: string_methods.qmd
             text: "Text Methods"
+          - href: dir_mgmt.qmd
+            text: "Directory Management"
       - text: "Data Wrangling"
         menu:
           - href: wrangle_start.qmd

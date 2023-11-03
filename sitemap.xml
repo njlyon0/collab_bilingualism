@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_reshape.html</loc>
-    <lastmod>2023-11-02T14:46:18.915Z</lastmod>
+    <lastmod>2023-11-03T14:55:08.717Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/workbench.html</loc>
-    <lastmod>2023-11-02T14:46:16.771Z</lastmod>
+    <lastmod>2023-11-03T14:55:06.697Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_subset.html</loc>
-    <lastmod>2023-11-02T14:46:14.911Z</lastmod>
+    <lastmod>2023-11-03T14:55:04.937Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/basics.html</loc>
-    <lastmod>2023-11-02T14:46:12.579Z</lastmod>
+    <lastmod>2023-11-03T14:55:02.837Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_join.html</loc>
-    <lastmod>2023-11-02T14:46:10.983Z</lastmod>
+    <lastmod>2023-11-03T14:55:01.433Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_summarize.html</loc>
-    <lastmod>2023-11-02T14:46:08.723Z</lastmod>
+    <lastmod>2023-11-03T14:54:59.517Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/njlyon0/collab_bilingualism/string_methods.html</loc>
+    <lastmod>2023-11-03T14:54:58.057Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/terms.html</loc>
-    <lastmod>2023-11-02T14:46:05.103Z</lastmod>
+    <lastmod>2023-11-03T14:54:56.541Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/sql.html</loc>
-    <lastmod>2023-11-02T14:46:07.871Z</lastmod>
+    <lastmod>2023-11-03T14:54:58.829Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/index.html</loc>
-    <lastmod>2023-11-02T14:46:09.763Z</lastmod>
+    <lastmod>2023-11-03T14:55:00.365Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/collabs.html</loc>
-    <lastmod>2023-11-02T14:46:11.511Z</lastmod>
+    <lastmod>2023-11-03T14:55:01.869Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/wrangle_start.html</loc>
-    <lastmod>2023-11-02T14:46:13.827Z</lastmod>
+    <lastmod>2023-11-03T14:55:03.941Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/viz_gg.html</loc>
-    <lastmod>2023-11-02T14:46:16.063Z</lastmod>
+    <lastmod>2023-11-03T14:55:06.009Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/njlyon0/collab_bilingualism/automata.html</loc>
-    <lastmod>2023-11-02T14:46:18.103Z</lastmod>
+    <lastmod>2023-11-03T14:55:07.901Z</lastmod>
   </url>
 </urlset>

@@ -120,14 +120,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./terms.html" rel="" target="">
- <span class="menu-text">Glossary</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentals" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Fundamentals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentals">    
+        <li>
+    <a class="dropdown-item" href="./basics.html" rel="" target="">
+ <span class="dropdown-text">Core Concepts</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./basics.html" rel="" target="">
- <span class="menu-text">Fundamentals</span></a>
+        <li>
+    <a class="dropdown-item" href="./automata.html" rel="" target="">
+ <span class="dropdown-text">Automation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./string_methods.html" rel="" target="">
+ <span class="dropdown-text">Text Methods</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-wrangling" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Data Wrangling</span>
@@ -155,10 +166,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./automata.html" rel="" target="">
- <span class="menu-text">Automation</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visualization" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Visualization</span>
@@ -176,6 +183,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./terms.html" rel="" target="">
+ <span class="menu-text">Glossary</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-creators" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Creators</span>

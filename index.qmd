@@ -39,21 +39,14 @@ python3 -m pip install plotnine
 
 ## Section Overviews
 
-### Glossary
-
-As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
 
 ### Fundamentals
 
-When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. Beginning in this way provides a strong foundation for extensions into more nuanced operations.
+When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. We can also build upon really core concepts into more nuanced fundamentals like automation or <span style="color:#077DC2">string</span>/<span style="color:#FF9B00">character</span> methods.
 
 ### Data Wrangling
 
 The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.
-
-### Automation
-
-Sometimes we want to repeat a given set of steps iteratively. While we _could_ simply copy/paste the relevant code once per needed iteration, this is cumbersome and error-prone. Instead we can use loops and "custom" functions (i.e., those we write ourselves rather than those that are installed from official libraries) to capture a repeated set of steps in a single location for re-use.
 
 ### Visualization
 
@@ -63,6 +56,9 @@ Somewhat self-explanatory but this section is all about data visualization! Whil
 
 `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span>'s syntax itself.
 
+### Glossary
+
+As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
 
 ## Contributing Guidelines
 

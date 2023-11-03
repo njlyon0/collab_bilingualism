@@ -11,10 +11,15 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - href: terms.qmd
-        text: "Glossary"
-      - href: basics.qmd
-        text: "Fundamentals"
+      
+      - text: "Fundamentals"
+        menu:
+          - href: basics.qmd
+            text: "Core Concepts"
+          - href: automata.qmd
+            text: "Automation"
+          - href: string_methods.qmd
+            text: "Text Methods"
       - text: "Data Wrangling"
         menu:
           - href: wrangle_start.qmd
@@ -27,10 +32,6 @@ website:
             text: "Reshape"
           - href: wrangle_join.qmd
             text: "Join"
-          - href: wrangle_strings.qmd
-            text: "Text Methods"
-      - href: automata.qmd
-        text: "Automation"
       - text: "Visualization"
         menu: 
           - href: viz_gg.qmd
@@ -38,6 +39,8 @@ website:
       - href: sql.qmd
         text: "SQL"
     right:
+      - href: terms.qmd
+        text: "Glossary"
       - text: "Creators"
         menu:
           - href: https://njlyon0.github.io/

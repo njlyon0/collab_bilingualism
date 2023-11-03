@@ -46,7 +46,7 @@ In R we can open the connection with the `dbConnect` function, identify the tabl
 
 ```{r r-sql-connect}
 # Open the connection
-cxn <- DBI::dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
+cxn <- DBI::dbConnect(RSQLite::SQLite(), file.path("data", "mammals.sqlite"))
 
 # Identify tables in the database
 DBI::dbListTables(conn = cxn)
@@ -61,7 +61,7 @@ In Python we can open the connection with the `connect` function (from the `sqli
 
 ```{python py-sql-connect}
 # Open the connection
-cxn = sqlite3.connect("data/mammals.sqlite")
+cxn = sqlite3.connect(os.path.join("data", "mammals.sqlite"))
 
 # Query some columns in the 'surveys' object
 pd.read_sql_query(sql = "SELECT name FROM sqlite_master WHERE type = 'table'", con = cxn)
@@ -82,7 +82,7 @@ At a minimum a query must involve `SELECT` to dictate which columns to keep (acc
 
 ```{r r-sql1}
 # Open the connection
-cxn <- DBI::dbConnect(RSQLite::SQLite(), "data/mammals.sqlite")
+cxn <- DBI::dbConnect(RSQLite::SQLite(), file.path("data", "mammals.sqlite"))
 
 # Query some columns in the 'surveys' object
 query_r <- DBI::dbGetQuery(conn = cxn, statement = "SELECT year, species_id, plot_id FROM surveys")
@@ -102,7 +102,7 @@ head(query_r, n = 4)
 
 ```{python py-sql1}
 # Open the connection
-cxn = sqlite3.connect("data/mammals.sqlite")
+cxn = sqlite3.connect(os.path.join("data", "mammals.sqlite"))
 
 # Query some columns in the 'surveys' object
 query_py = pd.read_sql_query(sql = "SELECT year, species_id, plot_id FROM surveys", con = cxn)

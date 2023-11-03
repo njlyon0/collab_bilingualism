@@ -16,7 +16,7 @@ Load the `tidyverse` meta-package as well as our vertebrate data.
 library(tidyverse)
 
 # Load data
-vert_r <- read.csv(file = "data/verts.csv")
+vert_r <- utils::read.csv(file = file.path("data", "verts.csv"))
 
 # Check out first few rows
 head(vert_r, n = 5)
@@ -32,7 +32,7 @@ import os
 import pandas as pd
 
 # Load data
-vert_py = pd.read_csv("data/verts.csv")
+vert_py = pd.read_csv(os.path.join("data", "verts.csv"))
 
 # Check out first few rows
 vert_py.head()

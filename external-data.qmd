@@ -40,8 +40,10 @@ Namespacing in R is accomplished by doing `package_name::function_name` and is o
 
 ```{r r-ext-data}
 # Read in vertebrate data CSV
-vert_r <- utils::read.csv(file = "data/verts.csv")
+vert_r <- utils::read.csv(file = file.path("data", "verts.csv"))
 ```
+
+Recall from our file path module that the `file.path` function accounts for computer operating system differences.
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
@@ -49,8 +51,10 @@ In Python, namespacing is required and is done via `package_name.function_name`.
 
 ```{python py-ext-data}
 # Read in vertebrate data CSV
-vert_py = pd.read_csv("data/verts.csv")
+vert_py = pd.read_csv(os.path.join("data", "verts.csv"))
 ```
+
+Recall from our file path module that the `join` function accounts for computer operating system differences.
 :::
 
 ## Tabular Data <span style="color:#077DC2">Type</span>/<span style="color:#FF9B00">Class</span>

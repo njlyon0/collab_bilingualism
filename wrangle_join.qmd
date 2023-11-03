@@ -40,7 +40,7 @@ Load the vertebrate data first.
 
 ```{r r-data1}
 # Load data
-vert_r <- read.csv(file = "data/verts.csv")
+vert_r <- read.csv(file = file.path("data", "verts.csv"))
 
 # Check out first few rows
 head(vert_r, n = 2)
@@ -50,7 +50,7 @@ Then load the dataset with lichen community composition on trees.
 
 ```{r r-data2}
 # Load data
-lich <- read.csv(file = "data/tree_lichen.csv")
+lich <- read.csv(file = file.path("data", "tree_lichen.csv"))
 
 # Check out rows rows
 head(lich, n = 2)
@@ -60,7 +60,7 @@ And finally load the data that includes distance from the nearest road for some 
 
 ```{r r-data3}
 # Load data
-road <- read.csv(file = "data/tree_road.csv")
+road <- read.csv(file = file.path("data", "tree_road.csv"))
 
 # Check out rows
 head(road, n = 2)
@@ -72,7 +72,7 @@ Load the vertebrate data first.
 
 ```{python py-data1}
 # Load data
-vert_py = pd.read_csv("data/verts.csv")
+vert_py = pd.read_csv(os.path.join("data", "verts.csv"))
 
 # Check out first few rows
 vert_py.head(2)
@@ -82,7 +82,7 @@ Then load the dataset with lichen community composition on trees.
 
 ```{python py-data2}
 # Load data
-lich = pd.read_csv("data/tree_lichen.csv")
+lich = pd.read_csv(os.path.join("data", "tree_lichen.csv"))
 
 # Check out rows
 lich.head(2)
@@ -92,7 +92,7 @@ And finally load the data that includes distance from the nearest road for some 
 
 ```{python py-data3}
 # Load data
-road = pd.read_csv("data/tree_road.csv")
+road = pd.read_csv(os.path.join("data", "tree_road.csv"))
 
 # Check out rows
 road.head(2)

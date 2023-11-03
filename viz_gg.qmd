@@ -25,7 +25,7 @@ library(ggplot2)
 library(dplyr)
 
 # Load data
-vert_r <- read.csv(file = "data/verts.csv")
+vert_r <- utils::read.csv(file = file.path("data", "verts.csv"))
 
 # Keep only rows where species and year are *not* NA
 complete_r <- dplyr::filter(.data = vert_r,
@@ -59,7 +59,7 @@ import plotnine as p9
 import pandas as pd
 
 # Load data
-vert_py = pd.read_csv("data/verts.csv")
+vert_py = pd.read_csv(os.path.join("data", "verts.csv"))
 
 # Keep only rows where species and year are *not* NA
 complete_py = vert_py[(~pd.isnull(vert_py["species"])) & (~pd.isnull(vert_py["year"]))]

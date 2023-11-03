@@ -27,7 +27,7 @@ website:
             text: "Reshape"
           - href: wrangle_join.qmd
             text: "Join"
-          - href: modules/wrangle_strings.qmd
+          - href: wrangle_strings.qmd
             text: "Text Methods"
       - href: automata.qmd
         text: "Automation"

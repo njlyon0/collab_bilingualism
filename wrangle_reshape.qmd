@@ -24,10 +24,11 @@ head(lich_r, n = 3)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas library as well as our simulated lichen data.
+Load the Pandas and `os` libraries as well as our simulated lichen data.
 
 ```{python py-libs}
-# Load needed library
+# Load needed libraries
+import os
 import pandas as pd
 
 # Load data

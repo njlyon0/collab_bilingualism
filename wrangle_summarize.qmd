@@ -24,10 +24,11 @@ head(vert_r, n = 5)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas library as well as our vertebrate data.
+Load the Pandas and `os` libraries as well as our simulated lichen data.
 
 ```{python py-libs}
-# Load needed library
+# Load needed libraries
+import os
 import pandas as pd
 
 # Load data

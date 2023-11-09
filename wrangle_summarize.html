@@ -366,25 +366,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average weight and length</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vert_r_summary <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">.data =</span> vert_r_grp,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">avg_weight_g =</span> <span class="fu">mean</span>(weight_g, <span class="at">na.rm =</span> T),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight_g =</span> <span class="fu">mean</span>(weight_g, <span class="at">na.rm =</span> T),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">length_1_mm =</span> <span class="fu">mean</span>(length_1_mm, <span class="at">na.rm =</span> T),</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">length_2_mm =</span> <span class="fu">mean</span>(length_2_mm, <span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'year'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out the first bit of that</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(vert_r_summary, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">length_2_mm =</span> <span class="fu">mean</span>(length_2_mm, <span class="at">na.rm =</span> T))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out the first bit of that</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(vert_r_summary, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 5
-# Groups:   year [4]
-   year species           avg_weight_g length_1_mm length_2_mm
-  &lt;int&gt; &lt;chr&gt;                    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-1  1987 "Cutthroat trout"         8.96        90.2         NaN
-2  1988 "Cutthroat trout"        16.1        115.          NaN
-3  1989 "Cutthroat trout"        14.3        107.          NaN
-4  1990 ""                      NaN          NaN           NaN
-5  1990 "Cutthroat trout"        11.2         94.4         NaN</code></pre>
+<pre><code># A tibble: 3 × 5
+# Groups:   year [3]
+   year species         weight_g length_1_mm length_2_mm
+  &lt;int&gt; &lt;chr&gt;              &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+1  1987 Cutthroat trout     8.96        90.2         NaN
+2  1988 Cutthroat trout    16.1        115.          NaN
+3  1989 Cutthroat trout    14.3        107.          NaN</code></pre>
 </div>
 </div>
 </div>
@@ -392,26 +387,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When summarizing data in Python we need to calculate each metric separately and then combine them. Apologies that this uses the <code>concat</code> function in Pandas that we have not previously covered but you can see a greater discussion of these functions/methods in the “Join” section.</p>
 <p>Note the use of two modes of indexing a particular column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average weight and length</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>mean_wt <span class="op">=</span> vert_py_grp[<span class="st">"weight_g"</span>].mean()</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mean_ln1 <span class="op">=</span> vert_py_grp.length_1_mm.mean()</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mean_ln2 <span class="op">=</span> vert_py_grp[<span class="st">"length_2_mm"</span>].mean()</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine them</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>vert_py_summary <span class="op">=</span> pd.concat([mean_wt, mean_ln1, mean_ln2], axis <span class="op">=</span> <span class="dv">0</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out that</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>vert_py_summary.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average weight and length</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mean_wt <span class="op">=</span> vert_py_grp[<span class="st">"weight_g"</span>].mean()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>mean_ln1 <span class="op">=</span> vert_py_grp.length_1_mm.mean()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>mean_ln2 <span class="op">=</span> vert_py_grp[<span class="st">"length_2_mm"</span>].mean()</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine them</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>vert_py_summary <span class="op">=</span> pd.concat([mean_wt, mean_ln1, mean_ln2], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Do some small index reformatting steps</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>vert_py_summary <span class="op">=</span> vert_py_summary.reset_index().rename_axis(mapper <span class="op">=</span> <span class="va">None</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out that</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>vert_py_summary.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>year  species        
-1987  Cutthroat trout     8.959867
-1988  Cutthroat trout    16.073510
-1989  Cutthroat trout    14.308766
-1990  Cutthroat trout    11.212827
-1991  Cutthroat trout     9.150639
-dtype: float64</code></pre>
+<pre><code>   year          species   weight_g  length_1_mm  length_2_mm
+0  1987  Cutthroat trout   8.959867    90.170813          NaN
+1  1988  Cutthroat trout  16.073510   115.417219          NaN
+2  1989  Cutthroat trout  14.308766   107.038961          NaN</code></pre>
 </div>
 </div>
+<p>The index re-setting is needed for Python just to make sure the columns and rows are indexed as they should be.</p>
 </div>
 </div>
 </div>

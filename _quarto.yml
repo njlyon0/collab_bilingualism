@@ -59,6 +59,9 @@ website:
 
 format:
   html:
+    code-overflow: scroll
+    code-line-numbers: false
+    code-copy: true
     theme:
       light: lyonlight.scss
       dark: lyondark.scss

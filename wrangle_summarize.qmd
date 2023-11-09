@@ -82,15 +82,22 @@ Once we've established the columns for which we want to calculate summary statis
 
 R allows for multiple summary metrics to be calculate simultaneously within `dplyr`'s `summarize` function.
 
+```{r silence-dplyr}
+#| echo: false
+
+# Silence dplyr summarization message
+options(dplyr.summarise.inform = F)
+```
+
 ```{r r-summary}
 # Calculate average weight and length
 vert_r_summary <- dplyr::summarize(.data = vert_r_grp,
-                 avg_weight_g = mean(weight_g, na.rm = T),
+                 weight_g = mean(weight_g, na.rm = T),
                  length_1_mm = mean(length_1_mm, na.rm = T),
                  length_2_mm = mean(length_2_mm, na.rm = T))
 
 # Check out the first bit of that
-head(vert_r_summary, n = 5)
+head(vert_r_summary, n = 3)
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
@@ -106,9 +113,13 @@ mean_ln1 = vert_py_grp.length_1_mm.mean()
 mean_ln2 = vert_py_grp["length_2_mm"].mean()
 
 # Combine them
-vert_py_summary = pd.concat([mean_wt, mean_ln1, mean_ln2], axis = 0)
+vert_py_summary = pd.concat([mean_wt, mean_ln1, mean_ln2], axis = 1)
+
+# Do some small index reformatting steps
+vert_py_summary = vert_py_summary.reset_index().rename_axis(mapper = None, axis = 1)
 
 # Check out that
-vert_py_summary.head(5)
+vert_py_summary.head(3)
 ```
+The index re-setting is needed for Python just to make sure the columns and rows are indexed as they should be.
 :::

@@ -12,7 +12,7 @@ If you identify a bug in this manner I'll add your name (and the link to the pro
 
 #### Bug Finders {{< fa bugs >}}
 
-- 
+- Timothy Divoll -- {{< fa brands github >}} [GitHub profile](https://github.com/tdivoll)
 
 ### Co-Development
 

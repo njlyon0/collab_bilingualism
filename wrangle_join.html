@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Load the Pandas and <code>os</code> libraries.</p>
+<p>Load the <code>pandas</code> and <code>os</code> libraries.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -459,7 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<p>Python does horizontal concatenation with the <code>concat</code> function from the Pandas library. This function does horizontal and vertical concatenation and uses the <code>axis</code> argument to determine which is done. Setting <code>axis</code> to <code>0</code> performs vertical concatenation.</p>
+<p>Python does horizontal concatenation with the <code>concat</code> function from the <code>pandas</code> library. This function does horizontal and vertical concatenation and uses the <code>axis</code> argument to determine which is done. Setting <code>axis</code> to <code>0</code> performs vertical concatenation.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine vertically</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>vert_py_vertical <span class="op">=</span> pd.concat([vert_py_top, vert_py_bottom], axis <span class="op">=</span> <span class="dv">0</span>)</span>
@@ -557,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>See how “tree_B” has no distance to road listed? That is because it lacks a row in the right data object!</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<p>All Python joins are performed with the <code>merge</code> function (from the Pandas library) and the type of join is specified by the <code>how</code> argument. Which data variable is left and right is specified by arguments of the same name.</p>
+<p>All Python joins are performed with the <code>merge</code> function (from the <code>pandas</code> library) and the type of join is specified by the <code>how</code> argument. Which data variable is left and right is specified by arguments of the same name.</p>
 <p>The <code>on</code> argument can be used when the join key(s) labels match but otherwise a <code>left_on</code> and <code>right_on</code> argument are provided to specify the join key’s label in the left and right data variable respectively.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a left join</span></span>

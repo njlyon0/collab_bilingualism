@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Load the Pandas and <code>os</code> libraries as well as our simulated lichen data.</p>
+<p>Load the <code>pandas</code> and <code>os</code> libraries as well as our simulated lichen data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note that the column names to reshape <em>must</em> be a vector.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Python uses the <code>melt</code> function from the Pandas library for this operation. We need to specify the DataFrame to reshape, the columns to <em>exclude</em> from collapsing (with the <code>id_vars</code> argument), as well as the new column names for both the old column names and the values they contained. Fortunately the <code>var_name</code> and <code>value_name</code> arguments are reasonably intuitively named.</p>
+<p>Python uses the <code>melt</code> function from the <code>pandas</code> library for this operation. We need to specify the DataFrame to reshape, the columns to <em>exclude</em> from collapsing (with the <code>id_vars</code> argument), as well as the new column names for both the old column names and the values they contained. Fortunately the <code>var_name</code> and <code>value_name</code> arguments are reasonably intuitively named.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape longer</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>long_py <span class="op">=</span> pd.melt(frame <span class="op">=</span> lich_py,</span>
@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>We can use the Pandas function <code>pivot_table</code> to reshape back into wide format. Unlike R, we do need to specify the <code>index</code> column label(s) that are not being reshaped.</p>
+<p>We can use the <code>pandas</code> function <code>pivot_table</code> to reshape back into wide format. Unlike R, we do need to specify the <code>index</code> column label(s) that are not being reshaped.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape (back) into wide format</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>wide_py <span class="op">=</span> pd.pivot_table(data <span class="op">=</span> long_py,</span>

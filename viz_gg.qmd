@@ -50,7 +50,7 @@ Note that the `summarize` function drops columns that it doesn't create and that
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Plotnine, `os`, and Pandas libraries as well as our vertebrate data.
+Load the `plotnine`, `os`, and `pandas` libraries as well as our vertebrate data.
 
 ```{python py-libs}
 # Load needed library

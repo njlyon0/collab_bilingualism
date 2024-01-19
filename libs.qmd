@@ -24,7 +24,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like Pandas) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of Pandas).
+Python libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like `pandas`) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of `pandas`).
 
 ```{python py-libs}
 import pandas as pd

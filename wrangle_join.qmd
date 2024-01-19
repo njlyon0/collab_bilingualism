@@ -18,7 +18,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas and `os` libraries.
+Load the `pandas` and `os` libraries.
 
 ```{python py-libs}
 # Load needed libraries
@@ -155,7 +155,7 @@ message("There were two rows each before concatenation and ", nrow(vert_r_vertic
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python does horizontal concatenation with the `concat` function from the Pandas library. This function does horizontal and vertical concatenation and uses the `axis` argument to determine which is done. Setting `axis` to `0` performs vertical concatenation.
+Python does horizontal concatenation with the `concat` function from the `pandas` library. This function does horizontal and vertical concatenation and uses the `axis` argument to determine which is done. Setting `axis` to `0` performs vertical concatenation.
 
 ```{python py-rowbind}
 # Combine vertically
@@ -231,7 +231,7 @@ See how "tree_B" has no distance to road listed? That is because it lacks a row 
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-All Python joins are performed with the `merge` function (from the Pandas library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
+All Python joins are performed with the `merge` function (from the `pandas` library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
 
 The `on` argument can be used when the join key(s) labels match but otherwise a `left_on` and `right_on` argument are provided to specify the join key's label in the left and right data variable respectively.
 

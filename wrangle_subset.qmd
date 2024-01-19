@@ -17,7 +17,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas and `os` libraries.
+Load the `pandas` and `os` libraries.
 
 ```{python py-libs}
 # Load needed libraries

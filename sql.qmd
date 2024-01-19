@@ -25,7 +25,7 @@ library(DBI)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas, `os`, and `sqlite3` packages.
+Load the `pandas`, `os`, and `sqlite3` packages.
 
 ```{python py-libs}
 # Load needed libraries

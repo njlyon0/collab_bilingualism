@@ -20,7 +20,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas and `os` libraries.
+Load the `pandas` and `os` libraries.
 
 ```{python py-libs}
 # Load needed libraries
@@ -73,7 +73,7 @@ class(vert_r)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, such data are type `DataFrame` and this variable type is defined by the Pandas library. This is the standard type returned by the Pandas `read_csv` function.
+In Python, such data are type `DataFrame` and this variable type is defined by the `pandas` library. This is the standard type returned by the `pandas` `read_csv` function.
 
 ```{python py-class}
 # Check type of a data object

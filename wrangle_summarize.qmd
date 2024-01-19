@@ -24,7 +24,7 @@ head(vert_r, n = 5)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas and `os` libraries as well as our simulated lichen data.
+Load the `pandas` and `os` libraries as well as our simulated lichen data.
 
 ```{python py-libs}
 # Load needed libraries
@@ -102,7 +102,7 @@ head(vert_r_summary, n = 3)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-When summarizing data in Python we need to calculate each metric separately and then combine them. Apologies that this uses the `concat` function in Pandas that we have not previously covered but you can see a greater discussion of these functions/methods in the "Join" section.
+When summarizing data in Python we need to calculate each metric separately and then combine them. Apologies that this uses the `concat` function in `pandas` that we have not previously covered but you can see a greater discussion of these functions/methods in the "Join" section.
 
 Note the use of two modes of indexing a particular column.
 

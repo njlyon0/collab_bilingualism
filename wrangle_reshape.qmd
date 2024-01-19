@@ -24,7 +24,7 @@ head(lich_r, n = 3)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Load the Pandas and `os` libraries as well as our simulated lichen data.
+Load the `pandas` and `os` libraries as well as our simulated lichen data.
 
 ```{python py-libs}
 # Load needed libraries
@@ -69,7 +69,7 @@ Note that the column names to reshape _must_ be a vector.
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python uses the `melt` function from the Pandas library for this operation. We need to specify the DataFrame to reshape, the columns to _exclude_ from collapsing (with the `id_vars` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `var_name` and `value_name` arguments are reasonably intuitively named.
+Python uses the `melt` function from the `pandas` library for this operation. We need to specify the DataFrame to reshape, the columns to _exclude_ from collapsing (with the `id_vars` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `var_name` and `value_name` arguments are reasonably intuitively named.
 
 ```{python py-longer}
 # Reshape longer
@@ -106,7 +106,7 @@ head(wide_r, n = 2)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-We can use the Pandas function `pivot_table` to reshape back into wide format. Unlike R, we do need to specify the `index` column label(s) that are not being reshaped.
+We can use the `pandas` function `pivot_table` to reshape back into wide format. Unlike R, we do need to specify the `index` column label(s) that are not being reshaped.
 
 ```{python py-wider}
 # Reshape (back) into wide format

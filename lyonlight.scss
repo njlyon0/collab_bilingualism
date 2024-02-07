@@ -38,3 +38,9 @@ $code-color: $gray-3; // inline code text color
 
 // Code blocks
 $code-block-bg: $gray-0; // code block background color
+
+/*-- scss:rules --*/
+
+// Quick refs for frequently used text colors
+.r { color: $orange-3; }
+.py { color: $blue-3; }

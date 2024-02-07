@@ -6,9 +6,9 @@ execute:
 
 ## Grammar of Graphics
 
-Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> have a plotting library based on [The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson. The `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> package (`plotnine`) is actually directly based on the `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> package (`ggplot2`) so their internal syntax is _very_ similar. In fact the only serious differences between the two languages' ggplot operations are those that derive from larger syntax and format differences.
+Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} have a plotting library based on [The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson. The `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} package (`plotnine`) is actually directly based on the `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} package (`ggplot2`) so their internal syntax is _very_ similar. In fact the only serious differences between the two languages' ggplot operations are those that derive from larger syntax and format differences.
 
-Note that in the following examples we **_will not_** namespace `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> `ggplot2` functions (e.g., `ggplot2::aes`) for convenience. Any function not namespaced in the R examples producing graphs can be assumed to be exported from `ggplot2`.
+Note that in the following examples we **_will not_** namespace `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} `ggplot2` functions (e.g., `ggplot2::aes`) for convenience. Any function not namespaced in the R examples producing graphs can be assumed to be exported from `ggplot2`.
 
 ## Library & Data Loading
 
@@ -81,8 +81,8 @@ Remember that we use a `~` in Python to negate a conditional masking function li
 
 There are three fundamental components to ggplots:
 
-1. <u>Data</u> <span style="color:#077DC2">variable(s)</span>/<span style="color:#FF9B00">object(s)</span> used in the graph
-2. <u>Aesthetics</u> (i.e., which column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> are assigned to graph components)
+1. <u>Data</u> [variable(s)]{.py}/[object(s)]{.r} used in the graph
+2. <u>Aesthetics</u> (i.e., which column [labels]{.py}/[names]{.r} are assigned to graph components)
 3. <u>Geometries</u> (i.e., defining the type of plot)
 
 ### Data & Aesthetics 
@@ -172,7 +172,7 @@ Note that we could specify the color aesthetic in the `ggplot` aesthetics!
 
 ### Iterative Revision
 
-One of the real strengths of ggplots is that you can preserve part of your ideal graph as a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> and then add to it later. This saves you from needing to re-type a consistent `ggplot` function when all you really want to do is experiment with different geometries
+One of the real strengths of ggplots is that you can preserve part of your ideal graph as a [variable]{.py}/[object]{.r} and then add to it later. This saves you from needing to re-type a consistent `ggplot` function when all you really want to do is experiment with different geometries
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -208,7 +208,7 @@ gg_py = p9.ggplot(data = avg_py, mapping = p9.aes(x = "year", y = "mean_wt", col
 
 Once you have a graph that has the desired content mapped to various aesthetics and uses the geometry that you want, it's time to dive into the optional fourth component of grammar of graphics plots: themes! All plot format components from the size of the font in the axes to the gridline width are controlled by theme elements.
 
-To emphasize the theme modification examples below, let's assign all components of the above graph into a new <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+To emphasize the theme modification examples below, let's assign all components of the above graph into a new [variable]{.py}/[object]{.r}.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -231,7 +231,7 @@ line_py = gg_py + p9.geom_line()
 
 ### Built-In Themes
 
-To begin, <span style="color:#077DC2">plotnine</span>/<span style="color:#FF9B00">ggplot2</span> both come with pre-built themes that change a swath of theme elements all at once. If one of these fits your visualization needs then you don't need to worry about customizing the nitty gritty yourself which can be a real time-saver.
+To begin, [plotnine]{.py}/[ggplot2]{.r} both come with pre-built themes that change a swath of theme elements all at once. If one of these fits your visualization needs then you don't need to worry about customizing the nitty gritty yourself which can be a real time-saver.
 
 Let's add the built-in 'black and white' theme to our existing graph using the `theme_bw` function.
 
@@ -296,12 +296,12 @@ Note that the `theme` arguments use underscores (`_`) between words to be consis
 
 ## Continuing to Explore
 
-This lesson was designed to showcase the similarity between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>, _not_ to provide an exhaustive primer on all things ggplot. There are a lot of really cool graphs you can make with these tools and hopefully this website makes you feel better prepared to translate the knowledge you have from one language into the other!
+This lesson was designed to showcase the similarity between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, _not_ to provide an exhaustive primer on all things ggplot. There are a lot of really cool graphs you can make with these tools and hopefully this website makes you feel better prepared to translate the knowledge you have from one language into the other!
 
-If you are new to `ggplot`, I recommend searching out "faceting" graphs in particular as this can be a particularly powerful tool when you have many groups within your data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+If you are new to `ggplot`, I recommend searching out "faceting" graphs in particular as this can be a particularly powerful tool when you have many groups within your data [variable]{.py}/[object]{.r}.
 
 ### Additional Resources
 
-- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- NCEAS Scientific Computing team has a nice [Tidyverse Workshop](https://nceas.github.io/scicomp-workshop-tidyverse/visualize.html) with a particular emphasis on `ggplot2`
-- `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> -- The Carpentries covers `plotnine` in their ['Python for Ecologists' lesson](https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python.html)
-- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> -- The Carpentries also covers `ggplot2` in their ['R for Ecologists' lesson](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
+- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- NCEAS Scientific Computing team has a nice [Tidyverse Workshop](https://nceas.github.io/scicomp-workshop-tidyverse/visualize.html) with a particular emphasis on `ggplot2`
+- `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- The Carpentries covers `plotnine` in their ['Python for Ecologists' lesson](https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python.html)
+- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- The Carpentries also covers `ggplot2` in their ['R for Ecologists' lesson](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)

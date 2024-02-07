@@ -11,7 +11,7 @@ Note also that "package" and "library" are functionally interchangeable for our 
 
 ## Library Loading
 
-Assuming you've already installed the needed `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> _and_ `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> packages, you can now load them.
+Assuming you've already installed the needed `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} _and_ `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} packages, you can now load them.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -31,5 +31,5 @@ import pandas as pd
 ```
 :::
 
-With that, you're all done loading libraries! Note however that you will need to re-load your libraries every time you quit and re-open your IDE (<u>I</u>ntegrated <u>D</u>eveloper <u>E</u>nvironment) such as <span style="color:#077DC2">Conda</span> or <span style="color:#FF9B00">RStudio</span>. Restarting your session will also necessitate re-loading your libraries. That said, you only need to install packages _once!_
+With that, you're all done loading libraries! Note however that you will need to re-load your libraries every time you quit and re-open your IDE (<u>I</u>ntegrated <u>D</u>eveloper <u>E</u>nvironment) such as [Conda]{.py} or [RStudio]{.r}. Restarting your session will also necessitate re-loading your libraries. That said, you only need to install packages _once!_
 

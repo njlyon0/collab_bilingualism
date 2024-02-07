@@ -57,9 +57,9 @@ vert_py = pd.read_csv(os.path.join("data", "verts.csv"))
 Recall from our file path module that the `join` function accounts for computer operating system differences.
 :::
 
-## Tabular Data <span style="color:#077DC2">Type</span>/<span style="color:#FF9B00">Class</span>
+## Tabular Data [Type]{.py}/[Class]{.r}
 
-Data stored in CSVs (and similar data formats like Microsoft Excel, etc.) has a unique <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> that differs from some of the categories we covered in the "Fundamentals" section.
+Data stored in CSVs (and similar data formats like Microsoft Excel, etc.) has a unique [type]{.py}/[class]{.r} that differs from some of the categories we covered in the "Fundamentals" section.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -118,7 +118,7 @@ vert_py.tail(2)
 
 ## Data Structure
 
-While it is nice to know the <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> of the data table generally, we often need to know the <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> of the columns within those data tables. Our operations are typically aimed at modifying particular columns and pre-requisite to that is knowing the <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span> of the column to know what actions are available to us.
+While it is nice to know the [type]{.py}/[class]{.r} of the data table generally, we often need to know the [type]{.py}/[class]{.r} of the columns within those data tables. Our operations are typically aimed at modifying particular columns and pre-requisite to that is knowing the [type]{.py}/[class]{.r} of the column to know what actions are available to us.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -173,7 +173,7 @@ vert_py.info()
 
 ## Identifying Columns
 
-If we want to skip these steps and just identify the full set of column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> there is a small operation for stripping that information out in both languages.
+If we want to skip these steps and just identify the full set of column [labels]{.py}/[names]{.r} there is a small operation for stripping that information out in both languages.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -200,10 +200,10 @@ vert_py.columns
 We may want to access a particular column or set of columns. There are several approaches we might use to access a particular column in either Python or R. They are:
 
 - Indexing the column by its location
-- Indexing the column by its <span style="color:#077DC2">label</span>/<span style="color:#FF9B00">name</span>
+- Indexing the column by its [label]{.py}/[name]{.r}
 - Indexing the column with an operator
 
-In all of the following examples we'll use the `head` <span style="color:#077DC2">method</span>/<span style="color:#FF9B00">function</span> to simplify the output.
+In all of the following examples we'll use the `head` [method]{.py}/[function]{.r} to simplify the output.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -256,9 +256,9 @@ vert_py.year.head()
 ```
 :::
 
-When we want to access multiple columns we can still use either index positions or column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> but we _cannot_ use the column operator.
+When we want to access multiple columns we can still use either index positions or column [labels]{.py}/[names]{.r} but we _cannot_ use the column operator.
 
-We'll continue to use the `head` <span style="color:#077DC2">method</span>/<span style="color:#FF9B00">function</span> to simplify outputs.
+We'll continue to use the `head` [method]{.py}/[function]{.r} to simplify outputs.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

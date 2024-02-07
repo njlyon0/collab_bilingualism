@@ -4,13 +4,13 @@ title: "Core Concepts"
 
 ## Overview
 
-This section covers some of the most fundamental operations of both languages. These include <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> assignment, data <span style="color:#077DC2">type</span>/<span style="color:#FF9B00">class</span>, arithmetic, etc. External data are _not_ included in this page.
+This section covers some of the most fundamental operations of both languages. These include [variable]{.py}/[object]{.r} assignment, data [type]{.py}/[class]{.r}, arithmetic, etc. External data are _not_ included in this page.
 
 Note that any line in a code chunk preceded by a hashtag (`#`) is a "comment" and is not evaluated in either language. Including comments is generally good practice because it allows humans to read and understand code that may otherwise be unclear to them.
 
 ## Assignment
 
-At its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires **assigning** data to a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> with the **assignment operator**.
+At its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires **assigning** data to a [variable]{.py}/[object]{.r} with the **assignment operator**.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -38,7 +38,7 @@ a
 ```
 :::
 
-Once we've created a <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> we can then use the information stored inside of it in downstream operations! For example, we could perform basic arithmetic on our <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> and assign the result to a new <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>.
+Once we've created a [variable]{.py}/[object]{.r} we can then use the information stored inside of it in downstream operations! For example, we could perform basic arithmetic on our [variable]{.py}/[object]{.r} and assign the result to a new [variable]{.py}/[object]{.r}.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -66,9 +66,9 @@ b
 ```
 :::
 
-## <span style="color:#077DC2">Type</span> & <span style="color:#FF9B00">Class</span>
+## [Type]{.py} & [Class]{.r}
 
-Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In Python this is known as the <span style="color:#077DC2">variable</span>'s <span style="color:#077DC2">type</span> & while in R this is the <span style="color:#FF9B00">object</span>'s <span style="color:#FF9B00">class</span>. In either case, it's important to know--and be able to check--this information about the <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> with which we are working.
+Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In Python this is known as the [variable]{.py}'s [type]{.py} & while in R this is the [object]{.r}'s [class]{.r}. In either case, it's important to know--and be able to check--this information about the [variables]{.py}/[objects]{.r} with which we are working.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -112,9 +112,9 @@ type("my hands are typing words")
 
 ## Indexing
 
-When our <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> have more than one <span style="color:#077DC2">item</span>/<span style="color:#FF9B00">element</span> we may want to examine the piece of information at a specific position. This position is the "index position" and can be accessed in either language fairly easily.
+When our [variables]{.py}/[objects]{.r} have more than one [item]{.py}/[element]{.r} we may want to examine the piece of information at a specific position. This position is the "index position" and can be accessed in either language fairly easily.
 
-In order to explore this more fully, let's make some example multi-component <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>.
+In order to explore this more fully, let's make some example multi-component [variables]{.py}/[objects]{.r}.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -146,7 +146,7 @@ type(x)
 ```
 :::
 
-One crucial difference between R and Python is that Python is "0-based" meaning that the first <span style="color:#077DC2">item</span> is at index position `0` while in R the position of the equivalent <span style="color:#FF9B00">element</span> is `1`.
+One crucial difference between R and Python is that Python is "0-based" meaning that the first [item]{.py} is at index position `0` while in R the position of the equivalent [element]{.r} is `1`.
 
 Fortunately, in either language the syntax for indexing is the same.
 
@@ -172,7 +172,7 @@ x[0]
 
 ## Slicing
 
-When we index more than one position, this is known as "slicing". We can still use square brackets in either language to slice multiple <span style="color:#077DC2">items</span>/<span style="color:#FF9B00">elements</span> and the syntax inside of those brackets _seems_ shared but yields different results due to inherent syntactical differences.
+When we index more than one position, this is known as "slicing". We can still use square brackets in either language to slice multiple [items]{.py}/[elements]{.r} and the syntax inside of those brackets _seems_ shared but yields different results due to inherent syntactical differences.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

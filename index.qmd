@@ -7,7 +7,7 @@ I think of myself as a competent R coder but am a total novice when it comes to 
 
 ## Package Installation
 
-Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
+Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -42,7 +42,7 @@ python3 -m pip install plotnine
 
 ### Fundamentals
 
-When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. We can also build upon really core concepts into more nuanced fundamentals like automation or <span style="color:#077DC2">string</span>/<span style="color:#FF9B00">character</span> methods.
+When learning a new programming language, it can be really helpful to begin with dramatically simplified examples to demonstrate crucial concepts. We can also build upon really core concepts into more nuanced fundamentals like automation or [string]{.py}/[character]{.r} methods.
 
 ### Data Wrangling
 
@@ -54,11 +54,11 @@ Somewhat self-explanatory but this section is all about data visualization! Whil
 
 ### SQL
 
-`r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span> syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` <span style="color:#283E82">SQL</span>'s syntax itself.
+`r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql}'s syntax itself.
 
 ### Glossary
 
-As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
+As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
 
 ## Contributing Guidelines
 

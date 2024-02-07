@@ -23,7 +23,7 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 :::
 
 
-<span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>
+[variables]{.py}/[objects]{.r}
 
 
-`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>
+`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}

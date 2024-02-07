@@ -102,9 +102,9 @@ road.head(2)
 
 ## Concatenating Data
 
-The simplest way of combining data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> is called "concatenation". This involves--essentially--pasting rows or columns of separate data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> together.
+The simplest way of combining data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} is called "concatenation". This involves--essentially--pasting rows or columns of separate data [variables]{.py}/[objects]{.r} together.
 
-We'll need to modify our vertebrate data somewhat in order to demonstrate the two modes (horizontal or vertical) of concatenating <span style="color:#077DC2">DataFrames</span>/<span style="color:#FF9B00">data.frames</span>.
+We'll need to modify our vertebrate data somewhat in order to demonstrate the two modes (horizontal or vertical) of concatenating [DataFrames]{.py}/[data.frames]{.r}.
 
 Concatenating data (either horizontally or vertically) in this way is _deeply_ risky in that it can easily result in creating rows or columns that appear to relate to one another but in actuality do not. However, it is still worthwhile to cover how this can be done.
 
@@ -168,7 +168,7 @@ print("There were two rows each before concatenation and", len(vert_py_vertical)
 
 ### Horizontal Concatenation
 
-Horizontal concatenation (i.e., concatenating by putting columns next to one another) is the other option for concatenation. Note that it assumes row orders are consistent and _won't perform any check for improper row combinations_. Also, both languages will create duplicate column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> in our example because both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> have the same column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span>.
+Horizontal concatenation (i.e., concatenating by putting columns next to one another) is the other option for concatenation. Note that it assumes row orders are consistent and _won't perform any check for improper row combinations_. Also, both languages will create duplicate column [labels]{.py}/[names]{.r} in our example because both data [variables]{.py}/[objects]{.r} have the same column [labels]{.py}/[names]{.r}.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -198,15 +198,15 @@ vert_py_horiz.columns
 
 ## Joins
 
-While concatentation is simple and effective in some cases, a less risky mode of combining separate data objects is to use "joins". Joins allow two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> to be combined in an appropriate order based on a column found in both data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span>. This shared column (or column_s_) are known as "join keys".
+While concatentation is simple and effective in some cases, a less risky mode of combining separate data objects is to use "joins". Joins allow two data [variables]{.py}/[objects]{.r} to be combined in an appropriate order based on a column found in both data [variables]{.py}/[objects]{.r}. This shared column (or column_s_) are known as "join keys".
 
-This module makes use of simulated data on lichen coverage on various trees and the distance of those trees to the nearest road. Lichen wasn't surveyed on all of the trees and not all trees that _did_ have lichen measured had their distance to the nearest road recorded. Vertical concatenation is inappropriate because the column <span style="color:#077DC2">labels</span>/<span style="color:#FF9B00">names</span> and horizontal concatenation is incorrect because we want to make sure we only combine data from the same tree across the two datasets.
+This module makes use of simulated data on lichen coverage on various trees and the distance of those trees to the nearest road. Lichen wasn't surveyed on all of the trees and not all trees that _did_ have lichen measured had their distance to the nearest road recorded. Vertical concatenation is inappropriate because the column [labels]{.py}/[names]{.r} and horizontal concatenation is incorrect because we want to make sure we only combine data from the same tree across the two datasets.
 
-There are several variants of joins that each function slightly differently so we'll discuss each below. Note that all <u>joins only combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> at a time</u> and they are always referred to as the "left" (first) and "right" (second).
+There are several variants of joins that each function slightly differently so we'll discuss each below. Note that all <u>joins only combine two data [variables]{.py}/[objects]{.r} at a time</u> and they are always referred to as the "left" (first) and "right" (second).
 
 ### Left / Right Joins
 
-Left joins combine two data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> by their join key(s) but only keep rows that are found in the "left". A right join performs the same operation but prioritizes rows in the second data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span>. Note that functionally you can make a left join into a right join by switching which data <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> you assign to "left" versus "right".
+Left joins combine two data [variables]{.py}/[objects]{.r} by their join key(s) but only keep rows that are found in the "left". A right join performs the same operation but prioritizes rows in the second data [variable]{.py}/[object]{.r}. Note that functionally you can make a left join into a right join by switching which data [variable]{.py}/[object]{.r} you assign to "left" versus "right".
 
 <p align="center">
 <img src="images/joins/left-join_table.png" width="75%"/>
@@ -284,7 +284,7 @@ in_py.head(5)
 
 ### Full Joins
 
-A full join (sometimes known as an "outer join" or a "full outer join") combines all rows in both left and right data <span style="color:#077DC2">variables</span>/<span style="color:#FF9B00">objects</span> regardless of whether the join key entries are found in both.
+A full join (sometimes known as an "outer join" or a "full outer join") combines all rows in both left and right data [variables]{.py}/[objects]{.r} regardless of whether the join key entries are found in both.
 
 <p align="center">
 <img src="images/joins/outer-join_table.png" width="75%"/>

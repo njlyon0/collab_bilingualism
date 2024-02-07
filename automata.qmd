@@ -4,9 +4,9 @@ title: "Workflow Automation"
 
 ## Loops
 
-Often we want to perform some set of operations repeatedly across a known number of iterations. For example, maybe we want to subset a given data file into a separate <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> by month of data collection and export the resulting file as a CSV. We _could_ simply copy/paste our 'subset and export' code as many times as needed but this can be error-prone. Also, it is cumbersome to manually update all copies of the relevant code when you identify a possible improvement. 
+Often we want to perform some set of operations repeatedly across a known number of iterations. For example, maybe we want to subset a given data file into a separate [variable]{.py}/[object]{.r} by month of data collection and export the resulting file as a CSV. We _could_ simply copy/paste our 'subset and export' code as many times as needed but this can be error-prone. Also, it is cumbersome to manually update all copies of the relevant code when you identify a possible improvement. 
 
-One code solution to this is to **automate** the workflow using `for` loops (casually referred to more simply as just "loops"). The syntax of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> is very similar for loops--likely because this is such a fundamental operation to any coding language!
+One code solution to this is to **automate** the workflow using `for` loops (casually referred to more simply as just "loops"). The syntax of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} is very similar for loops--likely because this is such a fundamental operation to any coding language!
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -34,19 +34,19 @@ zoo_py
 ```
 :::
 
-With this simple <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> in-hand we can now demonstrate the core facets of loops.
+With this simple [variable]{.py}/[object]{.r} in-hand we can now demonstrate the core facets of loops.
 
 ### Fundamental Components
 
 Loops (in either language) require a few core components in order to work properly:
 
 1. `for` statement -- defines the start of the loop-definition component
-2. "Loop <span style="color:#077DC2">Variable</span>/<span style="color:#FF9B00">Object</span>" -- essentially a placeholder <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> whose value will change with each iteration of the loop
-3. `in` statement -- relates loop <span style="color:#077DC2">variable</span>/<span style="color:#FF9B00">object</span> to set of <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> to iterate across
-4. <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> to iterate across -- set of values to iterate across
+2. "Loop [variable]{.py}/[object]{.r}" -- essentially a placeholder [variable]{.py}/[object]{.r} whose value will change with each iteration of the loop
+3. `in` statement -- relates loop [variable]{.py}/[object]{.r} to set of [list]{.py}/[vector]{.r} to iterate across
+4. [list]{.py}/[vector]{.r} to iterate across -- set of values to iterate across
 5. Actual workflow! -- operations to perform on each iteration of the loop
 
-To see in this syntax in action we'll use a simple loop that prints each animal type in the <span style="color:#077DC2">list</span>/<span style="color:#FF9B00">vector</span> we created above.
+To see in this syntax in action we'll use a simple loop that prints each animal type in the [list]{.py}/[vector]{.r} we created above.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -97,7 +97,7 @@ animal
 
 We can also build conditional statements into a loop to create a loop that can flexibly handle different outcomes. We have discussed conditional operators elsewhere so we'll only explain the parts of loop conditionals that we haven't already discussed. To demonstrate, we can loop across a set of numbers and use conditionals to print whether the values are greater/less than or equal to zero.
 
-In the example below we'll use three new statements `if`, `else if` and `else`. Each condition only performs its operation when its condition is met (i.e., returns <span style="color:#077DC2">True</span>/<span style="color:#FF9B00">TRUE</span>).
+In the example below we'll use three new statements `if`, `else if` and `else`. Each condition only performs its operation when its condition is met (i.e., returns [True]{.py}/[TRUE]{.r}).
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -234,7 +234,7 @@ help(mult_py)
 
 ### Function Defaults
 
-Sometimes a given argument will often be set to the same value. In cases like this, we can define that as the default of the argument which allows users to not specify that argument at all. When users do specify something for that argument, it overrides the default behavior. All functions (and `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python methods</span>) with "optional" arguments are using defaults behind the scenes to make those arguments optional.
+Sometimes a given argument will often be set to the same value. In cases like this, we can define that as the default of the argument which allows users to not specify that argument at all. When users do specify something for that argument, it overrides the default behavior. All functions (and `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python methods]{.py}) with "optional" arguments are using defaults behind the scenes to make those arguments optional.
 
 We can define these defaults when we first create a function! Let's make a simple division function that divides the first argument by the second and sets the default of the second argument to 2.
 

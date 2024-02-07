@@ -28,9 +28,9 @@ import pandas as pd
 
 ## Conditionals
 
-Often when we work with data we want to retrieve only the rows that meet some condition(s). These conditions can be defined in code by using "relational operators". Fortunately, the fundamental relational operators are the same between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>!
+Often when we work with data we want to retrieve only the rows that meet some condition(s). These conditions can be defined in code by using "relational operators". Fortunately, the fundamental relational operators are the same between `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}!
 
-Conditional statements always return "boolean" [boo-lee-un] values. These are <span style="color:#077DC2">type</span> boolean and <span style="color:#FF9B00">class</span> logical in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> respectively.
+Conditional statements always return "boolean" [boo-lee-un] values. These are [type]{.py} boolean and [class]{.r} logical in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} respectively.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -120,7 +120,7 @@ vert_py.head(3)
 Recall from our file path module that the `join` function accounts for computer operating system differences.
 :::
 
-Now that we have some data we can use conditional statements to actually subset it! We'll use the `len` and `nrow` functions in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> respectively to demonstrate that we successfully subset. Either will show whether we've successfully removed the rows that don't meet our criteria.
+Now that we have some data we can use conditional statements to actually subset it! We'll use the `len` and `nrow` functions in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} respectively to demonstrate that we successfully subset. Either will show whether we've successfully removed the rows that don't meet our criteria.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -184,7 +184,7 @@ print("Subsetting changed this to", len(py_sub2))
 
 ## Subsetting with Masks
 
-We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` <span style="color:#077DC2">method</span> or the `%in%` <span style="color:#FF9B00">operator</span> (in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span> respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
+We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` [method]{.py} or the `%in%` [operator]{.r} (in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
@@ -218,7 +218,7 @@ print("Subsetting changed this to", len(py_mask1))
 
 Sometimes it is helpful to _negate_ criteria and subset to only conditions that _don't_ meet our criteria. This works with either simpler conditional statements or with masks! The symbol we use to do this negation differs between the two languages but in either it is placed to the left of the criterion it is negating.
 
-In the below example we'll use the `isnull` <span style="color:#077DC2">function</span> or the `is.na` <span style="color:#FF9B00">function</span> to see whether a column contains missing values and invert it to return only rows where the specified column _is not_ missing values.
+In the below example we'll use the `isnull` [function]{.py} or the `is.na` [function]{.r} to see whether a column contains missing values and invert it to return only rows where the specified column _is not_ missing values.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

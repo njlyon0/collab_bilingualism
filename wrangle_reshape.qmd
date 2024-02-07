@@ -87,7 +87,7 @@ Note that the column names use as IDs _must_ be a list (or similar object type).
 
 ## Reshaping Wider
 
-The opposite operation--reshaping wider--is also readily available in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` <span style="color:#077DC2">Python</span> or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` <span style="color:#FF9B00">R</span>. We'll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.
+The opposite operation--reshaping wider--is also readily available in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. We'll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R

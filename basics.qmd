@@ -15,7 +15,7 @@ At its most basic, we want to store data in code in such a way that we can use /
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, the assignment operator is `<-`. To use it, the name of the new object-to-be is on the left of the arrow and the information to assign is on the right.
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, the assignment operator is `<-`. To use it, the name of the new object-to-be is on the left of the arrow and the information to assign is on the right.
 
 ```{r r-assign}
 # Make a simple object
@@ -27,7 +27,7 @@ a
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, the assignment operator is `=`. To use it, the name of the new object-to-be is on the left of the equal sign and the information to assign is on the right.
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, the assignment operator is `=`. To use it, the name of the new object-to-be is on the left of the equal sign and the information to assign is on the right.
 
 ```{python py-assign}
 # Make a simple object
@@ -43,7 +43,7 @@ Once we've created a [variable]{.py}/[object]{.r} we can then use the informatio
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in R exponents use `^`.
+Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} exponents use `^`.
 
 ```{r r-math}
 # Raise to an exponent
@@ -55,7 +55,7 @@ b
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in Python exponents use `**`
+Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} exponents use `**`
 
 ```{python py-math}
 # Raise to an exponent
@@ -68,12 +68,12 @@ b
 
 ## [Type]{.py} & [Class]{.r}
 
-Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In Python this is known as the [variable]{.py}'s [type]{.py} & while in R this is the [object]{.r}'s [class]{.r}. In either case, it's important to know--and be able to check--this information about the [variables]{.py}/[objects]{.r} with which we are working.
+Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} this is known as the [variable]{.py}'s [type]{.py} & while in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} this is the [object]{.r}'s [class]{.r}. In either case, it's important to know--and be able to check--this information about the [variables]{.py}/[objects]{.r} with which we are working.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R we use the `class` function to get this information. Note that the names of R classes sometimes differ from their equivalents in Python.
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} we use the `class` function to get this information. Note that the names of `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} classes sometimes differ from their equivalents in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}.
 
 ```{r r-class1}
 # Check class of an integer
@@ -92,7 +92,7 @@ class("my hands are typing words")
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In python, the `type` function returns the type of the data object. Note that the names of Python types sometimes differ from their equivalents in R.
+In python, the `type` function returns the type of the data object. Note that the names of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} types sometimes differ from their equivalents in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}.
 
 ```{python py-class1}
 # Check type of an integer
@@ -119,7 +119,7 @@ In order to explore this more fully, let's make some example multi-component [va
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, one of the fundamental data structures is a "vector". Vectors are assembled with the concatenation function (`c`) where each item is separated by commas (`,`) and the set of them is wrapped in parentheses (`(...)`).
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, one of the fundamental data structures is a "vector". Vectors are assembled with the concatenation function (`c`) where each item is separated by commas (`,`) and the set of them is wrapped in parentheses (`(...)`).
 
 Note that the class of the object comes from the vector's _contents_ rather than the fact that it is a vector. All elements in a vector therefore must share a class.
 
@@ -133,7 +133,7 @@ class(x)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python the fundamental data structure is a "list". Lists are assembled either by wrapping the items to include in square brackets (`[...]`) or by using the `list` function. In either case, each item is separated from the others by commas (`,`).
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} the fundamental data structure is a "list". Lists are assembled either by wrapping the items to include in square brackets (`[...]`) or by using the `list` function. In either case, each item is separated from the others by commas (`,`).
 
 Note that the type of the variable comes from the _list itself_ rather than its contents. Lists therefore support items of multiple different types.
 
@@ -146,7 +146,7 @@ type(x)
 ```
 :::
 
-One crucial difference between R and Python is that Python is "0-based" meaning that the first [item]{.py} is at index position `0` while in R the position of the equivalent [element]{.r} is `1`.
+One crucial difference between `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} and `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} is that `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} is "0-based" meaning that the first [item]{.py} is at index position `0` while in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} the position of the equivalent [element]{.r} is `1`.
 
 Fortunately, in either language the syntax for indexing is the same.
 
@@ -177,7 +177,7 @@ When we index more than one position, this is known as "slicing". We can still u
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, when we write two numbers separated by a colon (`:`), that indicates that we want those two numbers and all integers between them.
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, when we write two numbers separated by a colon (`:`), that indicates that we want those two numbers and all integers between them.
 
 ```{r r-slice-cont1}
 # Demonstrate that the colon is shorthand for 'all numbers between'
@@ -193,7 +193,7 @@ x[2:4]
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In order to slice in Python, we include the start and stop _bounds_ of the items that we want to slice separated by a colon (`:`) inside of square brackets. The first bound (i.e., bound position 0) is actually the starting bracket of the list! This means that we can treat the first number in the slice in the same way we would in single indexing but the second number is actually the bound before the item with that index value.
+In order to slice in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, we include the start and stop _bounds_ of the items that we want to slice separated by a colon (`:`) inside of square brackets. The first bound (i.e., bound position 0) is actually the starting bracket of the list! This means that we can treat the first number in the slice in the same way we would in single indexing but the second number is actually the bound before the item with that index value.
 
 Another way of thinking about this is that it is similar to a mathematical set. The starting bound is _inclusive_ while the ending bound is _exclusive_.
 

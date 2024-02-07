@@ -3,7 +3,7 @@ title: "Welcome!"
 engine: knitr
 ---
  
-I think of myself as a competent R coder but am a total novice when it comes to Python. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in Python. I think trying for a 1-to-1 R translation to Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
+I think of myself as a competent `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} coder but am a total novice when it comes to `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}. I think trying for a 1-to-1 `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} translation to `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
 
 ## Package Installation
 
@@ -46,7 +46,7 @@ When learning a new programming language, it can be really helpful to begin with
 
 ### Data Wrangling
 
-The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore Python equivalents to many of the R operations that I know and love.
+The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} equivalents to many of the `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} operations that I know and love.
 
 ### Visualization
 
@@ -66,7 +66,7 @@ As the heading would suggest, I'm housing various term definitions here. As of n
 
 ## Additional Resources
 
-I'm not the first to have this idea so there are other useful Python tutorials and specifically R-Python bilingualism resources. See below:
+I'm not the first to have this idea so there are other useful `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} tutorials and specifically `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}/`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} bilingualism resources. See below:
 
 - The Carpentries has a "[Data Analysis and Visualization in Python for Ecologists ](https://datacarpentry.org/python-ecology-lesson/index.html)" lesson that is really well put-together (as is characteristic of The Carpentries' content)
 - The [Earth Lab](https://www.earthdatascience.org/) has a Python course that was recommended to me by an NCEAS employee (specifically [section 4](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/))

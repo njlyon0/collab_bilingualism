@@ -51,7 +51,7 @@ To see in this syntax in action we'll use a simple loop that prints each animal 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, the `for` statement requires parentheses around the loop object, the `in` statement, and the vector to iterate across. The operation(s) performed in each iteration _must_ be wrapped in curly braces (`{...}`).
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, the `for` statement requires parentheses around the loop object, the `in` statement, and the vector to iterate across. The operation(s) performed in each iteration _must_ be wrapped in curly braces (`{...}`).
 
 When the code reaches the closing curly brace it returns to the top of the workflow and begins again with the next element of the provided vector.
 
@@ -74,7 +74,7 @@ animal
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indentened one level (i.e., press "tab" once or "space" four times).
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indentened one level (i.e., press "tab" once or "space" four times).
 
 When the code reaches the end of the indented lines it returns to the top of the workflow and begins again with the next item of the provided list.
 
@@ -168,7 +168,7 @@ Let's write a simple function in both languages that simply multiplies two argum
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Generating a function in R shares some syntax elements with loops and conditional statements! In this case we use the `function` function to preserve our work as a function, then provide any needed arguments in parentheses, and end with curly braces with the operation(s) performed by the function inside. If the function produces something that we want to give back to the user, we need to specify that with the `return` function.
+Generating a function in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} shares some syntax elements with loops and conditional statements! In this case we use the `function` function to preserve our work as a function, then provide any needed arguments in parentheses, and end with curly braces with the operation(s) performed by the function inside. If the function produces something that we want to give back to the user, we need to specify that with the `return` function.
 
 ```{r r-fxn}
 # Multiplication function
@@ -187,7 +187,7 @@ mult_r(p = 2, q = 5)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Generating a function in Python shares some syntax elements with loops and conditional statements! In this case we use the `def` statement then provide the name and--parenthetically--any needed arguments for our new function. If the function produces something that we want to give back to the user, we need to specify that by using the `return` statement.
+Generating a function in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} shares some syntax elements with loops and conditional statements! In this case we use the `def` statement then provide the name and--parenthetically--any needed arguments for our new function. If the function produces something that we want to give back to the user, we need to specify that by using the `return` statement.
 
 ```{python py-fxn}
 # Multiplication function
@@ -220,7 +220,7 @@ One component of custom functions to be aware of is their somewhat variable docu
 
 R contains no native mode of specifying function documentation! While there are tools to formalize this when functions are part of a formal package (see [roxygen2 formatting](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)) our custom functions _cannot_ include documentation. That said, <u>it is still good practice to include plain-language comment lines that describe the function's operations</u> even when they will only be visible where the function is defined.
 
-Note that the [`docstring` R package](https://cran.r-project.org/web/packages/docstring/vignettes/docstring_intro.html) simulates Python-style docstrings for R functions but is not part of "base" R.
+Note that the [`docstring` package](https://cran.r-project.org/web/packages/docstring/vignettes/docstring_intro.html) for `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} simulates `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}-style docstrings for `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} functions but is not part of "base" R.
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
@@ -305,7 +305,7 @@ Just like loops, we can build conditional statements into our functions to make 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Let's make a simple addition function and set both arguments to default to `NULL`. `NULL` is an R constant that allows us to create an object without assigning any value to it.
+Let's make a simple addition function and set both arguments to default to `NULL`. `NULL` is an `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} constant that allows us to create an object without assigning any value to it.
 
 Note that we're also using the `is.null` function in our conditional in order to easily assess whether the argument has been left to its default (i.e., set to `NULL`) or defined.
 
@@ -340,7 +340,7 @@ add_r()
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Let's make a simple addition function and set both arguments to default to `None`. `None` is a Python constant that allows us to create a variable without assigning any value to it.
+Let's make a simple addition function and set both arguments to default to `None`. `None` is a `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} constant that allows us to create a variable without assigning any value to it.
 
 Note that we're also using the `is` statement in our conditional (in this case it is equivalent to `==``).
 

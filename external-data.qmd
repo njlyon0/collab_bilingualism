@@ -31,12 +31,12 @@ import pandas as pd
 
 ## Data Import
 
-We can now load an external dataset derived from the `lterdatasampler` R package (see [here](https://lter.github.io/lterdatasampler/)) with both R and Python. This relatively simple operation is also a nice chance to showcase how 'namespacing' (i.e., indicating which package a given function comes from) differs between the two languages.
+We can now load an external dataset derived from the `lterdatasampler` `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} package (see [here](https://lter.github.io/lterdatasampler/)) with both `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} and `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}. This relatively simple operation is also a nice chance to showcase how 'namespacing' (i.e., indicating which package a given function comes from) differs between the two languages.
 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-Namespacing in R is accomplished by doing `package_name::function_name` and is optional (though, in my opinion, good practice!). Note that we use the assignment operator (`<-`) to assign the contents of the CSV to an object.
+Namespacing in `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} is accomplished by doing `package_name::function_name` and is optional (though, in my opinion, good practice!). Note that we use the assignment operator (`<-`) to assign the contents of the CSV to an object.
 
 ```{r r-ext-data}
 # Read in vertebrate data CSV
@@ -47,7 +47,7 @@ Recall from our file path module that the `file.path` function accounts for comp
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, namespacing is required and is done via `package_name.function_name`. Note that we use the assignment operator (`=`) to assign the contents of the CSV to a variable.
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, namespacing is required and is done via `package_name.function_name`. Note that we use the assignment operator (`=`) to assign the contents of the CSV to a variable.
 
 ```{python py-ext-data}
 # Read in vertebrate data CSV
@@ -64,7 +64,7 @@ Data stored in CSVs (and similar data formats like Microsoft Excel, etc.) has a 
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, such data are class `data.frame`
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, such data are class `data.frame`
 
 ```{r r-class}
 # Check class of a data object
@@ -73,7 +73,7 @@ class(vert_r)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python, such data are type `DataFrame` and this variable type is defined by the `pandas` library. This is the standard type returned by the `pandas` `read_csv` function.
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, such data are type `DataFrame` and this variable type is defined by the `pandas` library. This is the standard type returned by the `pandas` `read_csv` function.
 
 ```{python py-class}
 # Check type of a data object
@@ -88,7 +88,7 @@ Checking the 'head' or 'tail' of the data (i.e., the first or last few rows of t
 ::: panel-tabset
 ## `r fontawesome::fa("r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R, we use the `head` or `tail` function to return the first or last rows respectively.
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, we use the `head` or `tail` function to return the first or last rows respectively.
 
 ```{r r-head}
 # Check out head
@@ -103,7 +103,7 @@ utils::tail(vert_r, n = 3)
 
 ## `r fontawesome::fa("python", fill = "#077DC2", a11y ="sem")` Python
 
-In Python, we use the `head` or `tail` method to return the first or last rows respectively. Note that these methods are only available to variables of type `DataFrame`. All methods are appended to the end of the variable of the appropriate type separated by a period.
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}, we use the `head` or `tail` method to return the first or last rows respectively. Note that these methods are only available to variables of type `DataFrame`. All methods are appended to the end of the variable of the appropriate type separated by a period.
 
 ```{python py-head}
 # Check out head
@@ -123,17 +123,17 @@ While it is nice to know the [type]{.py}/[class]{.r} of the data table generally
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R uses the `str` function to assess data structure. Structure includes the dimensions of the data (i.e., number of rows and columns) as well as the class of the data (`data.frame`) and the class of each column.
+`r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} uses the `str` function to assess data structure. Structure includes the dimensions of the data (i.e., number of rows and columns) as well as the class of the data (`data.frame`) and the class of each column.
 
 ```{r r-structure}
 utils::str(vert_r)
 ```
 
-Be careful to not confuse this with the Python function `str` that coerces values to type "string"!
+Be careful to not confuse this with the `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} function `str` that coerces values to type "string"!
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-When we want to know the type of each column in a Python `DataFrame`, we can use the `dtypes` "attribute". Attributes are akin to a method but they completely lack arguments that might modify their behavior. As a consequence they are extremely precisely defined. The `dtypes` attribute returns the type of each column.
+When we want to know the type of each column in a `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} `DataFrame`, we can use the `dtypes` "attribute". Attributes are akin to a method but they completely lack arguments that might modify their behavior. As a consequence they are extremely precisely defined. The `dtypes` attribute returns the type of each column.
 
 ```{python py-structure}
 vert_py.dtypes
@@ -147,7 +147,7 @@ We often want to begin our exploration of a given dataset by getting a summary o
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R provides the `summary` function to summarize all columns in a dataset. Note that it is not terribly informative for columns of class character.
+`r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} provides the `summary` function to summarize all columns in a dataset. Note that it is not terribly informative for columns of class character.
 
 ```{r r-describe}
 # Get summary of data
@@ -156,14 +156,14 @@ summary(vert_r)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python has the `describe` method for getting similar information about each column of a `DataFrame`.
+`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} has the `describe` method for getting similar information about each column of a `DataFrame`.
 
 ```{python py-describe}
 # Describe data
 vert_py.describe()
 ```
 
-Python also offers the `info` method to identify only the count of non-null entries in each column as well as the type of each column.
+`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} also offers the `info` method to identify only the count of non-null entries in each column as well as the type of each column.
 
 ```{python py-describe2}
 # Check info of data
@@ -178,7 +178,7 @@ If we want to skip these steps and just identify the full set of column [labels]
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R has the `names` function to quickly return a vector of the column names in a given `data.frame` object.
+`r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} has the `names` function to quickly return a vector of the column names in a given `data.frame` object.
 
 ```{r r-names}
 # Check column names
@@ -187,7 +187,7 @@ names(vert_r)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python has the `columns` attributes for returning a simple list of column labels in a given `DataFrame` variable.
+`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} has the `columns` attributes for returning a simple list of column labels in a given `DataFrame` variable.
 
 ```{python py-names}
 # Check column labels
@@ -197,7 +197,7 @@ vert_py.columns
 
 ## Accessing Column(s)
 
-We may want to access a particular column or set of columns. There are several approaches we might use to access a particular column in either Python or R. They are:
+We may want to access a particular column or set of columns. There are several approaches we might use to access a particular column in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. They are:
 
 - Indexing the column by its location
 - Indexing the column by its [label]{.py}/[name]{.r}
@@ -228,7 +228,7 @@ If preferred we could instead substitute the number for the column name.
 head(vert_r["year"])
 ```
 
-In R, the column operator is a `$` and we place that character between the object and column names (e.g., `data_name$column_name`).
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, the column operator is a `$` and we place that character between the object and column names (e.g., `data_name$column_name`).
 
 ```{r r-cols3}
 head(vert_r$year)
@@ -249,7 +249,7 @@ If preferred we could instead substitute the number for the column label.
 vert_py["year"].head()
 ```
 
-In R, the column operator is a `.` and we place that character between the variable name and column label (e.g., `data_name.column_name`).
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}, the column operator is a `.` and we place that character between the variable name and column label (e.g., `data_name.column_name`).
 
 ```{python py-cols3}
 vert_py.year.head()
@@ -263,7 +263,7 @@ We'll continue to use the `head` [method]{.py}/[function]{.r} to simplify output
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-In R we could use a concatenated vector of index positions to specify particular columns by their positions.
+In `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} we could use a concatenated vector of index positions to specify particular columns by their positions.
 
 ```{r r-multicols1}
 # Use multiple column index positions
@@ -279,7 +279,7 @@ head(vert_r[, c("year", "sitecode", "weight_g")])
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-In Python we could use the `iloc` method for multiple columns and simply supply a list of the column index positions in which we are interested. Note that this method is different from many of the other methods we've covered so far because it uses square brackets instead of parentheses.
+In `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} we could use the `iloc` method for multiple columns and simply supply a list of the column index positions in which we are interested. Note that this method is different from many of the other methods we've covered so far because it uses square brackets instead of parentheses.
 
 ```{python py-multicols1}
 # Use multiple column index positions

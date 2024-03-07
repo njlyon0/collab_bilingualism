@@ -40,6 +40,12 @@ website:
         menu: 
           - href: viz_gg.qmd
             text: "Grammar of Graphics"
+      - text: "Spatial"
+        menu: 
+          - href: spatial_core.qmd
+            text: "Core"
+          - href: spatial_viz.qmd
+            text: "Visualization"
       - href: sql.qmd
         text: "SQL"
     right:

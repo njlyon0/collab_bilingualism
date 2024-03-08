@@ -3,6 +3,31 @@ title: "Spatial Fundamentals"
 engine: knitr
 ---
 
+## Library Loading
+
+Begin by loading any needed libraries.
+
+:::panel-tabset
+## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+
+Load `sf` and `terra`.
+
+```{r r-libs, warning = F, message = F}
+library(sf)
+library(terra)
+```
+
+## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+
+Load the `geopandas` and `rasterio` libraries.
+
+```{python py-libs}
+# Load needed libraries
+import geopandas as gpd
+import rasterio
+```
+:::
+
 ## Spatial Data Types
 
 Under Construction, check back soon!

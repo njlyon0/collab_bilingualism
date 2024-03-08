@@ -3,4 +3,6 @@ title: "Spatial Visualization"
 engine: knitr
 ---
 
+## Map Making
+
 Under Construction, check back soon!

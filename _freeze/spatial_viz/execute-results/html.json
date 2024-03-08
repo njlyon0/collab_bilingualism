@@ -1,7 +1,7 @@
 {
-  "hash": "d963b96b1c9b9d7d74aaacb864f887d0",
+  "hash": "ec8562a5d3897c663fd95997b05baafa",
   "result": {
-    "markdown": "---\ntitle: \"Spatial Visualization\"\nengine: knitr\n---\n\n\nUnder Construction, check back soon!\n",
+    "markdown": "---\ntitle: \"Spatial Visualization\"\nengine: knitr\n---\n\n\n## Map Making\n\nUnder Construction, check back soon!\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

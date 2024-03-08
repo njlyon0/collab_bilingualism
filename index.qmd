@@ -12,28 +12,40 @@ Both coding languages rely on packages to install specific functions that are ab
 :::panel-tabset
 ## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
 
-R contains an `install.packages` function for installing packages from within R.
+`r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} contains an `install.packages` function for installing packages desired libraries.
 
 ```{r r-pkg-install, eval = F}
-# Install the 'tidyverse' meta-package
+# The 'tidyverse' meta-package contains many of the tools we'll need
 install.packages("tidyverse")
+
+# For SQL operations, DBI is needed
 install.packages("DBI")
+
+# For spatial operations we'll need sf and terra
+install.packages("sf")
+install.packages("terra")
 ```
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python packages must be installed via the <u>C</u>ommand <u>L</u>ine <u>I</u>nterface (a.k.a. CLI, or "bash").
+`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} packages must be installed via the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}.
 
 ```{bash py-pkg-install, eval = F}
-# Install the following python packages
+# The numpy and pandas packages contain fundamental Python tools
 python3 -m pip install pandas
 python3 -m pip install numpy
+
+# For plotting we'll want some other packages
 python3 -m pip install matplotlib
-python3 -m pip install jupyterlab
+python3 -m pip install plotnine
+## plotnine is Python's ggplot2
+
+# For SQL operations we'll need the sqlite3 package
 python3 -m pip install sqlite3
 
-## `plotnine` is `ggplot2` in python!
-python3 -m pip install plotnine
+# For spatial operations we'll need geopandas and rasterio
+python3 -m pip install geopandas
+python3 -m pip install rasterio
 ```
 :::
 

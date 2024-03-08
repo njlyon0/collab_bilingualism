@@ -5,7 +5,7 @@ engine: knitr
 
 ## Overview
 
-One thing we have not discussed that is incredibly important to any scripted language ([{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r} _very_ much included) is computer directory and file management. Code often interacts with external data files that must be imported at the start of a workflow and often preserves a record of its operation as an exported product at the end of the workflow. These concepts are more related to fundamental understanding of how your computer stores information than they are strictly coding language considerations but they are still worth discussing here.
+One thing we have not discussed that is incredibly important to any scripted language ([{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} _very_ much included) is computer directory and file management. Code often interacts with external data files that must be imported at the start of a workflow and often preserves a record of its operation as an exported product at the end of the workflow. These concepts are more related to fundamental understanding of how your computer stores information than they are strictly coding language considerations but they are still worth discussing here.
 
 ## Crucial Vocabulary
 
@@ -25,7 +25,7 @@ We'll need to quickly load any needed libraries before getting into the "actual"
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-R does not require any libraries to perform these operations!
+[{{< fa brands r-project >}} R]{.r} does not require any libraries to perform these operations!
 
 ```{r r-libs}
 #| echo: false
@@ -36,7 +36,7 @@ R does not require any libraries to perform these operations!
 
 ## [{{< fa brands python >}}]{.py} Python
 
-We'll need the `os` library and `glob` library in Python to do these operations.
+We'll need the `os` library and `glob` library in [{{< fa brands python >}} Python]{.py} to do these operations.
 
 ```{python py-libs}
 # Load needed library
@@ -54,7 +54,7 @@ Both languages provide a quick way of checking what your current working directo
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-Base R includes the `getwd` function to display your current working directory.
+Base [{{< fa brands r-project >}} R]{.r} includes the `getwd` function to display your current working directory.
 
 ```{r r-wd}
 # Check current working directory
@@ -62,6 +62,8 @@ getwd()
 ```
 
 ## [{{< fa brands python >}}]{.py} Python
+
+[{{< fa brands python >}} Python]{.py} has a `getcwd` function (from the `os` library) to display your current working directory.
 
 ```{python py-wd}
 # Check current working directory
@@ -76,7 +78,7 @@ One minor--but often frustrating--hurdle for collaborative coding occurs when gr
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-Base R includes a `file.path` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
+[{{< fa brands r-project >}} R]{.r} includes a `file.path` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
 ```{r r-os-paths}
 # Build a faux file path
@@ -85,7 +87,7 @@ file.path("path", "to", "my", "data")
 
 ## [{{< fa brands python >}}]{.py} Python
 
-The `os` library in Python includes a `join` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
+The `os` library in [{{< fa brands python >}} Python]{.py} includes a `join` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
 ```{python py-os-paths}
 # Build a faux file path
@@ -95,7 +97,7 @@ os.path.join("path", "to", "my", "data")
 Note that the needed function is in the `path` module of the `os` library.
 :::
 
-Using these tools allows us to code collaboratively even when not all group members use the same operating system! Note that nothing will solve the issue of using absolute paths because group members will always have different paths from the root to a particular directory. Because of this <u>it is best to **_always_** use relative paths when working in group contexts</u>.
+Using these tools allows us to code collaboratively even when not all group members use the same operating system! Note that nothing will solve the issue of using absolute paths because group members will always have different paths from the root to a particular directory. Because of this <u>it is best to **_always_** use relative paths for maximum reproducibility</u>.
 
 ## Finding Files
 
@@ -104,7 +106,7 @@ Once you've confirmed your working directory and figured out how to account for 
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-We can use the base R `dir` function to identify all files in a particular folder (note this ignores _folders_ in that folder).
+We can use the [{{< fa brands r-project >}} R]{.r} `dir` function to identify all files in a particular folder (note this ignores _folders_ inside of the specified folder).
 
 ```{r r-ls}
 # List files in the "data" folder for this website

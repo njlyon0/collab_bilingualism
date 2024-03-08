@@ -44,9 +44,9 @@ avg_r <- dplyr::summarize(.data = grp_r,
 head(avg_r, n = 5)
 ```
 
-Remember that we use an `!` in R to negate a conditional masking function like `is.na`.
+Remember that we use an `!` in [{{< fa brands r-project >}} R]{.r} to negate a conditional masking function like `is.na`.
 
-Note that the `summarize` function drops columns that it doesn't create and that are not used as grouping variables.
+Note that the `summarize` function drops all columns that either it doesn't create or that are not used as grouping variables.
 
 ## [{{< fa brands python >}}]{.py} Python
 
@@ -74,7 +74,7 @@ avg_py = grp_py["weight_g"].mean().reset_index(name = "mean_wt")
 avg_py.head()
 ```
 
-Remember that we use a `~` in Python to negate a conditional masking function like `isnull`.
+Remember that we use a `~` in [{{< fa brands python >}} Python]{.py} to negate a conditional masking function like `isnull`.
 :::
 
 ## Core Components
@@ -279,7 +279,7 @@ line_r +
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Note that the `theme` arguments use underscores (`_`) between words to be consistent with Python syntax.
+Note that the `theme` arguments use underscores (`_`) between words to be consistent with [{{< fa brands python >}} Python]{.py} syntax.
 
 ```{python py-gg7}
 #| warning: false
@@ -302,6 +302,8 @@ If you are new to `ggplot`, I recommend searching out "faceting" graphs in parti
 
 ### Additional Resources
 
-- [{{< fa brands r-project >}} R]{.r} -- NCEAS Scientific Computing team has a nice [Tidyverse Workshop](https://nceas.github.io/scicomp-workshop-tidyverse/visualize.html) with a particular emphasis on `ggplot2`
 - [{{< fa brands python >}} Python]{.py} -- The Carpentries covers `plotnine` in their ['Python for Ecologists' lesson](https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python.html)
+- [{{< fa brands r-project >}} R]{.r} -- NCEAS Scientific Computing team has a nice [Tidyverse Workshop](https://nceas.github.io/scicomp-workshop-tidyverse/visualize.html) with a particular emphasis on `ggplot2`
 - [{{< fa brands r-project >}} R]{.r} -- The Carpentries also covers `ggplot2` in their ['R for Ecologists' lesson](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
+- [{{< fa brands r-project >}} R]{.r} -- [Sam Csik](https://samanthacsik.github.io/) designed a ["Data Visualization & Communication"](https://samanthacsik.github.io/EDS-240-data-viz/course-materials/week5.html) course for the UCSB Master of Environmental Data Science (MEDS) program
+

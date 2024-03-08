@@ -35,7 +35,7 @@ Conditional statements always return "boolean" [BOO-lee-un] values. These are [t
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-In R `TRUE` and `FALSE` are booleans. Note that their abbreviations `T` and `F` are also accepted though they _must_ be capitalized.
+In [{{< fa brands r-project >}} R]{.r} `TRUE` and `FALSE` are booleans. Note that their abbreviations `T` and `F` are also accepted though they _must_ be capitalized.
 
 ```{r r-bool1}
 # Assess whether a number equals itself and assign to an object
@@ -52,7 +52,7 @@ class(bool_r)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-In Python `True` or `False` are booleans. Note that they must be capitalized in this way to register as the correct type (i.e., only first letter capitalized).
+In [{{< fa brands python >}} Python]{.py} `True` or `False` are booleans. Note that they must be capitalized in this way to register as the correct type (i.e., only first letter capitalized).
 
 ```{python py-bool1}
 # Assess whether a number equals itself and assign to an object
@@ -88,7 +88,7 @@ In addition to asking whether something 'is exactly equal to' something else (`=
 
 ## Subsetting with One Condition
 
-We can leverage these conditional values to return only rows of a data table that meet criteria that are valuable to us. Let's begin by loading the external dataset derived from the `lterdatasampler` R package (see [here](https://lter.github.io/lterdatasampler/)) that we used in the previous section.
+We can leverage these conditional values to return only rows of a data table that meet criteria that are valuable to us. Let's begin by loading the external dataset derived from the `lterdatasampler` [{{< fa brands r-project >}} R]{.r} package (see [here](https://lter.github.io/lterdatasampler/)) that we used in the previous section.
 
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
@@ -125,7 +125,7 @@ Now that we have some data we can use conditional statements to actually subset 
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-Let's subset to only one particular site of vertebrate data. Note that 'base R' does include a `subset` function but we'll use the equivalent `filter` function from the `dplyr` package.
+Let's subset to only one particular site of vertebrate data. Note that base [{{< fa brands r-project >}} R]{.r} does include a `subset` function but we'll use the equivalent `filter` function from the `dplyr` package.
 
 ```{r r-subset1}
 # Subset to only site "MACKOG-U"
@@ -170,7 +170,7 @@ message("Subsetting changed this to ", nrow(r_sub2))
 
 ## [{{< fa brands python >}}]{.py} Python
 
-If we want a only values between a minimum and maximum value that means we need all criteria to be met so we need to use a `&` between conditions. Note that when we specify multiple criteria in Python we _must_ wrap each conditional in parentheses.
+If we want a only values between a minimum and maximum value that means we need all criteria to be met so we need to use a `&` between conditions. Note that when we specify multiple criteria in [{{< fa brands python >}} Python]{.py} we _must_ wrap each conditional in parentheses.
 
 ```{python py-subset2}
 # Subset to only data from after 1990 before 1995 (inclusive)
@@ -189,7 +189,7 @@ We can define "boolean masks" when we want to leverage a helper function that te
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-Let's subset to only salamander species in the dataset using a mask. In R, that means providing the column name to the left of the `%in%` operator and giving a vector of options to the right.
+Let's subset to only salamander species in the dataset using a mask. In [{{< fa brands r-project >}} R]{.r}, that means providing the column name to the left of the `%in%` operator and giving a vector of options to the right.
 
 ```{r r-mask1}
 # Make the subset
@@ -202,7 +202,7 @@ message("Subsetting changed this to ", nrow(r_mask1))
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Let's subset to only salamander species in the dataset using a mask. In Python, the `isin` method is a method so it is appended to the right of the column it accesses (separated by a period) and the options must be provided as a list (i.e., wrapped in square brackets and separated by commas).
+Let's subset to only salamander species in the dataset using a mask. In [{{< fa brands python >}} Python]{.py}, `isin` is a method so it is appended to the right of the column it accesses (separated by a period) and the options must be provided as a list (i.e., wrapped in square brackets and separated by commas).
 
 ```{python py-mask1}
 # Make the subset
@@ -223,7 +223,7 @@ In the below example we'll use the `isnull` [function]{.py} or the `is.na` [func
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-In R we negate conditions by adding an exclamation point (`!`) to the left of the relevant criterion.
+In [{{< fa brands r-project >}} R]{.r} we negate conditions by adding an exclamation point (`!`) to the left of the relevant criterion.
 
 ```{r r-mask2}
 # Subset to only species that *have* a recorded value in the "length_2_mm" column
@@ -236,7 +236,7 @@ message("Subsetting changed this to ", nrow(r_mask2))
 
 ## [{{< fa brands python >}}]{.py} Python
 
-In Python we negate conditions by adding a tilde (`~`) to the left of the relevant criterion.
+In [{{< fa brands python >}} Python]{.py} we negate conditions by adding a tilde (`~`) to the left of the relevant criterion.
 
 ```{python py-mask2}
 # Subset to only species that *have* a recorded value in the "length_2_mm" column

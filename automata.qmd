@@ -224,7 +224,7 @@ Note that the [`docstring` package](https://cran.r-project.org/web/packages/docs
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Python custom functions allow us to specify triple quoted (`"""..."""`) documentation of function purpose/arguments known as "docstrings". When this is supplied, we can use the `help` function (or append a `?` _after_ the function name) to print whatever documentation was included in the function when it was defined.
+[{{< fa brands python >}} Python]{.py} custom functions allow us to specify triple quoted (`"""..."""`) documentation of function purpose/arguments known as "docstrings". When this is supplied, we can use the `help` function (or append a `?` _after_ the function name) to print whatever documentation was included in the function when it was defined.
 
 ```{python py-fxn-help}
 # Check custom function documentation
@@ -342,7 +342,7 @@ add_r()
 
 Let's make a simple addition function and set both arguments to default to `None`. `None` is a [{{< fa brands python >}}]{.py} [Python]{.py} constant that allows us to create a variable without assigning any value to it.
 
-Note that we're also using the `is` statement in our conditional (in this case it is equivalent to `==``).
+Note that we're also using the `is` statement in our conditional (in this case it is equivalent to `==`).
 
 ```{python py-condfxn}
 # Define addition function

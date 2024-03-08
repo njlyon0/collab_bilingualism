@@ -143,7 +143,7 @@ Vertical concatenation (i.e., concatenating by stacking rows on top of each othe
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-R can perform this operation with the `rbind` function (from base R) but the `bind_rows` function (from the `dplyr` package) is preferable because it checks for matching column names and--if necessary--reorders columns to match between the two data objects.
+[{{< fa brands r-project >}} R]{.r} can perform this operation with the `rbind` function (from base [{{< fa brands r-project >}} R]{.r}) but the `bind_rows` function (from the `dplyr` package) is preferable because it checks for matching column names and--if necessary--reorders columns to match between the two data objects.
 
 ```{r r-rowbind}
 # Combine vertically
@@ -173,7 +173,7 @@ Horizontal concatenation (i.e., concatenating by putting columns next to one ano
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-R does horizontal concatenation with the `cbind` function from base R. 
+[{{< fa brands r-project >}} R]{.r} does horizontal concatenation with the `cbind` function from base [{{< fa brands r-project >}} R]{.r}. 
 
 ```{r r-colbind}
 # Combine horizontally
@@ -231,7 +231,7 @@ See how "tree_B" has no distance to road listed? That is because it lacks a row 
 
 ## [{{< fa brands python >}}]{.py} Python
 
-All Python joins are performed with the `merge` function (from the `pandas` library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
+All [{{< fa brands python >}} Python]{.py} joins are performed with the `merge` function (from the `pandas` library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
 
 The `on` argument can be used when the join key(s) labels match but otherwise a `left_on` and `right_on` argument are provided to specify the join key's label in the left and right data variable respectively.
 
@@ -258,7 +258,7 @@ An inner join keeps _only_ the rows that can be found in <u>both</u> join keys. 
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-In R, we can do an inner join with `dplyr`'s `inner_join` function. It has the same arguments as the `left_join` function.
+In [{{< fa brands r-project >}} R]{.r}, we can do an inner join with `dplyr`'s `inner_join` function. It has the same arguments as the `left_join` function.
 
 ```{r r-inner}
 # Inner join the two datasets
@@ -270,7 +270,7 @@ head(in_r, n = 5)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-In Python, an inner join is actually the default behavior of the `merge` function. Therefore we can exclude the `how` argument entirely!
+In [{{< fa brands python >}} Python]{.py}, an inner join is actually the default behavior of the `merge` function. Therefore we can exclude the `how` argument entirely!
 
 ```{python py-inner}
 # Inner join the two datasets
@@ -293,7 +293,7 @@ A full join (sometimes known as an "outer join" or a "full outer join") combines
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-R uses the `full_join` function (from `dplyr`) and the same arguments as the other types of join that we've already discussed.
+[{{< fa brands r-project >}} R]{.r} uses the `full_join` function (from `dplyr`) and the same arguments as the other types of join that we've already discussed.
 
 ```{r r-outer}
 # Do a full join
@@ -305,7 +305,7 @@ head(full_r, n = 5)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Python refers to full joins as "outer" joins so the `how` argument of the `merge` function needs to be set to "outer".
+[{{< fa brands python >}} Python]{.py} refers to full joins as "outer" joins so the `how` argument of the `merge` function needs to be set to "outer".
 
 ```{python py-outer}
 # Do a full join

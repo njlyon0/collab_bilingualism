@@ -24,7 +24,7 @@ head(vert_r, n = 5)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Load the `pandas` and `os` libraries as well as our simulated lichen data.
+Load the `pandas` and `os` libraries as well as our vertebrate data.
 
 ```{python py-libs}
 # Load needed libraries

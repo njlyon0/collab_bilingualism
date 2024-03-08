@@ -16,7 +16,7 @@ Assuming you've already installed the needed [{{< fa brands python >}} Python]{.
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-R libraries are loaded with the `library` function.
+[{{< fa brands r-project >}} R]{.r} libraries are loaded with the `library` function.
 
 ```{r r-libs, warning = F, message = F}
 library(tidyverse)
@@ -24,7 +24,7 @@ library(tidyverse)
 
 ## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
 
-Python libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like `pandas`) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of `pandas`).
+[{{< fa brands python >}} Python]{.py} libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like `pandas`) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of `pandas`).
 
 ```{python py-libs}
 import pandas as pd

@@ -5,7 +5,7 @@ engine: knitr
 
 ## Overview
 
-Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an R / Python bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial R and Python terms below.
+Learning a programming language is just like learning a spoken language: there are a lot of terms and definitions to learn! To complicate matters for an [{{< fa brands r-project >}} R]{.r} / [{{< fa brands python >}} Python]{.py} bilingualism context like this one, the two programming languages sometimes use the same term with very different definitions attached. To hopefully streamline term acquisition / comparison, I'm compiling a glossary of crucial [{{< fa brands r-project >}} R]{.r} and [{{< fa brands python >}} Python]{.py} terms below.
 
 Note that if a definition has a term in both languages, the definition is given with the terms in the respective languages beneath. If a term is only found in one language it is given first and subsequently defined.
 

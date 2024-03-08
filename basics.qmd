@@ -92,19 +92,19 @@ class("my hands are typing words")
 
 ## [{{< fa brands python >}}]{.py} Python
 
-In python, the `type` function returns the type of the data object. Note that the names of [{{< fa brands python >}} Python]{.py} types sometimes differ from their equivalents in [{{< fa brands r-project >}} R]{.r}.
+In [{{< fa brands python >}} Python]{.py}, the `type` function returns the type of the data object. Note that the names of [{{< fa brands python >}} Python]{.py} types sometimes differ from their equivalents in [{{< fa brands r-project >}} R]{.r}.
 
-```{python py-class1}
+```{python py-type1}
 # Check type of an integer
 type(37)
 ```
 
-```{python py-class2}
+```{python py-type2}
 # Check type of a decimal
 type(3.14159)
 ```
 
-```{python py-class3}
+```{python py-type3}
 # Check type of text
 type("my hands are typing words")
 ```

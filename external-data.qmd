@@ -249,7 +249,7 @@ If preferred we could instead substitute the number for the column label.
 vert_py["year"].head()
 ```
 
-In [{{< fa brands r-project >}} R]{.r}, the column operator is a `.` and we place that character between the variable name and column label (e.g., `data_name.column_name`).
+In [{{< fa brands python >}} Python]{.py}, the column operator is a `.` and we place that character between the variable name and column label (e.g., `data_name.column_name`).
 
 ```{python py-cols3}
 vert_py.year.head()

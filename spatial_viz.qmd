@@ -1,5 +1,6 @@
 ---
 title: "Spatial Visualization"
+engine: knitr
 ---
 
 Under Construction, check back soon!

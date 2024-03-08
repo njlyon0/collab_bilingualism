@@ -5,14 +5,14 @@ engine: knitr
 
 ## Overview
 
-Data stored as text (i.e.,[string]{.py}/[object]{.r} or [character]{.r}) is notoriously typo-prone and often requires extensive quality control checks throughout the data tidying process. Below is a--non exhaustive--set of common text methods that may prove valuable to people interested in dealing with text data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}.
+Data stored as text (i.e.,[string]{.py}/[object]{.r} or [character]{.r}) is notoriously typo-prone and often requires extensive quality control checks throughout the data tidying process. Below is a--non exhaustive--set of common text methods that may prove valuable to people interested in dealing with text data in either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}.
 
 ## Find & Replace
 
 The bulk of text tidying often boils down to finding unwanted [strings]{.py}/[characters]{.r} and replacing them with desired variants. This operation is how computers handle fixing typos.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 We can use the base R function `gsub` to find and replace (part of) a character object.
 
@@ -27,7 +27,7 @@ fix1_r <- gsub(pattern = "1", replacement = "l", x = text_r)
 print(fix1_r)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 We can use the Python method `replace` to find and replace (part of) a string/object variable.
 
@@ -50,7 +50,7 @@ Note that we have to loop across our list to do this operation in this language.
 Text casing (i.e., either UPPERCASE or lowercase) is also a frequent source of issues in code as many scripted operations are sensitive to text case. We can coerce to upper or lowercase as needed though with relative ease.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 We can use the `tolower` or `toupper` functions (also from base R) to coerce all text into lower or uppercase respectively.
 
@@ -62,7 +62,7 @@ fix2_r <- tolower(x = fix1_r)
 print(fix2_r)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 We can use the `lower` or `upper` methods to coerce all text into lower or uppercase respectively.
 

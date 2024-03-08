@@ -7,14 +7,14 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 ## Template Tabset Panel Area
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 ```{r r-}
 # X
 
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 ```{python py-}
 # X
@@ -26,4 +26,5 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 [variables]{.py}/[objects]{.r}
 
 
-`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}
+[{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}
+

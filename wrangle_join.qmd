@@ -7,7 +7,7 @@ title: "Joining Data"
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Load the `tidyverse` meta-package.
 
@@ -16,7 +16,7 @@ Load the `tidyverse` meta-package.
 library(tidyverse)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Load the `pandas` and `os` libraries.
 
@@ -34,7 +34,7 @@ Sometimes we collected related data and store them in separate files. This neces
 To illustrate some of these methods we'll load some new simulated data on lichen coverage to use instead of the vertebrate data we've used in past modules.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Load the vertebrate data first.
 
@@ -66,7 +66,7 @@ road <- read.csv(file = file.path("data", "tree_road.csv"))
 head(road, n = 2)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Load the vertebrate data first.
 
@@ -102,14 +102,14 @@ road.head(2)
 
 ## Concatenating Data
 
-The simplest way of combining data in either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} is called "concatenation". This involves--essentially--pasting rows or columns of separate data [variables]{.py}/[objects]{.r} together.
+The simplest way of combining data in either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r} is called "concatenation". This involves--essentially--pasting rows or columns of separate data [variables]{.py}/[objects]{.r} together.
 
 We'll need to modify our vertebrate data somewhat in order to demonstrate the two modes (horizontal or vertical) of concatenating [DataFrames]{.py}/[data.frames]{.r}.
 
 Concatenating data (either horizontally or vertically) in this way is _deeply_ risky in that it can easily result in creating rows or columns that appear to relate to one another but in actuality do not. However, it is still worthwhile to cover how this can be done.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Split the first and last two rows of the vertebrate data into separate objects. Note that in each we'll want to retain all columns.
 
@@ -122,7 +122,7 @@ vert_r_bottom <- vert_r[(nrow(vert_r) - 1):nrow(vert_r), ]
 vert_r_bottom
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Split the first and last two rows of the vertebrate data into separate variables. Note that in each we'll want to retain all columns.
 
@@ -141,7 +141,7 @@ vert_py_bottom
 Vertical concatenation (i.e., concatenating by stacking rows on top of each other) is one option for concatenation. This is much more common than horizontal concatenation.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 R can perform this operation with the `rbind` function (from base R) but the `bind_rows` function (from the `dplyr` package) is preferable because it checks for matching column names and--if necessary--reorders columns to match between the two data objects.
 
@@ -153,7 +153,7 @@ vert_r_vertical <- dplyr::bind_rows(vert_r_top, vert_r_bottom)
 message("There were two rows each before concatenation and ", nrow(vert_r_vertical), " after")
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Python does horizontal concatenation with the `concat` function from the `pandas` library. This function does horizontal and vertical concatenation and uses the `axis` argument to determine which is done. Setting `axis` to `0` performs vertical concatenation.
 
@@ -171,7 +171,7 @@ print("There were two rows each before concatenation and", len(vert_py_vertical)
 Horizontal concatenation (i.e., concatenating by putting columns next to one another) is the other option for concatenation. Note that it assumes row orders are consistent and _won't perform any check for improper row combinations_. Also, both languages will create duplicate column [labels]{.py}/[names]{.r} in our example because both data [variables]{.py}/[objects]{.r} have the same column [labels]{.py}/[names]{.r}.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 R does horizontal concatenation with the `cbind` function from base R. 
 
@@ -183,7 +183,7 @@ vert_r_horiz <- cbind(vert_r_top, vert_r_bottom)
 names(vert_r_horiz)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Setting the `axis` argument to `1` is how the `concat` function is switched to horizontal concatenation.
 
@@ -213,7 +213,7 @@ Left joins combine two data [variables]{.py}/[objects]{.r} by their join key(s) 
 </p>
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 The `left_join` function (from the `dplyr` package) performs--as its name suggests--left joins. The `right_join` function does the same for right joins. Both have an `x` and a `y` argument for the left and right data objects respectively.
 
@@ -229,7 +229,7 @@ head(left_r, n = 5)
 
 See how "tree_B" has no distance to road listed? That is because it lacks a row in the right data object!
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 All Python joins are performed with the `merge` function (from the `pandas` library) and the type of join is specified by the `how` argument. Which data variable is left and right is specified by arguments of the same name.
 
@@ -256,7 +256,7 @@ See how "tree_B" has no distance to road listed? That is because it lacks a row 
 An inner join keeps _only_ the rows that can be found in <u>both</u> join keys. This is very useful in situations where only "complete" data (i.e., no missing values) is required.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 In R, we can do an inner join with `dplyr`'s `inner_join` function. It has the same arguments as the `left_join` function.
 
@@ -268,7 +268,7 @@ in_r <- dplyr::inner_join(x = lich, y = road, by = c("tree" = "tree_name"))
 head(in_r, n = 5)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 In Python, an inner join is actually the default behavior of the `merge` function. Therefore we can exclude the `how` argument entirely!
 
@@ -291,7 +291,7 @@ A full join (sometimes known as an "outer join" or a "full outer join") combines
 </p>
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 R uses the `full_join` function (from `dplyr`) and the same arguments as the other types of join that we've already discussed.
 
@@ -303,7 +303,7 @@ full_r <- dplyr::full_join(x = lich, y = road, by = c("tree" = "tree_name"))
 head(full_r, n = 5)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Python refers to full joins as "outer" joins so the `how` argument of the `merge` function needs to be set to "outer".
 

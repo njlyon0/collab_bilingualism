@@ -5,11 +5,11 @@ engine: knitr
 
 ## Overview
 
-One thing we have not discussed that is incredibly important to any scripted language (`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} _very_ much included) is computer directory and file management. Code often interacts with external data files that must be imported at the start of a workflow and often preserves a record of its operation as an exported product at the end of the workflow. These concepts are more related to fundamental understanding of how your computer stores information than they are strictly coding language considerations but they are still worth discussing here.
+One thing we have not discussed that is incredibly important to any scripted language ([{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r} _very_ much included) is computer directory and file management. Code often interacts with external data files that must be imported at the start of a workflow and often preserves a record of its operation as an exported product at the end of the workflow. These concepts are more related to fundamental understanding of how your computer stores information than they are strictly coding language considerations but they are still worth discussing here.
 
 ## Crucial Vocabulary
 
-There are a few vocabulary terms we need to introduce before we can dive into the code side of file and directory management. Fortunately, these are terms that apply to computers generally so we do not have to deal with `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} using different names for the same concept.
+There are a few vocabulary terms we need to introduce before we can dive into the code side of file and directory management. Fortunately, these are terms that apply to computers generally so we do not have to deal with [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} using different names for the same concept.
 
 - Directory -- A folder on your computer (typically containing other folders and/or files)
 particular file/folder
@@ -23,7 +23,7 @@ particular file/folder
 We'll need to quickly load any needed libraries before getting into the "actual" coding.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 R does not require any libraries to perform these operations!
 
@@ -34,7 +34,7 @@ R does not require any libraries to perform these operations!
 
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 We'll need the `os` library and `glob` library in Python to do these operations.
 
@@ -47,12 +47,12 @@ import glob
 
 ## The Working Directory
 
-As defined above, the working directory is the primary folder with which your code can easily interact. This includes folders within your working directory but _does not_ include folders "above"/outside of it. It is a good practice to use different folders for different projects such that each project has a different working directory and you don't run the risk of scripts/data from one project accidentally interacting with those form another project. For `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} users, the RStudio "R Project" functionality guarantees that you have a different working directory for each R project.
+As defined above, the working directory is the primary folder with which your code can easily interact. This includes folders within your working directory but _does not_ include folders "above"/outside of it. It is a good practice to use different folders for different projects such that each project has a different working directory and you don't run the risk of scripts/data from one project accidentally interacting with those form another project. For [{{< fa brands r-project >}} R]{.r} users, the RStudio "R Project" functionality guarantees that you have a different working directory for each R project.
 
 Both languages provide a quick way of checking what your current working directory is to ensure you're not accidentally in the wrong one. Note that either approach will return the _absolute path_ to your working directory which will differ among users/computers.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Base R includes the `getwd` function to display your current working directory.
 
@@ -61,7 +61,7 @@ Base R includes the `getwd` function to display your current working directory.
 getwd()
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 ```{python py-wd}
 # Check current working directory
@@ -71,10 +71,10 @@ os.getcwd()
 
 ## Operating Systems & File Paths
 
-One minor--but often frustrating--hurdle for collaborative coding occurs when group members use different operating systems (i.e., macOS, Windows, etc.). When defining file paths (absolute or relative), different operating systems use either a slash (`/`) or a backslash (`\`) to separate directories in that path. Unfortunately for us, your OS will only be able to interpret file paths that use the type of slash it uses. This means that any code that reads in external data or exports its outputs needs to account for this OS-level difference **_every_ time a file path is defined**. However, the developers of `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} know this pain themselves and have given us straightforward tools to handle this.
+One minor--but often frustrating--hurdle for collaborative coding occurs when group members use different operating systems (i.e., macOS, Windows, etc.). When defining file paths (absolute or relative), different operating systems use either a slash (`/`) or a backslash (`\`) to separate directories in that path. Unfortunately for us, your OS will only be able to interpret file paths that use the type of slash it uses. This means that any code that reads in external data or exports its outputs needs to account for this OS-level difference **_every_ time a file path is defined**. However, the developers of [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} know this pain themselves and have given us straightforward tools to handle this.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Base R includes a `file.path` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
@@ -83,7 +83,7 @@ Base R includes a `file.path` function that automatically detects your computer'
 file.path("path", "to", "my", "data")
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 The `os` library in Python includes a `join` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
@@ -99,10 +99,10 @@ Using these tools allows us to code collaboratively even when not all group memb
 
 ## Finding Files
 
-Once you've confirmed your working directory and figured out how to account for OS idiosyncrasies, its time to actually look at the files you have available! In the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}, the `ls` function lists all files in a particular folder. Fortunately both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} contain tools for doing this as well.
+Once you've confirmed your working directory and figured out how to account for OS idiosyncrasies, its time to actually look at the files you have available! In the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}, the `ls` function lists all files in a particular folder. Fortunately both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} contain tools for doing this as well.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 We can use the base R `dir` function to identify all files in a particular folder (note this ignores _folders_ in that folder).
 
@@ -111,7 +111,7 @@ We can use the base R `dir` function to identify all files in a particular folde
 dir(path = file.path("data"))
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 We can use the `glob` function (from the library of the same name) to identify all files in a particular folder.
 

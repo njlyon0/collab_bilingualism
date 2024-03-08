@@ -12,107 +12,107 @@ Note that if a definition has a term in both languages, the definition is given 
 ## General Terms
 
 - Data stored for later re-use (regardless of structure/dimensions)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- variable
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- object
+    - [{{< fa brands python >}} Python]{.py} -- variable
+    -  [{{< fa brands r-project >}} R]{.r} -- object
 
 - Category of information stored in a given data [variable]{.py}/[object]{.r}
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- type
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- class
+    - [{{< fa brands python >}} Python]{.py} -- type
+    -  [{{< fa brands r-project >}} R]{.r} -- class
 
 - Downloadable set of functions
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- library / package
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- library / package
     - See "Tools" for definition of 'function'
 
 ## Data [Types]{.py}/[Classes]{.r}
 
 - Numbers that are not a fraction (i.e., are a whole number)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- integer
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} `pandas` library -- int64
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- integer
+    - [{{< fa brands python >}} Python]{.py} `pandas` library -- int64
 
 - Non-integer numbers
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- float
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} `pandas` library -- float64
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- numeric
+    - [{{< fa brands python >}} Python]{.py} -- float
+    - [{{< fa brands python >}} Python]{.py} `pandas` library -- float64
+    -  [{{< fa brands r-project >}} R]{.r} -- numeric
 
 - Text / content stored as text
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- string
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} `pandas` library -- object
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- character
+    - [{{< fa brands python >}} Python]{.py} -- string
+    - [{{< fa brands python >}} Python]{.py} `pandas` library -- object
+    -  [{{< fa brands r-project >}} R]{.r} -- character
 
 - Categorical content with an order among the unique entries (often--though not necessarily--with few _unique_ entries relative to _total_ number of entries)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} _ONLY_ -- factor
+    -  [{{< fa brands r-project >}} R]{.r} _ONLY_ -- factor
 
 - Logical values indicating whether conditions are met
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- boolean (`True` / `False`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- boolean (`TRUE` / `FALSE` / `T` / `F`)
+    - [{{< fa brands python >}} Python]{.py} -- boolean (`True` / `False`)
+    -  [{{< fa brands r-project >}} R]{.r} -- boolean (`TRUE` / `FALSE` / `T` / `F`)
 
 - [Variable]{.py}/[Object]{.r} holding an ordered sequence of data (_can_ be modified)
-   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- list
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- vector (_must_ be one-dimensional) / list
+   - [{{< fa brands python >}} Python]{.py} -- list
+    -  [{{< fa brands r-project >}} R]{.r} -- vector (_must_ be one-dimensional) / list
 
 - Each component of a [list]{.py}/[list]{.r}
-   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- item
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- element
+   - [{{< fa brands python >}} Python]{.py} -- item
+    -  [{{< fa brands r-project >}} R]{.r} -- element
 
 - [Variable]{.py} holding an ordered sequence of data (_cannot_ be modified)
-   - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} _ONLY_ -- tuple [too-pull]
+   - [{{< fa brands python >}} Python]{.py} _ONLY_ -- tuple [too-pull]
 
 ## Operators
 
 - Assignment operator -- creates a new [variable]{.py}/[object]{.r}
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- `=`
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- `<-` / `->`
+    - [{{< fa brands python >}} Python]{.py} -- `=`
+    -  [{{< fa brands r-project >}} R]{.r} -- `<-` / `->`
 
 - Arithmetic operators -- performs basic arithmetic
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- addition (`+`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- subtraction (`-`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- multiplication (`*`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- division (`/`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- exponent (`**`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- exponent (`^`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- addition (`+`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- subtraction (`-`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- multiplication (`*`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- division (`/`)
+    - [{{< fa brands python >}} Python]{.py} -- exponent (`**`)
+    -  [{{< fa brands r-project >}} R]{.r} -- exponent (`^`)
 
 - Arithmetic assignment operator -- does an arithmetic operation and stores the result in a [variable]{.py}
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} _ONLY_ -- arithmetic operator and assignment operator (e.g., `+=`)
+    - [{{< fa brands python >}} Python]{.py} _ONLY_ -- arithmetic operator and assignment operator (e.g., `+=`)
 
 - Relational operators -- conditional statements that return boolean values
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- 'exactly equal to' (`==`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- 'not equal to' (`!=`)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- greater/less than (`>` / `<` respectively)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- greater/less than or equal to (`>=` / `<=` respectively)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- 'exactly equal to' (`==`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- 'not equal to' (`!=`)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- greater/less than (`>` / `<` respectively)
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- greater/less than or equal to (`>=` / `<=` respectively)
 
 - Namespacing operator -- specifies library in which a given function is defined
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- a period `package.function` _(required)_
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- two colons `package::function` _(optional)_
+    - [{{< fa brands python >}} Python]{.py} -- a period `package.function` _(required)_
+    -  [{{< fa brands r-project >}} R]{.r} -- two colons `package::function` _(optional)_
 
 ## Tools
 
 - [variable]{.py}/[object]{.r} containing multiple, inter-related operations that are run in a pre-defined order every time the [variable]{.py}/[object]{.r} is used
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- function
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- function
 
 - Value sent to a function when called to modify behavior (sometimes optional)
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- argument / parameter
+    - [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r} -- argument / parameter
 
 - Function that can only be used on a specific [type]{.py}/[class]{.r} of [variable]{.py}/[object]{.r} that supports arguments (sometimes optional) to modify behavior
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- method (`variable.method(...)`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- just a special case of function
+    - [{{< fa brands python >}} Python]{.py} -- method (`variable.method(...)`)
+    -  [{{< fa brands r-project >}} R]{.r} -- just a special case of function
 
 - Function that can only be used on a specific [type]{.py}/[class]{.r} of [variable]{.py}/[object]{.r} _without_ arguments to modify behavior
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- attribute (`variable.attribute`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- just a special case of function
+    - [{{< fa brands python >}} Python]{.py} -- attribute (`variable.attribute`)
+    -  [{{< fa brands r-project >}} R]{.r} -- just a special case of function
 
 ## Data Characteristics
 
 - Number of [items]{.py}/[elements]{.r} in a [variable]{.py}/[object]{.r}
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- length (`len()`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- length (`length()`)
+    - [{{< fa brands python >}} Python]{.py} -- length (`len()`)
+    -  [{{< fa brands r-project >}} R]{.r} -- length (`length()`)
 
 - Number of rows/columns in a two-dimension, tabular [variable]{.py}/[object]{.r}
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- shape (`.shape`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- dimensions (`dim()`)
+    - [{{< fa brands python >}} Python]{.py} -- shape (`.shape`)
+    -  [{{< fa brands r-project >}} R]{.r} -- dimensions (`dim()`)
 
 - Number of characters in a string
-    - `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- also length (`len()`)
-    -  `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- number of characters (`nchar()`)
+    - [{{< fa brands python >}} Python]{.py} -- also length (`len()`)
+    -  [{{< fa brands r-project >}} R]{.r} -- number of characters (`nchar()`)
 
 
 

@@ -8,7 +8,7 @@ engine: knitr
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Load `sf` and `terra`.
 
@@ -17,7 +17,7 @@ library(sf)
 library(terra)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Load the `geopandas` and `rasterio` libraries.
 
@@ -47,7 +47,7 @@ Under Construction, check back soon!
 
 ## Additional Resources
 
-Spatial operations have gotten _a ton_ of attention in both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.
+Spatial operations have gotten _a ton_ of attention in both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r}! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.
 
-- `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} -- [Rachel King](https://github.com/king0708) created a really nice ["Spatial Data Visualization"](https://github.com/king0708/spatial-data-viz) workshop
-- `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} -- The Arctic Data Center made a "Scalable and Computationally Reproducible Approaches to Arctic Resources" course that includes a ["Spatial and Image Data Using GeoPandas"](https://learning.nceas.ucsb.edu/2023-03-arctic/sections/geopandas.html#calculate-total-distance-per-fishing-area) chapter
+- [{{< fa brands r-project >}} R]{.r} -- [Rachel King](https://github.com/king0708) created a really nice ["Spatial Data Visualization"](https://github.com/king0708/spatial-data-viz) workshop
+- [{{< fa brands python >}} Python]{.py} -- The Arctic Data Center made a "Scalable and Computationally Reproducible Approaches to Arctic Resources" course that includes a ["Spatial and Image Data Using GeoPandas"](https://learning.nceas.ucsb.edu/2023-03-arctic/sections/geopandas.html#calculate-total-distance-per-fishing-area) chapter

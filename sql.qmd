@@ -5,16 +5,16 @@ engine: knitr
 
 ## Overview
 
-So far, we've been able to use `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} on CSV files without issue. However, when the data that we are working with become very large (e.g., millions of rows) it can be very inefficient to rely on your computer's internal memory to do operations. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} (<u>S</u>tructured <u>Q</u>uery <u>L</u>anguage) is another programming language specifically built to work with larger databases where users "query" just the component of the data that they need for a given operation. This minimizes the amount of data that must be held in memory at any given time.
+So far, we've been able to use [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r} on CSV files without issue. However, when the data that we are working with become very large (e.g., millions of rows) it can be very inefficient to rely on your computer's internal memory to do operations. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} (<u>S</u>tructured <u>Q</u>uery <u>L</u>anguage) is another programming language specifically built to work with larger databases where users "query" just the component of the data that they need for a given operation. This minimizes the amount of data that must be held in memory at any given time.
 
-A caveat before we begin: `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} is a fully fledged language in its own right that carries a suite of verbs and syntax conventions. We'll need to engage with these a little in our examples but this website is not meant as a tutorial in this language. Note that `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} users may have some `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} intuition already because `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} shares many of its verbs with the `dplyr` package.
+A caveat before we begin: `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} is a fully fledged language in its own right that carries a suite of verbs and syntax conventions. We'll need to engage with these a little in our examples but this website is not meant as a tutorial in this language. Note that [{{< fa brands r-project >}} R]{.r} users may have some `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} intuition already because `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} shares many of its verbs with the `dplyr` package.
 
 ## Library Loading
 
 Begin by loading the needed libraries.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Load the `DBI` package.
 
@@ -23,7 +23,7 @@ Load the `DBI` package.
 library(DBI)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Load the `pandas`, `os`, and `sqlite3` packages.
 
@@ -40,7 +40,7 @@ import sqlite3
 SQLite operations require us to connect to a database, perform desired operations, and then _close the connection_ when we are finished. A good introduction to this is showing how one can list the data tables available in a given database; this is _vital_ information for doing any "real" queries as we need to know the name of the table from which we want to extract data.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 In R we can open the connection with the `dbConnect` function, identify the tables in the database with the `dbListTables` function and--eventually--close the connection with the `dbDisconnect` function (all of which are in the `DBI` package).
 
@@ -55,7 +55,7 @@ DBI::dbListTables(conn = cxn)
 DBI::dbDisconnect(conn = cxn)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 In Python we can open the connection with the `connect` function (from the `sqlite3` library), identify the tables in the database with the `read_sql_query` function (from `pandas`) and--eventually--close the connection with the `close` method.
 
@@ -78,7 +78,7 @@ Connecting and listing the available data in a given database is all well and go
 At a minimum a query must involve `SELECT` to dictate which columns to keep (accepts either column names or a `*` for 'all columns') and `FROM` to indicate which table in the database we want to query.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 ```{r r-sql1}
 # Open the connection
@@ -98,7 +98,7 @@ Note that we can still use the query data object even when we have closed our da
 head(query_r, n = 4)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 ```{python py-sql1}
 # Open the connection

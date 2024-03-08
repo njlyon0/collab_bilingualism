@@ -8,7 +8,7 @@ engine: knitr
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 Load `sf`, `terra`, and `ggplot2`.
 
@@ -17,7 +17,7 @@ library(sf)
 library(terra)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
 Load the `geopandas`, `rasterio`, and `plotnine` libraries.
 

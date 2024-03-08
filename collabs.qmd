@@ -4,7 +4,7 @@ engine: knitr
 
 ### Contributing Overview
 
-A comprehensive and accessible coding bilingualism website like this one is a huge undertaking and I'd welcome collaborators who share my vision for the value of a resource like this. I'm a competent `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} coder but that definitely does not mean I am 100% correct all the time nor that I always write explanations in the clearest way possible. On the `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} front, I'm a total novice and my approach to this website has largely involved reframing and recapitulating my takeaways from the tutorials that I've taken.
+A comprehensive and accessible coding bilingualism website like this one is a huge undertaking and I'd welcome collaborators who share my vision for the value of a resource like this. I'm a competent [{{< fa brands r-project >}} R]{.r} coder but that definitely does not mean I am 100% correct all the time nor that I always write explanations in the clearest way possible. On the [{{< fa brands python >}} Python]{.py} front, my first real foray into that coding language is taking tutorials and making this website.
 
 So, if you'd like to collaborate with me on this I have drafted the following guidelines. I'm happy to discuss/modify these with prospective collaborators so please don't let them dissuade you from reaching out!
 

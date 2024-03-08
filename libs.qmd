@@ -11,10 +11,10 @@ Note also that "package" and "library" are functionally interchangeable for our 
 
 ## Library Loading
 
-Assuming you've already installed the needed `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} _and_ `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} packages, you can now load them.
+Assuming you've already installed the needed [{{< fa brands python >}} Python]{.py} _and_ [{{< fa brands r-project >}} R]{.r} packages, you can now load them.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
 R libraries are loaded with the `library` function.
 

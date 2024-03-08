@@ -2,17 +2,17 @@
 title: "Welcome!"
 engine: knitr
 ---
- 
-I think of myself as a competent `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} coder but am a total novice when it comes to `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py}. I think trying for a 1-to-1 `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} translation to `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
+
+I think of myself as a competent [{{< fa brands r-project >}} R]{.r} coder but am a total novice when it comes to [{{< fa brands python >}} Python]{.py}. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in [{{< fa brands python >}} Python]{.py}. I think trying for a 1-to-1 [{{< fa brands r-project >}} R]{.r} translation to [{{< fa brands python >}} Python]{.py} will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
 
 ## Package Installation
 
-Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} or `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
+Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
 
 :::panel-tabset
-## `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` R
+## [{{< fa brands r-project >}}]{.r} R
 
-`r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} contains an `install.packages` function for installing packages desired libraries.
+[{{< fa brands r-project >}} R]{.r} contains an `install.packages` function for installing packages desired libraries.
 
 ```{r r-pkg-install, eval = F}
 # The 'tidyverse' meta-package contains many of the tools we'll need
@@ -26,9 +26,9 @@ install.packages("sf")
 install.packages("terra")
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}}]{.py} Python
 
-`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} packages must be installed via the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}.
+[{{< fa brands python >}} Python]{.py} packages must be installed via the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}.
 
 ```{bash py-pkg-install, eval = F}
 # The numpy and pandas packages contain fundamental Python tools
@@ -58,7 +58,7 @@ When learning a new programming language, it can be really helpful to begin with
 
 ### Data Wrangling
 
-The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} equivalents to many of the `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} operations that I know and love.
+The beating heart of my day-to-day work revolves around data 'wrangling'. I view 'wrangling' as any _scripted_ data manipulations between the very first raw data entered digitally and the data being ready for any analysis/visualization. This covers a huge swath of operations and should allow me to explore [{{< fa brands python >}} Python]{.py} equivalents to many of the [{{< fa brands r-project >}} R]{.r} operations that I know and love.
 
 ### Visualization
 
@@ -66,11 +66,11 @@ Somewhat self-explanatory but this section is all about data visualization! Whil
 
 ### SQL
 
-`r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} and `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql}'s syntax itself.
+`r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} is a powerful programming language in its own right that is intended to work with relational databases. Relational databases include several data tables of various sizes/structures that share some common 'index' columns that allow them to be combined as needed. Both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} allow users to access these databases using `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} syntax while still living in their preferred coding language. This section highlights some of the major considerations when working with databases through either language though it is _not_ a tutorial on `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql}'s syntax itself.
 
 ### Glossary
 
-As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} & `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
+As the heading would suggest, I'm housing various term definitions here. As of now, it makes most sense to me to provide the definition for a concept and then give the term in [{{< fa brands python >}} Python]{.py} & [{{< fa brands r-project >}} R]{.r}. Note that I also give a more functional definition of major concepts in the code tutorial pages upon first mention.
 
 ## Contributing Guidelines
 
@@ -78,7 +78,7 @@ As the heading would suggest, I'm housing various term definitions here. As of n
 
 ## Additional Resources
 
-I'm not the first to have this idea so there are other useful `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} tutorials and specifically `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r}/`r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} bilingualism resources. See below:
+I'm not the first to have this idea so there are other useful [{{< fa brands python >}} Python]{.py} tutorials and specifically [{{< fa brands r-project >}} R]{.r}/[{{< fa brands python >}} Python]{.py} bilingualism resources. See below:
 
 ### Bilingualism Resources
 
@@ -86,13 +86,13 @@ I'm not the first to have this idea so there are other useful `r fontawesome::fa
 - [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nnovation and <u>I</u>nclusion <u>L</u>ab) has created [an R-Python bilingualism tutorial](https://cu-esiil.github.io/pre-innovation-summit-training/2_R_and_Py_bilingualism/code/outline/outline/) that is framed for a more applied audience
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for the part of it that deals with R/Python bilingualism
 
-### `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` [Python]{.py} Resources
+### [{{< fa brands python >}} Python]{.py} Resources
 
 - The Carpentries has a "[Data Analysis and Visualization in Python for Ecologists ](https://datacarpentry.org/python-ecology-lesson/index.html)" lesson that is really well put-together (as is characteristic of The Carpentries' content)
 - The [Earth Lab](https://www.earthdatascience.org/) has a Python course that was recommended to me by an NCEAS employee (specifically [section 4](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/))
 - [Python]{.py} -- Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
 
-### `r fontawesome::fa(name = "r-project", fill = "#FF9B00", a11y = "sem")` [R]{.r} Resources
+### [{{< fa brands r-project >}} R]{.r} Resources
 
 - [R for Data Science](https://r4ds.hadley.nz/) is a free online book that does a really nice job covering a lot of powerful R topics
 - The Carpentries also has a "[Data Analysis and Visualization in Rfor Ecologists](https://datacarpentry.org/R-ecology-lesson/)" that is very well done

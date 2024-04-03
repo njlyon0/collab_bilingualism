@@ -179,35 +179,35 @@
     "href": "spatial_core.html",
     "title": "Spatial Fundamentals",
     "section": "",
-    "text": "Begin by loading any needed libraries.\n\n R Python\n\n\nLoad sf and terra.\n\nlibrary(sf)\nlibrary(terra)\n\n\n\nLoad the geopandas and rasterio libraries.\n\n# Load needed libraries\nimport geopandas as gpd\nimport rasterio"
-  },
-  {
-    "objectID": "spatial_core.html#library-loading",
-    "href": "spatial_core.html#library-loading",
-    "title": "Spatial Fundamentals",
-    "section": "",
-    "text": "Begin by loading any needed libraries.\n\n R Python\n\n\nLoad sf and terra.\n\nlibrary(sf)\nlibrary(terra)\n\n\n\nLoad the geopandas and rasterio libraries.\n\n# Load needed libraries\nimport geopandas as gpd\nimport rasterio"
+    "text": "There are two primary types of spatial data: raster and vector data.  Python and  R can both handle either of these types so coding language doesn’t matter but there are fundamental structural differences between the two data types. See below for more information about each.\n\nRaster DataVector Data\n\n\nRaster data stores information in pixels. Each pixel is located at a specific geographic location (i.e., a specific X and Y coordinate pair). These pixel values can be continuous (e.g., rainfall, elevation, etc.) or categorical (e.g., land cover categories, date of first green up, etc.). Even if you’ve never worked with spatial data before you’ve certainly worked with rasters: technically every digital image is a raster!\nRaster files are typically GeoTIFFs and use the .tif extension.\nConsider this visual depiction of raster data:\n\n\n\nImage Source - National Ecological Observatory Network (NEON)\n\n\n\n\nVector data store information in “features”. These features use specific geographic points (again, think X and Y coordinates) and store information about the geometric relationship among features. This allows vector data to be in terms of particular geometries like points, lines, or polygons.\nVector data are typically preserved as shapefiles and use several extensions. When we refer to shapefiles in code we only refer to the .shp file but there are several associated files that must also be present in the same folder for the data to be read properly. These usually include .dbf, .prj, and .shx but there may sometimes also be a .xml file or two. For our purposes, the specifics of these files are not relevant but it is important to remember that you will need them in order to work with vector data.\nConsider this visual depiction of vector data:\n\n\n\nImage Source - National Ecological Observatory Network (NEON)"
   },
   {
     "objectID": "spatial_core.html#spatial-data-types",
     "href": "spatial_core.html#spatial-data-types",
     "title": "Spatial Fundamentals",
-    "section": "Spatial Data Types",
-    "text": "Spatial Data Types\nUnder Construction, check back soon!"
+    "section": "",
+    "text": "There are two primary types of spatial data: raster and vector data.  Python and  R can both handle either of these types so coding language doesn’t matter but there are fundamental structural differences between the two data types. See below for more information about each.\n\nRaster DataVector Data\n\n\nRaster data stores information in pixels. Each pixel is located at a specific geographic location (i.e., a specific X and Y coordinate pair). These pixel values can be continuous (e.g., rainfall, elevation, etc.) or categorical (e.g., land cover categories, date of first green up, etc.). Even if you’ve never worked with spatial data before you’ve certainly worked with rasters: technically every digital image is a raster!\nRaster files are typically GeoTIFFs and use the .tif extension.\nConsider this visual depiction of raster data:\n\n\n\nImage Source - National Ecological Observatory Network (NEON)\n\n\n\n\nVector data store information in “features”. These features use specific geographic points (again, think X and Y coordinates) and store information about the geometric relationship among features. This allows vector data to be in terms of particular geometries like points, lines, or polygons.\nVector data are typically preserved as shapefiles and use several extensions. When we refer to shapefiles in code we only refer to the .shp file but there are several associated files that must also be present in the same folder for the data to be read properly. These usually include .dbf, .prj, and .shx but there may sometimes also be a .xml file or two. For our purposes, the specifics of these files are not relevant but it is important to remember that you will need them in order to work with vector data.\nConsider this visual depiction of vector data:\n\n\n\nImage Source - National Ecological Observatory Network (NEON)"
+  },
+  {
+    "objectID": "spatial_core.html#library-loading",
+    "href": "spatial_core.html#library-loading",
+    "title": "Spatial Fundamentals",
+    "section": "Library Loading",
+    "text": "Library Loading\nBefore we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra and sf to work with raster and vector data respectively.\n\n# Load needed libraries\nlibrary(terra)\nlibrary(sf)\n\n\n\nLoad the rasterio and geopandas libraries to work with raster and vector data respectively.\n\n# Load needed libraries\nimport rasterio\nimport geopandas as gpd"
   },
   {
     "objectID": "spatial_core.html#coordinate-reference-systems-crs",
     "href": "spatial_core.html#coordinate-reference-systems-crs",
     "title": "Spatial Fundamentals",
     "section": "Coordinate Reference Systems (CRS)",
-    "text": "Coordinate Reference Systems (CRS)\n\nChecking CRS\n\n\nTransforming CRS"
+    "text": "Coordinate Reference Systems (CRS)\n\nRaster CRS\nChecking / Transforming\n\n\nVector CRS\nChecking / Transforming"
   },
   {
     "objectID": "spatial_core.html#additional-resources",
     "href": "spatial_core.html#additional-resources",
     "title": "Spatial Fundamentals",
     "section": "Additional Resources",
-    "text": "Additional Resources\nSpatial operations have gotten a ton of attention in both  Python and  R! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.\n\n R – Rachel King created a really nice “Spatial Data Visualization” workshop\n Python – The Arctic Data Center made a “Scalable and Computationally Reproducible Approaches to Arctic Resources” course that includes a “Spatial and Image Data Using GeoPandas” chapter"
+    "text": "Additional Resources\nSpatial operations have gotten a ton of attention in both  Python and  R! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.\n\n R – The Data Carpentries has a solid “Introduction to Geospatial Concepts” lesson\n R – Rachel King created a really nice “Spatial Data Visualization” workshop\n Python – The Arctic Data Center made a “Scalable and Computationally Reproducible Approaches to Arctic Resources” course that includes a “Spatial and Image Data Using GeoPandas” chapter"
   },
   {
     "objectID": "string_methods.html",

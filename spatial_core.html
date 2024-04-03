@@ -256,12 +256,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#library-loading" id="toc-library-loading" class="nav-link active" data-scroll-target="#library-loading">Library Loading</a></li>
-  <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link" data-scroll-target="#spatial-data-types">Spatial Data Types</a></li>
+  <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link active" data-scroll-target="#spatial-data-types">Spatial Data Types</a></li>
+  <li><a href="#library-loading" id="toc-library-loading" class="nav-link" data-scroll-target="#library-loading">Library Loading</a></li>
   <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a>
   <ul class="collapse">
-  <li><a href="#checking-crs" id="toc-checking-crs" class="nav-link" data-scroll-target="#checking-crs">Checking CRS</a></li>
-  <li><a href="#transforming-crs" id="toc-transforming-crs" class="nav-link" data-scroll-target="#transforming-crs">Transforming CRS</a></li>
+  <li><a href="#raster-crs" id="toc-raster-crs" class="nav-link" data-scroll-target="#raster-crs">Raster CRS</a></li>
+  <li><a href="#vector-crs" id="toc-vector-crs" class="nav-link" data-scroll-target="#vector-crs">Vector CRS</a></li>
   </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
@@ -289,47 +289,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="library-loading" class="level2">
-<h2 class="anchored" data-anchor-id="library-loading">Library Loading</h2>
-<p>Begin by loading any needed libraries.</p>
+<section id="spatial-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data-types">Spatial Data Types</h2>
+<p>There are two primary types of spatial data: <em>raster</em> and <em>vector</em> data. <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> can both handle either of these types so coding language doesn’t matter but there are fundamental structural differences between the two data types. See below for more information about each.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Raster Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Vector Data</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Load <code>sf</code> and <code>terra</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Raster data stores information in pixels. Each pixel is located at a specific geographic location (i.e., a specific X and Y coordinate pair). These pixel values can be continuous (e.g., rainfall, elevation, etc.) or categorical (e.g., land cover categories, date of first green up, etc.). Even if you’ve never worked with spatial data before you’ve certainly worked with rasters: technically every digital image is a raster!</p>
+<p><u>Raster files are typically GeoTIFFs and use the <code>.tif</code> extension.</u></p>
+<p>Consider this visual depiction of raster data:</p>
+<figure align="center" class="figure">
+<img src="images/spatial/raster_diagram.png" alt="Picture of a forest with an inset showing how the pixels in that image relate to information stored in each pixel" width="65%" class="figure-img">
+<figcaption>
+Image Source - National Ecological Observatory Network (NEON)
+</figcaption>
+</figure>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Load the <code>geopandas</code> and <code>rasterio</code> libraries.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Vector data store information in “features”. These features use specific geographic points (again, think X and Y coordinates) and store information about the geometric relationship among features. This allows vector data to be in terms of particular geometries like points, lines, or polygons.</p>
+<p><u>Vector data are typically preserved as shapefiles and use <strong>several extensions</strong>.</u> When we refer to shapefiles in code we only refer to the <code>.shp</code> file but there are several associated files that must also be present in the same folder for the data to be read properly. These usually include <code>.dbf</code>, <code>.prj</code>, and <code>.shx</code> but there may sometimes also be a <code>.xml</code> file or two. For our purposes, the specifics of these files are not relevant but it is important to remember that you will need them in order to work with vector data.</p>
+<p>Consider this visual depiction of vector data:</p>
+<figure align="center" class="figure">
+<img src="images/spatial/vector_diagram.png" alt="Diagram of points, lines (points connected by lines), and polygons (three or more points that define the edges of a shape)" width="65%" class="figure-img">
+<figcaption>
+Image Source - National Ecological Observatory Network (NEON)
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 </section>
-<section id="spatial-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-data-types">Spatial Data Types</h2>
-<p>Under Construction, check back soon!</p>
+<section id="library-loading" class="level2">
+<h2 class="anchored" data-anchor-id="library-loading">Library Loading</h2>
+<p>Before we can dive into “actual” spatial work we’ll need to load some libraries.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Load <code>terra</code> and <code>sf</code> to work with raster and vector data respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Load the <code>rasterio</code> and <code>geopandas</code> libraries to work with raster and vector data respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="coordinate-reference-systems-crs" class="level2">
 <h2 class="anchored" data-anchor-id="coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</h2>
-<section id="checking-crs" class="level3">
-<h3 class="anchored" data-anchor-id="checking-crs">Checking CRS</h3>
+<section id="raster-crs" class="level3">
+<h3 class="anchored" data-anchor-id="raster-crs">Raster CRS</h3>
+<p>Checking / Transforming</p>
 </section>
-<section id="transforming-crs" class="level3">
-<h3 class="anchored" data-anchor-id="transforming-crs">Transforming CRS</h3>
+<section id="vector-crs" class="level3">
+<h3 class="anchored" data-anchor-id="vector-crs">Vector CRS</h3>
+<p>Checking / Transforming</p>
 </section>
 </section>
 <section id="additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
 <p>Spatial operations have gotten <em>a ton</em> of attention in both <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span>! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.</p>
 <ul>
+<li><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> – The Data Carpentries has a solid <a href="https://datacarpentry.org/organization-geospatial/index.html">“Introduction to Geospatial Concepts”</a> lesson</li>
 <li><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> – <a href="https://github.com/king0708">Rachel King</a> created a really nice <a href="https://github.com/king0708/spatial-data-viz">“Spatial Data Visualization”</a> workshop</li>
 <li><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> – The Arctic Data Center made a “Scalable and Computationally Reproducible Approaches to Arctic Resources” course that includes a <a href="https://learning.nceas.ucsb.edu/2023-03-arctic/sections/geopandas.html#calculate-total-distance-per-fishing-area">“Spatial and Image Data Using GeoPandas”</a> chapter</li>
 </ul>

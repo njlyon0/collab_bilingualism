@@ -7,6 +7,7 @@ engine: knitr
 
 There are two primary types of spatial data: _raster_ and _vector_ data. [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} can both handle either of these types so coding language doesn't matter but there are fundamental structural differences between the two data types. See below for more information about each.
 
+:::panel-tabset
 ### Raster Data
 
 Raster data stores information in pixels. Each pixel is located at a specific geographic location (i.e., a specific X and Y coordinate pair). These pixel values can be continuous (e.g., rainfall, elevation, etc.) or categorical (e.g., land cover categories, date of first green up, etc.). Even if you've never worked with spatial data before you've certainly worked with rasters: technically every digital image is a raster!
@@ -32,6 +33,8 @@ Consider this visual depiction of vector data:
   <img src="images/spatial/vector_diagram.png" alt="Diagram of points, lines (points connected by lines), and polygons (three or more points that define the edges of a shape)" width="65%">
   <figcaption>Image Source - National Ecological Observatory Network (NEON)</figcaption>
 </figure>
+
+:::
 
 ## Library Loading
 

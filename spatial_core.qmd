@@ -3,44 +3,73 @@ title: "Spatial Fundamentals"
 engine: knitr
 ---
 
+## Spatial Data Types
+
+There are two primary types of spatial data: _raster_ and _vector_ data. [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} can both handle either of these types so coding language doesn't matter but there are fundamental structural differences between the two data types. See below for more information about each.
+
+### Raster Data
+
+Raster data stores information in pixels. Each pixel is located at a specific geographic location (i.e., a specific X and Y coordinate pair). These pixel values can be continuous (e.g., rainfall, elevation, etc.) or categorical (e.g., land cover categories, date of first green up, etc.). Even if you've never worked with spatial data before you've certainly worked with rasters: technically every digital image is a raster!
+
+<u>Raster files are typically GeoTIFFs and use the `.tif` extension.</u>
+
+Consider this visual depiction of raster data:
+
+<figure align="center">
+  <img src="images/spatial/raster_diagram.png" alt="Picture of a forest with an inset showing how the pixels in that image relate to information stored in each pixel" width="65%">
+  <figcaption>Image Source - National Ecological Observatory Network (NEON)</figcaption>
+</figure>
+
+### Vector Data
+
+Vector data store information in "features". These features use specific geographic points (again, think X and Y coordinates) and store information about the geometric relationship among features. This allows vector data to be in terms of particular geometries like points, lines, or polygons.
+
+<u>Vector data are typically preserved as shapefiles and use **several extensions**.</u> When we refer to shapefiles in code we only refer to the `.shp` file but there are several associated files that must also be present in the same folder for the data to be read properly. These usually include `.dbf`, `.prj`, and `.shx` but there may sometimes also be a `.xml` file or two. For our purposes, the specifics of these files are not relevant but it is important to remember that you will need them in order to work with vector data.
+
+Consider this visual depiction of vector data:
+
+<figure align="center">
+  <img src="images/spatial/vector_diagram.png" alt="Diagram of points, lines (points connected by lines), and polygons (three or more points that define the edges of a shape)" width="65%">
+  <figcaption>Image Source - National Ecological Observatory Network (NEON)</figcaption>
+</figure>
+
 ## Library Loading
 
-Begin by loading any needed libraries.
+Before we can dive into "actual" spatial work we'll need to load some libraries.
 
 :::panel-tabset
 ## [{{< fa brands r-project >}}]{.r} R
 
-Load `sf` and `terra`.
+Load `terra` and `sf` to work with raster and vector data respectively.
 
 ```{r r-libs, warning = F, message = F}
-library(sf)
+# Load needed libraries
 library(terra)
+library(sf)
 ```
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Load the `geopandas` and `rasterio` libraries.
+Load the `rasterio` and `geopandas` libraries to work with raster and vector data respectively.
 
 ```{python py-libs}
 # Load needed libraries
-import geopandas as gpd
 import rasterio
+import geopandas as gpd
 ```
 :::
 
-## Spatial Data Types
-
-Under Construction, check back soon!
-
-
-
 ## Coordinate Reference Systems (CRS)
 
-### Checking CRS
+### Raster CRS
 
 
-### Transforming CRS
+Checking / Transforming
 
+
+### Vector CRS
+
+Checking / Transforming
 
 
 
@@ -49,5 +78,6 @@ Under Construction, check back soon!
 
 Spatial operations have gotten _a ton_ of attention in both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r}! This website is mostly focused on translating between the two languages though so much of this nuance is not covered here. For those interested in a deeper dive in spatial computing, consider the following.
 
+- [{{< fa brands r-project >}} R]{.r} -- The Data Carpentries has a solid ["Introduction to Geospatial Concepts"](https://datacarpentry.org/organization-geospatial/index.html) lesson
 - [{{< fa brands r-project >}} R]{.r} -- [Rachel King](https://github.com/king0708) created a really nice ["Spatial Data Visualization"](https://github.com/king0708/spatial-data-viz) workshop
 - [{{< fa brands python >}} Python]{.py} -- The Arctic Data Center made a "Scalable and Computationally Reproducible Approaches to Arctic Resources" course that includes a ["Spatial and Image Data Using GeoPandas"](https://learning.nceas.ucsb.edu/2023-03-arctic/sections/geopandas.html#calculate-total-distance-per-fishing-area) chapter

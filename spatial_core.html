@@ -258,9 +258,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link active" data-scroll-target="#spatial-data-types">Spatial Data Types</a></li>
   <li><a href="#library-loading" id="toc-library-loading" class="nav-link" data-scroll-target="#library-loading">Library Loading</a></li>
-  <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a>
+  <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a></li>
+  <li><a href="#raster-data-1" id="toc-raster-data-1" class="nav-link" data-scroll-target="#raster-data-1">Raster Data</a>
   <ul class="collapse">
+  <li><a href="#loading-rasters" id="toc-loading-rasters" class="nav-link" data-scroll-target="#loading-rasters">Loading Rasters</a></li>
   <li><a href="#raster-crs" id="toc-raster-crs" class="nav-link" data-scroll-target="#raster-crs">Raster CRS</a></li>
+  </ul></li>
+  <li><a href="#vector-data-1" id="toc-vector-data-1" class="nav-link" data-scroll-target="#vector-data-1">Vector Data</a>
+  <ul class="collapse">
+  <li><a href="#loading-vector-data" id="toc-loading-vector-data" class="nav-link" data-scroll-target="#loading-vector-data">Loading Vector Data</a></li>
   <li><a href="#vector-crs" id="toc-vector-crs" class="nav-link" data-scroll-target="#vector-crs">Vector CRS</a></li>
   </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
@@ -347,9 +353,33 @@ Image Source - National Ecological Observatory Network (NEON)
 </section>
 <section id="coordinate-reference-systems-crs" class="level2">
 <h2 class="anchored" data-anchor-id="coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</h2>
+<p>While raster and vector data may both refer to non-spatial or spatial data, true spatial data <em>requires</em> a coordinate reference system (CRS). CRS has a very specific format that all geospatial applications (including <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span>!) use to display/process the data correctly. CRS includes three components:</p>
+<ol type="1">
+<li><strong>Datum</strong> – a model for the shape of the earth. It defines the starting coordinate pair and angular units that–when used with the starting point–define a particular spot on the planet. There can be global datums (e.g., WGS84, NAD83, etc.) that apply anywhere on the planet and local datums that work well for a particular area but do not work outside of that area</li>
+<li><strong>Projection</strong> – mathematical transformation to get from a round planet to a flat map</li>
+<li><strong>Additional Parameters</strong> – any other information necessary to support the projection (e.g., the coordinates of the center of the map, etc.)</li>
+</ol>
+<p>A hopefully useful analogy is to consider the datum as a choice between a set of citrus fruits of varying shapes (e.g., lemon, orange, grapefruit, etc.) while the projection is a set of instructions on how to flatten the peel of the chosen fruit.</p>
+<section id="crs-importance" class="level4">
+<h4 class="anchored" data-anchor-id="crs-importance">CRS Importance</h4>
+<p>Coordinate reference systems may sound dry and uninteresting–even in a pretty technical coding context–but they are vitally important! For many scientific purposes we want to know how a set of points intersect with a given map or how well several maps line up. To answer questions like these or interpret virtually any geospatial information, we must make sure that each spatial component uses the same CRS. Some coordinate reference systems use similar units which can mean a quick glance makes all spatial data <em>seem</em> interoperable while in reality the data cannot be directly compared without transforming to a standard CRS.</p>
+<p>A rule of thumb that may help is that <u><em>every</em> spatial script you write should be very careful to check the CRS(s) used by the data.</u></p>
+</section>
+</section>
+<section id="raster-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="raster-data-1">Raster Data</h2>
+<section id="loading-rasters" class="level3">
+<h3 class="anchored" data-anchor-id="loading-rasters">Loading Rasters</h3>
+</section>
 <section id="raster-crs" class="level3">
 <h3 class="anchored" data-anchor-id="raster-crs">Raster CRS</h3>
 <p>Checking / Transforming</p>
+</section>
+</section>
+<section id="vector-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="vector-data-1">Vector Data</h2>
+<section id="loading-vector-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-vector-data">Loading Vector Data</h3>
 </section>
 <section id="vector-crs" class="level3">
 <h3 class="anchored" data-anchor-id="vector-crs">Vector CRS</h3>

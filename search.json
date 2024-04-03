@@ -200,7 +200,21 @@
     "href": "spatial_core.html#coordinate-reference-systems-crs",
     "title": "Spatial Fundamentals",
     "section": "Coordinate Reference Systems (CRS)",
-    "text": "Coordinate Reference Systems (CRS)\n\nRaster CRS\nChecking / Transforming\n\n\nVector CRS\nChecking / Transforming"
+    "text": "Coordinate Reference Systems (CRS)\nWhile raster and vector data may both refer to non-spatial or spatial data, true spatial data requires a coordinate reference system (CRS). CRS has a very specific format that all geospatial applications (including  Python and  R!) use to display/process the data correctly. CRS includes three components:\n\nDatum – a model for the shape of the earth. It defines the starting coordinate pair and angular units that–when used with the starting point–define a particular spot on the planet. There can be global datums (e.g., WGS84, NAD83, etc.) that apply anywhere on the planet and local datums that work well for a particular area but do not work outside of that area\nProjection – mathematical transformation to get from a round planet to a flat map\nAdditional Parameters – any other information necessary to support the projection (e.g., the coordinates of the center of the map, etc.)\n\nA hopefully useful analogy is to consider the datum as a choice between a set of citrus fruits of varying shapes (e.g., lemon, orange, grapefruit, etc.) while the projection is a set of instructions on how to flatten the peel of the chosen fruit.\n\nCRS Importance\nCoordinate reference systems may sound dry and uninteresting–even in a pretty technical coding context–but they are vitally important! For many scientific purposes we want to know how a set of points intersect with a given map or how well several maps line up. To answer questions like these or interpret virtually any geospatial information, we must make sure that each spatial component uses the same CRS. Some coordinate reference systems use similar units which can mean a quick glance makes all spatial data seem interoperable while in reality the data cannot be directly compared without transforming to a standard CRS.\nA rule of thumb that may help is that every spatial script you write should be very careful to check the CRS(s) used by the data."
+  },
+  {
+    "objectID": "spatial_core.html#raster-data-1",
+    "href": "spatial_core.html#raster-data-1",
+    "title": "Spatial Fundamentals",
+    "section": "Raster Data",
+    "text": "Raster Data\n\nLoading Rasters\n\n\nRaster CRS\nChecking / Transforming"
+  },
+  {
+    "objectID": "spatial_core.html#vector-data-1",
+    "href": "spatial_core.html#vector-data-1",
+    "title": "Spatial Fundamentals",
+    "section": "Vector Data",
+    "text": "Vector Data\n\nLoading Vector Data\n\n\nVector CRS\nChecking / Transforming"
   },
   {
     "objectID": "spatial_core.html#additional-resources",

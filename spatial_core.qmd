@@ -53,12 +53,13 @@ library(sf)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Load the `rasterio` and `geopandas` libraries to work with raster and vector data respectively.
+Load the `rasterio` and `geopandas` libraries to work with raster and vector data respectively. We'll also load the `os` library to deal with file path issues.
 
 ```{python py-libs}
 # Load needed libraries
 import rasterio
 import geopandas as gpd
+import os
 ```
 :::
 
@@ -78,25 +79,117 @@ Coordinate reference systems may sound dry and uninteresting--even in a pretty t
 
 A rule of thumb that may help is that <u>_every_ spatial script you write should be very careful to check the CRS(s) used by the data.</u>
 
-## Raster Data
+## Working with Rasters
+
+To demonstrate raster data operations we'll use NASA's [Shuttle Radar Topography Mission Global 3 arc second](https://lpdaac.usgs.gov/products/srtmgl3v003/) elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in [this folder](https://github.com/njlyon0/collab_bilingualism/tree/main/dev) of the website's {{< fa brands github >}} GitHub repository.
 
 ### Loading Rasters
 
+We can begin by reading in the data.
 
-### Raster CRS
+:::panel-tabset
+## [{{< fa brands r-project >}}]{.r} R
 
+There are several [{{< fa brands r-project >}} R]{.r} packages for working with raster data but we'll focus on `terra`.
 
-Checking / Transforming
+```{r r-rast-read}
+# Load a raster of elevation data
+rast_r <- terra::rast(x = file.path("data", "elevation.tif"))
 
-## Vector Data
+# Check the class of this object
+class(rast_r)
+```
+
+## [{{< fa brands python >}}]{.py} Python
+
+The `rasterio` library will be our focal library for raster operations with [{{< fa brands python >}} Python].
+
+pd.read_csv(os.path.join("data", "verts.csv"))
+
+```{python py-rast-read}
+# Load a raster of elevation data
+rast_py = rasterio.open(os.path.join("data", "elevation.tif"))
+
+# Check the type of this variable
+type(rast_py)
+```
+:::
+
+### Checking Raster CRS
+
+As noted earlier, the very first thing we should do after reading in spatial data is _check the coordinate reference system!_
+
+:::panel-tabset
+## [{{< fa brands r-project >}}]{.r} R
+
+We can check the CRS with the `crs` function (from `terra`).
+
+```{r r-crs-check}
+# Check the CRS of the elevation data
+terra::crs(x = rast_r)
+```
+
+## [{{< fa brands python >}}]{.py} Python
+
+[{{< fa brands python >}} Python]{.py} stores raster CRS as an attribute.
+
+```{python py-crs-check}
+# Check the CRS of the elevation data
+rast_py.crs
+```
+:::
+
+You may note in the above operations that [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} seem to be returning different information for the same data. In fact they are saying the same thing just in slightly different ways. [{{< fa brands r-project >}} R]{.r} is telling us the name of the coordinate reference system (World Geodetic System 1984) while [{{< fa brands python >}} Python]{.py} is giving us the four-digit "EPSG" code. For context, the European Petroleum Survey Group (EPSG) is a major authority on accepted coordinate reference systems. Each CRS is given a unique, four-digit code. As you may now be able to guess, "4326" is the EPSG code for the World Geodetic System 1984 CRS!
+ 
+This CRS (WGS84) is an especially common one so you may eventually commit its EPSG code to memory but often you'll encounter either CRS names or EPSG codes with which you are not familiar. It may not sound like sage advice but it can be simplest to just use whichever piece of information your coding language returns to Google the "missing" information.
+
+### Transforming Raster CRS
+
+Once we know the current CRS, we can transform into a different coordinate reference system as needed. Let's transform from WGS84 into another commonly-used CRS: Albers Equal Area (EPSG code 3083).
+
+Quick warning, transforming rasters can take a **long** time and is very computationally intensive. It'll work for a relatively small raster like the one we're working with here but in general you should be careful with attempting to re-project a raster into a different CRS.
+
+:::panel-tabset
+## [{{< fa brands r-project >}}]{.r} R
+
+For CRS transformations in [{{< fa brands r-project >}} R]{.r} we can use the `project` function (pronounced like the verb not the noun).
+
+```{r r-crs-change}
+# Transform the raster CRS
+rast_alber_r <- terra::project(x = rast_r, y = "epsg:3083")
+
+# Re-check the CRS to confirm it worked
+terra::crs(rast_alber_r)
+```
+
+## [{{< fa brands python >}}]{.py} Python
+
+Under construction, check back later.
+
+```{python py-crs-change}
+#| eval: false
+#| include: false
+
+# # Transform the raster CRS
+# rast_alber_py = rast_py.rasterio.reproject(rasterio.crs.CRS.from_string("EPSG:9822"))
+# 
+# # Re-check the CRS to confirm it worked
+# raster_alber_py.crs
+# 
+# # Get the full CRS information from an EPSG code
+# rasterio.crs.CRS.from_epsg("3083")
+```
+:::
+
+## Working with Vector Data
 
 ### Loading Vector Data
 
 
-### Vector CRS
+### Checking Vector CRS
 
-Checking / Transforming
 
+### Transforming Vector CRS
 
 
 

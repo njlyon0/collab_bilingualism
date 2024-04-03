@@ -60,3 +60,10 @@ docs/
 
 # External resources folder
 misc_resources/
+
+# Spatial data
+*.dbf
+*.prj
+*.shp
+*.shx
+*.tif

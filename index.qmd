@@ -43,9 +43,10 @@ python3 -m pip install plotnine
 # For SQL operations we'll need the sqlite3 package
 python3 -m pip install sqlite3
 
-# For spatial operations we'll need geopandas and rasterio
+# For spatial operations we'll need a few packages
 python3 -m pip install geopandas
 python3 -m pip install rasterio
+python3 -m pip install rioxarray
 ```
 :::
 

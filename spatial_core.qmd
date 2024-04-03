@@ -53,11 +53,12 @@ library(sf)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Load the `rasterio` and `geopandas` libraries to work with raster and vector data respectively. We'll also load the `os` library to deal with file path issues.
+Load the `rioxarray`, `rasterio`, and `geopandas` libraries to work with raster and vector data. We'll also load the `os` library to deal with file path issues.
 
 ```{python py-libs}
 # Load needed libraries
-import rasterio
+import rasterio as rio
+import rioxarray as rxr
 import geopandas as gpd
 import os
 ```
@@ -102,16 +103,16 @@ class(rast_r)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-The `rasterio` library will be our focal library for raster operations with [{{< fa brands python >}} Python].
+The `rioxarray` library will be our focal library for raster operations with [{{< fa brands python >}} Python].
 
 pd.read_csv(os.path.join("data", "verts.csv"))
 
 ```{python py-rast-read}
 # Load a raster of elevation data
-rast_py = rasterio.open(os.path.join("data", "elevation.tif"))
+rast_py = rxr.open_rasterio(os.path.join("data", "elevation.tif"), masked = True).squeeze()
 
 # Check the type of this variable
-type(rast_py)
+type(rast_py.rio.crs)
 ```
 :::
 
@@ -135,7 +136,7 @@ terra::crs(x = rast_r)
 
 ```{python py-crs-check}
 # Check the CRS of the elevation data
-rast_py.crs
+rast_py.rio.crs
 ```
 :::
 
@@ -164,20 +165,17 @@ terra::crs(rast_alber_r)
 
 ## [{{< fa brands python >}}]{.py} Python
 
-Under construction, check back later.
+[{{< fa brands python >}} Python]{.py} CRS re-projections have slightly more steps to work through.
 
 ```{python py-crs-change}
-#| eval: false
-#| include: false
+# Create a CRS variable for the desired ending CRS
+wgs84_crs = rio.crs.CRS.from_string("EPSG:3083")
 
-# # Transform the raster CRS
-# rast_alber_py = rast_py.rasterio.reproject(rasterio.crs.CRS.from_string("EPSG:9822"))
-# 
-# # Re-check the CRS to confirm it worked
-# raster_alber_py.crs
-# 
-# # Get the full CRS information from an EPSG code
-# rasterio.crs.CRS.from_epsg("3083")
+# Reproject the raster we had
+rast_alber_py = rast_py.rio.reproject(wgs84_crs)
+
+# Re-check the CRS to confirm it worked
+rast_alber_py.rio.crs
 ```
 :::
 

@@ -259,15 +259,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#spatial-data-types" id="toc-spatial-data-types" class="nav-link active" data-scroll-target="#spatial-data-types">Spatial Data Types</a></li>
   <li><a href="#library-loading" id="toc-library-loading" class="nav-link" data-scroll-target="#library-loading">Library Loading</a></li>
   <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a></li>
-  <li><a href="#raster-data-1" id="toc-raster-data-1" class="nav-link" data-scroll-target="#raster-data-1">Raster Data</a>
+  <li><a href="#working-with-rasters" id="toc-working-with-rasters" class="nav-link" data-scroll-target="#working-with-rasters">Working with Rasters</a>
   <ul class="collapse">
   <li><a href="#loading-rasters" id="toc-loading-rasters" class="nav-link" data-scroll-target="#loading-rasters">Loading Rasters</a></li>
-  <li><a href="#raster-crs" id="toc-raster-crs" class="nav-link" data-scroll-target="#raster-crs">Raster CRS</a></li>
+  <li><a href="#checking-raster-crs" id="toc-checking-raster-crs" class="nav-link" data-scroll-target="#checking-raster-crs">Checking Raster CRS</a></li>
+  <li><a href="#transforming-raster-crs" id="toc-transforming-raster-crs" class="nav-link" data-scroll-target="#transforming-raster-crs">Transforming Raster CRS</a></li>
   </ul></li>
-  <li><a href="#vector-data-1" id="toc-vector-data-1" class="nav-link" data-scroll-target="#vector-data-1">Vector Data</a>
+  <li><a href="#working-with-vector-data" id="toc-working-with-vector-data" class="nav-link" data-scroll-target="#working-with-vector-data">Working with Vector Data</a>
   <ul class="collapse">
   <li><a href="#loading-vector-data" id="toc-loading-vector-data" class="nav-link" data-scroll-target="#loading-vector-data">Loading Vector Data</a></li>
-  <li><a href="#vector-crs" id="toc-vector-crs" class="nav-link" data-scroll-target="#vector-crs">Vector CRS</a></li>
+  <li><a href="#checking-vector-crs" id="toc-checking-vector-crs" class="nav-link" data-scroll-target="#checking-vector-crs">Checking Vector CRS</a></li>
+  <li><a href="#transforming-vector-crs" id="toc-transforming-vector-crs" class="nav-link" data-scroll-target="#transforming-vector-crs">Transforming Vector CRS</a></li>
   </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
@@ -341,11 +343,12 @@ Image Source - National Ecological Observatory Network (NEON)
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Load the <code>rasterio</code> and <code>geopandas</code> libraries to work with raster and vector data respectively.</p>
+<p>Load the <code>rasterio</code> and <code>geopandas</code> libraries to work with raster and vector data respectively. We’ll also load the <code>os</code> library to deal with file path issues.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -366,24 +369,115 @@ Image Source - National Ecological Observatory Network (NEON)
 <p>A rule of thumb that may help is that <u><em>every</em> spatial script you write should be very careful to check the CRS(s) used by the data.</u></p>
 </section>
 </section>
-<section id="raster-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="raster-data-1">Raster Data</h2>
+<section id="working-with-rasters" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-rasters">Working with Rasters</h2>
+<p>To demonstrate raster data operations we’ll use NASA’s <a href="https://lpdaac.usgs.gov/products/srtmgl3v003/">Shuttle Radar Topography Mission Global 3 arc second</a> elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in <a href="https://github.com/njlyon0/collab_bilingualism/tree/main/dev">this folder</a> of the website’s <i class="fa-brands fa-github" aria-label="github"></i> GitHub repository.</p>
 <section id="loading-rasters" class="level3">
 <h3 class="anchored" data-anchor-id="loading-rasters">Loading Rasters</h3>
+<p>We can begin by reading in the data.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>There are several <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> packages for working with raster data but we’ll focus on <code>terra</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a raster of elevation data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>rast_r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(<span class="at">x =</span> <span class="fu">file.path</span>(<span class="st">"data"</span>, <span class="st">"elevation.tif"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the class of this object</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rast_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "SpatRaster"
+attr(,"package")
+[1] "terra"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>The <code>rasterio</code> library will be our focal library for raster operations with [<i class="fa-brands fa-python" aria-label="python"></i> Python].</p>
+<p>pd.read_csv(os.path.join(“data”, “verts.csv”))</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a raster of elevation data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rast_py <span class="op">=</span> rasterio.<span class="bu">open</span>(os.path.join(<span class="st">"data"</span>, <span class="st">"elevation.tif"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the type of this variable</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(rast_py)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'rasterio.io.DatasetReader'&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="raster-crs" class="level3">
-<h3 class="anchored" data-anchor-id="raster-crs">Raster CRS</h3>
-<p>Checking / Transforming</p>
+<section id="checking-raster-crs" class="level3">
+<h3 class="anchored" data-anchor-id="checking-raster-crs">Checking Raster CRS</h3>
+<p>As noted earlier, the very first thing we should do after reading in spatial data is <em>check the coordinate reference system!</em></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>We can check the CRS with the <code>crs</code> function (from <code>terra</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the CRS of the elevation data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">crs</span>(<span class="at">x =</span> rast_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> stores raster CRS as an attribute.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the CRS of the elevation data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>rast_py.crs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CRS.from_epsg(4326)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>You may note in the above operations that <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> seem to be returning different information for the same data. In fact they are saying the same thing just in slightly different ways. <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> is telling us the name of the coordinate reference system (World Geodetic System 1984) while <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> is giving us the four-digit “EPSG” code. For context, the European Petroleum Survey Group (EPSG) is a major authority on accepted coordinate reference systems. Each CRS is given a unique, four-digit code. As you may now be able to guess, “4326” is the EPSG code for the World Geodetic System 1984 CRS!</p>
+<p>This CRS (WGS84) is an especially common one so you may eventually commit its EPSG code to memory but often you’ll encounter either CRS names or EPSG codes with which you are not familiar. It may not sound like sage advice but it can be simplest to just use whichever piece of information your coding language returns to Google the “missing” information.</p>
+</section>
+<section id="transforming-raster-crs" class="level3">
+<h3 class="anchored" data-anchor-id="transforming-raster-crs">Transforming Raster CRS</h3>
+<p>Once we know the current CRS, we can transform into a different coordinate reference system as needed. Let’s transform from WGS84 into another commonly-used CRS: Albers Equal Area (EPSG code 3083).</p>
+<p>Quick warning, transforming rasters can take a <strong>long</strong> time and is very computationally intensive. It’ll work for a relatively small raster like the one we’re working with here but in general you should be careful with attempting to re-project a raster into a different CRS.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>For CRS transformations in <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> we can use the <code>project</code> function (pronounced like the verb not the noun).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform the raster CRS</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rast_alber_r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(<span class="at">x =</span> rast_r, <span class="at">y =</span> <span class="st">"epsg:3083"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-check the CRS to confirm it worked</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">crs</span>(rast_alber_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "PROJCRS[\"NAD83 / Texas Centric Albers Equal Area\",\n    BASEGEOGCRS[\"NAD83\",\n        DATUM[\"North American Datum 1983\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4269]],\n    CONVERSION[\"Texas Centric Albers Equal Area\",\n        METHOD[\"Albers Equal Area\",\n            ID[\"EPSG\",9822]],\n        PARAMETER[\"Latitude of false origin\",18,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8821]],\n        PARAMETER[\"Longitude of false origin\",-100,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8822]],\n        PARAMETER[\"Latitude of 1st standard parallel\",27.5,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8823]],\n        PARAMETER[\"Latitude of 2nd standard parallel\",35,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8824]],\n        PARAMETER[\"Easting at false origin\",1500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8826]],\n        PARAMETER[\"Northing at false origin\",6000000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8827]]],\n    CS[Cartesian,2],\n        AXIS[\"easting (X)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"northing (Y)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"State-wide spatial data presentation requiring true area measurements.\"],\n        AREA[\"United States (USA) - Texas.\"],\n        BBOX[25.83,-106.66,36.5,-93.5]],\n    ID[\"EPSG\",3083]]"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Under construction, check back later.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="vector-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="vector-data-1">Vector Data</h2>
+<section id="working-with-vector-data" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-vector-data">Working with Vector Data</h2>
 <section id="loading-vector-data" class="level3">
 <h3 class="anchored" data-anchor-id="loading-vector-data">Loading Vector Data</h3>
 </section>
-<section id="vector-crs" class="level3">
-<h3 class="anchored" data-anchor-id="vector-crs">Vector CRS</h3>
-<p>Checking / Transforming</p>
+<section id="checking-vector-crs" class="level3">
+<h3 class="anchored" data-anchor-id="checking-vector-crs">Checking Vector CRS</h3>
+</section>
+<section id="transforming-vector-crs" class="level3">
+<h3 class="anchored" data-anchor-id="transforming-vector-crs">Transforming Vector CRS</h3>
 </section>
 </section>
 <section id="additional-resources" class="level2">

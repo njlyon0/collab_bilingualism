@@ -7,11 +7,11 @@ execute:
 
 website:
   title: "R / Python Bilingualism"
+  favicon: images/logo_lyon.png
   navbar:
     left:
       - href: index.qmd
         text: "Home"
-      
       - text: "Fundamentals"
         menu:
           - href: basics.qmd
@@ -37,11 +37,11 @@ website:
           - href: wrangle_join.qmd
             text: "Join"
       - text: "Visualization"
-        menu: 
+        menu:
           - href: viz_gg.qmd
             text: "Grammar of Graphics"
       - text: "Spatial"
-        menu: 
+        menu:
           - href: spatial_core.qmd
             text: "Core"
           - href: spatial_viz.qmd

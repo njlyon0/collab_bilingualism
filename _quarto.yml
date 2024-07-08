@@ -10,57 +10,57 @@ website:
   favicon: images/logo_lyon.png
   navbar:
     left:
-      - href: index.qmd
-        text: "Home"
+      - text: "Home"
+        href: index.qmd
       - text: "Fundamentals"
         menu:
-          - href: basics.qmd
-            text: "Core Concepts"
-          - href: automata.qmd
-            text: "Automation"
-          - href: string_methods.qmd
-            text: "Text Methods"
-          - href: libs.qmd
-            text: "Packages & Libraries"
-          - href: dir_mgmt.qmd
-            text: "Directory Management"
-          - href: external-data.qmd
-            text: "External Data"
+          - text: "Core Concepts"
+            href: basics.qmd
+          - text: "Automation"
+            href: automata.qmd
+          - text: "Text Methods"
+            href: string_methods.qmd
+          - text: "Packages & Libraries"
+            href: libs.qmd
+          - text: "Directory Management"
+            href: dir_mgmt.qmd
+          - text: "External Data"
+            href: external-data.qmd
       - text: "Data Wrangling"
         menu:
-          - href: wrangle_subset.qmd
-            text: "Subset"
-          - href: wrangle_summarize.qmd
-            text: "Summarize"
-          - href: wrangle_reshape.qmd
-            text: "Reshape"
-          - href: wrangle_join.qmd
-            text: "Join"
+          - text: "Subset"
+            href: wrangle_subset.qmd
+          - text: "Summarize"
+            href: wrangle_summarize.qmd
+          - text: "Reshape"
+            href: wrangle_reshape.qmd
+          - text: "Join"
+            href: wrangle_join.qmd
       - text: "Visualization"
         menu:
-          - href: viz_gg.qmd
-            text: "Grammar of Graphics"
+          - text: "Grammar of Graphics"
+            href: viz_gg.qmd
       - text: "Spatial"
         menu:
-          - href: spatial_core.qmd
-            text: "Core"
-          - href: spatial_viz.qmd
-            text: "Visualization"
-      - href: sql.qmd
-        text: "SQL"
+          - text: "Core"
+            href: spatial_core.qmd
+          - text: "Visualization"
+            href: spatial_viz.qmd
+      - text: "SQL"
+        href: sql.qmd
     right:
-      - href: terms.qmd
-        text: "Glossary"
+      - text: "Glossary"
+        href: terms.qmd
       - text: "Creators"
         menu:
-          - href: https://njlyon0.github.io/
-            text: "Nick J Lyon"
-          - href: collabs.qmd
-            text: "Contributing"
+          - text: "Nick J Lyon"
+            href: https://njlyon0.github.io/
+          - text: "Contributing"
+            href: collabs.qmd
       - href: https://github.com/njlyon0/lyon_bilingualism
         icon: github
   page-footer:
-    center: "Copyright 2023, Nicholas Lyon"
+    center: "Copyright 2024, Nicholas Lyon"
     background: secondary
 
 format:

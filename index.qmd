@@ -79,7 +79,7 @@ As the heading would suggest, I'm housing various term definitions here. As of n
 
 ## Additional Resources
 
-I'm not the first to have this idea so there are other useful [{{< fa brands python >}} Python]{.py} tutorials and specifically [{{< fa brands r-project >}} R]{.r}/[{{< fa brands python >}} Python]{.py} bilingualism resources. See below:
+If this is of interest, consider checking out these useful coding language-specific tutorials and other attempts at [{{< fa brands r-project >}} R]{.r}/[{{< fa brands python >}} Python]{.py} bilingualism. See below:
 
 ### Bilingualism Resources
 
@@ -91,7 +91,8 @@ I'm not the first to have this idea so there are other useful [{{< fa brands pyt
 
 - The Carpentries has a "[Data Analysis and Visualization in Python for Ecologists ](https://datacarpentry.org/python-ecology-lesson/index.html)" lesson that is really well put-together (as is characteristic of The Carpentries' content)
 - The [Earth Lab](https://www.earthdatascience.org/) has a Python course that was recommended to me by an NCEAS employee (specifically [section 4](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/))
-- [Python]{.py} -- Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
+- Dr. Diba Mirza taught a UCSB Computer Science ([CS8](https://ucsb-cs8.github.io/w19-mirza/lectures_list/)) course on Python
+- There's a nice [30 Days of Python](https://github.com/Asabeneh/30-Days-Of-Python) challenge on GitHub you can work through at your own pace that covers a breadth of Python skills
 
 ### [{{< fa brands r-project >}} R]{.r} Resources
 

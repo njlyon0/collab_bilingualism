@@ -86,6 +86,7 @@ If this is of interest, consider checking out these useful coding language-speci
 - The [EEOB-BioData](https://github.com/EEOB-BioData) faculty at [Iowa State University](https://www.iastate.edu/) offer a ["Computational Skills For Biological Data"](https://eeob-biodata.github.io/EEOB-BCB-546X/) course that covers R and Python (and Unix)
 - [ESIIL](https://esiil.org/) (<u>E</u>nvironmental Data <u>S</u>cience <u>I</u>nnovation and <u>I</u>nclusion <u>L</u>ab) has created [an R-Python bilingualism tutorial](https://cu-esiil.github.io/pre-innovation-summit-training/2_R_and_Py_bilingualism/code/outline/outline/) that is framed for a more applied audience
 - [Marie Rivers](https://github.com/marierivers) also made [a website](https://marierivers.github.io/marie_quarto/) for exploring Quarto more generally that I've found super helpful for the part of it that deals with R/Python bilingualism
+- [Rebecca Barter](https://rebeccabarter.com/) made a nice blog post titled "[An Introduction to Python for R Users](https://rebeccabarter.com/blog/2023-09-11-from_r_to_python?utm_source=substack&utm_medium=email)" that focuses on comparing [{{< fa brands python >}} Python]{.py} operations to the _logic_ of [{{< fa brands r-project >}} R]{.r} (rather than side-by-side comparison)
 
 ### [{{< fa brands python >}} Python]{.py} Resources
 

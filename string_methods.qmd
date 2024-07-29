@@ -12,7 +12,7 @@ Data stored as text (i.e., [string]{.py}/[object]{.r} or [character]{.r}) is not
 The bulk of text tidying often boils down to finding unwanted [strings]{.py}/[characters]{.r} and replacing them with desired variants. This operation is how computers handle fixing typos.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 We can use the [{{< fa brands r-project >}} R]{.r} function `gsub` to find and replace (part of) a character object.
 
@@ -27,7 +27,7 @@ fix1_r <- gsub(pattern = "1", replacement = "l", x = text_r)
 print(fix1_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 We can use the [{{< fa brands python >}} Python]{.py} method `replace` to find and replace (part of) a string/object variable.
 
@@ -50,7 +50,7 @@ Note that we have to loop across our list to do this operation in this language.
 Text casing (i.e., either UPPERCASE or lowercase) is also a frequent source of issues in code as many scripted operations are sensitive to text case. We can coerce to upper or lowercase as needed though with relative ease.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 We can use the `tolower` or `toupper` functions to coerce all text into lower or uppercase respectively.
 
@@ -62,7 +62,7 @@ fix2_r <- tolower(x = fix1_r)
 print(fix2_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 We can use the `lower` or `upper` methods to coerce all text into lower or uppercase respectively.
 

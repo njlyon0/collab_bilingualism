@@ -1,7 +1,8 @@
 {
-  "hash": "f31b791d24d2f00d7f11f8911335b353",
+  "hash": "5f09d4005b1219962aa2a62757f98dec",
   "result": {
-    "markdown": "---\ntitle: \"Workbench\"\n---\n\n\nPlace to store snippets of code / formatting that I'll be copy/pasting a bunch\n\n## Template Tabset Panel Area\n\n:::panel-tabset\n## [{{< fa brands r-project >}}]{.r} R\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# X\n```\n:::\n\n\n## [{{< fa brands python >}}]{.py} Python\n\n\n::: {.cell}\n\n```{.python .cell-code}\n# X\n```\n:::\n\n:::\n\n\n[variables]{.py}/[objects]{.r}\n\n\n[{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}\n\n",
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Workbench\"\n---\n\n\nPlace to store snippets of code / formatting that I'll be copy/pasting a bunch\n\n## Template Tabset Panel Area\n\n:::panel-tabset\n## [{{< fa brands r-project >}} R]{.r}\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# X\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\n## [{{< fa brands python >}} Python]{.py}\n\n\n::: {.cell}\n\n```{.python .cell-code}\n# X\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n2\n```\n\n\n:::\n:::\n\n:::\n\n\n[variables]{.py}/[objects]{.r}\n\n\n[{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

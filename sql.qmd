@@ -14,7 +14,7 @@ A caveat before we begin: `r fontawesome::fa(name = "database", fill = "#283E82"
 Begin by loading the needed libraries.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `DBI` package.
 
@@ -23,7 +23,7 @@ Load the `DBI` package.
 library(DBI)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `pandas`, `os`, and `sqlite3` packages.
 
@@ -40,7 +40,7 @@ import sqlite3
 SQLite operations require us to connect to a database, perform desired operations, and then _close the connection_ when we are finished. A good introduction to this is showing how one can list the data tables available in a given database; this is _vital_ information for doing any "real" queries as we need to know the name of the table from which we want to extract data.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r} we can open the connection with the `dbConnect` function, identify the tables in the database with the `dbListTables` function and--eventually--close the connection with the `dbDisconnect` function (all of which are in the `DBI` package).
 
@@ -55,7 +55,7 @@ DBI::dbListTables(conn = cxn)
 DBI::dbDisconnect(conn = cxn)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py} we can open the connection with the `connect` function (from the `sqlite3` library), identify the tables in the database with the `read_sql_query` function (from `pandas`) and--eventually--close the connection with the `close` method.
 
@@ -78,7 +78,7 @@ Connecting and listing the available data in a given database is all well and go
 At a minimum a query must involve `SELECT` to dictate which columns to keep (accepts either column names or a `*` for 'all columns') and `FROM` to indicate which table in the database we want to query.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-sql1}
 # Open the connection
@@ -98,7 +98,7 @@ Note that we can still use the query data object even when we have closed our da
 head(query_r, n = 4)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-sql1}
 # Open the connection

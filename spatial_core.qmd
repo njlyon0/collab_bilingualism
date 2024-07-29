@@ -41,7 +41,7 @@ Consider this visual depiction of vector data:
 Before we can dive into "actual" spatial work we'll need to load some libraries.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load `terra` and `sf` to work with raster and vector data respectively.
 
@@ -51,7 +51,7 @@ library(terra)
 library(sf)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `rioxarray`, `rasterio`, and `geopandas` libraries to work with raster and vector data. We'll also load the `os` library to deal with file path issues.
 
@@ -89,7 +89,7 @@ To demonstrate raster data operations we'll use NASA's [Shuttle Radar Topography
 We can begin by reading in the data.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 There are several [{{< fa brands r-project >}} R]{.r} packages for working with raster data but we'll focus on `terra`.
 
@@ -101,7 +101,7 @@ rast_r <- terra::rast(x = file.path("data", "elevation.tif"))
 class(rast_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 The `rioxarray` library will be our focal library for raster operations with [{{< fa brands python >}} Python].
 
@@ -121,7 +121,7 @@ type(rast_py.rio.crs)
 As noted earlier, the very first thing we should do after reading in spatial data is _check the coordinate reference system!_
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 We can check the CRS with the `crs` function (from `terra`).
 
@@ -130,7 +130,7 @@ We can check the CRS with the `crs` function (from `terra`).
 terra::crs(x = rast_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} stores raster CRS as an attribute.
 
@@ -151,7 +151,7 @@ Once we know the current CRS, we can transform into a different coordinate refer
 Quick warning, transforming rasters can take a **long** time and is very computationally intensive. It'll work for a relatively small raster like the one we're working with here but in general you should be careful with attempting to re-project a raster into a different CRS.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 For CRS transformations in [{{< fa brands r-project >}} R]{.r} we can use the `project` function (pronounced like the verb not the noun).
 
@@ -163,7 +163,7 @@ rast_alber_r <- terra::project(x = rast_r, y = "epsg:3083")
 terra::crs(rast_alber_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} CRS re-projections have slightly more steps to work through.
 

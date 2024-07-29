@@ -10,7 +10,7 @@ I think of myself as a competent [{{< fa brands r-project >}} R]{.r} coder but a
 Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} contains an `install.packages` function for installing packages desired libraries.
 
@@ -26,7 +26,7 @@ install.packages("sf")
 install.packages("terra")
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} packages must be installed via the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}.
 

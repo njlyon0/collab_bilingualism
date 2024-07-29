@@ -7,7 +7,7 @@ title: "Subsetting Data"
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `tidyverse` meta-package.
 
@@ -15,7 +15,7 @@ Load the `tidyverse` meta-package.
 library(tidyverse)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `pandas` and `os` libraries.
 
@@ -33,7 +33,7 @@ Often when we work with data we want to retrieve only the rows that meet some co
 Conditional statements always return "boolean" [BOO-lee-un] values. These are [type]{.py} boolean and [class]{.r} logical in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r} `TRUE` and `FALSE` are booleans. Note that their abbreviations `T` and `F` are also accepted though they _must_ be capitalized.
 
@@ -50,7 +50,7 @@ bool_r
 class(bool_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py} `True` or `False` are booleans. Note that they must be capitalized in this way to register as the correct type (i.e., only first letter capitalized).
 
@@ -71,14 +71,14 @@ type(bool_py)
 In addition to asking whether something 'is exactly equal to' something else (`==`), we can also ask whether two values are _not_ equal (`!=`) or pose greater/less than conditionals (`>`/`<`).
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-bool3}
 # Ask whether a number is less than or equal to a particular value
 7 <= 5
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-bool3}
 # Ask whether a number is less than or equal to a particular value
@@ -91,7 +91,7 @@ In addition to asking whether something 'is exactly equal to' something else (`=
 We can leverage these conditional values to return only rows of a data table that meet criteria that are valuable to us. Let's begin by loading the external dataset derived from the `lterdatasampler` [{{< fa brands r-project >}} R]{.r} package (see [here](https://lter.github.io/lterdatasampler/)) that we used in the previous section.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Read in vertebrate data CSV and check out the first few rows.
 
@@ -105,7 +105,7 @@ head(vert_r, n = 3)
 
 Recall from our file path module that the `file.path` function accounts for computer operating system differences.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Read in vertebrate data CSV (remember we _must_ namespace the `read_csv` function) and check out the first few rows.
 
@@ -123,7 +123,7 @@ Recall from our file path module that the `join` function accounts for computer 
 Now that we have some data we can use conditional statements to actually subset it! We'll use the `len` and `nrow` functions in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively to demonstrate that we successfully subset. Either will show whether we've successfully removed the rows that don't meet our criteria.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Let's subset to only one particular site of vertebrate data. Note that base [{{< fa brands r-project >}} R]{.r} does include a `subset` function but we'll use the equivalent `filter` function from the `dplyr` package.
 
@@ -136,7 +136,7 @@ message("Before subsetting the data had ", nrow(vert_r), " rows.")
 message("Subsetting changed this to ", nrow(r_sub1))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Let's subset to only one particular site of vertebrate data.
 
@@ -155,7 +155,7 @@ print("Subsetting changed this to", len(py_sub1))
 If desired we can also specify multiple criteria to subset by. We must decide whether _all_ criteria must be met or if _any_ criterion being met is sufficient to retain the row. If we want **all** (in either language) we need to separate each criterion with an ampersand (`&`). If instead we want **any** (in either language) we need to separate each criterion with a pipe (`|`); note that this is _not_ the same as a "pipe operator" which we'll discuss in detail later.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 If we want a only values between a minimum and maximum value that means we need all criteria to be met so we need to use a `&` between conditions.
 
@@ -168,7 +168,7 @@ message("Before subsetting the data had ", nrow(vert_r), " rows.")
 message("Subsetting changed this to ", nrow(r_sub2))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 If we want a only values between a minimum and maximum value that means we need all criteria to be met so we need to use a `&` between conditions. Note that when we specify multiple criteria in [{{< fa brands python >}} Python]{.py} we _must_ wrap each conditional in parentheses.
 
@@ -187,7 +187,7 @@ print("Subsetting changed this to", len(py_sub2))
 We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` [method]{.py} or the `%in%` [operator]{.r} (in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Let's subset to only salamander species in the dataset using a mask. In [{{< fa brands r-project >}} R]{.r}, that means providing the column name to the left of the `%in%` operator and giving a vector of options to the right.
 
@@ -200,7 +200,7 @@ message("Before subsetting the data had ", nrow(vert_r), " rows.")
 message("Subsetting changed this to ", nrow(r_mask1))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Let's subset to only salamander species in the dataset using a mask. In [{{< fa brands python >}} Python]{.py}, `isin` is a method so it is appended to the right of the column it accesses (separated by a period) and the options must be provided as a list (i.e., wrapped in square brackets and separated by commas).
 
@@ -221,7 +221,7 @@ Sometimes it is helpful to _negate_ criteria and subset to only conditions that 
 In the below example we'll use the `isnull` [function]{.py} or the `is.na` [function]{.r} to see whether a column contains missing values and invert it to return only rows where the specified column _is not_ missing values.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r} we negate conditions by adding an exclamation point (`!`) to the left of the relevant criterion.
 
@@ -234,7 +234,7 @@ message("Before subsetting the data had ", nrow(vert_r), " rows.")
 message("Subsetting changed this to ", nrow(r_mask2))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py} we negate conditions by adding a tilde (`~`) to the left of the relevant criterion.
 

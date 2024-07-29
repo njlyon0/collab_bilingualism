@@ -7,7 +7,7 @@ title: "Reshaping Data"
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `tidyverse` meta-package as well as our simulated lichen data.
 
@@ -22,7 +22,7 @@ lich_r <- read.csv(file = file.path("data", "tree_lichen.csv"))
 head(lich_r, n = 3)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `pandas` and `os` libraries as well as our simulated lichen data.
 
@@ -50,7 +50,7 @@ When wrangling data we may find it necessary to change the data from one shape t
 Our lichen data are currently in wide format so let's reshape into long format.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} uses the `pivot_longer` function from the `tidyr` package for this operation. We need to specify the data table to reshape, the columns to collapse (to the `cols` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `names_to` and `values_to` arguments are reasonably intuitively named.
 
@@ -67,7 +67,7 @@ head(long_r, n = 3)
 
 Note that the column names to reshape _must_ be a vector.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} uses the `melt` function from the `pandas` library for this operation. We need to specify the DataFrame to reshape, the columns to _exclude_ from collapsing (with the `id_vars` argument), as well as the new column names for both the old column names and the values they contained. Fortunately the `var_name` and `value_name` arguments are reasonably intuitively named.
 
@@ -90,7 +90,7 @@ Note that the column names use as IDs _must_ be a list (or similar object type).
 The opposite operation--reshaping wider--is also readily available in either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. We'll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} uses the `pivot_wider` function (also from the `tidyr` package) to do this type of reshaping operation. Reshaping wider requires fewer arguments as only the columns to reshape need to be specified.
 
@@ -104,7 +104,7 @@ wide_r <- tidyr::pivot_wider(data = long_r,
 head(wide_r, n = 2)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 We can use the `pandas` function `pivot_table` to reshape back into wide format. Unlike [{{< fa brands r-project >}} R]{.r}, we do need to specify the `index` column label(s) that are not being reshaped.
 

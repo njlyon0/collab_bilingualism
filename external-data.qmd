@@ -9,7 +9,7 @@ code-annotations: hover
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `tidyverse` meta-package.
 
@@ -18,7 +18,7 @@ Load the `tidyverse` meta-package.
 library(tidyverse)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `pandas` and `os` libraries.
 
@@ -34,7 +34,7 @@ import pandas as pd
 We can now load an external dataset derived from the `lterdatasampler` [{{< fa brands r-project >}} R]{.r} package (see [here](https://lter.github.io/lterdatasampler/)) with both [{{< fa brands r-project >}} R]{.r} and [{{< fa brands python >}} Python]{.py}. This relatively simple operation is also a nice chance to showcase how 'namespacing' (i.e., indicating which package a given function comes from) differs between the two languages.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Namespacing in [{{< fa brands r-project >}} R]{.r} is accomplished by doing `package_name::function_name` and is optional (though, in my opinion, good practice!). Note that we use the assignment operator (`<-`) to assign the contents of the CSV to an object.
 
@@ -45,7 +45,7 @@ vert_r <- utils::read.csv(file = file.path("data", "verts.csv"))
 
 Recall from our file path module that the `file.path` function accounts for computer operating system differences.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py}, namespacing is required and is done via `package_name.function_name`. Note that we use the assignment operator (`=`) to assign the contents of the CSV to a variable.
 
@@ -62,7 +62,7 @@ Recall from our file path module that the `join` function accounts for computer 
 Data stored in CSVs (and similar data formats like Microsoft Excel, etc.) has a unique [type]{.py}/[class]{.r} that differs from some of the categories we covered in the "Fundamentals" section.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r}, such data are class `data.frame`
 
@@ -71,7 +71,7 @@ In [{{< fa brands r-project >}} R]{.r}, such data are class `data.frame`
 class(vert_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py}, such data are type `DataFrame` and this variable type is defined by the `pandas` library. This is the standard type returned by the `pandas` `read_csv` function.
 
@@ -121,7 +121,7 @@ vert_py.tail(2)
 While it is nice to know the [type]{.py}/[class]{.r} of the data table generally, we often need to know the [type]{.py}/[class]{.r} of the columns within those data tables. Our operations are typically aimed at modifying particular columns and pre-requisite to that is knowing the [type]{.py}/[class]{.r} of the column to know what actions are available to us.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} uses the `str` function to assess data structure. Structure includes the dimensions of the data (i.e., number of rows and columns) as well as the class of the data (`data.frame`) and the class of each column.
 
@@ -131,7 +131,7 @@ utils::str(vert_r)
 
 Be careful to not confuse this with the [{{< fa brands python >}} Python]{.py} function `str` that coerces values to type "string"!
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 When we want to know the type of each column in a [{{< fa brands python >}} Python]{.py} `DataFrame`, we can use the `dtypes` "attribute". Attributes are akin to a method but they completely lack arguments that might modify their behavior. As a consequence they are extremely precisely defined. The `dtypes` attribute returns the type of each column.
 
@@ -145,7 +145,7 @@ vert_py.dtypes
 We often want to begin our exploration of a given dataset by getting a summary of each column. This is rarely what we actually need for statistics or visualization but it is a nice high-level way of getting a sense for the composition of the data.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} provides the `summary` function to summarize all columns in a dataset. Note that it is not terribly informative for columns of class character.
 
@@ -154,7 +154,7 @@ We often want to begin our exploration of a given dataset by getting a summary o
 summary(vert_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} has the `describe` method for getting similar information about each column of a `DataFrame`.
 
@@ -176,7 +176,7 @@ vert_py.info()
 If we want to skip these steps and just identify the full set of column [labels]{.py}/[names]{.r} there is a small operation for stripping that information out in both languages.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} has the `names` function to quickly return a vector of the column names in a given `data.frame` object.
 
@@ -185,7 +185,7 @@ If we want to skip these steps and just identify the full set of column [labels]
 names(vert_r)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} has the `columns` attributes for returning a simple list of column labels in a given `DataFrame` variable.
 
@@ -206,7 +206,7 @@ We may want to access a particular column or set of columns. There are several a
 In all of the following examples we'll use the `head` [method]{.py}/[function]{.r} to simplify the output.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 If we know the order of the columns we can use the same syntax as when we indexed a vector.
 
@@ -234,7 +234,7 @@ In [{{< fa brands r-project >}} R]{.r}, the column operator is a `$` and we plac
 head(vert_r$year)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 If we know the index position of the desired column we can use the `iloc` method (short for "integer location"). Note that the `iloc` method uses square brackets instead of parentheses (typical methods use parentheses). We must include a colon with either nothing or the start/stop bounds (see "Slicing" in "Fundamentals"). A colon without specifying bounds returns all rows.
 
@@ -261,7 +261,7 @@ When we want to access multiple columns we can still use either index positions 
 We'll continue to use the `head` [method]{.py}/[function]{.r} to simplify outputs.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r} we could use a concatenated vector of index positions to specify particular columns by their positions.
 
@@ -277,7 +277,7 @@ Instead we could use a vector of column names for extra precision.
 head(vert_r[, c("year", "sitecode", "weight_g")])
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py} we could use the `iloc` method for multiple columns and simply supply a list of the column index positions in which we are interested. Note that this method is different from many of the other methods we've covered so far because it uses square brackets instead of parentheses.
 

@@ -7,7 +7,7 @@ title: "Summarizing Data"
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `tidyverse` meta-package as well as our vertebrate data.
 
@@ -22,7 +22,7 @@ vert_r <- utils::read.csv(file = file.path("data", "verts.csv"))
 head(vert_r, n = 5)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `pandas` and `os` libraries as well as our vertebrate data.
 
@@ -46,7 +46,7 @@ Now that we have data, we can use it to demonstrate groupwise summarization! Bot
 Let's suppose that we want to calculate average weight and length within each species and year.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r}, we use the `group_by` function (from `dplyr`) to define our grouping variables. Note that this changes the class from `data.frame` to `tibble` (a special dataframe-like class defined by the tidyverse in part due to this operation).
 
@@ -60,7 +60,7 @@ vert_r_grp <- dplyr::group_by(.data = vert_r, year, species)
 class(vert_r_grp)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py}, we can use the `groupby` method (available to all variables of type `DataFrame`). This method does accept multiple column labels but they must be provided as a list (i.e., wrapped in square brackets) and the labels themselves must be wrapped in quotes.
 
@@ -78,7 +78,7 @@ type(vert_py_grp)
 Once we've established the columns for which we want to calculate summary statistics we can move on to the tools that actually allow summarization steps to take place. Note that _summarization_ implicitly means that we should lose rows because we should only have one row per combination of grouping column content combination. Adding columns is not necessarily summarization if it doesn't shed rows.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} allows for multiple summary metrics to be calculate simultaneously within `dplyr`'s `summarize` function.
 
@@ -100,7 +100,7 @@ vert_r_summary <- dplyr::summarize(.data = vert_r_grp,
 head(vert_r_summary, n = 3)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 When summarizing data in [{{< fa brands python >}} Python]{.py} we need to calculate each metric separately and then combine them. Apologies that this uses the `concat` function in `pandas` that we have not previously covered but you can see a greater discussion of these functions/methods in the "Join" section.
 

@@ -15,7 +15,7 @@ Note that in the following examples we **_will not_** namespace [{{< fa brands r
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load the `ggplot2` and `dplyr` libraries as well as our vertebrate data.
 
@@ -48,7 +48,7 @@ Remember that we use an `!` in [{{< fa brands r-project >}} R]{.r} to negate a c
 
 Note that the `summarize` function drops all columns that either it doesn't create or that are not used as grouping variables.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `plotnine`, `os`, and `pandas` libraries as well as our vertebrate data.
 
@@ -90,7 +90,7 @@ There are three fundamental components to ggplots:
 We can create an empty graph with correctly labeled axes but without any data by defining the data and aesthetics but neglecting to include any geometry. Make a graph where year is on the X-axis (horizontal) and mean weight is on the Y-axis (vertical).
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Column names _cannot be_ in quotes in the `aes` function.
 
@@ -99,7 +99,7 @@ Column names _cannot be_ in quotes in the `aes` function.
 ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Column labels supplies to the `aes` function _need to be_ in quotes.
 
@@ -122,7 +122,7 @@ All geometry functions--in either language--take the form of `geom_*` where `*` 
 Let's make these graphs into scatter plots by adding a point geometry.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-gg2}
 # Create graph
@@ -130,7 +130,7 @@ ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt)) +
   geom_point()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-gg2}
 #| warning: false
@@ -146,7 +146,7 @@ Note that in either language the `geom_point` function does not need either data
 Let's practice a little further by making the color of the points dependent upon species.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-gg3}
 # Create graph
@@ -156,7 +156,7 @@ ggplot(data = avg_r, mapping = aes(x = year, y = mean_wt)) +
 
 Note that we could specify the color aesthetic in the `ggplot` aesthetics!
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-gg3}
 #| warning: false
@@ -175,7 +175,7 @@ Note that we could specify the color aesthetic in the `ggplot` aesthetics!
 One of the real strengths of ggplots is that you can preserve part of your ideal graph as a [variable]{.py}/[object]{.r} and then add to it later. This saves you from needing to re-type a consistent `ggplot` function when all you really want to do is experiment with different geometries
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Create the top level of the graph and assign it to an object. Then--separately--add a line geometry.
 
@@ -188,7 +188,7 @@ gg_r +
   geom_line()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Create the top level of the graph and assign it to a variable. Then--separately--add a line geometry.
 
@@ -211,7 +211,7 @@ Once you have a graph that has the desired content mapped to various aesthetics 
 To emphasize the theme modification examples below, let's assign all components of the above graph into a new [variable]{.py}/[object]{.r}.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-gg5}
 # Make the line graph object
@@ -219,7 +219,7 @@ line_r <- gg_r +
   geom_line()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-gg5}
 #| warning: false
@@ -236,7 +236,7 @@ To begin, [plotnine]{.py}/[ggplot2]{.r} both come with pre-built themes that cha
 Let's add the built-in 'black and white' theme to our existing graph using the `theme_bw` function.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-gg6}
 # Add the black and white theme
@@ -244,7 +244,7 @@ line_r +
   theme_bw()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-gg6}
 #| warning: false
@@ -262,7 +262,7 @@ If we'd rather, we can use the `theme` function and manually specify particular 
 We'll also use the `labs` function to customize our axis titles slightly.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Note that the `theme` arguments use periods (`.`) between words.
 
@@ -277,7 +277,7 @@ line_r +
 ```
 
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Note that the `theme` arguments use underscores (`_`) between words to be consistent with [{{< fa brands python >}} Python]{.py} syntax.
 

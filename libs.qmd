@@ -14,7 +14,7 @@ Note also that "package" and "library" are functionally interchangeable for our 
 Assuming you've already installed the needed [{{< fa brands python >}} Python]{.py} _and_ [{{< fa brands r-project >}} R]{.r} packages, you can now load them.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} libraries are loaded with the `library` function.
 
@@ -22,7 +22,7 @@ Assuming you've already installed the needed [{{< fa brands python >}} Python]{.
 library(tidyverse)
 ```
 
-## `r fontawesome::fa(name = "python", fill = "#077DC2", a11y = "sem")` Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} libraries are loaded with the `import` statement and can be "aliased" into simpler names with `as` at the same time. Note that common libraries (like `pandas`) have broadly-accepted abbreviations that are almost always used (like `pd` in the case of `pandas`).
 

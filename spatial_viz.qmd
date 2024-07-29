@@ -8,7 +8,7 @@ engine: knitr
 Begin by loading any needed libraries.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Load `sf`, `terra`, and `ggplot2`.
 
@@ -17,7 +17,7 @@ library(sf)
 library(terra)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Load the `geopandas`, `rasterio`, and `plotnine` libraries.
 

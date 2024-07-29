@@ -23,7 +23,7 @@ particular file/folder
 We'll need to quickly load any needed libraries before getting into the "actual" coding.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} does not require any libraries to perform these operations!
 
@@ -34,7 +34,7 @@ We'll need to quickly load any needed libraries before getting into the "actual"
 
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 We'll need the `os` library and `glob` library in [{{< fa brands python >}} Python]{.py} to do these operations.
 
@@ -52,7 +52,7 @@ As defined above, the working directory is the primary folder with which your co
 Both languages provide a quick way of checking what your current working directory is to ensure you're not accidentally in the wrong one. Note that either approach will return the _absolute path_ to your working directory which will differ among users/computers.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Base [{{< fa brands r-project >}} R]{.r} includes the `getwd` function to display your current working directory.
 
@@ -61,7 +61,7 @@ Base [{{< fa brands r-project >}} R]{.r} includes the `getwd` function to displa
 getwd()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} has a `getcwd` function (from the `os` library) to display your current working directory.
 
@@ -76,7 +76,7 @@ os.getcwd()
 One minor--but often frustrating--hurdle for collaborative coding occurs when group members use different operating systems (i.e., macOS, Windows, etc.). When defining file paths (absolute or relative), different operating systems use either a slash (`/`) or a backslash (`\`) to separate directories in that path. Unfortunately for us, your OS will only be able to interpret file paths that use the type of slash it uses. This means that any code that reads in external data or exports its outputs needs to account for this OS-level difference **_every_ time a file path is defined**. However, the developers of [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} know this pain themselves and have given us straightforward tools to handle this.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 [{{< fa brands r-project >}} R]{.r} includes a `file.path` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
@@ -85,7 +85,7 @@ One minor--but often frustrating--hurdle for collaborative coding occurs when gr
 file.path("path", "to", "my", "data")
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 The `os` library in [{{< fa brands python >}} Python]{.py} includes a `join` function that automatically detects your computer's OS and inserts the correct type of slash between each directory name.
 
@@ -104,7 +104,7 @@ Using these tools allows us to code collaboratively even when not all group memb
 Once you've confirmed your working directory and figured out how to account for OS idiosyncrasies, its time to actually look at the files you have available! In the `r fontawesome::fa(name = "terminal", fill = "#EB6534", a11y = "sem")` [command line]{.cli}, the `ls` function lists all files in a particular folder. Fortunately both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} contain tools for doing this as well.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 We can use the [{{< fa brands r-project >}} R]{.r} `dir` function to identify all files in a particular folder (note this ignores _folders_ inside of the specified folder).
 
@@ -113,7 +113,7 @@ We can use the [{{< fa brands r-project >}} R]{.r} `dir` function to identify al
 dir(path = file.path("data"))
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 We can use the `glob` function (from the library of the same name) to identify all files in a particular folder.
 

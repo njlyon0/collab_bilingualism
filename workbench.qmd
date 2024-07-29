@@ -7,18 +7,18 @@ Place to store snippets of code / formatting that I'll be copy/pasting a bunch
 ## Template Tabset Panel Area
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 ```{r r-}
 # X
-
+1 + 1
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 ```{python py-}
 # X
-
+1 + 1
 ```
 :::
 

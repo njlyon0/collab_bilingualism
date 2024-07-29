@@ -9,7 +9,7 @@ Often we want to perform some set of operations repeatedly across a known number
 One code solution to this is to **automate** the workflow using `for` loops (casually referred to more simply as just "loops"). The syntax of [{{< fa brands python >}}]{.py} [Python]{.py} and [{{< fa brands r-project >}}]{.r} [R]{.r} is very similar for loops--likely because this is such a fundamental operation to any coding language!
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Make a simple object to demonstrate loops.
 
@@ -21,7 +21,7 @@ zoo_r <- c("lion", "tiger", "crocodile", "vulture", "hippo")
 zoo_r
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Make a simple variable to demonstrate loops.
 
@@ -49,7 +49,7 @@ Loops (in either language) require a few core components in order to work proper
 To see in this syntax in action we'll use a simple loop that prints each animal type in the [list]{.py}/[vector]{.r} we created above.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}}]{.r} [R]{.r}, the `for` statement requires parentheses around the loop object, the `in` statement, and the vector to iterate across. The operation(s) performed in each iteration _must_ be wrapped in curly braces (`{...}`).
 
@@ -72,7 +72,7 @@ Note that when we are done the loop object still exists and is set to the last e
 animal
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}}]{.py} [Python]{.py}, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indentened one level (i.e., press "tab" once or "space" four times).
 
@@ -100,7 +100,7 @@ We can also build conditional statements into a loop to create a loop that can f
 In the example below we'll use three new statements `if`, `else if` and `else`. Each condition only performs its operation when its condition is met (i.e., returns [True]{.py}/[TRUE]{.r}).
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 These three statements all have similar syntax to the `for` statement in that they evaluate something in parentheses and then perform some operation(s) in curly braces. They do differ slightly in context however:
 
@@ -131,7 +131,7 @@ for(j in c(-2, -1, 0, 1, 2)){
 
 Note that to get the message to print correctly we needed to wrap a `paste` function in `print` to assemble multiple things into a single object.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 These three statements all have similar syntax to the `for` statement in that they evaluate something before a colon and then perform some operation(s) after that colon. They do differ slightly in context however:
 
@@ -166,7 +166,7 @@ Loops are a really powerful tool but they are limited in some ways. Sometimes we
 Let's write a simple function in both languages that simply multiplies two arguments by one another and returns the result.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Generating a function in [{{< fa brands r-project >}}]{.r} [R]{.r} shares some syntax elements with loops and conditional statements! In this case we use the `function` function to preserve our work as a function, then provide any needed arguments in parentheses, and end with curly braces with the operation(s) performed by the function inside. If the function produces something that we want to give back to the user, we need to specify that with the `return` function.
 
@@ -185,7 +185,7 @@ mult_r <- function(p, q){
 mult_r(p = 2, q = 5)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Generating a function in [{{< fa brands python >}}]{.py} [Python]{.py} shares some syntax elements with loops and conditional statements! In this case we use the `def` statement then provide the name and--parenthetically--any needed arguments for our new function. If the function produces something that we want to give back to the user, we need to specify that by using the `return` statement.
 
@@ -216,13 +216,13 @@ mult_py(n = 2, i = 5)
 One component of custom functions to be aware of is their somewhat variable documentation. "Official" functions tend to be really well documented but custom functions have no required documentation. However, there are some best practices that we can try to follow ourselves to make life as easy as possible for people trying to intuit our functions' purposes (including ourselves in the future!).
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 R contains no native mode of specifying function documentation! While there are tools to formalize this when functions are part of a formal package (see [roxygen2 formatting](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)) our custom functions _cannot_ include documentation. That said, <u>it is still good practice to include plain-language comment lines that describe the function's operations</u> even when they will only be visible where the function is defined.
 
 Note that the [`docstring` package](https://cran.r-project.org/web/packages/docstring/vignettes/docstring_intro.html) for [{{< fa brands r-project >}}]{.r} [R]{.r} simulates [{{< fa brands python >}}]{.py} [Python]{.py}-style docstrings for [{{< fa brands r-project >}}]{.r} [R]{.r} functions but is not part of "base" R.
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 [{{< fa brands python >}} Python]{.py} custom functions allow us to specify triple quoted (`"""..."""`) documentation of function purpose/arguments known as "docstrings". When this is supplied, we can use the `help` function (or append a `?` _after_ the function name) to print whatever documentation was included in the function when it was defined.
 
@@ -239,7 +239,7 @@ Sometimes a given argument will often be set to the same value. In cases like th
 We can define these defaults when we first create a function! Let's make a simple division function that divides the first argument by the second and sets the default of the second argument to 2.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Write and demonstrate the simple division function.
 
@@ -265,7 +265,7 @@ Use the function again but set the second argument ourselves.
 div_r(p = 10, q = 10)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Write and demonstrate the simple division function.
 
@@ -303,7 +303,7 @@ div_py(n = 10, i = 10)
 Just like loops, we can build conditional statements into our functions to make them more flexible and broadly useful. Let's combine this with setting default values to demonstrate this effectively.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Let's make a simple addition function and set both arguments to default to `NULL`. `NULL` is an [{{< fa brands r-project >}}]{.r} [R]{.r} constant that allows us to create an object without assigning any value to it.
 
@@ -338,7 +338,7 @@ Now let's use the function without specifying either argument.
 add_r()
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Let's make a simple addition function and set both arguments to default to `None`. `None` is a [{{< fa brands python >}}]{.py} [Python]{.py} constant that allows us to create a variable without assigning any value to it.
 

@@ -13,7 +13,7 @@ Note that any line in a code chunk preceded by a hashtag (`#`) is a "comment" an
 At its most basic, we want to store data in code in such a way that we can use / manipulate it via our scripts. This requires **assigning** data to a [variable]{.py}/[object]{.r} with the **assignment operator**.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r}, the assignment operator is `<-`. To use it, the name of the new object-to-be is on the left of the arrow and the information to assign is on the right.
 
@@ -25,7 +25,7 @@ a <- 2
 a
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py}, the assignment operator is `=`. To use it, the name of the new object-to-be is on the left of the equal sign and the information to assign is on the right.
 
@@ -41,7 +41,7 @@ a
 Once we've created a [variable]{.py}/[object]{.r} we can then use the information stored inside of it in downstream operations! For example, we could perform basic arithmetic on our [variable]{.py}/[object]{.r} and assign the result to a new [variable]{.py}/[object]{.r}.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in [{{< fa brands r-project >}} R]{.r} exponents use `^`.
 
@@ -53,7 +53,7 @@ b <- a^3
 b
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 Addition, subtraction, multiplication, and division share operators across both languages (`+`, `-`, `*`, and `/` respectively). However, in [{{< fa brands python >}} Python]{.py} exponents use `**`
 
@@ -71,7 +71,7 @@ b
 Some operations are only possible on some categories of information. For instance, we can only perform arithmetic on numbers. In [{{< fa brands python >}} Python]{.py} this is known as the [variable]{.py}'s [type]{.py} & while in [{{< fa brands r-project >}} R]{.r} this is the [object]{.r}'s [class]{.r}. In either case, it's important to know--and be able to check--this information about the [variables]{.py}/[objects]{.r} with which we are working.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r} we use the `class` function to get this information. Note that the names of [{{< fa brands r-project >}} R]{.r} classes sometimes differ from their equivalents in [{{< fa brands python >}} Python]{.py}.
 
@@ -90,7 +90,7 @@ class(3.14159)
 class("my hands are typing words")
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py}, the `type` function returns the type of the data object. Note that the names of [{{< fa brands python >}} Python]{.py} types sometimes differ from their equivalents in [{{< fa brands r-project >}} R]{.r}.
 
@@ -117,7 +117,7 @@ When our [variables]{.py}/[objects]{.r} have more than one [item]{.py}/[element]
 In order to explore this more fully, let's make some example multi-component [variables]{.py}/[objects]{.r}.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r}, one of the fundamental data structures is a "vector". Vectors are assembled with the concatenation function (`c`) where each item is separated by commas (`,`) and the set of them is wrapped in parentheses (`(...)`).
 
@@ -131,7 +131,7 @@ x <- c(1, 2, 3, 4, 5)
 class(x)
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In [{{< fa brands python >}} Python]{.py} the fundamental data structure is a "list". Lists are assembled either by wrapping the items to include in square brackets (`[...]`) or by using the `list` function. In either case, each item is separated from the others by commas (`,`).
 
@@ -151,7 +151,7 @@ One crucial difference between [{{< fa brands r-project >}} R]{.r} and [{{< fa b
 Fortunately, in either language the syntax for indexing is the same.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 To index a multi-element object, simply append square brackets to the end of the object name and specify the number of the index position in which you are interested.
 
@@ -160,7 +160,7 @@ To index a multi-element object, simply append square brackets to the end of the
 x[1]
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 To index a multi-item variable, simply append square brackets to the end of the variable name and specify the number of the index position in which you are interested.
 
@@ -175,7 +175,7 @@ x[0]
 When we index more than one position, this is known as "slicing". We can still use square brackets in either language to slice multiple [items]{.py}/[elements]{.r} and the syntax inside of those brackets _seems_ shared but yields different results due to inherent syntactical differences.
 
 :::panel-tabset
-## [{{< fa brands r-project >}}]{.r} R
+## [{{< fa brands r-project >}} R]{.r}
 
 In [{{< fa brands r-project >}} R]{.r}, when we write two numbers separated by a colon (`:`), that indicates that we want those two numbers and all integers between them.
 
@@ -191,7 +191,7 @@ We can use this to slice out multiple _continuous_ index positions from an objec
 x[2:4]
 ```
 
-## [{{< fa brands python >}}]{.py} Python
+## [{{< fa brands python >}} Python]{.py}
 
 In order to slice in [{{< fa brands python >}} Python]{.py}, we include the start and stop _bounds_ of the items that we want to slice separated by a colon (`:`) inside of square brackets. The first bound (i.e., bound position 0) is actually the starting bracket of the list! This means that we can treat the first number in the slice in the same way we would in single indexing but the second number is actually the bound before the item with that index value.
 

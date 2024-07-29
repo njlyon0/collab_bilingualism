@@ -41,6 +41,22 @@ $code-block-bg: $blue-4; // code block background color
 
 /*-- scss:rules --*/
 
+// Code chunk ouput
+pre code:not(.sourceCode) { background-color: $gray-0; } 
+
+// Active tabset panel (tab then tab content)
+.nav-tabs .nav-link.active { 
+  background-color: $gray-3; 
+  color: $cream;
+}
+.tab-content { background-color: $gray-3; }
+
+// Navbar dropdown elements
+.dropdown-menu{
+  --bs-dropdown-link-hover-color: #191919;
+  --bs-dropdown-link-hover-bg: #077DC2;
+}
+
 // Quick refs for frequently used text colors
 .r { color: $orange-3; }
 .py { color: $blue-3; }

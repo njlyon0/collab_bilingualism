@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="library-loading">Library Loading</h2>
 <p>We’ll need to quickly load any needed libraries before getting into the “actual” coding.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> does not require any libraries to perform these operations!</p>
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As defined above, the working directory is the primary folder with which your code can easily interact. This includes folders within your working directory but <em>does not</em> include folders “above”/outside of it. It is a good practice to use different folders for different projects such that each project has a different working directory and you don’t run the risk of scripts/data from one project accidentally interacting with those form another project. For <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> users, the RStudio “R Project” functionality guarantees that you have a different working directory for each R project.</p>
 <p>Both languages provide a quick way of checking what your current working directory is to ensure you’re not accidentally in the wrong one. Note that either approach will return the <em>absolute path</em> to your working directory which will differ among users/computers.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>Base <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> includes the <code>getwd</code> function to display your current working directory.</p>
@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check current working directory</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/lyon/Documents/Personal/lyon_bilingualism"</code></pre>
+<pre><code>[1] "/Users/lyon/Documents/personal/lyon_bilingualism"</code></pre>
 </div>
 </div>
 </div>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check current working directory</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'/Users/lyon/Documents/Personal/lyon_bilingualism'</code></pre>
+<pre><code>'/Users/lyon/Documents/personal/lyon_bilingualism'</code></pre>
 </div>
 </div>
 </div>
@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="operating-systems-file-paths">Operating Systems &amp; File Paths</h2>
 <p>One minor–but often frustrating–hurdle for collaborative coding occurs when group members use different operating systems (i.e., macOS, Windows, etc.). When defining file paths (absolute or relative), different operating systems use either a slash (<code>/</code>) or a backslash (<code>\</code>) to separate directories in that path. Unfortunately for us, your OS will only be able to interpret file paths that use the type of slash it uses. This means that any code that reads in external data or exports its outputs needs to account for this OS-level difference <strong><em>every</em> time a file path is defined</strong>. However, the developers of <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> know this pain themselves and have given us straightforward tools to handle this.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> includes a <code>file.path</code> function that automatically detects your computer’s OS and inserts the correct type of slash between each directory name.</p>
@@ -390,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="finding-files">Finding Files</h2>
 <p>Once you’ve confirmed your working directory and figured out how to account for OS idiosyncrasies, its time to actually look at the files you have available! In the <svg aria-label="Terminal" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#EB6534;overflow:visible;position:relative;"><title>Terminal</title><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> <span class="cli">command line</span>, the <code>ls</code> function lists all files in a particular folder. Fortunately both <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> contain tools for doing this as well.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>We can use the <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> <code>dir</code> function to identify all files in a particular folder (note this ignores <em>folders</em> inside of the specified folder).</p>
@@ -398,7 +398,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List files in the "data" folder for this website</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(<span class="at">path =</span> <span class="fu">file.path</span>(<span class="st">"data"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "mammals.sqlite"  "tree_lichen.csv" "tree_road.csv"   "verts.csv"      </code></pre>
+<pre><code> [1] "elevation.tif"                                    
+ [2] "mammals.sqlite"                                   
+ [3] "nc.dbf"                                           
+ [4] "nc.prj"                                           
+ [5] "nc.shp"                                           
+ [6] "nc.shx"                                           
+ [7] "README.md"                                        
+ [8] "SRTMGL3_NC.003_SRTMGL3_DEM_doy2000042_aid0001.tif"
+ [9] "tree_lichen.csv"                                  
+[10] "tree_road.csv"                                    
+[11] "verts.csv"                                        </code></pre>
 </div>
 </div>
 </div>
@@ -408,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List files in the "data" folder for this website</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>glob.glob(pathname <span class="op">=</span> os.path.join(<span class="st">"data"</span>, <span class="st">"*"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['data/tree_lichen.csv', 'data/verts.csv', 'data/tree_road.csv', 'data/mammals.sqlite']</code></pre>
+<pre><code>['data/nc.prj', 'data/SRTMGL3_NC.003_SRTMGL3_DEM_doy2000042_aid0001.tif', 'data/elevation.tif', 'data/README.md', 'data/tree_lichen.csv', 'data/nc.shx', 'data/verts.csv', 'data/nc.shp', 'data/tree_road.csv', 'data/nc.dbf', 'data/mammals.sqlite']</code></pre>
 </div>
 </div>
 <p>Note that we need to use the wildcard asterisk (<code>*</code>) to identify everything in the “data” folder.</p>

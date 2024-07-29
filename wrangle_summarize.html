@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="library-data-loading">Library &amp; Data Loading</h2>
 <p>Begin by loading any needed libraries and reading in an external data file for use in downstream examples.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Load the <code>tidyverse</code> meta-package as well as our vertebrate data.</p>
@@ -350,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that we have data, we can use it to demonstrate groupwise summarization! Both <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> support defining the grouping structure in one step and then doing the actual summarization in subsequent steps.</p>
 <p>Let’s suppose that we want to calculate average weight and length within each species and year.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>In <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span>, we use the <code>group_by</code> function (from <code>dplyr</code>) to define our grouping variables. Note that this changes the class from <code>data.frame</code> to <code>tibble</code> (a special dataframe-like class defined by the tidyverse in part due to this operation).</p>
@@ -386,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="groupwise-summarization">Groupwise Summarization</h2>
 <p>Once we’ve established the columns for which we want to calculate summary statistics we can move on to the tools that actually allow summarization steps to take place. Note that <em>summarization</em> implicitly means that we should lose rows because we should only have one row per combination of grouping column content combination. Adding columns is not necessarily summarization if it doesn’t shed rows.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> allows for multiple summary metrics to be calculate simultaneously within <code>dplyr</code>’s <code>summarize</code> function.</p>

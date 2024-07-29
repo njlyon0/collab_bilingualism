@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="library-data-loading">Library &amp; Data Loading</h2>
 <p>Begin by loading any needed libraries and reading in an external data file for use in downstream examples.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Load the <code>tidyverse</code> meta-package as well as our simulated lichen data.</p>
@@ -343,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="reshaping-longer">Reshaping Longer</h2>
 <p>Our lichen data are currently in wide format so let’s reshape into long format.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> uses the <code>pivot_longer</code> function from the <code>tidyr</code> package for this operation. We need to specify the data table to reshape, the columns to collapse (to the <code>cols</code> argument), as well as the new column names for both the old column names and the values they contained. Fortunately the <code>names_to</code> and <code>values_to</code> arguments are reasonably intuitively named.</p>
@@ -394,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="reshaping-wider">Reshaping Wider</h2>
 <p>The opposite operation–reshaping wider–is also readily available in either <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> or <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span>. We’ll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i></span> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i></span> Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> uses the <code>pivot_wider</code> function (also from the <code>tidyr</code> package) to do this type of reshaping operation. Reshaping wider requires fewer arguments as only the columns to reshape need to be specified.</p>

@@ -42,11 +42,11 @@ $code-block-bg: $gray-0; // code block background color
 /*-- scss:rules --*/
 
 // Code chunk ouput
-pre code:not(.sourceCode) { background-color: $blue-1; } 
+pre code:not(.sourceCode) { background-color: $blue-1; }
 
 // Active tabset panel (tab then tab content)
-.nav-tabs .nav-link.active { 
-  background-color: #FFF; 
+.nav-tabs .nav-link.active {
+  background-color: #FFF;
   color: $black;
 }
 .tab-content { background-color:  #FFF; }
@@ -57,7 +57,7 @@ pre code:not(.sourceCode) { background-color: $blue-1; }
   --bs-dropdown-link-hover-bg: #01BAEF;
 }
 
-// Quick refs for frequently used text colors
+// Code language semantic text colors
 .r { color: $orange-3; }
 .py { color: $blue-3; }
 .sql { color: $blue-4; }

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ee5c50cf50a5e4fdb2e7c580dabe9d96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bc609e86e0160eca77c6b41c169e2db8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -259,10 +259,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#library-loading" id="toc-library-loading" class="nav-link active" data-scroll-target="#library-loading">Library Loading</a></li>
   <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">Conditionals</a></li>
-  <li><a href="#subsetting-with-one-condition" id="toc-subsetting-with-one-condition" class="nav-link" data-scroll-target="#subsetting-with-one-condition">Subsetting with One Condition</a></li>
-  <li><a href="#subsetting-with-multiple-conditions" id="toc-subsetting-with-multiple-conditions" class="nav-link" data-scroll-target="#subsetting-with-multiple-conditions">Subsetting with Multiple Conditions</a></li>
-  <li><a href="#subsetting-with-masks" id="toc-subsetting-with-masks" class="nav-link" data-scroll-target="#subsetting-with-masks">Subsetting with Masks</a></li>
+  <li><a href="#subset-with-one-condition" id="toc-subset-with-one-condition" class="nav-link" data-scroll-target="#subset-with-one-condition">Subset with One Condition</a></li>
+  <li><a href="#subset-with-multiple-conditions" id="toc-subset-with-multiple-conditions" class="nav-link" data-scroll-target="#subset-with-multiple-conditions">Subset with Multiple Conditions</a></li>
+  <li><a href="#subset-with-masks" id="toc-subset-with-masks" class="nav-link" data-scroll-target="#subset-with-masks">Subset with Masks</a></li>
   <li><a href="#negating-criteria" id="toc-negating-criteria" class="nav-link" data-scroll-target="#negating-criteria">Negating Criteria</a></li>
+  <li><a href="#partial-string-matching" id="toc-partial-string-matching" class="nav-link" data-scroll-target="#partial-string-matching">Partial String Matching</a></li>
   </ul>
 </nav>
     </div>
@@ -385,8 +386,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="subsetting-with-one-condition" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting-with-one-condition">Subsetting with One Condition</h2>
+<section id="subset-with-one-condition" class="level2">
+<h2 class="anchored" data-anchor-id="subset-with-one-condition">Subset with One Condition</h2>
 <p>We can leverage these conditional values to return only rows of a data table that meet criteria that are valuable to us. Let’s begin by loading the external dataset derived from the <code>lterdatasampler</code> <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> package (see <a href="https://lter.github.io/lterdatasampler/">here</a>) that we used in the previous section.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
@@ -474,8 +475,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="subsetting-with-multiple-conditions" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting-with-multiple-conditions">Subsetting with Multiple Conditions</h2>
+<section id="subset-with-multiple-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="subset-with-multiple-conditions">Subset with Multiple Conditions</h2>
 <p>If desired we can also specify multiple criteria to subset by. We must decide whether <em>all</em> criteria must be met or if <em>any</em> criterion being met is sufficient to retain the row. If we want <strong>all</strong> (in either language) we need to separate each criterion with an ampersand (<code>&amp;</code>). If instead we want <strong>any</strong> (in either language) we need to separate each criterion with a pipe (<code>|</code>); note that this is <em>not</em> the same as a “pipe operator” which we’ll discuss in detail later.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
@@ -517,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="subsetting-with-masks" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting-with-masks">Subsetting with Masks</h2>
+<section id="subset-with-masks" class="level2">
+<h2 class="anchored" data-anchor-id="subset-with-masks">Subset with Masks</h2>
 <p>We can define “boolean masks” when we want to leverage a helper function that tests for specific crtieria. For instance we can use the <code>isin</code> <span class="py">method</span> or the <code>%in%</code> <span class="r">operator</span> (in <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> and <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one “or” criterion for every option individually.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
@@ -598,6 +599,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Subsetting changed this to"</span>, <span class="bu">len</span>(py_mask2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Subsetting changed this to 12560</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="partial-string-matching" class="level2">
+<h2 class="anchored" data-anchor-id="partial-string-matching">Partial String Matching</h2>
+<p>We can also filter by instances where part of a larger <span class="py">string</span>/<span class="r">character</span> matches a specific pattern. This type of criterion is known as “partial string matching”.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset to only rows where the 'species' column includes the word "salamander"</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>r_part <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(vert_r, stringr<span class="sc">::</span><span class="fu">str_detect</span>(<span class="at">string =</span> species, <span class="at">pattern =</span> <span class="st">"salamander"</span>))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether that worked</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Before subsetting the data had "</span>, <span class="fu">nrow</span>(vert_r), <span class="st">" rows."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Before subsetting the data had 32209 rows.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Subsetting changed this to "</span>, <span class="fu">nrow</span>(r_part))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Subsetting changed this to 11773</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows missing species information</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>py_knownsp <span class="op">=</span> vert_py[<span class="op">~</span>pd.isnull(vert_py.species)]</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset to only rows where the 'species' column includes the word "salamander"</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>py_part <span class="op">=</span> py_knownsp[py_knownsp[<span class="st">"species"</span>].<span class="bu">str</span>.contains(<span class="st">"salamander"</span>)]</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether that worked</span></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before subsetting the data had"</span>, <span class="bu">len</span>(vert_py), <span class="st">"rows."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Before subsetting the data had 32209 rows.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Subsetting changed this to"</span>, <span class="bu">len</span>(py_part))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Subsetting changed this to 11773</code></pre>
 </div>
 </div>
 </div>
@@ -834,8 +879,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -951,7 +994,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

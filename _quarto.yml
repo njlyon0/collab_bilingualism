@@ -75,3 +75,4 @@ format:
     toc: true
     link-external-newwindow: true
     link-external-icon: false
+jupyter: python3

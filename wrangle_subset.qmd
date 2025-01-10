@@ -86,7 +86,7 @@ In addition to asking whether something 'is exactly equal to' something else (`=
 ```
 :::
 
-## Subsetting with One Condition
+## Subset with One Condition
 
 We can leverage these conditional values to return only rows of a data table that meet criteria that are valuable to us. Let's begin by loading the external dataset derived from the `lterdatasampler` [{{< fa brands r-project >}} R]{.r} package (see [here](https://lter.github.io/lterdatasampler/)) that we used in the previous section.
 
@@ -150,7 +150,7 @@ print("Subsetting changed this to", len(py_sub1))
 ```
 :::
 
-## Subsetting with Multiple Conditions
+## Subset with Multiple Conditions
 
 If desired we can also specify multiple criteria to subset by. We must decide whether _all_ criteria must be met or if _any_ criterion being met is sufficient to retain the row. If we want **all** (in either language) we need to separate each criterion with an ampersand (`&`). If instead we want **any** (in either language) we need to separate each criterion with a pipe (`|`); note that this is _not_ the same as a "pipe operator" which we'll discuss in detail later.
 
@@ -182,7 +182,7 @@ print("Subsetting changed this to", len(py_sub2))
 ```
 :::
 
-## Subsetting with Masks
+## Subset with Masks
 
 We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` [method]{.py} or the `%in%` [operator]{.r} (in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
 

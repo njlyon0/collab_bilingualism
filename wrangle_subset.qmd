@@ -247,3 +247,35 @@ print("Before subsetting the data had", len(vert_py), "rows.")
 print("Subsetting changed this to", len(py_mask2))
 ```
 :::
+
+## Partial String Matching
+
+We can also filter by instances where part of a larger [string]{.py}/[character]{.r} matches a specific pattern. This type of criterion is known as "partial string matching".
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+```{r r-partialstring}
+# Subset to only rows where the 'species' column includes the word "salamander"
+r_part <- dplyr::filter(vert_r, stringr::str_detect(string = species, pattern = "salamander"))
+
+# Check whether that worked
+message("Before subsetting the data had ", nrow(vert_r), " rows.")
+message("Subsetting changed this to ", nrow(r_part))
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+```{python py-partialstring}
+# Remove rows missing species information
+py_knownsp = vert_py[~pd.isnull(vert_py.species)]
+
+# Subset to only rows where the 'species' column includes the word "salamander"
+py_part = py_knownsp[py_knownsp["species"].str.contains("salamander")]
+
+# Check whether that worked
+print("Before subsetting the data had", len(vert_py), "rows.")
+print("Subsetting changed this to", len(py_part))
+```
+:::
+

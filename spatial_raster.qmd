@@ -10,7 +10,7 @@ Before we can dive into "actual" spatial work we'll need to load some libraries.
 :::panel-tabset
 ## [{{< fa brands r-project >}} R]{.r}
 
-Load `terra` and `sf` to work with raster and vector data respectively.
+Load `terra` to work with raster data.
 
 ```{r r-libs, warning = F, message = F}
 # Load needed libraries
@@ -19,7 +19,7 @@ library(terra)
 
 ## [{{< fa brands python >}} Python]{.py}
 
-Load the `rioxarray`, `rasterio`, and `geopandas` libraries to work with raster and vector data. We'll also load the `os` library to deal with file path issues.
+Load the `rioxarray` and `rasterio` libraries to work with raster data. We'll also load the `os` library to deal with file path issues.
 
 ```{python py-libs}
 # Load needed libraries

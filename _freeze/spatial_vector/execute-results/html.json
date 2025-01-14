@@ -1,9 +1,11 @@
 {
-  "hash": "7706fb4f0430e9a483a6f87497f188e5",
+  "hash": "c62b89750c550d5af3124c485e1adc06",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Vector Data\"\nengine: knitr\n---\n\n\n\n\n## Library Loading\n\nBefore we can dive into \"actual\" spatial work we'll need to load some libraries.\n\n:::panel-tabset\n## [{{< fa brands r-project >}} R]{.r}\n\nLoad `terra` and `sf` to work with raster and vector data respectively.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load needed libraries\nlibrary(sf)\n```\n:::\n\n\n\n\n## [{{< fa brands python >}} Python]{.py}\n\nLoad the `rioxarray`, `rasterio`, and `geopandas` libraries to work with raster and vector data. We'll also load the `os` library to deal with file path issues.\n\n\n\n\n::: {.cell}\n\n```{.python .cell-code}\n# Load needed libraries\nimport os\nimport geopandas as gpd\n```\n:::\n\n\n\n:::\n\n## Loading Vector Data\n\n\n## Checking Vector CRS\n\n\n## Transforming Vector CRS\n\n\n\n\n\n\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Vector Data\"\nengine: knitr\n---\n\n\n\n\n## Library Loading\n\nBefore we can dive into \"actual\" spatial work we'll need to load some libraries.\n\n:::panel-tabset\n## [{{< fa brands r-project >}} R]{.r}\n\nLoad `sf` to work with vector data.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load needed libraries\nlibrary(sf)\n```\n:::\n\n\n\n\n## [{{< fa brands python >}} Python]{.py}\n\nLoad the `geopandas` library to work with vector data. We'll also load the `os` library to deal with file path issues.\n\n\n\n\n::: {.cell}\n\n```{.python .cell-code}\n# Load needed libraries\nimport os\nimport geopandas as gpd\n```\n:::\n\n\n\n:::\n\n## Loading Vector Data\n\n\n## Checking Vector CRS\n\n\n## Transforming Vector CRS\n\n\n\n\n\n\n",
+    "supporting": [
+      "spatial_vector_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

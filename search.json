@@ -60,14 +60,14 @@
     "href": "spatial_raster.html",
     "title": "Raster Data",
     "section": "",
-    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra and sf to work with raster and vector data respectively.\n\n# Load needed libraries\nlibrary(terra)\n\n\n\nLoad the rioxarray, rasterio, and geopandas libraries to work with raster and vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport rasterio as rio\nimport rioxarray as rxr\n\n\n\n\nTo demonstrate raster data operations we’ll use NASA’s Shuttle Radar Topography Mission Global 3 arc second elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in this folder of the website’s  GitHub repository."
+    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra to work with raster data.\n\n# Load needed libraries\nlibrary(terra)\n\n\n\nLoad the rioxarray and rasterio libraries to work with raster data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport rasterio as rio\nimport rioxarray as rxr\n\n\n\n\nTo demonstrate raster data operations we’ll use NASA’s Shuttle Radar Topography Mission Global 3 arc second elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in this folder of the website’s  GitHub repository."
   },
   {
     "objectID": "spatial_raster.html#library-loading",
     "href": "spatial_raster.html#library-loading",
     "title": "Raster Data",
     "section": "",
-    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra and sf to work with raster and vector data respectively.\n\n# Load needed libraries\nlibrary(terra)\n\n\n\nLoad the rioxarray, rasterio, and geopandas libraries to work with raster and vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport rasterio as rio\nimport rioxarray as rxr\n\n\n\n\nTo demonstrate raster data operations we’ll use NASA’s Shuttle Radar Topography Mission Global 3 arc second elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in this folder of the website’s  GitHub repository."
+    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra to work with raster data.\n\n# Load needed libraries\nlibrary(terra)\n\n\n\nLoad the rioxarray and rasterio libraries to work with raster data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport rasterio as rio\nimport rioxarray as rxr\n\n\n\n\nTo demonstrate raster data operations we’ll use NASA’s Shuttle Radar Topography Mission Global 3 arc second elevation data. Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in this folder of the website’s  GitHub repository."
   },
   {
     "objectID": "spatial_raster.html#loading-rasters",
@@ -438,14 +438,14 @@
     "href": "spatial_vector.html",
     "title": "Vector Data",
     "section": "",
-    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra and sf to work with raster and vector data respectively.\n\n# Load needed libraries\nlibrary(sf)\n\n\n\nLoad the rioxarray, rasterio, and geopandas libraries to work with raster and vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport geopandas as gpd"
+    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad sf to work with vector data.\n\n# Load needed libraries\nlibrary(sf)\n\n\n\nLoad the geopandas library to work with vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport geopandas as gpd"
   },
   {
     "objectID": "spatial_vector.html#library-loading",
     "href": "spatial_vector.html#library-loading",
     "title": "Vector Data",
     "section": "",
-    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad terra and sf to work with raster and vector data respectively.\n\n# Load needed libraries\nlibrary(sf)\n\n\n\nLoad the rioxarray, rasterio, and geopandas libraries to work with raster and vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport geopandas as gpd"
+    "text": "Before we can dive into “actual” spatial work we’ll need to load some libraries.\n\n R Python\n\n\nLoad sf to work with vector data.\n\n# Load needed libraries\nlibrary(sf)\n\n\n\nLoad the geopandas library to work with vector data. We’ll also load the os library to deal with file path issues.\n\n# Load needed libraries\nimport os\nimport geopandas as gpd"
   },
   {
     "objectID": "spatial_vector.html#loading-vector-data",

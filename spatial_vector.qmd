@@ -30,14 +30,87 @@ import geopandas as gpd
 
 ## Loading Vector Data
 
+To demonstrate vector data operations we'll use data on the counties in North Carolina (USA). Note that some minor preparatory work was necessary to get the data ready for our purposes here and is preserved in [this folder](https://github.com/njlyon0/collab_bilingualism/tree/main/dev) of the website's {{< fa brands github >}} GitHub repository.
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+There are several [{{< fa brands r-project >}} R]{.r} packages for working with vector data but we'll focus on `sf`.
+
+```{r r-vect-read}
+# Load a shapefile of county borders
+vect_r <- sf::st_read(dsn = file.path("data", "nc.shp"))
+
+# Check the class of this object
+class(vect_r)
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+The `geopandas` library will be our focal library for vector operations with [{{< fa brands python >}} Python]{.py}.
+
+```{python py-vect-read}
+# Load a shapefile of county borders
+
+
+# Check the class of this object
+
+```
+:::
 
 ## Checking Vector CRS
 
+As noted earlier, the very first thing we should do after reading in spatial data is _check the coordinate reference system!_
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+We can check the CRS with the `st_crs` function (from `sf`).
+
+```{r r-crs-check}
+# Check the CRS of the shapefile
+sf::st_crs(x = vect_r)
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+[{{< fa brands python >}} Python]{.py} stores raster CRS as an attribute.
+
+```{python py-crs-check}
+# Check the CRS of the shapefile
+
+```
+:::
 
 ## Transforming Vector CRS
 
+Once we know the current CRS, we can transform into a different coordinate reference system as needed. Let's transform from WGS84 into another commonly-used CRS: Albers Equal Area (EPSG code 3083).
+
+Note that while transforming a raster's CRS is very computationally intensive, transforming vector data CRS is _much_ faster. If you are trying to use vector and raster data together but they don't use the same CRS it can be quicker to transform the vector data to match the raster data (rather than vice versa).
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+For CRS transformations in [{{< fa brands r-project >}} R]{.r} we can use the `st_transform` function.
+
+```{r r-crs-change}
+# Transform the shapefile CRS
+vect_alber_r <- sf::st_transform(x = vect_r, crs = 3083)
+
+# Re-check the CRS to confirm it worked
+sf::st_crs(vect_alber_r)
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+[{{< fa brands python >}} Python]{.py} CRS re-projections have slightly different steps to work through.
+
+```{python py-crs-change}
+# Transform the shapefile CRS
 
 
+# Re-check the CRS to confirm it worked
 
+```
 
-
+:::

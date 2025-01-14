@@ -1,0 +1,43 @@
+---
+title: "Vector Data"
+engine: knitr
+---
+
+## Library Loading
+
+Before we can dive into "actual" spatial work we'll need to load some libraries.
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+Load `terra` and `sf` to work with raster and vector data respectively.
+
+```{r r-libs, warning = F, message = F}
+# Load needed libraries
+library(sf)
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+Load the `rioxarray`, `rasterio`, and `geopandas` libraries to work with raster and vector data. We'll also load the `os` library to deal with file path issues.
+
+```{python py-libs}
+# Load needed libraries
+import os
+import geopandas as gpd
+```
+:::
+
+## Loading Vector Data
+
+
+## Checking Vector CRS
+
+
+## Transforming Vector CRS
+
+
+
+
+
+

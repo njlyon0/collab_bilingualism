@@ -44,8 +44,10 @@ website:
         menu:
           - text: "Core"
             href: spatial_core.qmd
-          - text: "Visualization"
-            href: spatial_viz.qmd
+          - text: "Raster"
+            href: spatial_raster.qmd
+          - text: "Vector"
+            href: spatial_vector.qmd
       - text: "SQL"
         href: sql.qmd
     right:

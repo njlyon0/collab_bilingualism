@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Text Methods – R / Python Bilingualism</title>
+<title>Vector Data – R / Python Bilingualism</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -261,9 +261,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#find-replace" id="toc-find-replace" class="nav-link" data-scroll-target="#find-replace">Find &amp; Replace</a></li>
-  <li><a href="#casing" id="toc-casing" class="nav-link" data-scroll-target="#casing">Casing</a></li>
+  <li><a href="#library-loading" id="toc-library-loading" class="nav-link active" data-scroll-target="#library-loading">Library Loading</a></li>
+  <li><a href="#loading-vector-data" id="toc-loading-vector-data" class="nav-link" data-scroll-target="#loading-vector-data">Loading Vector Data</a></li>
+  <li><a href="#checking-vector-crs" id="toc-checking-vector-crs" class="nav-link" data-scroll-target="#checking-vector-crs">Checking Vector CRS</a></li>
+  <li><a href="#transforming-vector-crs" id="toc-transforming-vector-crs" class="nav-link" data-scroll-target="#transforming-vector-crs">Transforming Vector CRS</a></li>
   </ul>
 </nav>
     </div>
@@ -272,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Text Methods</h1>
+<h1 class="title">Vector Data</h1>
 </div>
 
 
@@ -289,86 +290,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Data stored as text (i.e., <span class="py">string</span>/<span class="r">object</span> or <span class="r">character</span>) is notoriously typo-prone and often requires extensive quality control checks throughout the data tidying process. Below is a–non exhaustive–set of common text methods that may prove valuable to people interested in dealing with text data in either <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> or <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span>.</p>
-</section>
-<section id="find-replace" class="level2">
-<h2 class="anchored" data-anchor-id="find-replace">Find &amp; Replace</h2>
-<p>The bulk of text tidying often boils down to finding unwanted <span class="py">strings</span>/<span class="r">characters</span> and replacing them with desired variants. This operation is how computers handle fixing typos.</p>
+<section id="library-loading" class="level2">
+<h2 class="anchored" data-anchor-id="library-loading">Library Loading</h2>
+<p>Before we can dive into “actual” spatial work we’ll need to load some libraries.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>We can use the <span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span> function <code>gsub</code> to find and replace (part of) a character object.</p>
+<p>Load <code>terra</code> and <code>sf</code> to work with raster and vector data respectively.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a vector of characters</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>text_r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"he1lo"</span>, <span class="st">"HELLO"</span>, <span class="st">"bye"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find and replace the number "1" with an "L"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fix1_r <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">"1"</span>, <span class="at">replacement =</span> <span class="st">"l"</span>, <span class="at">x =</span> text_r)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fix1_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "hello" "HELLO" "bye"  </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>We can use the <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span> method <code>replace</code> to find and replace (part of) a string/object variable.</p>
+<p>Load the <code>rioxarray</code>, <code>rasterio</code>, and <code>geopandas</code> libraries to work with raster and vector data. We’ll also load the <code>os</code> library to deal with file path issues.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a list of strings</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>text_py <span class="op">=</span> [<span class="st">"he1lo"</span>, <span class="st">"HELLO"</span>, <span class="st">"bye"</span>]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find and replace the number "1" with an "L"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fix1_py <span class="op">=</span> [item.replace(<span class="st">"1"</span>, <span class="st">"l"</span>) <span class="cf">for</span> item <span class="kw">in</span> text_py]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fix1_py)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['hello', 'HELLO', 'bye']</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load needed libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Note that we have to loop across our list to do this operation in this language.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="casing" class="level2">
-<h2 class="anchored" data-anchor-id="casing">Casing</h2>
-<p>Text casing (i.e., either UPPERCASE or lowercase) is also a frequent source of issues in code as many scripted operations are sensitive to text case. We can coerce to upper or lowercase as needed though with relative ease.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="r"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span></a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>We can use the <code>tolower</code> or <code>toupper</code> functions to coerce all text into lower or uppercase respectively.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coerce everything to lowercase</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fix2_r <span class="ot">&lt;-</span> <span class="fu">tolower</span>(<span class="at">x =</span> fix1_r)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fix2_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "hello" "hello" "bye"  </code></pre>
-</div>
-</div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>We can use the <code>lower</code> or <code>upper</code> methods to coerce all text into lower or uppercase respectively.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coerce everything to lowercase</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fix2_py <span class="op">=</span> [item.lower() <span class="cf">for</span> item <span class="kw">in</span> fix1_py]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fix2_py)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['hello', 'hello', 'bye']</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section id="loading-vector-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-vector-data">Loading Vector Data</h2>
+</section>
+<section id="checking-vector-crs" class="level2">
+<h2 class="anchored" data-anchor-id="checking-vector-crs">Checking Vector CRS</h2>
+</section>
+<section id="transforming-vector-crs" class="level2">
+<h2 class="anchored" data-anchor-id="transforming-vector-crs">Transforming Vector CRS</h2>
 
 
 </section>

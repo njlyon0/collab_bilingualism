@@ -367,7 +367,7 @@ def add_py(n = None, i = None):
 
 Now let's use the function without specifying either argument.
 
-```{py py-condfxn2}
+```{python py-condfxn2}
 # Use the function
 add_py()
 ```

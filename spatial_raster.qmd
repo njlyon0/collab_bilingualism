@@ -50,9 +50,7 @@ class(rast_r)
 
 ## [{{< fa brands python >}} Python]{.py}
 
-The `rioxarray` library will be our focal library for raster operations with [{{< fa brands python >}} Python].
-
-pd.read_csv(os.path.join("data", "verts.csv"))
+The `rioxarray` library will be our focal library for raster operations with [{{< fa brands python >}} Python]{.py}.
 
 ```{python py-rast-read}
 # Load a raster of elevation data

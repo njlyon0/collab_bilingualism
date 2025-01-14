@@ -338,8 +338,7 @@ attr(,"package")
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>The <code>rioxarray</code> library will be our focal library for raster operations with [<i class="fa-brands fa-python" aria-label="python"></i> Python].</p>
-<p>pd.read_csv(os.path.join(“data”, “verts.csv”))</p>
+<p>The <code>rioxarray</code> library will be our focal library for raster operations with <span class="py"><i class="fa-brands fa-python" aria-label="python"></i> Python</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a raster of elevation data</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rast_py <span class="op">=</span> rxr.open_rasterio(os.path.join(<span class="st">"data"</span>, <span class="st">"elevation.tif"</span>), masked <span class="op">=</span> <span class="va">True</span>).squeeze()</span>

@@ -51,10 +51,34 @@ The `geopandas` library will be our focal library for vector operations with [{{
 
 ```{python py-vect-read}
 # Load a shapefile of county borders
-
+vect_py = gpd.read_file(os.path.join("data", "nc.shp"))
 
 # Check the class of this object
+type(vect_py)
+```
+:::
 
+## Vector Data Structure
+
+Note that vector data are often structurally similar to tabular data so some of the operations you can use in [Pandas]{.py}/[Tidyverse]{.r} [variables]{.py}/[objects]{.r} can be performed on these data. To demonstrate this, lets check the columns included in this vector data.
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+In [{{< fa brands r-project >}} R]{.r} we can explore vector data using the `str` function. Note that the spatial information is stored in the "geometry" column; see the strange [class]{.r} attribute?
+
+```{r r-vect-structure}
+# Check columns
+str(vect_r)
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+In [{{< fa brands python >}} Python]{.py} we can explore vector data via the `dtypes` attribute (which is also found in 'normal' tabular data variables). Note that the spatial information is stored in the "geometry" column; see the strange [type]{.py} attribute?
+
+```{python py-vect-structure}
+# Check columns
+vect_py.dtypes
 ```
 :::
 
@@ -74,11 +98,11 @@ sf::st_crs(x = vect_r)
 
 ## [{{< fa brands python >}} Python]{.py}
 
-[{{< fa brands python >}} Python]{.py} stores raster CRS as an attribute.
+[{{< fa brands python >}} Python]{.py} stores vector CRS as an attribute.
 
 ```{python py-crs-check}
 # Check the CRS of the shapefile
-
+vect_py.crs
 ```
 :::
 
@@ -103,14 +127,38 @@ sf::st_crs(vect_alber_r)
 
 ## [{{< fa brands python >}} Python]{.py}
 
-[{{< fa brands python >}} Python]{.py} CRS re-projections have slightly different steps to work through.
+[{{< fa brands python >}} Python]{.py} CRS re-projections use the same process but the relevant method is `to_crs`.
 
 ```{python py-crs-change}
 # Transform the shapefile CRS
-
+vect_alber_py = vect_py.to_crs("EPSG:3083")
 
 # Re-check the CRS to confirm it worked
-
+vect_alber_py.crs
 ```
 
+:::
+
+## Map Making with Vector Data
+
+Once you've checked the CRS and confirmed it is appropriate, you may want to make a simple map. Again, because these data [variables]{.py}/[objects]{.r} have a similar structure to 'normal' tabular data we can use many of the same tools without modification.
+
+:::panel-tabset
+## [{{< fa brands r-project >}} R]{.r}
+
+The base [{{< fa brands r-project >}} R]{.r} function `plot` works for spatial data too! Though note that it will make a separate map panel for each column in the data so we'll need to pick a particular column to get just one map.
+
+```{r r-vect-map}
+# Make a map
+plot(vect_r["AREA"])
+```
+
+## [{{< fa brands python >}} Python]{.py}
+
+[{{< fa brands python >}} Python]{.py} uses the `plot` method for this type of [variable]{.py}. Though note that without speciying the "column" argument we will get the map but every polygon will be filled with the default grey-blue color rather than informatively tied to another column in the data.
+
+```{python py-vect-map}
+# Make a map
+vect_py.plot(column = "AREA")
+```
 :::

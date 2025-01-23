@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
 
 execute:
   freeze: auto

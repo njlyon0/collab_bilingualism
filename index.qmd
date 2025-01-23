@@ -102,6 +102,5 @@ If this is of interest, consider checking out these useful coding language-speci
 ### [{{< fa brands r-project >}} R]{.r} Resources
 
 - [R for Data Science](https://r4ds.hadley.nz/) is a free online book that does a really nice job covering a lot of powerful R topics
+- I've created an "[R for Biologists](https://njlyon0.github.io/teach_r-for-biologists/)" course aimed at teaching undergraduates R which may be helpful if you have limited prior experience with this language and/or want a formal scaffold in which to tie your existing knowledge
 - The Carpentries also has a "[Data Analysis and Visualization in Rfor Ecologists](https://datacarpentry.org/R-ecology-lesson/)" that is very well done
-
-

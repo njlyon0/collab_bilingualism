@@ -2,6 +2,11 @@
 title: "Subsetting Data"
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Library Loading
 
 Begin by loading any needed libraries.
@@ -184,7 +189,7 @@ print("Subsetting changed this to", len(py_sub2))
 
 ## Subset with Masks
 
-We can define "boolean masks" when we want to leverage a helper function that tests for specific crtieria. For instance we can use the `isin` [method]{.py} or the `%in%` [operator]{.r} (in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
+We can define "boolean masks" when we want to leverage a helper function that tests for specific criteria. For instance we can use the `isin` [method]{.py} or the `%in%` [operator]{.r} (in [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} respectively) to ask whether the value in a given row matches any of a set of options. This is much simpler than writing out one "or" criterion for every option individually.
 
 :::panel-tabset
 ## [{{< fa brands r-project >}} R]{.r}

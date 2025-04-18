@@ -74,7 +74,7 @@ animal
 
 ## [{{< fa brands python >}} Python]{.py}
 
-In [{{< fa brands python >}}]{.py} [Python]{.py}, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indentened one level (i.e., press "tab" once or "space" four times).
+In [{{< fa brands python >}}]{.py} [Python]{.py}, the `for` statement, loop variable, `in` statement, and list to iterate across do not use parentheses but the end of the line requires a colon `:`. The operation(s) performed in each iteration _must_ be indented one level (i.e., press "tab" once or "space" four times).
 
 When the code reaches the end of the indented lines it returns to the top of the workflow and begins again with the next item of the provided list.
 

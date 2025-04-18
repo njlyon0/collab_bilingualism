@@ -49,27 +49,6 @@ python3 -m pip install rasterio
 python3 -m pip install rioxarray
 ```
 
-```{r install-py-pkgs-for-website}
-#| include: false
-
-# Load 'reticulate'
-library(reticulate)
-
-# Require packages
-reticulate::py_require(packages = c("pandas", "numpy", 
-                                    "matplotlib", "plotnine", 
-                                    "geopandas", "rasterio", "rioxarray"))
-
-# Import them all
-reticulate::import(module = "pandas")
-reticulate::import(module = "numpy")
-reticulate::import(module = "matplotlib")
-reticulate::import(module = "plotnine")
-reticulate::import(module = "geopandas")
-reticulate::import(module = "rasterio")
-reticulate::import(module = "rioxarray")
-```
-
 :::
 
 ## Section Overviews

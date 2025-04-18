@@ -3,9 +3,14 @@ title: "Packages & Libraries"
 engine: knitr
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Installation versus Loading
 
-Packages must first be _installed_ before they can be _loaded_. Installing a package is equivalent to going to a hardware store and buying a pre-made set of tools whereas loading that package is more like retrieving a set of tools that you already own and putting them in your work space so they are available to use. <u>All sections of this website assume you have already installed the needed packages</u> so consult the [package installtion instructions](https://njlyon0.github.io/collab_bilingualism/#package-installation) on the home page of the site if you have not already done so.
+Packages must first be _installed_ before they can be _loaded_. Installing a package is equivalent to going to a hardware store and buying a pre-made set of tools whereas loading that package is more like retrieving a set of tools that you already own and putting them in your work space so they are available to use. <u>All sections of this website assume you have already installed the needed packages</u> so consult the [package installation instructions](https://njlyon0.github.io/collab_bilingualism/#package-installation) on the home page of the site if you have not already done so.
 
 Note also that "package" and "library" are functionally interchangeable for our purposes though it is more common to say that packages are installed and libraries are loaded.
 

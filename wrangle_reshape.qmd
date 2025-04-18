@@ -2,6 +2,11 @@
 title: "Reshaping Data"
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Library & Data Loading
 
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.
@@ -87,7 +92,7 @@ Note that the column names use as IDs _must_ be a list (or similar object type).
 
 ## Reshaping Wider
 
-The opposite operation--reshaping wider--is also readily available in either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. We'll reshape the data we made into long format above to demonsrate re-reshaping back into wide format.
+The opposite operation--reshaping wider--is also readily available in either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. We'll reshape the data we made into long format above to demonstrate re-reshaping back into wide format.
 
 :::panel-tabset
 ## [{{< fa brands r-project >}} R]{.r}

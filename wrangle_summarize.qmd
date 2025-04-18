@@ -2,6 +2,11 @@
 title: "Summarizing Data"
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Library & Data Loading
 
 Begin by loading any needed libraries and reading in an external data file for use in downstream examples.

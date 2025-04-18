@@ -3,6 +3,12 @@ title: "Vector Data"
 engine: knitr
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_virtualenv(virtualenv = "r-reticulate")
+reticulate::py_install(packages = c("geopandas", "matplotlib"))
+```
+
 ## Library Loading
 
 Before we can dive into "actual" spatial work we'll need to load some libraries.
@@ -155,7 +161,7 @@ plot(vect_r["AREA"])
 
 ## [{{< fa brands python >}} Python]{.py}
 
-[{{< fa brands python >}} Python]{.py} uses the `plot` method for this type of [variable]{.py}. Though note that without speciying the "column" argument we will get the map but every polygon will be filled with the default grey-blue color rather than informatively tied to another column in the data.
+[{{< fa brands python >}} Python]{.py} uses the `plot` method for this type of [variable]{.py}. Though note that without specifying the "column" argument we will get the map but every polygon will be filled with the default grey-blue color rather than informatively tied to another column in the data.
 
 ```{python py-vect-map}
 # Make a map

@@ -4,6 +4,11 @@ execute:
   warning: false
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Grammar of Graphics
 
 Both [{{< fa brands python >}} Python]{.py} and [{{< fa brands r-project >}} R]{.r} have a plotting library based on [The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson. The [{{< fa brands python >}} Python]{.py} package (`plotnine`) is actually directly based on the [{{< fa brands r-project >}} R]{.r} package (`ggplot2`) so their internal syntax is _very_ similar. In fact the only serious differences between the two languages' ggplot operations are those that derive from larger syntax and format differences.
@@ -257,7 +262,7 @@ line_r +
 
 ### Fully Custom Themes
 
-If we'd rather, we can use the `theme` function and manually specify particular elements to change ourselves! Each element requires a helper function that matches the category of element beind edited. For instance, text elements get changed with `element_text()` while line elements with `element_line`. When we want to _remove_ an element we can use `element_blank`. Let's increase the font size for our axis tick labels and titles.
+If we'd rather, we can use the `theme` function and manually specify particular elements to change ourselves! Each element requires a helper function that matches the category of element being edited. For instance, text elements get changed with `element_text()` while line elements with `element_line`. When we want to _remove_ an element we can use `element_blank`. Let's increase the font size for our axis tick labels and titles.
 
 We'll also use the `labs` function to customize our axis titles slightly.
 

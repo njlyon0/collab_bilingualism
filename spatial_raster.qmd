@@ -3,6 +3,11 @@ title: "Raster Data"
 engine: knitr
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Library Loading
 
 Before we can dive into "actual" spatial work we'll need to load some libraries.

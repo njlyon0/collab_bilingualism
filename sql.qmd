@@ -3,6 +3,11 @@ title: "SQL"
 engine: knitr
 ---
 
+```{r py-setup}
+#| include: false
+reticulate::use_python("/usr/local/bin/python3")
+```
+
 ## Overview
 
 So far, we've been able to use [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r} on CSV files without issue. However, when the data that we are working with become very large (e.g., millions of rows) it can be very inefficient to rely on your computer's internal memory to do operations. `r fontawesome::fa(name = "database", fill = "#283E82", a11y = "sem")` [SQL]{.sql} (<u>S</u>tructured <u>Q</u>uery <u>L</u>anguage) is another programming language specifically built to work with larger databases where users "query" just the component of the data that they need for a given operation. This minimizes the amount of data that must be held in memory at any given time.

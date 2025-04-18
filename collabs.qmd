@@ -4,9 +4,15 @@ engine: knitr
 
 ### Contributing Overview
 
-A comprehensive and accessible coding bilingualism website like this one is a huge undertaking and I'd welcome collaborators who share my vision for the value of a resource like this. I'm a competent [{{< fa brands r-project >}} R]{.r} coder but that definitely does not mean I am 100% correct all the time nor that I always write explanations in the clearest way possible. On the [{{< fa brands python >}} Python]{.py} front, my first real foray into that coding language is taking tutorials and making this website.
+A comprehensive and accessible coding bilingualism website like this one is a huge undertaking and I'd welcome collaborators who share my vision for the value of a resource like this. I'm a competent [{{< fa brands r-project >}} R]{.r} coder but that definitely does not mean I am 100% correct all the time nor that I always write explanations in the clearest way possible. On the [{{< fa brands python >}} Python]{.py} front, my first real foray into that coding language is taking tutorials and starting this website (in 2023).
 
 So, if you'd like to collaborate with me on this I have drafted the following guidelines. I'm happy to discuss/modify these with prospective collaborators so please don't let them dissuade you from reaching out!
+
+### Note on "Artificial Intelligence"
+
+Please **_do not_** use generative AI for _any_ facet of your contribution to this work. AI is a random number generator built on plagiarism with an absurd error rate so from ethical and practical perspectives I'm not interested in including content produced in that way in this effort. I am absolutely interested in the ways in which _your_ curiosity and insight can benefit this product though, so please do contribute if you have an idea for improving this resource.
+
+Relatedly, I will not be developing any content for this website on how to effectively use AI in either an [{{< fa brands r-project >}} R]{.r} or [{{< fa brands python >}} Python]{.py} context. Proponents of AI often argue that AI is extremely user-friendly so surely those interested in using AI for coding in these languages should be able to teach themselves elsewhere.
 
 ### Bug / Issue Reporting
 

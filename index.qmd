@@ -48,10 +48,31 @@ python3 -m pip install geopandas
 python3 -m pip install rasterio
 python3 -m pip install rioxarray
 ```
+
+```{r install-py-pkgs-for-website}
+#| include: false
+
+# Load 'reticulate'
+library(reticulate)
+
+# Require packages
+reticulate::py_require(packages = c("pandas", "numpy", 
+                                    "matplotlib", "plotnine", 
+                                    "geopandas", "rasterio", "rioxarray"))
+
+# Import them all
+reticulate::import(module = "pandas")
+reticulate::import(module = "numpy")
+reticulate::import(module = "matplotlib")
+reticulate::import(module = "plotnine")
+reticulate::import(module = "geopandas")
+reticulate::import(module = "rasterio")
+reticulate::import(module = "rioxarray")
+```
+
 :::
 
 ## Section Overviews
-
 
 ### Fundamentals
 
@@ -103,4 +124,4 @@ If this is of interest, consider checking out these useful coding language-speci
 
 - [R for Data Science](https://r4ds.hadley.nz/) is a free online book that does a really nice job covering a lot of powerful R topics
 - I've created an "[R for Biologists](https://njlyon0.github.io/teach_r-for-biologists/)" course aimed at teaching undergraduates R which may be helpful if you have limited prior experience with this language and/or want a formal scaffold in which to tie your existing knowledge
-- The Carpentries also has a "[Data Analysis and Visualization in Rfor Ecologists](https://datacarpentry.org/R-ecology-lesson/)" that is very well done
+- The Carpentries also has a "[Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/)" that is very well done

@@ -5,6 +5,12 @@ engine: knitr
 
 I think of myself as a competent [{{< fa brands r-project >}} R]{.r} coder but am a total novice when it comes to [{{< fa brands python >}} Python]{.py}. This repository is my attempt at forcing myself to 'eat my vegetables' and gain basic competency in [{{< fa brands python >}} Python]{.py}. I think trying for a 1-to-1 [{{< fa brands r-project >}} R]{.r} translation to [{{< fa brands python >}} Python]{.py} will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process.
 
+## Citing These Materials
+
+I hope these materials have been useful to you and encourage you to use these elsewhere! If you do so, please use the following citation:
+
+> Lyon, N.J. (2025). R / Python Bilingualism (v1.1). Zenodo. [doi.org/10.5281/zenodo.17201351](https://doi.org/10.5281/zenodo.17201351)
+
 ## Package Installation
 
 Both coding languages rely on packages to install specific functions that are absent from the 'base' version of either [{{< fa brands python >}} Python]{.py} or [{{< fa brands r-project >}} R]{.r}. The following code chunks are not evaluated in the building of this website but you'll need to install these packages on your local machine (if you haven't already done so) in order to run the code in the rest of this translation tutorial.

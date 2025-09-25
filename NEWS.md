@@ -1,8 +1,8 @@
-## Version 1.0.900
+## Version 1.1
 
-This is the development version of this website. Changes from the preceding version will be identified as they are made.
+This is the release created to archive these materials on Zenodo and get a DOI. 
 
-- No changes (yet!)
+- There are no changes to the material from the preceding version
 
 ## Version 1.0
 

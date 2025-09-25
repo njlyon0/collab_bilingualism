@@ -217,6 +217,13 @@
     "text": "I think of myself as a competent  R coder but am a total novice when it comes to  Python. This repository is my attempt at forcing myself to ‘eat my vegetables’ and gain basic competency in  Python. I think trying for a 1-to-1  R translation to  Python will be an effective learning method (at least to start) and enshrining it in a Quarto website will keep me rigorous about documenting my process."
   },
   {
+    "objectID": "index.html#citing-these-materials",
+    "href": "index.html#citing-these-materials",
+    "title": "Welcome!",
+    "section": "Citing These Materials",
+    "text": "Citing These Materials\nI hope these materials have been useful to you and encourage you to use these elsewhere! If you do so, please use the following citation:\n\nLyon, N.J. (2025). R / Python Bilingualism (v1.1). Zenodo. doi.org/10.5281/zenodo.17201351"
+  },
+  {
     "objectID": "index.html#package-installation",
     "href": "index.html#package-installation",
     "title": "Welcome!",
